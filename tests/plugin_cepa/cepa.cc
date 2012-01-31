@@ -95,7 +95,7 @@ void CoupledPair::Initialize(Options &options){
      fzv     = ref->frzvpi();
   }
   if (nirreps>1){
-     throw PsiException("plugin_cepa requires symmetry c1",__FILE__,__LINE__);
+     //throw PsiException("plugin_cepa requires symmetry c1",__FILE__,__LINE__);
   }
   nso = nmo = ndocc = nvirt = nfzc = nfzv = 0;
   long int full=0;
