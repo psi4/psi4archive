@@ -826,16 +826,16 @@ int read_options(const std::string &name, Options & options, bool suppress_print
     /*- An ExternalPotential (built by Python or NULL/None) -*/
     options.add("EXTERN", new PythonDataType());
 
-    /*- SUBESCTION Parallel Runtime -*/
-
-    /*- The dimension sizes of the processor grid !expert -*/
-    options.add("PROCESS_GRID", new ArrayType());
-    /*- The tile size for the distributed matrices !expert -*/
-    options.add_int("TILE_SZ", 512);
-    /*- The dimension sizes of the distributed matrix !expert -*/
-    options.add("DISTRIBUTED_MATRIX", new ArrayType());
-    /*- Do run in parallel? !expert -*/
-    options.add_bool("PARALLEL", false);
+//    / SUBESCTION Parallel Runtime /
+//
+//    / The dimension sizes of the processor grid !expert /
+//    options.add("PROCESS_GRID", new ArrayType());
+//    / The tile size for the distributed matrices !expert /
+//    options.add_int("TILE_SZ", 512);
+//    / The dimension sizes of the distributed matrix !expert /
+//    options.add("DISTRIBUTED_MATRIX", new ArrayType());
+//    / Do run in parallel? !expert /
+//    options.add_bool("PARALLEL", false);
 
     /*- SUBSECTION Misc. -*/
 
