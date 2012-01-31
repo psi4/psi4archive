@@ -928,6 +928,7 @@ AC_CONFIG_FILES([
           src/util/tocprint/Makefile
 
           src/bin/psi4/Makefile
+          src/bin/psi4/gitversion.py
           src/bin/response/Makefile
           src/bin/dcft/Makefile
           src/bin/mcscf/Makefile
