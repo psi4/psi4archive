@@ -8,7 +8,6 @@ using namespace boost;
 
 namespace psi{
   PsiReturnType triples(boost::shared_ptr<psi::CoupledCluster>ccsd,Options&options);
-  PsiReturnType MP2NaturalOrbitals(boost::shared_ptr<psi::CoupledCluster>ccsd,Options&options);
 }
 
 namespace psi{
@@ -43,17 +42,6 @@ void RunCoupledCluster(Options &options){
      free(ccsd->diisvec);
      free(ccsd->tempt);
      free(ccsd->tempv);
-
-     if (options.get_bool("TRIPLES_USE_NOS")){
-        // mp2 natural orbitals:
-        tstart();
-        status = psi::MP2NaturalOrbitals(ccsd,options);
-        if (status == Failure){
-           throw PsiException( 
-              "Whoops, MP2 NO transformation died.",__FILE__,__LINE__);
-        }
-        tstop();
-     }
 
      tstart();
      // triples

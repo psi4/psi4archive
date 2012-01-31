@@ -38,9 +38,6 @@
 #include<libiwl/iwl.h>
 #include <libpsio/psio.hpp>
 
-// gpu helper class 
-#include"gpuhelper.h"
-
 namespace boost {
 template<class T> class shared_ptr;
 }
