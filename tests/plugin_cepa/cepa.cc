@@ -189,10 +189,20 @@ void CoupledPair::Initialize(Options &options){
   fprintf(outfile,"                                    %6d s (total)\n",(int)time_stop-(int)time_start);
 
   // orbital energies
-  eps_test = ref->epsilon_a();
-  double*tempeps = eps_test->pointer();
   eps = (double*)malloc(nmo*sizeof(double));
-  F_DCOPY(nmo,tempeps+nfzc,1,eps,1);
+  int count=0;
+  for (int h=0; h<nirreps; h++){
+      eps_test = ref->epsilon_a();
+      for (int norb = fzc[h]; norb<docc[h]; norb++){
+          eps[count++] = eps_test->get(h,norb);
+      }
+  }
+  for (int h=0; h<nirreps; h++){
+      eps_test = ref->epsilon_a();
+      for (int norb = docc[h]; norb<orbs[h]-fzv[h]; norb++){
+          eps[count++] = eps_test->get(h,norb);
+      }
+  }
   eps_test.reset();
 
   // by default, t2 will be held in core
