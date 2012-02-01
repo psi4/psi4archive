@@ -268,9 +268,6 @@ void HF::common_init()
     MOM_started_ = false;
     MOM_performed_ = false;
 
-    frac_enabled_ = (options_.get_int("FRAC_START") != 0);
-    frac_performed_ = false;
-
     print_header();
 }
 
@@ -456,8 +453,6 @@ void HF::find_occupation()
         // to be decided by Aufbau ordering prior to MOM_start)
         MOM_start();
     }
-    // Do fractional orbital normalization here.
-    frac();
 }
 
 void HF::print_header()
@@ -498,7 +493,6 @@ void HF::print_header()
             fprintf(outfile, "  Excited-state MOM enabled.\n");
         else
             fprintf(outfile, "  MOM %s.\n", MOM_enabled_ ? "enabled" : "disabled");
-        fprintf(outfile, "  Fractional occupation %s.\n", frac_enabled_ ? "enabled" : "disabled");
         fprintf(outfile, "  Guess Type is %s.\n", options_.get_str("GUESS").c_str());
         fprintf(outfile, "  Energy threshold   = %3.2e\n", energy_threshold_);
         fprintf(outfile, "  Density threshold  = %3.2e\n", density_threshold_);
@@ -1333,10 +1327,6 @@ double HF::compute_energy()
             if(status != "") status += "/";
             status += "DAMP";
         }
-        if(frac_performed_){
-            if(status != "") status += "/";
-            status += "FRAC";
-        }
 
         if (Communicator::world->me() == 0) {
             fprintf(outfile, "   @%s iter %3d: %20.14f   %12.5e   %-11.5e %s\n",
@@ -1367,9 +1357,6 @@ double HF::compute_energy()
         // If a an excited MOM is requested but not started, don't stop yet
         if (MOM_excited_ && !MOM_started_) converged = false;
 
-        // If a fractional occupation is requested but not started, don't stop yet
-        if (frac_enabled_ && !frac_performed_) converged = false;
-
         // Call any postiteration callbacks
         call_postiteration_callbacks();
 
@@ -1379,7 +1366,6 @@ double HF::compute_energy()
         fprintf(outfile, "\n  ==> Post-Iterations <==\n\n");
 
     check_phases();
-    frac_renormalize();
 
     if (converged) {
         // Need to recompute the Fock matrices, as they are modified during the SCF interation

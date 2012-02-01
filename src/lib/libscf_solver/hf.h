@@ -124,11 +124,6 @@ protected:
     /// MOM performed?
     bool MOM_performed_;
 
-    /// Are we to fractionally occupy?
-    bool frac_enabled_;
-    /// Frac started? (Same thing as frac_performed_)
-    bool frac_performed_;
-
     /// DIIS manager intiialized?
     bool initialized_diis_manager_;
     /// DIIS manager for all SCF wavefunctions
@@ -188,11 +183,6 @@ protected:
     void MOM();
     /// Start the MOM algorithm (requires one iteration worth of setup)
     void MOM_start();
-
-    /// Fractional occupation UHF/UKS
-    void frac();
-    /// Renormalize orbitals to 1.0 before saving to chkpt
-    void frac_renormalize();
 
     /// Determine how many core and virtual orbitals to freeze
     void compute_fcpi();
