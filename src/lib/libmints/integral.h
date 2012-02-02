@@ -445,18 +445,6 @@ public:
     /// Returns an erf complement ERI integral object (omega integral)
     virtual TwoBodyAOInt* erf_complement_eri(double omega, int deriv=0, double schwarz = 0.0);
 
-    /// Returns an F12 integral object
-    virtual TwoBodyAOInt* f12(boost::shared_ptr<CorrelationFactor> cf, int deriv=0, double schwarz = 0.0);
-
-    /// Returns an F12 squared integral object
-    virtual TwoBodyAOInt* f12_squared(boost::shared_ptr<CorrelationFactor> cf, int deriv=0, double schwarz = 0.0);
-
-    /// Returns an F12G12 integral object
-    virtual TwoBodyAOInt* f12g12(boost::shared_ptr<CorrelationFactor> cf, int deriv=0, double schwarz = 0.0);
-
-    /// Returns an F12 double commutator integral object
-    virtual TwoBodyAOInt* f12_double_commutator(boost::shared_ptr<CorrelationFactor> cf, int deriv=0, double schwarz = 0.0);
-
     /// Returns a general ERI iterator object for any (P Q | R S) in shells
     AOIntegralsIterator integrals_iterator(int p, int q, int r, int s);
 

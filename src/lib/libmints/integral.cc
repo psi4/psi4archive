@@ -191,26 +191,6 @@ TwoBodyAOInt* IntegralFactory::erf_complement_eri(double omega, int deriv, doubl
     return new ErfComplementERI(omega, this, deriv, schwarz);
 }
 
-TwoBodyAOInt* IntegralFactory::f12(boost::shared_ptr<CorrelationFactor> cf, int deriv, double schwarz)
-{
-    return new F12(cf, this, deriv, schwarz);
-}
-
-TwoBodyAOInt* IntegralFactory::f12_squared(boost::shared_ptr<CorrelationFactor> cf, int deriv, double schwarz)
-{
-    return new F12Squared(cf, this, deriv, schwarz);
-}
-
-TwoBodyAOInt* IntegralFactory::f12g12(boost::shared_ptr<CorrelationFactor> cf, int deriv, double schwarz)
-{
-    return new F12G12(cf, this, deriv, schwarz);
-}
-
-TwoBodyAOInt* IntegralFactory::f12_double_commutator(boost::shared_ptr<CorrelationFactor> cf, int deriv, double schwarz)
-{
-    return new F12DoubleCommutator(cf, this, deriv, schwarz);
-}
-
 void IntegralFactory::init_spherical_harmonics(int max_am)
 {
     spherical_transforms_.clear();
