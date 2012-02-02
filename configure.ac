@@ -655,12 +655,67 @@ AC_CHECK_LIB(m,exit,CXXLIBS="$CXXLIBS -lm")
 AC_MSG_RESULT(c++ libs: $CXXLIBS)
 AC_SUBST(CXXLIBS)
 
-BOOST_ROOT='$(top_objdir)/boost/boost_1_48_0'
-BOOST_INC='$(BOOST_ROOT)'
-BOOST_LIB='$(BOOST_ROOT)/bin.v2/libs'
-AC_SUBST(BOOST_ROOT)
-AC_SUBST(BOOST_INC)
-AC_SUBST(BOOST_LIB)
+# During Psi4 development we've used Boost 1.46, 1.47, and 1.48
+have_boost=0
+SAVE_CPPFLAGS=$CPPFLAGS
+AX_BOOST_BASE([1.46], [
+    have_boost=1
+
+    # Test the modules that we require
+    AX_BOOST_FILESYSTEM()
+    if test "x${ax_cv_boost_filesystem}" != "xyes"; then
+        have_boost=0
+    fi
+    AX_BOOST_PYTHON()
+    if test "x${ac_cv_boost_python}" != "xyes"; then
+        have_boost=0
+    fi
+    AX_BOOST_REGEX()
+    if test "x${ax_cv_boost_regex}" != "xyes"; then
+        have_boost=0
+    fi
+    AX_BOOST_SERIALIZATION()
+    if test "x${ax_cv_boost_serialization}" != "xyes"; then
+        have_boost=0
+    fi
+    AX_BOOST_SYSTEM()
+    if test "x${ax_cv_boost_system}" != "xyes"; then
+        have_boost=0
+    fi
+    AX_BOOST_THREAD()
+    if test "x${ax_cv_boost_thread}" != "xyes"; then
+        have_boost=0
+    fi
+],
+[
+    have_boost=0
+])
+CPPFLAGS=$SAVE_CPPFLAGS
+
+AC_SUBST(have_boost)
+
+if test "x${have_boost}" == "x0"; then
+    HAVE_BOOST=0
+    AC_SUBST(HAVE_BOOST)
+
+    BOOST_CPPFLAGS='-I$(top_objdir)/boost/boost_1_48_0'
+    BOOST_LDFLAGS=''
+    
+    BOOST_FILESYSTEM_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_filesystem.a'
+    BOOST_PYTHON_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_python.a'
+    BOOST_REGEX_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_regex.a'
+    BOOST_SERIALIZATION_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_serialization.a'
+    BOOST_SYSTEM_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_system.a'
+    BOOST_THREAD_LIB='../../../boost/boost_1_48_0/bin.v2/libs/libboost_thread.a'
+
+    AC_SUBST(BOOST_CPPFLAGS)
+    AC_SUBST(BOOST_LDFLAGS)
+    AC_SUBST(BOOST_FILESYSTEM_LIB)
+    AC_SUBST(BOOST_REGEX_LIB)
+    AC_SUBST(BOOST_SERIALIZATION_LIB)
+    AC_SUBST(BOOST_SYSTEM_LIB)
+    AC_SUBST(BOOST_THREAD_LIB)
+fi
 
 if test "$HAVE_MADNESS" = "1"; then
   PSICPPFLAGS='-I. -I$(BOOST_INC) -I$(top_objdir)/include -I$(top_srcdir)/include -I$(top_srcdir)/src/lib -I$(top_objdir)/src/lib $(madinc)'
