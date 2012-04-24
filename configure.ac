@@ -927,13 +927,11 @@ AC_CONFIG_FILES([
           src/bin/Makefile src/bin/MakeRules src/bin/MakeVars
 
           doc/MakeVars doc/MakeRules doc/Makefile
-          doc/macros.tex doc/progman/svn/svn.eps
+          doc/macros.tex 
           doc/installation/Makefile
-          doc/progman/Makefile doc/userman/Makefile
           doc/sphinxman/Makefile
           doc/sphinxman/source/conf.py
           doc/sphinxman/apply_relpath.py
-          doc/userman/prsty.bst
           doc/doxygen/Makefile
           doc/doxygen/doxygen.cfg
 
