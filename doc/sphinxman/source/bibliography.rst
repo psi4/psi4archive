@@ -3,6 +3,8 @@
 
 Bibliography
 ============
+|
+|
 
 .. [Jeziorski:1994:1887]
    B. Jeziorski, R. Moszynski, and K. Szalewicz,
@@ -140,4 +142,6 @@ Bibliography
 .. [Docken:1972:4928]
 
 .. [Ruedenberg:1979:1069]
+
+.. [Evangelista:2010:074107]
 
