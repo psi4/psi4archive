@@ -119,6 +119,9 @@ void DFJKGrad::print_header() const
 }
 void DFJKGrad::compute_gradient()
 {
+    if (do_wK_) 
+        throw PSIEXCEPTION("LRC gradients not yet implemented");
+
     if (!do_J_ && !do_K_ && !do_wK_) 
         return;
 
