@@ -966,7 +966,6 @@ AC_CONFIG_FILES([
           src/lib/lib3index/Makefile
           src/lib/libsmartptr/Makefile
           src/lib/libyeti/Makefile
-          src/lib/libdfcc_solver/Makefile
           src/util/tocprint/Makefile
 
           src/bin/psi4/Makefile
@@ -999,7 +998,6 @@ AC_CONFIG_FILES([
           src/bin/deriv/Makefile
           src/bin/scfgrad/Makefile
           src/bin/optking/Makefile
-          src/bin/dfcc/Makefile
           src/bin/findif/Makefile
           src/bin/omp2/Makefile
           src/bin/adc/Makefile
