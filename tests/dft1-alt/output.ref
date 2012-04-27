@@ -30,18 +30,22 @@ E11 = -74.9493412744 #TEST
 E12 = -75.3196957567 #TEST
 E13 = -75.3185459160 #TEST
 E14 = -75.3128178610 #TEST
+E15 = -75.5662986402 #TEST
 E21 = -74.9493412744 #TEST
 E22 = -75.3196957567 #TEST
 E23 = -75.3185459160 #TEST
 E24 = -75.3128178610 #TEST
+E25 = -75.5662986402 #TEST
 E31 = -74.6448669477 #TEST
 E32 = -74.9677634492 #TEST
 E33 = -74.9709217377 #TEST
 E34 = -74.9632650037 #TEST
+E35 = -75.1947121099 #TEST
 E41 = -74.4108252721 #TEST
 E42 = -74.8155846044 #TEST
 E43 = -74.8011166756 #TEST
 E44 = -74.7977834552 #TEST
+E45 = -75.0877533145 #TEST
 
 molecule h2o {
 0 1
@@ -58,45 +62,41 @@ guess core
 scf_type direct
 dft_spherical_points 302
 dft_radial_points 99
-reference rks
 }
 
-set dft_functional b88_x
-V11 = energy('scf')
-compare_values(E11,V11, 3, "RKS  0 1   B88 Energy") #TEST
+V11 = energy('b88_x')
+compare_values(E11,V11, 3, "RKS  0 1    B88 Energy") #TEST
 
-set dft_functional b3lyp
-V12 = energy('scf')
-compare_values(E12,V12, 3, "RKS  0 1 B3LYP Energy") #TEST
+V15 = energy('b97-d')
+compare_values(E15,V15, 3, "RKS  0 1 B97-D2 Energy") #TEST
 
-set dft_functional wB97
-set dft_omega 0.4
-V13 = energy('scf')
-compare_values(E13,V13, 3, "RKS  0 1  wB97 Energy") #TEST
+V12 = energy('b3lyp')
+compare_values(E12,V12, 3, "RKS  0 1  B3LYP Energy") #TEST
 
-set dft_functional wB97X 
+V13 = energy('wB97')  # default omega is 0.4
+compare_values(E13,V13, 3, "RKS  0 1   wB97 Energy") #TEST
+
 set dft_omega 0.3
-V14 = energy('scf')
-compare_values(E14,V14, 3, "RKS  0 1 wB97X Energy") #TEST
+V14 = energy('wB97X')
+compare_values(E14,V14, 3, "RKS  0 1  wB97X Energy") #TEST
 
-set reference uks
-set dft_functional b88_x
-V21 = energy('scf')
-compare_values(E21,V21, 3, "UKS  0 1   B88 Energy") #TEST
+set reference uhf
+V21 = energy('b88_x')
+compare_values(E21,V21, 3, "UKS  0 1    B88 Energy") #TEST
 
-set dft_functional b3lyp
-V22 = energy('scf')
-compare_values(E22,V22, 3, "UKS  0 1 B3LYP Energy") #TEST
+V25 = energy('b97-d')
+compare_values(E25,V25, 3, "UKS  0 1 B97-D2 Energy") #TEST
 
-set dft_functional wB97
+V22 = energy('b3lyp')
+compare_values(E22,V22, 3, "UKS  0 1  B3LYP Energy") #TEST
+
 set dft_omega 0.4
-V23 = energy('scf')
-compare_values(E23,V23, 3, "UKS  0 1  wB97 Energy") #TEST
+V23 = energy('wB97')
+compare_values(E23,V23, 3, "UKS  0 1   wB97 Energy") #TEST
 
-set dft_functional wB97X 
 set dft_omega 0.3
-V24 = energy('scf')
-compare_values(E24,V24, 3, "UKS  0 1 wB97X Energy") #TEST
+V24 = energy('wB97X')
+compare_values(E24,V24, 3, "UKS  0 1  wB97X Energy") #TEST
 
 molecule h2op {
 1 2
@@ -107,23 +107,22 @@ H 1 1.0 2 104.5
 
 set basis sto-3g
 # Must be reset in each new molecule
-set dft_functional b88_x
-V31 = energy('scf')
-compare_values(E31,V31, 3, "UKS  1 2   B88 Energy") #TEST
+V31 = energy('B88_X')
+compare_values(E31,V31, 3, "UKS  1 2    B88 Energy") #TEST
 
-set dft_functional b3lyp
-V32 = energy('scf')
-compare_values(E32,V32, 3, "UKS  1 2 B3LYP Energy") #TEST
+V35 = energy('B97-D')
+compare_values(E35,V35, 3, "UKS  1 2 B97-D2 Energy") #TEST
 
-set dft_functional wB97
+V32 = energy('B3LYP')
+compare_values(E32,V32, 3, "UKS  1 2  B3LYP Energy") #TEST
+
 set dft_omega 0.4
-V33 = energy('scf')
-compare_values(E33,V33, 3, "UKS  1 2  wB97 Energy") #TEST
+V33 = energy('wB97')
+compare_values(E33,V33, 3, "UKS  1 2   wB97 Energy") #TEST
 
-set dft_functional wB97X 
 set dft_omega 0.3
-V34 = energy('scf')
-compare_values(E34,V34, 3, "UKS  1 2 wB97X Energy") #TEST
+V34 = energy('wB97X')
+compare_values(E34,V34, 3, "UKS  1 2  wB97X Energy") #TEST
 
 molecule h2om {
 -1 2
@@ -133,29 +132,29 @@ H 1 1.0 2 104.5
 }
 
 set basis sto-3g
-set dft_functional b88_x
-V41 = energy('scf')
-compare_values(E41,V41, 3, "UKS -1 2   B88 Energy") #TEST
+V41 = energy('b88_x')
+compare_values(E41,V41, 3, "UKS -1 2    B88 Energy") #TEST
 
-set dft_functional b3lyp
-V42 = energy('scf')
-compare_values(E42,V42, 3, "UKS -1 2 B3LYP Energy") #TEST
+V45 = energy('b97-d')
+print_variables()
+compare_values(E45,V45, 3, "UKS  1 2 B97-D2 Energy") #TEST
 
-set dft_functional wB97
+V42 = energy('b3lyp')
+compare_values(E42,V42, 3, "UKS -1 2  B3LYP Energy") #TEST
+
 set dft_omega 0.4
-V43 = energy('scf')
-compare_values(E43,V43, 3, "UKS -1 2  wB97 Energy") #TEST
+V43 = energy('wB97')
+compare_values(E43,V43, 3, "UKS -1 2   wB97 Energy") #TEST
 
-set dft_functional wB97X 
 set dft_omega 0.3
-V44 = energy('scf')
-compare_values(E44,V44, 3, "UKS -1 2 wB97X Energy") #TEST
+V44 = energy('wB97X')
+compare_values(E44,V44, 3, "UKS -1 2  wB97X Energy") #TEST
 --------------------------------------------------------------------------
 
   Memory set to 250.000 MiB by Python script.
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:52:53 2012
+*** at Fri Apr 27 13:56:25 2012
 
 
          ---------------------------------------------------------
@@ -370,7 +369,7 @@ compare_values(E44,V44, 3, "UKS -1 2 wB97X Energy") #TEST
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:55 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:27 2012
 Module time:
 	user time   =       1.37 seconds =       0.02 minutes
 	system time =       0.05 seconds =       0.00 minutes
@@ -381,7 +380,252 @@ Total time:
 	total time  =          2 seconds =       0.03 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:52:55 2012
+*** at Fri Apr 27 13:56:27 2012
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, and Andy Simmonett
+                              RKS Reference
+                        1 Threads,    250 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: c2v
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z       
+    ------------   -----------------  -----------------  -----------------
+           O          0.000000000000     0.000000000000    -0.068516219310
+           H          0.000000000000    -0.790689573744     0.543701060724
+           H          0.000000000000     0.790689573744     0.543701060724
+
+  Running in c2v symmetry.
+
+  Nuclear repulsion =    8.801465529972068
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 10
+  Nalpha       = 5
+  Nbeta        = 5
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DIRECT.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is CORE.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
+    Total number of shells = 5
+    Number of primitives   = 15
+    Number of AO           = 7
+    Number of SO           = 7
+    Maximum AM             = 1
+    Spherical Harmonics    = TRUE
+
+  -Contraction Scheme:
+    Atom   Type   All Primitives // Shells:
+   ------ ------ --------------------------
+       1     O     6s 3p // 2s 1p 
+       2     H     3s // 1s 
+       3     H     3s // 1s 
+
+  ==> DFT Potential <==
+
+   => B97-D Composite Functional <= 
+
+    B97-D Pure-GGA Exchange-Correlation Functional
+
+    S. Grimme, J. Comput. Chem., 27, 1787-1799, 2006
+
+    Points   =           5000
+    Deriv    =              1
+    GGA      =           TRUE
+    Meta     =          FALSE
+
+    X_LRC    =          FALSE
+    X_Hybrid =          FALSE
+    X_Alpha  =   0.000000E+00
+    X_Omega  =   0.000000E+00
+    C_LRC    =          FALSE
+    C_Hybrid =          FALSE
+    C_Alpha  =   0.000000E+00
+    C_Omega  =   0.000000E+00
+
+   => Exchange Functionals <=
+
+    1.0000 B97-D_X
+
+   => Correlation Functionals <=
+
+    1.0000 B97-D_C
+
+   => B97-D_X Functional <=
+
+    B97 Parameterized GGA Exchange
+
+    A.D. Becke, J. Chem. Phys., 107(20), 8554-8560, 1997
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => B97-D_C Functional <=
+
+
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => -D2: Empirical Dispersion <=
+
+    Grimme's -D2 Dispersion Correction
+
+    Grimme, S. (2006),  J. Comp. Chem., 27: 1787-1799
+
+    S6 =   1.250000E+00
+
+   => Molecular Quadrature <=
+
+    Spherical Scheme = Lebedev-Laikov
+    Radial Scheme    =       Treutler
+    Atomic Scheme    =       Treutler
+
+    Spherical Points =            302
+    Radial Points    =             99
+    Total Points     =          86003
+    Total Blocks     =            141
+    Max Points       =            986
+    Max Functions    =              7
+
+  ==> Pre-Iterations <==
+
+  Minimum eigenvalue in the overlap matrix is 3.7028400642E-01.
+  Using Symmetric Orthogonalization.
+  SCF Guess: Core (One-Electron) Hamiltonian.
+
+  Initial RKS energy:   -54.63426083487276
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     A1         4       4       3       3       3       0
+     A2         0       0       0       0       0       0
+     B1         1       1       1       1       1       0
+     B2         2       2       1       1       1       0
+   -------------------------------------------------------
+    Total       7       7       5       5       5       0
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  Building Direct Integral Objects...
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     Density RMS
+
+   @RKS iter   1:   -73.83536991137488   -1.92011e+01   0.00000e+00 
+   @RKS iter   2:   -74.70032642100475   -8.64957e-01   4.92377e-01 DIIS
+   @RKS iter   3:   -75.56529404991649   -8.64968e-01   3.03608e-01 DIIS
+   @RKS iter   4:   -75.56620841659635   -9.14367e-04   1.25397e-02 DIIS
+   @RKS iter   5:   -75.56628957594835   -8.11594e-05   1.84307e-03 DIIS
+   @RKS iter   6:   -75.56629854793277   -8.97198e-06   7.30695e-04 DIIS
+   @RKS iter   7:   -75.56629865452739   -1.06595e-07   9.13751e-05 DIIS
+   @RKS iter   8:   -75.56629865461403   -8.66436e-11   2.52609e-06 DIIS
+
+  ==> Post-Iterations <==
+
+	Orbital Energies (a.u.)
+	-----------------------
+
+	Doubly Occupied:                                                      
+
+	   1A1   -18.524263     2A1    -0.850186     1B2    -0.397179  
+	   3A1    -0.196529     1B1    -0.098302  
+
+	Virtual:                                                              
+
+	   4A1     0.243799     2B2     0.348431  
+
+	Final Occupation by Irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    1,    1 ]
+
+  Energy converged.
+
+  @RKS Final Energy:   -75.56629865461403
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -121.6479010420684119
+    Two-Electron Energy =              46.9453014986040813
+    DFT Functional Energy =            -9.6650986685725702
+    Empirical Dispersion Energy =      -0.0000659725491935
+    Total Energy =                    -75.5662986546140303
+
+  ==> Properties <==
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     1.0191
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:    -0.4048
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.6143     Total:     0.6143
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     1.5614     Total:     1.5614
+
+  Quadrupole Moment: (Debye Ang)
+    XX:    -6.1397     YY:    -4.3943     ZZ:    -5.2312
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Traceless Quadrupole Moment: (Debye Ang)
+    XX:    -0.8846     YY:     0.8607     ZZ:     0.0239
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Mulliken Charges: (a.u.)
+   Center  Symbol    Alpha    Beta     Spin     Total
+       1     O     4.16273  4.16273  0.00000 -0.32546
+       2     H     0.41864  0.41864  0.00000  0.16273
+       3     H     0.41864  0.41864  0.00000  0.16273
+
+   Total alpha =  5.00000, Total beta =  5.00000, Total charge = -0.00000
+
+
+  Saving occupied orbitals to File 180.
+
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:32 2012
+Module time:
+	user time   =       4.92 seconds =       0.08 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          5 seconds =       0.08 minutes
+Total time:
+	user time   =       6.29 seconds =       0.10 minutes
+	system time =       0.10 seconds =       0.00 minutes
+	total time  =          7 seconds =       0.12 minutes
+
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:56:32 2012
 
 
          ---------------------------------------------------------
@@ -623,18 +867,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:58 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:35 2012
 Module time:
-	user time   =       3.47 seconds =       0.06 minutes
+	user time   =       3.46 seconds =       0.06 minutes
 	system time =       0.05 seconds =       0.00 minutes
 	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       4.84 seconds =       0.08 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       9.75 seconds =       0.16 minutes
+	system time =       0.15 seconds =       0.00 minutes
+	total time  =         10 seconds =       0.17 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:52:58 2012
+*** at Fri Apr 27 13:56:35 2012
 
 
          ---------------------------------------------------------
@@ -859,18 +1103,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:04 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:40 2012
 Module time:
-	user time   =       5.18 seconds =       0.09 minutes
+	user time   =       5.19 seconds =       0.09 minutes
 	system time =       0.05 seconds =       0.00 minutes
-	total time  =          6 seconds =       0.10 minutes
+	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      10.02 seconds =       0.17 minutes
-	system time =       0.15 seconds =       0.00 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =      14.94 seconds =       0.25 minutes
+	system time =       0.20 seconds =       0.00 minutes
+	total time  =         15 seconds =       0.25 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:04 2012
+*** at Fri Apr 27 13:56:40 2012
 
 
          ---------------------------------------------------------
@@ -1096,18 +1340,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:09 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:46 2012
 Module time:
-	user time   =       5.18 seconds =       0.09 minutes
-	system time =       0.06 seconds =       0.00 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       5.21 seconds =       0.09 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          6 seconds =       0.10 minutes
 Total time:
-	user time   =      15.20 seconds =       0.25 minutes
-	system time =       0.21 seconds =       0.00 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =      20.15 seconds =       0.34 minutes
+	system time =       0.25 seconds =       0.00 minutes
+	total time  =         21 seconds =       0.35 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:09 2012
+*** at Fri Apr 27 13:56:46 2012
 
 
          ---------------------------------------------------------
@@ -1338,18 +1582,279 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:11 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:47 2012
 Module time:
-	user time   =       1.68 seconds =       0.03 minutes
-	system time =       0.06 seconds =       0.00 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.66 seconds =       0.03 minutes
+	system time =       0.07 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      16.88 seconds =       0.28 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =         18 seconds =       0.30 minutes
+	user time   =      21.81 seconds =       0.36 minutes
+	system time =       0.32 seconds =       0.01 minutes
+	total time  =         22 seconds =       0.37 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:11 2012
+*** at Fri Apr 27 13:56:47 2012
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, and Andy Simmonett
+                              UKS Reference
+                        1 Threads,    250 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: c2v
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z       
+    ------------   -----------------  -----------------  -----------------
+           O          0.000000000000     0.000000000000    -0.068516219310
+           H          0.000000000000    -0.790689573744     0.543701060724
+           H          0.000000000000     0.790689573744     0.543701060724
+
+  Running in c2v symmetry.
+
+  Nuclear repulsion =    8.801465529972068
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 10
+  Nalpha       = 5
+  Nbeta        = 5
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DIRECT.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is CORE.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
+    Total number of shells = 5
+    Number of primitives   = 15
+    Number of AO           = 7
+    Number of SO           = 7
+    Maximum AM             = 1
+    Spherical Harmonics    = TRUE
+
+  -Contraction Scheme:
+    Atom   Type   All Primitives // Shells:
+   ------ ------ --------------------------
+       1     O     6s 3p // 2s 1p 
+       2     H     3s // 1s 
+       3     H     3s // 1s 
+
+  ==> DFT Potential <==
+
+   => B97-D Composite Functional <= 
+
+    B97-D Pure-GGA Exchange-Correlation Functional
+
+    S. Grimme, J. Comput. Chem., 27, 1787-1799, 2006
+
+    Points   =           5000
+    Deriv    =              1
+    GGA      =           TRUE
+    Meta     =          FALSE
+
+    X_LRC    =          FALSE
+    X_Hybrid =          FALSE
+    X_Alpha  =   0.000000E+00
+    X_Omega  =   0.000000E+00
+    C_LRC    =          FALSE
+    C_Hybrid =          FALSE
+    C_Alpha  =   0.000000E+00
+    C_Omega  =   0.000000E+00
+
+   => Exchange Functionals <=
+
+    1.0000 B97-D_X
+
+   => Correlation Functionals <=
+
+    1.0000 B97-D_C
+
+   => B97-D_X Functional <=
+
+    B97 Parameterized GGA Exchange
+
+    A.D. Becke, J. Chem. Phys., 107(20), 8554-8560, 1997
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => B97-D_C Functional <=
+
+
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => -D2: Empirical Dispersion <=
+
+    Grimme's -D2 Dispersion Correction
+
+    Grimme, S. (2006),  J. Comp. Chem., 27: 1787-1799
+
+    S6 =   1.250000E+00
+
+   => Molecular Quadrature <=
+
+    Spherical Scheme = Lebedev-Laikov
+    Radial Scheme    =       Treutler
+    Atomic Scheme    =       Treutler
+
+    Spherical Points =            302
+    Radial Points    =             99
+    Total Points     =          86003
+    Total Blocks     =            141
+    Max Points       =            986
+    Max Functions    =              7
+
+  ==> Pre-Iterations <==
+
+  Minimum eigenvalue in the overlap matrix is 3.7028400642E-01.
+  Using Symmetric Orthogonalization.
+  SCF Guess: Core (One-Electron) Hamiltonian.
+
+  Initial UKS energy:   -54.63426083487276
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     A1         4       4       3       3       3       0
+     A2         0       0       0       0       0       0
+     B1         1       1       1       1       1       0
+     B2         2       2       1       1       1       0
+   -------------------------------------------------------
+    Total       7       7       5       5       5       0
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  Building Direct Integral Objects...
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     Density RMS
+
+   @UKS iter   1:   -73.83536991137488   -1.92011e+01   0.00000e+00 
+   @UKS iter   2:   -74.70032642100475   -8.64957e-01   4.92377e-01 DIIS
+   @UKS iter   3:   -75.56529404991649   -8.64968e-01   3.03608e-01 DIIS
+   @UKS iter   4:   -75.56620841659638   -9.14367e-04   1.25397e-02 DIIS
+   @UKS iter   5:   -75.56628957594833   -8.11594e-05   1.84307e-03 DIIS
+   @UKS iter   6:   -75.56629854793276   -8.97198e-06   7.30695e-04 DIIS
+   @UKS iter   7:   -75.56629865452742   -1.06595e-07   9.13751e-05 DIIS
+   @UKS iter   8:   -75.56629865461404   -8.66294e-11   2.52609e-06 DIIS
+
+  ==> Post-Iterations <==
+
+   @Spin Contamination Metric:  -5.329070518E-15
+   @S^2 Expected:                0.000000000E+00
+   @S^2 Observed:               -5.329070518E-15
+   @S   Expected:                0.000000000E+00
+   @S   Observed:                0.000000000E+00
+
+	Orbital Energies (a.u.)
+	-----------------------
+
+	Alpha Occupied:                                                       
+
+	   1A1   -18.524263     2A1    -0.850186     1B2    -0.397179  
+	   3A1    -0.196529     1B1    -0.098302  
+
+	Alpha Virtual:                                                        
+
+	   4A1     0.243799     2B2     0.348431  
+
+	Beta Occupied:                                                        
+
+	   1A1   -18.524263     2A1    -0.850186     1B2    -0.397179  
+	   3A1    -0.196529     1B1    -0.098302  
+
+	Beta Virtual:                                                         
+
+	   4A1     0.243799     2B2     0.348431  
+
+	Final Occupation by Irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    1,    1 ]
+	SOCC [     0,    0,    0,    0 ]
+
+  Energy converged.
+
+  @UKS Final Energy:   -75.56629865461404
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -121.6479010420717231
+    Two-Electron Energy =              46.9453014986077051
+    DFT Functional Energy =            -9.6650986685729006
+    Empirical Dispersion Energy =      -0.0000659725491935
+    Total Energy =                    -75.5662986546140445
+
+  ==> Properties <==
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     1.0191
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:    -0.4048
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.6143     Total:     0.6143
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     1.5614     Total:     1.5614
+
+  Quadrupole Moment: (Debye Ang)
+    XX:    -6.1397     YY:    -4.3943     ZZ:    -5.2312
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Traceless Quadrupole Moment: (Debye Ang)
+    XX:    -0.8846     YY:     0.8607     ZZ:     0.0239
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Mulliken Charges: (a.u.)
+   Center  Symbol    Alpha    Beta     Spin     Total
+       1     O     4.16273  4.16273  0.00000 -0.32546
+       2     H     0.41864  0.41864  0.00000  0.16273
+       3     H     0.41864  0.41864  0.00000  0.16273
+
+   Total alpha =  5.00000, Total beta =  5.00000, Total charge = -0.00000
+
+
+  Saving occupied orbitals to File 180.
+
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:53 2012
+Module time:
+	user time   =       5.19 seconds =       0.09 minutes
+	system time =       0.08 seconds =       0.00 minutes
+	total time  =          6 seconds =       0.10 minutes
+Total time:
+	user time   =      27.01 seconds =       0.45 minutes
+	system time =       0.40 seconds =       0.01 minutes
+	total time  =         28 seconds =       0.47 minutes
+
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:56:53 2012
 
 
          ---------------------------------------------------------
@@ -1607,18 +2112,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:56:57 2012
 Module time:
-	user time   =       3.88 seconds =       0.06 minutes
-	system time =       0.07 seconds =       0.00 minutes
+	user time   =       3.92 seconds =       0.07 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          4 seconds =       0.07 minutes
 Total time:
-	user time   =      20.76 seconds =       0.35 minutes
-	system time =       0.34 seconds =       0.01 minutes
-	total time  =         22 seconds =       0.37 minutes
+	user time   =      30.93 seconds =       0.52 minutes
+	system time =       0.46 seconds =       0.01 minutes
+	total time  =         32 seconds =       0.53 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:15 2012
+*** at Fri Apr 27 13:56:57 2012
 
 
          ---------------------------------------------------------
@@ -1859,18 +2364,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:20 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:02 2012
 Module time:
 	user time   =       5.53 seconds =       0.09 minutes
 	system time =       0.08 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      26.29 seconds =       0.44 minutes
-	system time =       0.42 seconds =       0.01 minutes
-	total time  =         27 seconds =       0.45 minutes
+	user time   =      36.46 seconds =       0.61 minutes
+	system time =       0.54 seconds =       0.01 minutes
+	total time  =         37 seconds =       0.62 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:20 2012
+*** at Fri Apr 27 13:57:02 2012
 
 
          ---------------------------------------------------------
@@ -2112,18 +2617,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:08 2012
 Module time:
 	user time   =       5.52 seconds =       0.09 minutes
-	system time =       0.08 seconds =       0.00 minutes
+	system time =       0.07 seconds =       0.00 minutes
 	total time  =          6 seconds =       0.10 minutes
 Total time:
-	user time   =      31.81 seconds =       0.53 minutes
-	system time =       0.50 seconds =       0.01 minutes
-	total time  =         33 seconds =       0.55 minutes
+	user time   =      41.98 seconds =       0.70 minutes
+	system time =       0.61 seconds =       0.01 minutes
+	total time  =         43 seconds =       0.72 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:26 2012
+*** at Fri Apr 27 13:57:08 2012
 
 
          ---------------------------------------------------------
@@ -2354,18 +2859,279 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:10 2012
 Module time:
-	user time   =       1.68 seconds =       0.03 minutes
+	user time   =       1.67 seconds =       0.03 minutes
 	system time =       0.07 seconds =       0.00 minutes
 	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =      33.49 seconds =       0.56 minutes
-	system time =       0.57 seconds =       0.01 minutes
-	total time  =         35 seconds =       0.58 minutes
+	user time   =      43.65 seconds =       0.73 minutes
+	system time =       0.68 seconds =       0.01 minutes
+	total time  =         45 seconds =       0.75 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:28 2012
+*** at Fri Apr 27 13:57:10 2012
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, and Andy Simmonett
+                              UKS Reference
+                        1 Threads,    250 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: c2v
+
+    Geometry (in Angstrom), charge = 1, multiplicity = 2:
+
+       Center              X                  Y                   Z       
+    ------------   -----------------  -----------------  -----------------
+           O          0.000000000000     0.000000000000    -0.068516219310
+           H          0.000000000000    -0.790689573744     0.543701060724
+           H          0.000000000000     0.790689573744     0.543701060724
+
+  Running in c2v symmetry.
+
+  Nuclear repulsion =    8.801465529972068
+
+  Charge       = 1
+  Multiplicity = 2
+  Electrons    = 9
+  Nalpha       = 5
+  Nbeta        = 4
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DIRECT.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is CORE.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
+    Total number of shells = 5
+    Number of primitives   = 15
+    Number of AO           = 7
+    Number of SO           = 7
+    Maximum AM             = 1
+    Spherical Harmonics    = TRUE
+
+  -Contraction Scheme:
+    Atom   Type   All Primitives // Shells:
+   ------ ------ --------------------------
+       1     O     6s 3p // 2s 1p 
+       2     H     3s // 1s 
+       3     H     3s // 1s 
+
+  ==> DFT Potential <==
+
+   => B97-D Composite Functional <= 
+
+    B97-D Pure-GGA Exchange-Correlation Functional
+
+    S. Grimme, J. Comput. Chem., 27, 1787-1799, 2006
+
+    Points   =           5000
+    Deriv    =              1
+    GGA      =           TRUE
+    Meta     =          FALSE
+
+    X_LRC    =          FALSE
+    X_Hybrid =          FALSE
+    X_Alpha  =   0.000000E+00
+    X_Omega  =   0.000000E+00
+    C_LRC    =          FALSE
+    C_Hybrid =          FALSE
+    C_Alpha  =   0.000000E+00
+    C_Omega  =   0.000000E+00
+
+   => Exchange Functionals <=
+
+    1.0000 B97-D_X
+
+   => Correlation Functionals <=
+
+    1.0000 B97-D_C
+
+   => B97-D_X Functional <=
+
+    B97 Parameterized GGA Exchange
+
+    A.D. Becke, J. Chem. Phys., 107(20), 8554-8560, 1997
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => B97-D_C Functional <=
+
+
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => -D2: Empirical Dispersion <=
+
+    Grimme's -D2 Dispersion Correction
+
+    Grimme, S. (2006),  J. Comp. Chem., 27: 1787-1799
+
+    S6 =   1.250000E+00
+
+   => Molecular Quadrature <=
+
+    Spherical Scheme = Lebedev-Laikov
+    Radial Scheme    =       Treutler
+    Atomic Scheme    =       Treutler
+
+    Spherical Points =            302
+    Radial Points    =             99
+    Total Points     =          86003
+    Total Blocks     =            141
+    Max Points       =            986
+    Max Functions    =              7
+
+  ==> Pre-Iterations <==
+
+  Minimum eigenvalue in the overlap matrix is 3.7028400642E-01.
+  Using Symmetric Orthogonalization.
+  SCF Guess: Core (One-Electron) Hamiltonian.
+
+  Initial UKS energy:   -50.92319081361079
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     A1         4       4       3       3       3       0
+     A2         0       0       0       0       0       0
+     B1         1       1       1       0       0       1
+     B2         2       2       1       1       1       0
+   -------------------------------------------------------
+    Total       7       7       5       4       4       1
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  Building Direct Integral Objects...
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     Density RMS
+
+   @UKS iter   1:   -74.03309129700675   -2.31099e+01   0.00000e+00 
+   @UKS iter   2:   -74.63524695355549   -6.02156e-01   4.34884e-01 DIIS
+   @UKS iter   3:   -75.19405468117050   -5.58808e-01   2.07272e-01 DIIS
+   @UKS iter   4:   -75.19470729684839   -6.52616e-04   7.41227e-03 DIIS
+   @UKS iter   5:   -75.19471189661446   -4.59977e-06   1.76598e-04 DIIS
+   @UKS iter   6:   -75.19471210902320   -2.12409e-07   1.81940e-05 DIIS
+   @UKS iter   7:   -75.19471210969330   -6.70099e-10   6.22745e-06 DIIS
+   @UKS iter   8:   -75.19471210969677   -3.46745e-12   4.77617e-07 DIIS
+
+  ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   2.379476415E-03
+   @S^2 Expected:                7.500000000E-01
+   @S^2 Observed:                7.523794764E-01
+   @S   Expected:                5.000000000E-01
+   @S   Observed:                5.000000000E-01
+
+	Orbital Energies (a.u.)
+	-----------------------
+
+	Alpha Occupied:                                                       
+
+	   1A1   -19.294249     2A1    -1.468779     1B2    -0.947240  
+	   1B1    -0.796794     3A1    -0.780403  
+
+	Alpha Virtual:                                                        
+
+	   4A1    -0.253245     2B2    -0.167850  
+
+	Beta Occupied:                                                        
+
+	   1A1   -19.286522     2A1    -1.401557     1B2    -0.923874  
+	   3A1    -0.745273  
+
+	Beta Virtual:                                                         
+
+	   1B1    -0.625723     4A1    -0.233597     2B2    -0.153736  
+
+	Final Occupation by Irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    0,    1 ]
+	SOCC [     0,    0,    1,    0 ]
+
+  Energy converged.
+
+  @UKS Final Energy:   -75.19471210969677
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -115.8063699475333124
+    Two-Electron Energy =              40.8864819815931924
+    DFT Functional Energy =            -9.0762237011795097
+    Empirical Dispersion Energy =      -0.0000659725491935
+    Total Energy =                    -75.1947121096967663
+
+  ==> Properties <==
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     1.0191
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0192
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     1.0383     Total:     1.0383
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     2.6390     Total:     2.6390
+
+  Quadrupole Moment: (Debye Ang)
+    XX:    -4.7123     YY:    -2.2840     ZZ:    -3.9134
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Traceless Quadrupole Moment: (Debye Ang)
+    XX:    -1.0757     YY:     1.3526     ZZ:    -0.2768
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Mulliken Charges: (a.u.)
+   Center  Symbol    Alpha    Beta     Spin     Total
+       1     O     4.47195  3.39394  1.07801  0.13411
+       2     H     0.26403  0.30303 -0.03901  0.43294
+       3     H     0.26403  0.30303 -0.03901  0.43294
+
+   Total alpha =  5.00000, Total beta =  4.00000, Total charge =  1.00000
+
+
+  Saving occupied orbitals to File 180.
+
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:15 2012
+Module time:
+	user time   =       5.49 seconds =       0.09 minutes
+	system time =       0.07 seconds =       0.00 minutes
+	total time  =          5 seconds =       0.08 minutes
+Total time:
+	user time   =      49.14 seconds =       0.82 minutes
+	system time =       0.75 seconds =       0.01 minutes
+	total time  =         50 seconds =       0.83 minutes
+
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:57:15 2012
 
 
          ---------------------------------------------------------
@@ -2625,18 +3391,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:21 2012
 Module time:
-	user time   =       5.25 seconds =       0.09 minutes
-	system time =       0.08 seconds =       0.00 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       5.31 seconds =       0.09 minutes
+	system time =       0.10 seconds =       0.00 minutes
+	total time  =          6 seconds =       0.10 minutes
 Total time:
-	user time   =      38.74 seconds =       0.65 minutes
-	system time =       0.65 seconds =       0.01 minutes
-	total time  =         40 seconds =       0.67 minutes
+	user time   =      54.45 seconds =       0.91 minutes
+	system time =       0.85 seconds =       0.01 minutes
+	total time  =         56 seconds =       0.93 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:33 2012
+*** at Fri Apr 27 13:57:21 2012
 
 
          ---------------------------------------------------------
@@ -2879,18 +3645,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:41 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:28 2012
 Module time:
 	user time   =       7.26 seconds =       0.12 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          8 seconds =       0.13 minutes
+	system time =       0.08 seconds =       0.00 minutes
+	total time  =          7 seconds =       0.12 minutes
 Total time:
-	user time   =      46.00 seconds =       0.77 minutes
-	system time =       0.75 seconds =       0.01 minutes
-	total time  =         48 seconds =       0.80 minutes
+	user time   =      61.71 seconds =       1.03 minutes
+	system time =       0.93 seconds =       0.02 minutes
+	total time  =         63 seconds =       1.05 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:41 2012
+*** at Fri Apr 27 13:57:28 2012
 
 
          ---------------------------------------------------------
@@ -3134,18 +3900,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:48 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:35 2012
 Module time:
-	user time   =       7.26 seconds =       0.12 minutes
+	user time   =       7.25 seconds =       0.12 minutes
 	system time =       0.10 seconds =       0.00 minutes
 	total time  =          7 seconds =       0.12 minutes
 Total time:
-	user time   =      53.26 seconds =       0.89 minutes
-	system time =       0.85 seconds =       0.01 minutes
-	total time  =         55 seconds =       0.92 minutes
+	user time   =      68.96 seconds =       1.15 minutes
+	system time =       1.03 seconds =       0.02 minutes
+	total time  =         70 seconds =       1.17 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:48 2012
+*** at Fri Apr 27 13:57:35 2012
 
 
          ---------------------------------------------------------
@@ -3382,18 +4148,311 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:50 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:37 2012
 Module time:
-	user time   =       1.88 seconds =       0.03 minutes
-	system time =       0.07 seconds =       0.00 minutes
+	user time   =       1.86 seconds =       0.03 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =      55.14 seconds =       0.92 minutes
-	system time =       0.92 seconds =       0.02 minutes
-	total time  =         57 seconds =       0.95 minutes
+	user time   =      70.83 seconds =       1.18 minutes
+	system time =       1.09 seconds =       0.02 minutes
+	total time  =         72 seconds =       1.20 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:50 2012
+*** at Fri Apr 27 13:57:37 2012
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, and Andy Simmonett
+                              UKS Reference
+                        1 Threads,    250 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: c2v
+
+    Geometry (in Angstrom), charge = -1, multiplicity = 2:
+
+       Center              X                  Y                   Z       
+    ------------   -----------------  -----------------  -----------------
+           O          0.000000000000     0.000000000000    -0.068516219310
+           H          0.000000000000    -0.790689573744     0.543701060724
+           H          0.000000000000     0.790689573744     0.543701060724
+
+  Running in c2v symmetry.
+
+  Nuclear repulsion =    8.801465529972068
+
+  Charge       = -1
+  Multiplicity = 2
+  Electrons    = 11
+  Nalpha       = 6
+  Nbeta        = 5
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DIRECT.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is CORE.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
+    Total number of shells = 5
+    Number of primitives   = 15
+    Number of AO           = 7
+    Number of SO           = 7
+    Maximum AM             = 1
+    Spherical Harmonics    = TRUE
+
+  -Contraction Scheme:
+    Atom   Type   All Primitives // Shells:
+   ------ ------ --------------------------
+       1     O     6s 3p // 2s 1p 
+       2     H     3s // 1s 
+       3     H     3s // 1s 
+
+  ==> DFT Potential <==
+
+   => B97-D Composite Functional <= 
+
+    B97-D Pure-GGA Exchange-Correlation Functional
+
+    S. Grimme, J. Comput. Chem., 27, 1787-1799, 2006
+
+    Points   =           5000
+    Deriv    =              1
+    GGA      =           TRUE
+    Meta     =          FALSE
+
+    X_LRC    =          FALSE
+    X_Hybrid =          FALSE
+    X_Alpha  =   0.000000E+00
+    X_Omega  =   0.000000E+00
+    C_LRC    =          FALSE
+    C_Hybrid =          FALSE
+    C_Alpha  =   0.000000E+00
+    C_Omega  =   0.000000E+00
+
+   => Exchange Functionals <=
+
+    1.0000 B97-D_X
+
+   => Correlation Functionals <=
+
+    1.0000 B97-D_C
+
+   => B97-D_X Functional <=
+
+    B97 Parameterized GGA Exchange
+
+    A.D. Becke, J. Chem. Phys., 107(20), 8554-8560, 1997
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => B97-D_C Functional <=
+
+
+
+    GGA   =           TRUE
+    Meta  =          FALSE
+    LRC   =          FALSE
+    Alpha =   1.000000E+00
+    Omega =   0.000000E+00
+
+   => -D2: Empirical Dispersion <=
+
+    Grimme's -D2 Dispersion Correction
+
+    Grimme, S. (2006),  J. Comp. Chem., 27: 1787-1799
+
+    S6 =   1.250000E+00
+
+   => Molecular Quadrature <=
+
+    Spherical Scheme = Lebedev-Laikov
+    Radial Scheme    =       Treutler
+    Atomic Scheme    =       Treutler
+
+    Spherical Points =            302
+    Radial Points    =             99
+    Total Points     =          86003
+    Total Blocks     =            141
+    Max Points       =            986
+    Max Functions    =              7
+
+  ==> Pre-Iterations <==
+
+  Minimum eigenvalue in the overlap matrix is 3.7028400642E-01.
+  Using Symmetric Orthogonalization.
+  SCF Guess: Core (One-Electron) Hamiltonian.
+
+  Initial UKS energy:   -56.71270683299687
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     A1         4       4       3       3       3       0
+     A2         0       0       0       0       0       0
+     B1         1       1       1       1       1       0
+     B2         2       2       2       1       1       1
+   -------------------------------------------------------
+    Total       7       7       6       5       5       1
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  Building Direct Integral Objects...
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     Density RMS
+
+   @UKS iter   1:   -73.59425197623091   -1.68815e+01   0.00000e+00 
+	Occupation by irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    1,    1 ]
+	SOCC [     1,    0,    0,    0 ]
+
+   @UKS iter   2:   -74.74817759942911   -1.15393e+00   4.37982e-01 DIIS
+   @UKS iter   3:   -75.08688577436645   -3.38708e-01   1.58132e-01 DIIS
+   @UKS iter   4:   -75.08769520319959   -8.09429e-04   4.69841e-03 DIIS
+   @UKS iter   5:   -75.08775157845902   -5.63753e-05   1.13272e-03 DIIS
+   @UKS iter   6:   -75.08775332341021   -1.74495e-06   3.04529e-04 DIIS
+   @UKS iter   7:   -75.08775332725196   -3.84175e-09   1.42379e-05 DIIS
+   @UKS iter   8:   -75.08775332725484   -2.88480e-12   3.99688e-07 DIIS
+   @UKS iter   9:   -75.08775332725489   -4.26326e-14   1.11810e-08 DIIS
+
+  ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   2.155743832E-04
+   @S^2 Expected:                7.500000000E-01
+   @S^2 Observed:                7.502155744E-01
+   @S   Expected:                5.000000000E-01
+   @S   Observed:                5.000000000E-01
+
+	Orbital Energies (a.u.)
+	-----------------------
+
+	Alpha Occupied:                                                       
+
+	   1A1   -17.857942     2A1    -0.328768     1B2     0.102662  
+	   3A1     0.265525     1B1     0.404029     4A1     0.722668  
+
+	Alpha Virtual:                                                        
+
+	   2B2     0.832160  
+
+	Beta Occupied:                                                        
+
+	   1A1   -17.848213     2A1    -0.290464     1B2     0.128964  
+	   3A1     0.295478     1B1     0.426605  
+
+	Beta Virtual:                                                         
+
+	   4A1     0.806195     2B2     0.868070  
+
+	Final Occupation by Irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    1,    1 ]
+	SOCC [     1,    0,    0,    0 ]
+
+  Energy converged.
+
+  @UKS Final Energy:   -75.08775332725489
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -126.3983992047858749
+    Two-Electron Energy =              52.8041608185817495
+    DFT Functional Energy =           -10.2949144984736254
+    Empirical Dispersion Energy =      -0.0000659725491935
+    Total Energy =                    -75.0877533272548874
+
+  ==> Properties <==
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     1.0191
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:    -1.3946
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:    -0.3755     Total:     0.3755
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:    -0.9544     Total:     0.9544
+
+  Quadrupole Moment: (Debye Ang)
+    XX:    -6.9754     YY:    -8.3519     ZZ:    -7.7265
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Traceless Quadrupole Moment: (Debye Ang)
+    XX:     0.7092     YY:    -0.6673     ZZ:    -0.0419
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Mulliken Charges: (a.u.)
+   Center  Symbol    Alpha    Beta     Spin     Total
+       1     O     4.48335  4.00773  0.47562 -0.49108
+       2     H     0.75832  0.49613  0.26219 -0.25446
+       3     H     0.75832  0.49613  0.26219 -0.25446
+
+   Total alpha =  6.00000, Total beta =  5.00000, Total charge = -1.00000
+
+
+  Saving occupied orbitals to File 180.
+
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:43 2012
+Module time:
+	user time   =       6.19 seconds =       0.10 minutes
+	system time =       0.09 seconds =       0.00 minutes
+	total time  =          6 seconds =       0.10 minutes
+Total time:
+	user time   =      77.02 seconds =       1.28 minutes
+	system time =       1.18 seconds =       0.02 minutes
+	total time  =         78 seconds =       1.30 minutes
+
+
+  Variable Map:
+  ----------------------------------------------------------------------------
+  "CURRENT ENERGY"               =>     -75.087753327255
+  "CURRENT REFERENCE ENERGY"     =>     -75.087753327255
+  "DFT FUNCTIONAL ENERGY"        =>     -10.294914498474
+  "DFT FUNCTIONAL TOTAL ENERGY"  =>     -75.087687354706
+  "DFT TOTAL ENERGY"             =>     -75.087753327255
+  "DISPERSION CORRECTION ENERGY" =>      -0.000065972549
+  "NUCLEAR REPULSION ENERGY"     =>       8.801465529972
+  "ONE-ELECTRON ENERGY"          =>    -126.398399204786
+  "SCF DIPOLE X"                 =>       0.000000000000
+  "SCF DIPOLE Y"                 =>       0.000000000000
+  "SCF DIPOLE Z"                 =>      -0.954415017142
+  "SCF ITERATION ENERGY"         =>     -75.087753327255
+  "SCF QUADRUPOLE XX"            =>      -6.975410592092
+  "SCF QUADRUPOLE XY"            =>       0.000000000000
+  "SCF QUADRUPOLE XZ"            =>       0.000000000000
+  "SCF QUADRUPOLE YY"            =>      -8.351869491658
+  "SCF QUADRUPOLE YZ"            =>       0.000000000000
+  "SCF QUADRUPOLE ZZ"            =>      -7.726526484480
+  "SCF TOTAL ENERGY"             =>     -75.087753327255
+  "TWO-ELECTRON ENERGY"          =>      52.804160818582
+
+
+
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:57:43 2012
 
 
          ---------------------------------------------------------
@@ -3657,18 +4716,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:53:55 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:48 2012
 Module time:
-	user time   =       4.72 seconds =       0.08 minutes
-	system time =       0.09 seconds =       0.00 minutes
+	user time   =       4.74 seconds =       0.08 minutes
+	system time =       0.08 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      59.86 seconds =       1.00 minutes
-	system time =       1.01 seconds =       0.02 minutes
-	total time  =         62 seconds =       1.03 minutes
+	user time   =      81.76 seconds =       1.36 minutes
+	system time =       1.26 seconds =       0.02 minutes
+	total time  =         83 seconds =       1.38 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:53:55 2012
+*** at Fri Apr 27 13:57:48 2012
 
 
          ---------------------------------------------------------
@@ -3915,18 +4974,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:54:02 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:57:57 2012
 Module time:
-	user time   =       6.50 seconds =       0.11 minutes
-	system time =       0.08 seconds =       0.00 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       6.56 seconds =       0.11 minutes
+	system time =       0.10 seconds =       0.00 minutes
+	total time  =          9 seconds =       0.15 minutes
 Total time:
-	user time   =      66.37 seconds =       1.11 minutes
-	system time =       1.09 seconds =       0.02 minutes
-	total time  =         69 seconds =       1.15 minutes
+	user time   =      88.32 seconds =       1.47 minutes
+	system time =       1.36 seconds =       0.02 minutes
+	total time  =         92 seconds =       1.53 minutes
 
 *** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
-*** at Fri Apr 27 13:54:02 2012
+*** at Fri Apr 27 13:57:57 2012
 
 
          ---------------------------------------------------------
@@ -4174,14 +5233,14 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:54:08 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:04 2012
 Module time:
-	user time   =       6.52 seconds =       0.11 minutes
-	system time =       0.08 seconds =       0.00 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       6.53 seconds =       0.11 minutes
+	system time =       0.10 seconds =       0.00 minutes
+	total time  =          7 seconds =       0.12 minutes
 Total time:
-	user time   =      72.89 seconds =       1.21 minutes
-	system time =       1.17 seconds =       0.02 minutes
-	total time  =         75 seconds =       1.25 minutes
+	user time   =      94.85 seconds =       1.58 minutes
+	system time =       1.46 seconds =       0.02 minutes
+	total time  =         99 seconds =       1.65 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -47,8 +49,8 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:02 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:51:53 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -70,19 +72,13 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.068516219310
+           O          0.000000000000     0.000000000000    -0.068516219310
            H          0.000000000000    -0.790689573744     0.543701060724
-           H         -0.000000000000     0.790689573744     0.543701060724
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.790689573744     0.543701060724
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    8.801465529972067
+  Nuclear repulsion =    8.801465529972068
 
   Charge       = 0
   Multiplicity = 1
@@ -101,9 +97,9 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: cc-pVTZ
     Number of shells: 22
     Number of basis function: 58
     Number of Cartesian functions: 65
@@ -116,7 +112,7 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -60.32108560423950
+  Initial RHF energy:   -60.32108560423962
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -131,45 +127,53 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  No auxiliary basis selected, defaulting to CC-PVTZ-JKFIT
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
 
-  ==> Auxiliary Basis:  <==
+   => Auxiliary Basis Set <=
 
-  Basis Set
+  Basis Set: CC-PVTZ-JKFIT
     Number of shells: 45
     Number of basis function: 139
     Number of Cartesian functions: 166
     Spherical Harmonics?: true
     Max angular momentum: 4
 
-  Using Core Algorithm.
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -61.31470778189309   -9.93622e-01   0.00000e+00 
+   @RHF iter   1:   -61.31470778188511   -9.93622e-01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -66.48315489011263   -5.16845e+00   3.97383e-01 DIIS
+
+   @RHF iter   2:   -66.48315489010807   -5.16845e+00   3.97383e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.60196544130834   -7.11881e+00   3.93884e-01 DIIS
-   @RHF iter   4:   -75.62913021420073   -2.02716e+00   1.61957e-02 DIIS
-   @RHF iter   5:   -76.04754576024054   -4.18416e-01   1.06664e-02 DIIS
-   @RHF iter   6:   -76.05037963843746   -2.83388e-03   1.61802e-03 DIIS
-   @RHF iter   7:   -76.05094915484641   -5.69516e-04   3.94875e-04 DIIS
-   @RHF iter   8:   -76.05098430174544   -3.51469e-05   1.57498e-04 DIIS
-   @RHF iter   9:   -76.05098614616766   -1.84442e-06   4.68252e-05 DIIS
-   @RHF iter  10:   -76.05098620224578   -5.60781e-08   7.30161e-06 DIIS
-   @RHF iter  11:   -76.05098620304794   -8.02160e-10   8.87365e-07 DIIS
-   @RHF iter  12:   -76.05098620307911   -3.11644e-11   1.40291e-07 DIIS
-   @RHF iter  13:   -76.05098620307962   -5.11591e-13   3.39456e-08 DIIS
+
+   @RHF iter   3:   -73.60196544130319   -7.11881e+00   3.93884e-01 DIIS
+   @RHF iter   4:   -75.62913021419645   -2.02716e+00   1.61957e-02 DIIS
+   @RHF iter   5:   -76.04754576023657   -4.18416e-01   1.06664e-02 DIIS
+   @RHF iter   6:   -76.05037963843361   -2.83388e-03   1.61802e-03 DIIS
+   @RHF iter   7:   -76.05094915484257   -5.69516e-04   3.94875e-04 DIIS
+   @RHF iter   8:   -76.05098430174164   -3.51469e-05   1.57498e-04 DIIS
+   @RHF iter   9:   -76.05098614616375   -1.84442e-06   4.68252e-05 DIIS
+   @RHF iter  10:   -76.05098620224194   -5.60782e-08   7.30161e-06 DIIS
+   @RHF iter  11:   -76.05098620304398   -8.02032e-10   8.87365e-07 DIIS
+   @RHF iter  12:   -76.05098620307524   -3.12639e-11   1.40297e-07 DIIS
+   @RHF iter  13:   -76.05098620307571   -4.68958e-13   3.39313e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -208,32 +212,42 @@ compare_values(refenergy, thisenergy, 9, "Reference energy")                    
 
   Energy converged.
 
-  @RHF Final Energy:   -76.05098620307962
+  @RHF Final Energy:   -76.05098620307571
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -122.4153437005133753
+    Two-Electron Energy =              37.5628919674655890
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0509862030757233
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     1.0191
+     X:     0.0000      Y:     0.0000      Z:     1.0191
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.2092
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.8099     Total:     0.8099
+     X:     0.0000      Y:     0.0000      Z:     0.8099     Total:     0.8099
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:     0.0000      Z:     2.0586     Total:     2.0586
+     X:     0.0000      Y:     0.0000      Z:     2.0586     Total:     2.0586
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:03 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:51:53 2012
 Module time:
-	user time   =       0.33 seconds =       0.01 minutes
+	user time   =       0.32 seconds =       0.01 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.33 seconds =       0.01 minutes
+	user time   =       0.32 seconds =       0.01 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

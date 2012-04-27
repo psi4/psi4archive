@@ -2,10 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
-               Git: Rev 9c152a38fd42fd364c25c4a938d32638a8677a8b
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
 
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -43,9 +43,9 @@ set {
 optimize('ccsd')
 
 refnuc   =   9.1654609427539  #TEST
-refscf   = -76.0229306840181  #TEST
-refccsd  = -0.20824772787315  #TEST
-reftotal = -76.2311784118913  #TEST
+refscf   = -76.0229427274435  #TEST
+refccsd  = -0.20823570806196  #TEST
+reftotal = -76.2311784355056  #TEST
 
 compare_values(refnuc,   h2o.nuclear_repulsion_energy(),          3, "Nuclear repulsion energy") #TEST
 compare_values(refscf,   get_variable("SCF total energy"),        5, "SCF energy")               #TEST
@@ -55,8 +55,8 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:11 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -78,13 +78,13 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.067578587269
+           O          0.000000000000     0.000000000000    -0.067578587269
            H          0.000000000000    -0.759129912147     0.536260610269
-           H         -0.000000000000     0.759129912147     0.536260610269
+           H          0.000000000000     0.759129912147     0.536260610269
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.077238153630930
+  Nuclear repulsion =    9.077238153630928
 
   Charge       = 0
   Multiplicity = 1
@@ -103,9 +103,9 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
   Density threshold  = 1.00e-11
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: 6-31G** <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: 6-31G**
     Number of shells: 12
     Number of basis function: 25
     Number of Cartesian functions: 25
@@ -118,7 +118,7 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.67612896328623
+  Initial RHF energy:   -58.67612896328600
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -158,27 +158,29 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.29457538492363   -9.61845e+00   0.00000e+00 
+   @RHF iter   1:   -68.29457538492346   -9.61845e+00   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   2:   -71.40214895176823   -3.10757e+00   5.21557e-01 DIIS
+
+   @RHF iter   2:   -71.40214895176796   -3.10757e+00   5.21557e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.76849950140186   -4.36635e+00   4.95640e-01 DIIS
-   @RHF iter   4:   -76.00465639463511   -2.36157e-01   1.70838e-02 DIIS
-   @RHF iter   5:   -76.02157592921327   -1.69195e-02   7.74804e-03 DIIS
-   @RHF iter   6:   -76.02195844293949   -3.82514e-04   1.22994e-03 DIIS
-   @RHF iter   7:   -76.02199662644674   -3.81835e-05   5.22673e-04 DIIS
-   @RHF iter   8:   -76.02199779472276   -1.16828e-06   8.31744e-05 DIIS
-   @RHF iter   9:   -76.02199786640762   -7.16849e-08   2.41323e-05 DIIS
-   @RHF iter  10:   -76.02199786811579   -1.70817e-09   3.82411e-06 DIIS
-   @RHF iter  11:   -76.02199786812291   -7.11964e-12   1.86355e-07 DIIS
-   @RHF iter  12:   -76.02199786812308   -1.70530e-13   3.72443e-08 DIIS
-   @RHF iter  13:   -76.02199786812321   -1.27898e-13   6.40841e-09 DIIS
-   @RHF iter  14:   -76.02199786812328   -7.10543e-14   6.31960e-10 DIIS
-   @RHF iter  15:   -76.02199786812312    1.56319e-13   3.46983e-11 DIIS
+
+   @RHF iter   3:   -75.76849950140169   -4.36635e+00   4.95640e-01 DIIS
+   @RHF iter   4:   -76.00465639463499   -2.36157e-01   1.70838e-02 DIIS
+   @RHF iter   5:   -76.02157592921309   -1.69195e-02   7.74804e-03 DIIS
+   @RHF iter   6:   -76.02195844293942   -3.82514e-04   1.22994e-03 DIIS
+   @RHF iter   7:   -76.02199662644671   -3.81835e-05   5.22673e-04 DIIS
+   @RHF iter   8:   -76.02199779472249   -1.16828e-06   8.31744e-05 DIIS
+   @RHF iter   9:   -76.02199786640747   -7.16850e-08   2.41323e-05 DIIS
+   @RHF iter  10:   -76.02199786811565   -1.70817e-09   3.82411e-06 DIIS
+   @RHF iter  11:   -76.02199786812278   -7.13385e-12   1.86355e-07 DIIS
+   @RHF iter  12:   -76.02199786812301   -2.27374e-13   3.72443e-08 DIIS
+   @RHF iter  13:   -76.02199786812304   -2.84217e-14   6.40841e-09 DIIS
+   @RHF iter  14:   -76.02199786812302    1.42109e-14   6.31961e-10 DIIS
+   @RHF iter  15:   -76.02199786812302    0.00000e+00   3.46974e-11 DIIS
 
   ==> Post-Iterations <==
 
@@ -206,37 +208,46 @@ compare_values(reftotal, get_variable("Current energy"),          7, "Total ener
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02199786812312
+  @RHF Final Energy:   -76.02199786812302
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.0772381536309279
+    One-Electron Energy =            -122.8800883806221833
+    Two-Electron Energy =              37.7808523588682448
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0219978681230089
 
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     1.0051
+     X:     0.0000      Y:     0.0000      Z:     1.0051
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.1315
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.8736     Total:     0.8736
+     X:     0.0000      Y:     0.0000      Z:     0.8736     Total:     0.8736
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:     0.0000      Z:     2.2205     Total:     2.2205
+     X:     0.0000      Y:     0.0000      Z:     2.2205     Total:     2.2205
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:11 2012
 Module time:
-	user time   =       0.05 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.05 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:11 2012
 
 
 	**************************************************
@@ -274,7 +285,7 @@ Total time:
 	 B2	   7	    0	    1	    0	    6	    0
 
 	Nuclear Rep. energy (chkpt) =      9.07723815363093
-	SCF energy          (chkpt) =    -76.02199786812312
+	SCF energy          (chkpt) =    -76.02199786812302
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
@@ -284,18 +295,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:11 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.08 seconds =       0.00 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:11 2012
 
 
 			**************************
@@ -333,7 +344,7 @@ Total time:
 	 B2	   7	    0	    1	    0	    6	    0
 
 	Nuclear Rep. energy (chkpt) =      9.07723815363093
-	SCF energy          (chkpt) =    -76.02199786812312
+	SCF energy          (chkpt) =    -76.02199786812302
 
 	Size of irrep 0 of <ab|cd> integrals:      0.017 (MW) /      0.135 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.005 (MW) /      0.041 (MB)
@@ -362,26 +373,26 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -122.88008838060112
+	One-electron energy          =   -122.88008838060101
 	Two-electron (AA) energy     =     14.41616306336393
 	Two-electron (BB) energy     =     14.41616306336393
-	Two-electron (AB) energy     =     23.36468929548313
-	Two-electron energy          =     37.78085235884706
+	Two-electron (AB) energy     =     23.36468929548311
+	Two-electron energy          =     37.78085235884704
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -76.02199786812314
+	Reference energy             =    -76.02199786812305
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:11 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.02 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.07 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.10 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:11 2012
 
 			**************************
 			*                        *
@@ -389,9 +400,9 @@ Total time:
 			*                        *
 			**************************
 
-	Nuclear Rep. energy (chkpt)   =    9.077238153630930
-	SCF energy          (chkpt)   =  -76.021997868123123
-	Reference energy    (file100) =  -76.021997868123137
+	Nuclear Rep. energy (chkpt)   =    9.077238153630928
+	SCF energy          (chkpt)   =  -76.021997868123023
+	Reference energy    (file100) =  -76.021997868123051
 
 	Input parameters:
 	-----------------
@@ -429,10 +440,10 @@ Total time:
      5        -0.208995521947254    2.053e-04    0.005786    0.012422    0.012422
      6        -0.208991621203255    6.453e-05    0.005799    0.012493    0.012493
      7        -0.208991063380955    1.565e-05    0.005803    0.012511    0.012511
-     8        -0.208991044227791    2.937e-06    0.005803    0.012514    0.012514
+     8        -0.208991044227790    2.937e-06    0.005803    0.012514    0.012514
      9        -0.208990967369754    7.070e-07    0.005803    0.012514    0.012514
     10        -0.208990987591396    1.507e-07    0.005803    0.012514    0.012514
-    11        -0.208990985954203    2.941e-08    0.005803    0.012514    0.012514
+    11        -0.208990985954204    2.941e-08    0.005803    0.012514    0.012514
     12        -0.208990986573959    4.776e-09    0.005803    0.012514    0.012514
     13        -0.208990986463526    1.062e-09    0.005803    0.012514    0.012514
     14        -0.208990986454465    1.977e-10    0.005803    0.012514    0.012514
@@ -467,32 +478,32 @@ Total time:
 	  4   4  16  16        -0.0246255030
 	  3   4  11  14        -0.0244548498
 
-	SCF energy       (chkpt)              =  -76.021997868123123
-	Reference energy (file100)            =  -76.021997868123137
+	SCF energy       (chkpt)              =  -76.021997868123023
+	Reference energy (file100)            =  -76.021997868123051
 
 	Opposite-spin MP2 correlation energy  =   -0.149954968994723
 	Same-spin MP2 correlation energy      =   -0.050329621977527
 	MP2 correlation energy                =   -0.200284590972250
-      * MP2 total energy                      =  -76.222282459095382
+      * MP2 total energy                      =  -76.222282459095297
 
 	Opposite-spin CCSD correlation energy =   -0.164400081317558
 	Same-spin CCSD correlation energy     =   -0.044590905133787
 	CCSD correlation energy               =   -0.208990986451373
-      * CCSD total energy                     =  -76.230988854574505
+      * CCSD total energy                     =  -76.230988854574420
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:13 2012
 Module time:
-	user time   =       0.23 seconds =       0.00 minutes
-	system time =       0.18 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.39 seconds =       0.01 minutes
+	system time =       0.46 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       0.30 seconds =       0.01 minutes
-	system time =       0.21 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.49 seconds =       0.01 minutes
+	system time =       0.53 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:13 2012
 
 
 			**************************
@@ -502,18 +513,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:13 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.32 seconds =       0.01 minutes
-	system time =       0.22 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.51 seconds =       0.01 minutes
+	system time =       0.56 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:13 2012
 
 
 			**************************
@@ -521,12 +532,12 @@ Total time:
 			**************************
 
 
-	Nuclear Rep. energy (chkpt)   =    9.077238153630930
+	Nuclear Rep. energy (chkpt)   =    9.077238153630928
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   =  -76.021997868123123
-	Reference energy    (CC_INFO) =  -76.021997868123137
+	SCF energy          (chkpt)   =  -76.021997868123023
+	Reference energy    (CC_INFO) =  -76.021997868123051
 	CCSD energy         (CC_INFO) =   -0.208990986451373
-	Total CCSD energy   (CC_INFO) =  -76.230988854574505
+	Total CCSD energy   (CC_INFO) =  -76.230988854574420
 
 	Input parameters:
 	-----------------
@@ -597,18 +608,18 @@ Total time:
 
 	Overlap <L|e^T> =        0.94273433031
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:13 2012
 Module time:
-	user time   =       0.07 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.09 seconds =       0.00 minutes
+	system time =       0.10 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.39 seconds =       0.01 minutes
-	system time =       0.25 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.61 seconds =       0.01 minutes
+	system time =       0.66 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:13 2012
 
 
 			**************************
@@ -632,11 +643,11 @@ Total time:
 	Use Zeta         = No
 	Xi connected     = Yes
 
-	Nuclear Rep. energy (chkpt)   =    9.077238153630930
-	SCF energy          (chkpt)   =  -76.021997868123123
-	Reference energy    (file100) =  -76.021997868123137
+	Nuclear Rep. energy (chkpt)   =    9.077238153630928
+	SCF energy          (chkpt)   =  -76.021997868123023
+	Reference energy    (file100) =  -76.021997868123051
 	CCSD energy         (CC_INFO) =   -0.208990986451373
-	Total CCSD energy   (CC_INFO) =  -76.230988854574505
+	Total CCSD energy   (CC_INFO) =  -76.230988854574420
 	Number of States = 1
 
 	Ground?  State     EOM Energy       R0
@@ -644,64 +655,64 @@ Total time:
 
 	Energies re-computed from CC density:
 	-------------------------------------
-	One-electron energy        =    0.221186778632421
+	One-electron energy        =    0.221186778632422
 	IJKL energy                =    0.041993252484629
 	IJKA energy                =   -0.001393403181933
-	IJAB energy                =   -0.412136979055867
-	IBJA energy                =   -0.101198078799300
-	CIAB energy                =   -0.000203578178172
+	IJAB energy                =   -0.412136979055866
+	IBJA energy                =   -0.101198078799301
+	CIAB energy                =   -0.000203578178173
 	ABCD energy                =    0.042761021646725
 	Total two-electron energy  =   -0.430177765083918
 	CCSD correlation energy    =   -0.208990986451497
-	Total CCSD energy          =  -76.230988854574633
+	Total CCSD energy          =  -76.230988854574548
 
 	Virial Theorem Data:
 	--------------------
-	Kinetic energy (ref)   =   75.764057172420578
-	Kinetic energy (corr)  =    0.151616995086172
-	Kinetic energy (total) =   75.915674167506751
-	-V/T (ref)             =    2.003404525910163
-	-V/T (corr)            =    2.378413985401787
-	-V/T (total)           =    2.004153485963544
+	Kinetic energy (ref)   =   75.764057172420394
+	Kinetic energy (corr)  =    0.151616995086271
+	Kinetic energy (total) =   75.915674167506666
+	-V/T (ref)             =    2.003404525910164
+	-V/T (corr)            =    2.378413985400885
+	-V/T (total)           =    2.004153485963545
 
 	Energies re-computed from Fock-adjusted CC density:
 	---------------------------------------------------
-	One-electron energy        =    0.245781759396171
-	IJKL energy                =   -0.672858140984563
-	IJKA energy                =   -0.047236969995761
-	IJAB energy                =   -0.412136979055867
-	IBJA energy                =    0.634901900719967
-	CIAB energy                =   -0.000203578178172
+	One-electron energy        =    0.245781759396124
+	IJKL energy                =   -0.672858140984567
+	IJKA energy                =   -0.047236969995712
+	IJAB energy                =   -0.412136979055866
+	IBJA energy                =    0.634901900719969
+	CIAB energy                =   -0.000203578178173
 	ABCD energy                =    0.042761021646725
-	Total two-electron energy  =   -0.454772745847671
-	CCSD correlation energy    =   -0.208990986451500
-	Total CCSD energy          =  -76.230988854574647
+	Total two-electron energy  =   -0.454772745847623
+	CCSD correlation energy    =   -0.208990986451499
+	Total CCSD energy          =  -76.230988854574548
 
 	Energies re-computed from Mulliken density:
 	-------------------------------------------
-	One-electron energy        =    0.245781759396171
-	IJKL energy                =   -0.672858140984563
-	IJKA energy                =   -0.047236969995761
-	IJAB energy                =   -0.381058776617439
-	IBJA energy                =    0.603823698281539
-	CIAB energy                =   -0.000203578178172
+	One-electron energy        =    0.245781759396124
+	IJKL energy                =   -0.672858140984567
+	IJKA energy                =   -0.047236969995712
+	IJAB energy                =   -0.381058776617438
+	IBJA energy                =    0.603823698281541
+	CIAB energy                =   -0.000203578178173
 	ABCD energy                =    0.042761021646725
-	Total two-electron energy  =   -0.454772745847671
+	Total two-electron energy  =   -0.454772745847624
 	CCSD correlation energy    =   -0.208990986451500
-	Total CCSD energy          =  -76.230988854574647
+	Total CCSD energy          =  -76.230988854574548
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:14 2012
 Module time:
-	user time   =       0.05 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       0.44 seconds =       0.01 minutes
-	system time =       0.26 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       0.67 seconds =       0.01 minutes
+	system time =       0.72 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:14 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -746,17 +757,15 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.127705022386
+           O          0.000000000000     0.000000000000    -0.127705022386
            H          0.000000000000    -1.434547633239     1.013385689263
-           H         -0.000000000000     1.434547633239     1.013385689263
+           H          0.000000000000     1.434547633239     1.013385689263
 
 	Presorting MO-basis TPDM.
 	Sorting File: MO TPDM (AA|AA) nbuckets = 1
 	Starting first half-transformation.
 	Sorting half-transformed TPDM.
 	First half integral transformation complete.
-
-
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
@@ -799,15 +808,15 @@ Total time:
        3        0.000000000000     0.006462029567     0.006593332129
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:14 2012
 Module time:
-	user time   =       0.10 seconds =       0.00 minutes
+	user time   =       0.15 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.54 seconds =       0.01 minutes
-	system time =       0.29 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.82 seconds =       0.01 minutes
+	system time =       0.75 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 
 			----------------------------------
 			 OPTKING: for geometry optimizations  
@@ -822,9 +831,9 @@ Total time:
 	 3 : 1
 
 	---Fragment 1 Geometry and Gradient---
-	 O          -0.0000000000        0.0000000000       -0.1277050224
+	 O           0.0000000000        0.0000000000       -0.1277050224
 	 H           0.0000000000       -1.4345476332        1.0133856893
-	 H          -0.0000000000        1.4345476332        1.0133856893
+	 H           0.0000000000        1.4345476332        1.0133856893
 	             0.0000000000        0.0000000000       -0.0131866643
 	             0.0000000000       -0.0064620296        0.0065933321
 	             0.0000000000        0.0064620296        0.0065933321
@@ -832,7 +841,7 @@ Total time:
 	Previous optimization step data not found.  Starting new optimization.
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
 	 R(1,2)           =         1.833034	       0.970000
 	 R(1,3)           =         1.833034	       0.970000
 	 B(2,1,3)         =         1.797689	     103.000000
@@ -840,7 +849,7 @@ Total time:
 	Current energy   :       -76.2309888546
 
 	Generating empirical Hessian (Schlegel '84) for each fragment.
-	Following RFO solution 0.
+	Going to follow RFO solution 1.
 	Projected energy change by RFO approximation:        -0.0001707038
 
 	Back-transformation to cartesian coordinates...
@@ -870,15 +879,15 @@ Total time:
 	Writing optimization data to binary file.
 	Structure for next step:
 	Cartesian Geometry (au)
-	    O    -0.0000000000   0.0000000000  -0.1144114813
+	    O     0.0000000000   0.0000000000  -0.1144114813
 	    H     0.0000000000  -1.4284419179   1.0067389187
-	    H    -0.0000000000   1.4284419179   1.0067389187
+	    H     0.0000000000   1.4284419179   1.0067389187
 			--------------------------
 			 OPTKING Finished Execution 
 			--------------------------
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:14 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -900,13 +909,13 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.066397666176
-           H          0.000000000000    -0.755898906773     0.526889572908
-           H         -0.000000000000     0.755898906773     0.526889572908
+           O          0.000000000000     0.000000000000    -0.066397666176
+           H          0.000000000000    -0.755898906773     0.526889572909
+           H          0.000000000000     0.755898906773     0.526889572909
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.161180832551008
+  Nuclear repulsion =    9.161180832550889
 
   Charge       = 0
   Multiplicity = 1
@@ -925,9 +934,9 @@ Total time:
   Density threshold  = 1.00e-11
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: 6-31G** <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: 6-31G**
     Number of shells: 12
     Number of basis function: 25
     Number of Cartesian functions: 25
@@ -940,7 +949,7 @@ Total time:
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.65158086685584
+  Initial RHF energy:   -58.65158086685587
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -984,23 +993,25 @@ Total time:
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   2:   -71.40937660120738   -3.13314e+00   5.27377e-01 DIIS
+
+   @RHF iter   2:   -71.40937660120726   -3.13314e+00   5.27377e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.76802244471152   -4.35865e+00   5.01708e-01 DIIS
-   @RHF iter   4:   -76.00563020113135   -2.37608e-01   1.71577e-02 DIIS
-   @RHF iter   5:   -76.02246461221007   -1.68344e-02   7.70097e-03 DIIS
-   @RHF iter   6:   -76.02283315353863   -3.68541e-04   1.21605e-03 DIIS
-   @RHF iter   7:   -76.02286917684937   -3.60233e-05   5.11588e-04 DIIS
-   @RHF iter   8:   -76.02287023449756   -1.05765e-06   8.04678e-05 DIIS
-   @RHF iter   9:   -76.02287029751321   -6.30156e-08   2.25997e-05 DIIS
-   @RHF iter  10:   -76.02287029902786   -1.51465e-09   3.66398e-06 DIIS
-   @RHF iter  11:   -76.02287029903299   -5.13012e-12   1.61405e-07 DIIS
-   @RHF iter  12:   -76.02287029903330   -3.12639e-13   3.08056e-08 DIIS
-   @RHF iter  13:   -76.02287029903327    2.84217e-14   5.68095e-09 DIIS
-   @RHF iter  14:   -76.02287029903316    1.13687e-13   6.50098e-10 DIIS
-   @RHF iter  15:   -76.02287029903334   -1.84741e-13   3.67128e-11 DIIS
+
+   @RHF iter   3:   -75.76802244471148   -4.35865e+00   5.01708e-01 DIIS
+   @RHF iter   4:   -76.00563020113138   -2.37608e-01   1.71577e-02 DIIS
+   @RHF iter   5:   -76.02246461221014   -1.68344e-02   7.70097e-03 DIIS
+   @RHF iter   6:   -76.02283315353860   -3.68541e-04   1.21605e-03 DIIS
+   @RHF iter   7:   -76.02286917684933   -3.60233e-05   5.11588e-04 DIIS
+   @RHF iter   8:   -76.02287023449759   -1.05765e-06   8.04678e-05 DIIS
+   @RHF iter   9:   -76.02287029751329   -6.30157e-08   2.25997e-05 DIIS
+   @RHF iter  10:   -76.02287029902782   -1.51452e-09   3.66398e-06 DIIS
+   @RHF iter  11:   -76.02287029903313   -5.31486e-12   1.61405e-07 DIIS
+   @RHF iter  12:   -76.02287029903329   -1.56319e-13   3.08056e-08 DIIS
+   @RHF iter  13:   -76.02287029903326    2.84217e-14   5.68095e-09 DIIS
+   @RHF iter  14:   -76.02287029903326    0.00000e+00   6.50098e-10 DIIS
+   @RHF iter  15:   -76.02287029903327   -1.42109e-14   3.67137e-11 DIIS
 
   ==> Post-Iterations <==
 
@@ -1028,7 +1039,16 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02287029903334
+  @RHF Final Energy:   -76.02287029903327
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.1611808325508886
+    One-Electron Energy =            -123.0327302641149316
+    Two-Electron Energy =              37.8486791325307905
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0228702990332579
 
   ==> Properties <==
 
@@ -1047,18 +1067,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:14 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.60 seconds =       0.01 minutes
-	system time =       0.29 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.89 seconds =       0.01 minutes
+	system time =       0.76 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:14 2012
 
 
 	**************************************************
@@ -1095,8 +1115,8 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.16118083255101
-	SCF energy          (chkpt) =    -76.02287029903334
+	Nuclear Rep. energy (chkpt) =      9.16118083255089
+	SCF energy          (chkpt) =    -76.02287029903327
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
@@ -1106,18 +1126,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:14 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.01 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.62 seconds =       0.01 minutes
-	system time =       0.29 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.90 seconds =       0.02 minutes
+	system time =       0.77 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:14 2012
 
 
 			**************************
@@ -1154,8 +1174,8 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.16118083255101
-	SCF energy          (chkpt) =    -76.02287029903334
+	Nuclear Rep. energy (chkpt) =      9.16118083255089
+	SCF energy          (chkpt) =    -76.02287029903327
 
 	Size of irrep 0 of <ab|cd> integrals:      0.017 (MW) /      0.135 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.005 (MW) /      0.041 (MB)
@@ -1184,26 +1204,26 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -123.03273026408854
-	Two-electron (AA) energy     =     14.44512538284268
-	Two-electron (BB) energy     =     14.44512538284268
-	Two-electron (AB) energy     =     23.40355374966160
-	Two-electron energy          =     37.84867913250429
+	One-electron energy          =   -123.03273026408826
+	Two-electron (AA) energy     =     14.44512538284261
+	Two-electron (BB) energy     =     14.44512538284261
+	Two-electron (AB) energy     =     23.40355374966151
+	Two-electron energy          =     37.84867913250412
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -76.02287029903323
+	Reference energy             =    -76.02287029903326
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:14 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.64 seconds =       0.01 minutes
-	system time =       0.31 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.93 seconds =       0.02 minutes
+	system time =       0.81 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:14 2012
 
 			**************************
 			*                        *
@@ -1211,9 +1231,9 @@ Total time:
 			*                        *
 			**************************
 
-	Nuclear Rep. energy (chkpt)   =    9.161180832551008
-	SCF energy          (chkpt)   =  -76.022870299033343
-	Reference energy    (file100) =  -76.022870299033229
+	Nuclear Rep. energy (chkpt)   =    9.161180832550889
+	SCF energy          (chkpt)   =  -76.022870299033272
+	Reference energy    (file100) =  -76.022870299033258
 
 	Input parameters:
 	-----------------
@@ -1243,23 +1263,23 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.199577929830914    2.791e-12    0.000000    0.000000    0.000000
-     1        -0.203943406368924    2.693e-02    0.004425    0.008687    0.008687
-     2        -0.207791733758625    9.554e-03    0.005058    0.010075    0.010075
-     3        -0.208290350722803    2.690e-03    0.005565    0.011583    0.011583
-     4        -0.208294921769842    6.205e-04    0.005616    0.011880    0.011880
-     5        -0.208308950754452    1.950e-04    0.005652    0.012063    0.012063
-     6        -0.208305324553402    6.138e-05    0.005665    0.012129    0.012129
-     7        -0.208304770778310    1.505e-05    0.005668    0.012147    0.012147
-     8        -0.208304761788381    2.796e-06    0.005669    0.012150    0.012150
-     9        -0.208304688587720    6.596e-07    0.005669    0.012150    0.012150
-    10        -0.208304707529464    1.392e-07    0.005669    0.012150    0.012150
-    11        -0.208304706083325    2.717e-08    0.005669    0.012150    0.012150
-    12        -0.208304706643972    4.395e-09    0.005669    0.012150    0.012150
-    13        -0.208304706542024    9.697e-10    0.005669    0.012150    0.012150
-    14        -0.208304706533372    1.785e-10    0.005669    0.012150    0.012150
-    15        -0.208304706530511    4.636e-11    0.005669    0.012150    0.012150
-    16        -0.208304706530673    9.474e-12    0.005669    0.012150    0.012150
+     0        -0.199577929830917    2.791e-12    0.000000    0.000000    0.000000
+     1        -0.203943406368926    2.693e-02    0.004425    0.008687    0.008687
+     2        -0.207791733758627    9.554e-03    0.005058    0.010075    0.010075
+     3        -0.208290350722806    2.690e-03    0.005565    0.011583    0.011583
+     4        -0.208294921769844    6.205e-04    0.005616    0.011880    0.011880
+     5        -0.208308950754455    1.950e-04    0.005652    0.012063    0.012063
+     6        -0.208305324553404    6.138e-05    0.005665    0.012129    0.012129
+     7        -0.208304770778312    1.505e-05    0.005668    0.012147    0.012147
+     8        -0.208304761788383    2.796e-06    0.005669    0.012150    0.012150
+     9        -0.208304688587723    6.596e-07    0.005669    0.012150    0.012150
+    10        -0.208304707529466    1.392e-07    0.005669    0.012150    0.012150
+    11        -0.208304706083327    2.717e-08    0.005669    0.012150    0.012150
+    12        -0.208304706643974    4.395e-09    0.005669    0.012150    0.012150
+    13        -0.208304706542026    9.697e-10    0.005669    0.012150    0.012150
+    14        -0.208304706533374    1.785e-10    0.005669    0.012150    0.012150
+    15        -0.208304706530513    4.636e-11    0.005669    0.012150    0.012150
+    16        -0.208304706530675    9.474e-12    0.005669    0.012150    0.012150
 
 	Iterations converged.
 
@@ -1288,32 +1308,32 @@ Total time:
 	  3   2  11   2         0.0246211686
 	  3   4  11  14        -0.0242303550
 
-	SCF energy       (chkpt)              =  -76.022870299033343
-	Reference energy (file100)            =  -76.022870299033229
+	SCF energy       (chkpt)              =  -76.022870299033272
+	Reference energy (file100)            =  -76.022870299033258
 
-	Opposite-spin MP2 correlation energy  =   -0.149388403587785
-	Same-spin MP2 correlation energy      =   -0.050189526243129
-	MP2 correlation energy                =   -0.199577929830914
-      * MP2 total energy                      =  -76.222448228864138
+	Opposite-spin MP2 correlation energy  =   -0.149388403587787
+	Same-spin MP2 correlation energy      =   -0.050189526243130
+	MP2 correlation energy                =   -0.199577929830917
+      * MP2 total energy                      =  -76.222448228864181
 
-	Opposite-spin CCSD correlation energy =   -0.163737342115634
+	Opposite-spin CCSD correlation energy =   -0.163737342115636
 	Same-spin CCSD correlation energy     =   -0.044567364415012
-	CCSD correlation energy               =   -0.208304706530673
-      * CCSD total energy                     =  -76.231175005563898
+	CCSD correlation energy               =   -0.208304706530675
+      * CCSD total energy                     =  -76.231175005563927
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:17 2012
 Module time:
-	user time   =       0.23 seconds =       0.00 minutes
-	system time =       0.17 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.39 seconds =       0.01 minutes
+	system time =       0.50 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       0.87 seconds =       0.01 minutes
-	system time =       0.48 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       1.33 seconds =       0.02 minutes
+	system time =       1.31 seconds =       0.02 minutes
+	total time  =          6 seconds =       0.10 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:17 2012
 
 
 			**************************
@@ -1323,18 +1343,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:17 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.88 seconds =       0.01 minutes
-	system time =       0.50 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       1.36 seconds =       0.02 minutes
+	system time =       1.35 seconds =       0.02 minutes
+	total time  =          6 seconds =       0.10 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:17 2012
 
 
 			**************************
@@ -1342,12 +1362,12 @@ Total time:
 			**************************
 
 
-	Nuclear Rep. energy (chkpt)   =    9.161180832551008
+	Nuclear Rep. energy (chkpt)   =    9.161180832550889
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   =  -76.022870299033343
-	Reference energy    (CC_INFO) =  -76.022870299033229
-	CCSD energy         (CC_INFO) =   -0.208304706530673
-	Total CCSD energy   (CC_INFO) =  -76.231175005563898
+	SCF energy          (chkpt)   =  -76.022870299033272
+	Reference energy    (CC_INFO) =  -76.022870299033258
+	CCSD energy         (CC_INFO) =   -0.208304706530675
+	Total CCSD energy   (CC_INFO) =  -76.231175005563927
 
 	Input parameters:
 	-----------------
@@ -1372,23 +1392,23 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.208341272679647    4.608e-12
-	   1        -0.205855817067176    7.969e-03
-	   2        -0.205434040041379    1.315e-03
-	   3        -0.205350569999217    6.037e-04
-	   4        -0.205344216683963    1.999e-04
-	   5        -0.205347757148695    6.066e-05
-	   6        -0.205347737508480    1.456e-05
-	   7        -0.205347817964679    3.263e-06
-	   8        -0.205347846116816    4.958e-07
-	   9        -0.205347844685183    8.424e-08
-	  10        -0.205347844464908    1.735e-08
-	  11        -0.205347844476721    3.577e-09
-	  12        -0.205347844497670    6.667e-10
-	  13        -0.205347844492614    1.433e-10
-	  14        -0.205347844492715    3.565e-11
-	  15        -0.205347844493252    1.131e-11
-	  16        -0.205347844493467    3.955e-12
+	   0        -0.208341272679649    4.608e-12
+	   1        -0.205855817067178    7.969e-03
+	   2        -0.205434040041381    1.315e-03
+	   3        -0.205350569999219    6.037e-04
+	   4        -0.205344216683964    1.999e-04
+	   5        -0.205347757148696    6.066e-05
+	   6        -0.205347737508481    1.456e-05
+	   7        -0.205347817964681    3.263e-06
+	   8        -0.205347846116817    4.958e-07
+	   9        -0.205347844685185    8.424e-08
+	  10        -0.205347844464910    1.735e-08
+	  11        -0.205347844476723    3.577e-09
+	  12        -0.205347844497672    6.667e-10
+	  13        -0.205347844492616    1.433e-10
+	  14        -0.205347844492716    3.565e-11
+	  15        -0.205347844493254    1.131e-11
+	  16        -0.205347844493468    3.955e-12
 
 	Largest LIA Amplitudes:
 	          2   0         0.0069579845
@@ -1418,18 +1438,18 @@ Total time:
 
 	Overlap <L|e^T> =        0.94342446350
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
-	user time   =       0.04 seconds =       0.00 minutes
-	system time =       0.05 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.09 seconds =       0.00 minutes
+	system time =       0.09 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.92 seconds =       0.02 minutes
-	system time =       0.55 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.45 seconds =       0.02 minutes
+	system time =       1.44 seconds =       0.02 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
 
 			**************************
@@ -1453,11 +1473,11 @@ Total time:
 	Use Zeta         = No
 	Xi connected     = Yes
 
-	Nuclear Rep. energy (chkpt)   =    9.161180832551008
-	SCF energy          (chkpt)   =  -76.022870299033343
-	Reference energy    (file100) =  -76.022870299033229
-	CCSD energy         (CC_INFO) =   -0.208304706530673
-	Total CCSD energy   (CC_INFO) =  -76.231175005563898
+	Nuclear Rep. energy (chkpt)   =    9.161180832550889
+	SCF energy          (chkpt)   =  -76.022870299033272
+	Reference energy    (file100) =  -76.022870299033258
+	CCSD energy         (CC_INFO) =   -0.208304706530675
+	Total CCSD energy   (CC_INFO) =  -76.231175005563927
 	Number of States = 1
 
 	Ground?  State     EOM Energy       R0
@@ -1465,64 +1485,64 @@ Total time:
 
 	Energies re-computed from CC density:
 	-------------------------------------
-	One-electron energy        =    0.220401430389637
-	IJKL energy                =    0.041624273349608
+	One-electron energy        =    0.220401430389639
+	IJKL energy                =    0.041624273349609
 	IJKA energy                =   -0.001380495868358
-	IJAB energy                =   -0.410871757806775
-	IBJA energy                =   -0.100224189514179
+	IJAB energy                =   -0.410871757806778
+	IBJA energy                =   -0.100224189514181
 	CIAB energy                =   -0.000154378103482
-	ABCD energy                =    0.042300411022725
-	Total two-electron energy  =   -0.428706136920461
-	CCSD correlation energy    =   -0.208304706530824
-	Total CCSD energy          =  -76.231175005564054
+	ABCD energy                =    0.042300411022726
+	Total two-electron energy  =   -0.428706136920465
+	CCSD correlation energy    =   -0.208304706530826
+	Total CCSD energy          =  -76.231175005564083
 
 	Virial Theorem Data:
 	--------------------
-	Kinetic energy (ref)   =   75.797290300671349
-	Kinetic energy (corr)  =    0.147813077735051
-	Kinetic energy (total) =   75.945103378406401
-	-V/T (ref)             =    2.002976095813809
-	-V/T (corr)            =    2.409244092082645
+	Kinetic energy (ref)   =   75.797290300671307
+	Kinetic energy (corr)  =    0.147813077735123
+	Kinetic energy (total) =   75.945103378406429
+	-V/T (ref)             =    2.002976095813810
+	-V/T (corr)            =    2.409244092081974
 	-V/T (total)           =    2.003766821222589
 
 	Energies re-computed from Fock-adjusted CC density:
 	---------------------------------------------------
-	One-electron energy        =    0.246368013015999
-	IJKL energy                =   -0.666765081427199
-	IJKA energy                =   -0.047671156477881
-	IJAB energy                =   -0.410871757806775
-	IBJA energy                =    0.628489243245787
+	One-electron energy        =    0.246368013016000
+	IJKL energy                =   -0.666765081427217
+	IJKA energy                =   -0.047671156477883
+	IJAB energy                =   -0.410871757806778
+	IBJA energy                =    0.628489243245806
 	CIAB energy                =   -0.000154378103482
-	ABCD energy                =    0.042300411022725
-	Total two-electron energy  =   -0.454672719546825
-	CCSD correlation energy    =   -0.208304706530827
-	Total CCSD energy          =  -76.231175005564054
+	ABCD energy                =    0.042300411022726
+	Total two-electron energy  =   -0.454672719546828
+	CCSD correlation energy    =   -0.208304706530829
+	Total CCSD energy          =  -76.231175005564083
 
 	Energies re-computed from Mulliken density:
 	-------------------------------------------
-	One-electron energy        =    0.246368013015999
-	IJKL energy                =   -0.666765081427199
-	IJKA energy                =   -0.047671156477881
-	IJAB energy                =   -0.379953585566519
-	IBJA energy                =    0.597571071005530
+	One-electron energy        =    0.246368013016000
+	IJKL energy                =   -0.666765081427217
+	IJKA energy                =   -0.047671156477883
+	IJAB energy                =   -0.379953585566521
+	IBJA energy                =    0.597571071005549
 	CIAB energy                =   -0.000154378103482
-	ABCD energy                =    0.042300411022725
-	Total two-electron energy  =   -0.454672719546825
-	CCSD correlation energy    =   -0.208304706530827
-	Total CCSD energy          =  -76.231175005564054
+	ABCD energy                =    0.042300411022726
+	Total two-electron energy  =   -0.454672719546828
+	CCSD correlation energy    =   -0.208304706530829
+	Total CCSD energy          =  -76.231175005564083
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.95 seconds =       0.02 minutes
-	system time =       0.59 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.51 seconds =       0.03 minutes
+	system time =       1.50 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -1567,9 +1587,9 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.125473404936
+           O          0.000000000000     0.000000000000    -0.125473404936
            H          0.000000000000    -1.428441917948     0.995676995070
-           H         -0.000000000000     1.428441917948     0.995676995070
+           H          0.000000000000     1.428441917948     0.995676995070
 
 	Presorting MO-basis TPDM.
 	Sorting File: MO TPDM (AA|AA) nbuckets = 1
@@ -1578,28 +1598,26 @@ Total time:
 	First half integral transformation complete.
 
 
-
-
   -Nuclear Repulsion Energy 1st Derivatives:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     0.000000000000     2.995860326893
        2        0.000000000000     2.031013916557    -1.497930163446
-       3       -0.000000000000    -2.031013916557    -1.497930163446
+       3        0.000000000000    -2.031013916557    -1.497930163446
 
 
   -One-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -6.905252291535
-       2        0.000000000000    -4.604556140715     3.452626145768
-       3        0.000000000000     4.604556140715     3.452626145768
+       1        0.000000000000     0.000000000000    -6.905252291536
+       2        0.000000000000    -4.604556140714     3.452626145768
+       3        0.000000000000     4.604556140714     3.452626145768
 
 
   -Lagrangian contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.413316410547
+       1        0.000000000000     0.000000000000     0.413316410548
        2        0.000000000000     0.251209962207    -0.206658205274
        3        0.000000000000    -0.251209962207    -0.206658205274
 
@@ -1607,7 +1625,7 @@ Total time:
   -Two-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     3.494694231096
+       1        0.000000000000     0.000000000000     3.494694231097
        2        0.000000000000     2.322323848516    -1.747347115548
        3        0.000000000000    -2.322323848516    -1.747347115548
 
@@ -1617,18 +1635,18 @@ Total time:
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     0.000000000000    -0.001381322999
        2        0.000000000000    -0.000008413435     0.000690661499
-       3       -0.000000000000     0.000008413435     0.000690661499
+       3        0.000000000000     0.000008413435     0.000690661499
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
-	user time   =       0.11 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       0.15 seconds =       0.00 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.06 seconds =       0.02 minutes
-	system time =       0.60 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.66 seconds =       0.03 minutes
+	system time =       1.52 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
 			----------------------------------
 			 OPTKING: for geometry optimizations  
@@ -1637,15 +1655,15 @@ Total time:
 
 	Previous internal coordinate definitions found.
 	---Fragment 1 Geometry and Gradient---
-	 O          -0.0000000000        0.0000000000       -0.1254734049
+	 O           0.0000000000        0.0000000000       -0.1254734049
 	 H           0.0000000000       -1.4284419179        0.9956769951
-	 H          -0.0000000000        1.4284419179        0.9956769951
+	 H           0.0000000000        1.4284419179        0.9956769951
 	             0.0000000000        0.0000000000       -0.0013813230
 	             0.0000000000       -0.0000084134        0.0006906615
-	            -0.0000000000        0.0000084134        0.0006906615
+	             0.0000000000        0.0000084134        0.0006906615
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
 	 R(1,2)           =         1.815881	       0.960923
 	 R(1,3)           =         1.815881	       0.960923
 	 B(2,1,3)         =         1.810691	     103.744934
@@ -1659,7 +1677,7 @@ Total time:
 
 
 	Performing BFGS update with previous 1 gradient(s).
-	Following RFO solution 0.
+	Going to follow RFO solution 1.
 	Projected energy change by RFO approximation:        -0.0000038376
 
 	Back-transformation to cartesian coordinates...
@@ -1691,13 +1709,13 @@ Total time:
 	Cartesian Geometry (au)
 	    O     0.0000000000   0.0000000000  -0.1217430299
 	    H     0.0000000000  -1.4313650496   0.9938118075
-	    H    -0.0000000000   1.4313650496   0.9938118075
+	    H     0.0000000000   1.4313650496   0.9938118075
 			--------------------------
 			 OPTKING Finished Execution 
 			--------------------------
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -1721,11 +1739,11 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.066066281291
            H          0.000000000000    -0.757445761431     0.524259913607
-           H         -0.000000000000     0.757445761431     0.524259913607
+           H          0.000000000000     0.757445761431     0.524259913607
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.166023982656473
+  Nuclear repulsion =    9.166023982656510
 
   Charge       = 0
   Multiplicity = 1
@@ -1744,9 +1762,9 @@ Total time:
   Density threshold  = 1.00e-11
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: 6-31G** <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: 6-31G**
     Number of shells: 12
     Number of basis function: 25
     Number of Cartesian functions: 25
@@ -1759,7 +1777,7 @@ Total time:
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.65053211089781
+  Initial RHF energy:   -58.65053211089787
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -1799,27 +1817,29 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.27595647094738   -9.62542e+00   0.00000e+00 
+   @RHF iter   1:   -68.27595647094739   -9.62542e+00   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   2:   -71.41294357538459   -3.13699e+00   5.27844e-01 DIIS
+
+   @RHF iter   2:   -71.41294357538472   -3.13699e+00   5.27844e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.76855240013467   -4.35561e+00   5.02208e-01 DIIS
-   @RHF iter   4:   -76.00576704161159   -2.37215e-01   1.71482e-02 DIIS
-   @RHF iter   5:   -76.02253898099603   -1.67719e-02   7.68569e-03 DIIS
-   @RHF iter   6:   -76.02290576951881   -3.66789e-04   1.21542e-03 DIIS
-   @RHF iter   7:   -76.02294161622773   -3.58467e-05   5.11813e-04 DIIS
-   @RHF iter   8:   -76.02294266406450   -1.04784e-06   8.04111e-05 DIIS
-   @RHF iter   9:   -76.02294272594371   -6.18792e-08   2.24194e-05 DIIS
-   @RHF iter  10:   -76.02294272743835   -1.49464e-09   3.64622e-06 DIIS
-   @RHF iter  11:   -76.02294272744342   -5.07328e-12   1.59156e-07 DIIS
-   @RHF iter  12:   -76.02294272744362   -1.98952e-13   2.99907e-08 DIIS
-   @RHF iter  13:   -76.02294272744354    8.52651e-14   5.54194e-09 DIIS
-   @RHF iter  14:   -76.02294272744372   -1.84741e-13   6.55495e-10 DIIS
-   @RHF iter  15:   -76.02294272744354    1.84741e-13   3.76259e-11 DIIS
+
+   @RHF iter   3:   -75.76855240013469   -4.35561e+00   5.02208e-01 DIIS
+   @RHF iter   4:   -76.00576704161162   -2.37215e-01   1.71482e-02 DIIS
+   @RHF iter   5:   -76.02253898099607   -1.67719e-02   7.68569e-03 DIIS
+   @RHF iter   6:   -76.02290576951884   -3.66789e-04   1.21542e-03 DIIS
+   @RHF iter   7:   -76.02294161622768   -3.58467e-05   5.11813e-04 DIIS
+   @RHF iter   8:   -76.02294266406457   -1.04784e-06   8.04111e-05 DIIS
+   @RHF iter   9:   -76.02294272594381   -6.18792e-08   2.24194e-05 DIIS
+   @RHF iter  10:   -76.02294272743835   -1.49454e-09   3.64622e-06 DIIS
+   @RHF iter  11:   -76.02294272744348   -5.13012e-12   1.59156e-07 DIIS
+   @RHF iter  12:   -76.02294272744369   -2.13163e-13   2.99907e-08 DIIS
+   @RHF iter  13:   -76.02294272744369    0.00000e+00   5.54195e-09 DIIS
+   @RHF iter  14:   -76.02294272744369    0.00000e+00   6.55496e-10 DIIS
+   @RHF iter  15:   -76.02294272744366    2.84217e-14   3.76269e-11 DIIS
 
   ==> Post-Iterations <==
 
@@ -1847,7 +1867,16 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02294272744354
+  @RHF Final Energy:   -76.02294272744366
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.1660239826565100
+    One-Electron Energy =            -123.0428193274932624
+    Two-Electron Energy =              37.8538526173930734
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0229427274436773
 
   ==> Properties <==
 
@@ -1866,18 +1895,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
-	user time   =       0.05 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.11 seconds =       0.02 minutes
-	system time =       0.60 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.73 seconds =       0.03 minutes
+	system time =       1.53 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
 
 	**************************************************
@@ -1914,8 +1943,8 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.16602398265647
-	SCF energy          (chkpt) =    -76.02294272744354
+	Nuclear Rep. energy (chkpt) =      9.16602398265651
+	SCF energy          (chkpt) =    -76.02294272744366
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
@@ -1925,18 +1954,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.12 seconds =       0.02 minutes
-	system time =       0.62 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.74 seconds =       0.03 minutes
+	system time =       1.55 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
 
 			**************************
@@ -1973,8 +2002,8 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.16602398265647
-	SCF energy          (chkpt) =    -76.02294272744354
+	Nuclear Rep. energy (chkpt) =      9.16602398265651
+	SCF energy          (chkpt) =    -76.02294272744366
 
 	Size of irrep 0 of <ab|cd> integrals:      0.017 (MW) /      0.135 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.005 (MW) /      0.041 (MB)
@@ -2003,26 +2032,26 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -123.04281932746518
+	One-electron energy          =   -123.04281932746522
 	Two-electron (AA) energy     =     14.44735702518646
 	Two-electron (BB) energy     =     14.44735702518646
-	Two-electron (AB) energy     =     23.40649559217858
-	Two-electron energy          =     37.85385261736504
+	Two-electron (AB) energy     =     23.40649559217859
+	Two-electron energy          =     37.85385261736505
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -76.02294272744365
+	Reference energy             =    -76.02294272744366
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:18 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.13 seconds =       0.02 minutes
-	system time =       0.64 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.77 seconds =       0.03 minutes
+	system time =       1.59 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:18 2012
 
 			**************************
 			*                        *
@@ -2030,9 +2059,9 @@ Total time:
 			*                        *
 			**************************
 
-	Nuclear Rep. energy (chkpt)   =    9.166023982656473
-	SCF energy          (chkpt)   =  -76.022942727443535
-	Reference energy    (file100) =  -76.022942727443649
+	Nuclear Rep. energy (chkpt)   =    9.166023982656510
+	SCF energy          (chkpt)   =  -76.022942727443663
+	Reference energy    (file100) =  -76.022942727443663
 
 	Input parameters:
 	-----------------
@@ -2062,7 +2091,7 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.199504006341727    9.474e-12    0.000000    0.000000    0.000000
+     0        -0.199504006341728    9.474e-12    0.000000    0.000000    0.000000
      1        -0.203883679280462    2.689e-02    0.004415    0.008665    0.008665
      2        -0.207725428118121    9.534e-03    0.005047    0.010058    0.010058
      3        -0.208221335932245    2.681e-03    0.005552    0.011563    0.011563
@@ -2072,12 +2101,12 @@ Total time:
      7        -0.208235771578977    1.504e-05    0.005656    0.012129    0.012129
      8        -0.208235763234828    2.790e-06    0.005656    0.012131    0.012131
      9        -0.208235690205351    6.564e-07    0.005656    0.012131    0.012131
-    10        -0.208235709060333    1.384e-07    0.005656    0.012131    0.012131
-    11        -0.208235707620873    2.706e-08    0.005656    0.012131    0.012131
+    10        -0.208235709060332    1.384e-07    0.005656    0.012131    0.012131
+    11        -0.208235707620872    2.706e-08    0.005656    0.012131    0.012131
     12        -0.208235708175440    4.379e-09    0.005656    0.012131    0.012131
     13        -0.208235708073316    9.656e-10    0.005656    0.012131    0.012131
-    14        -0.208235708064604    1.773e-10    0.005656    0.012131    0.012131
-    15        -0.208235708061787    4.605e-11    0.005656    0.012131    0.012131
+    14        -0.208235708064603    1.773e-10    0.005656    0.012131    0.012131
+    15        -0.208235708061786    4.605e-11    0.005656    0.012131    0.012131
     16        -0.208235708061960    9.462e-12    0.005656    0.012131    0.012131
 
 	Iterations converged.
@@ -2107,32 +2136,32 @@ Total time:
 	  4   4  16  16        -0.0246442492
 	  3   4  11  14        -0.0242044000
 
-	SCF energy       (chkpt)              =  -76.022942727443535
-	Reference energy (file100)            =  -76.022942727443649
+	SCF energy       (chkpt)              =  -76.022942727443663
+	Reference energy (file100)            =  -76.022942727443663
 
 	Opposite-spin MP2 correlation energy  =   -0.149329780464953
 	Same-spin MP2 correlation energy      =   -0.050174225876775
-	MP2 correlation energy                =   -0.199504006341727
-      * MP2 total energy                      =  -76.222446733785375
+	MP2 correlation energy                =   -0.199504006341728
+      * MP2 total energy                      =  -76.222446733785389
 
 	Opposite-spin CCSD correlation energy =   -0.163672921472923
 	Same-spin CCSD correlation energy     =   -0.044562786589010
 	CCSD correlation energy               =   -0.208235708061960
-      * CCSD total energy                     =  -76.231178435505612
+      * CCSD total energy                     =  -76.231178435505626
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:21 2012
 Module time:
-	user time   =       0.24 seconds =       0.00 minutes
-	system time =       0.14 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
-Total time:
-	user time   =       1.38 seconds =       0.02 minutes
-	system time =       0.78 seconds =       0.01 minutes
+	user time   =       0.39 seconds =       0.01 minutes
+	system time =       0.49 seconds =       0.01 minutes
 	total time  =          3 seconds =       0.05 minutes
+Total time:
+	user time   =       2.17 seconds =       0.04 minutes
+	system time =       2.08 seconds =       0.03 minutes
+	total time  =         10 seconds =       0.17 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:15 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:21 2012
 
 
 			**************************
@@ -2142,18 +2171,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:22 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       1.40 seconds =       0.02 minutes
-	system time =       0.79 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.19 seconds =       0.04 minutes
+	system time =       2.11 seconds =       0.04 minutes
+	total time  =         11 seconds =       0.18 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:15 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:22 2012
 
 
 			**************************
@@ -2161,12 +2190,12 @@ Total time:
 			**************************
 
 
-	Nuclear Rep. energy (chkpt)   =    9.166023982656473
+	Nuclear Rep. energy (chkpt)   =    9.166023982656510
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   =  -76.022942727443535
-	Reference energy    (CC_INFO) =  -76.022942727443649
+	SCF energy          (chkpt)   =  -76.022942727443663
+	Reference energy    (CC_INFO) =  -76.022942727443663
 	CCSD energy         (CC_INFO) =   -0.208235708061960
-	Total CCSD energy   (CC_INFO) =  -76.231178435505612
+	Total CCSD energy   (CC_INFO) =  -76.231178435505626
 
 	Input parameters:
 	-----------------
@@ -2196,18 +2225,18 @@ Total time:
 	   2        -0.205370449819469    1.311e-03
 	   3        -0.205287149754014    6.018e-04
 	   4        -0.205280812258443    1.995e-04
-	   5        -0.205284337749628    6.063e-05
+	   5        -0.205284337749627    6.063e-05
 	   6        -0.205284319180492    1.453e-05
-	   7        -0.205284399242187    3.249e-06
+	   7        -0.205284399242186    3.249e-06
 	   8        -0.205284427344876    4.934e-07
-	   9        -0.205284425912041    8.358e-08
+	   9        -0.205284425912040    8.358e-08
 	  10        -0.205284425698873    1.720e-08
-	  11        -0.205284425710756    3.545e-09
-	  12        -0.205284425731620    6.626e-10
+	  11        -0.205284425710755    3.545e-09
+	  12        -0.205284425731619    6.626e-10
 	  13        -0.205284425726617    1.424e-10
-	  14        -0.205284425726721    3.534e-11
+	  14        -0.205284425726720    3.534e-11
 	  15        -0.205284425727253    1.122e-11
-	  16        -0.205284425727464    3.909e-12
+	  16        -0.205284425727463    3.909e-12
 
 	Largest LIA Amplitudes:
 	          2   0         0.0069443328
@@ -2237,18 +2266,18 @@ Total time:
 
 	Overlap <L|e^T> =        0.94348490405
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:22 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.10 seconds =       0.00 minutes
+	system time =       0.09 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.46 seconds =       0.02 minutes
-	system time =       0.83 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.29 seconds =       0.04 minutes
+	system time =       2.20 seconds =       0.04 minutes
+	total time  =         11 seconds =       0.18 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:15 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:22 2012
 
 
 			**************************
@@ -2272,11 +2301,11 @@ Total time:
 	Use Zeta         = No
 	Xi connected     = Yes
 
-	Nuclear Rep. energy (chkpt)   =    9.166023982656473
-	SCF energy          (chkpt)   =  -76.022942727443535
-	Reference energy    (file100) =  -76.022942727443649
+	Nuclear Rep. energy (chkpt)   =    9.166023982656510
+	SCF energy          (chkpt)   =  -76.022942727443663
+	Reference energy    (file100) =  -76.022942727443663
 	CCSD energy         (CC_INFO) =   -0.208235708061960
-	Total CCSD energy   (CC_INFO) =  -76.231178435505612
+	Total CCSD energy   (CC_INFO) =  -76.231178435505626
 	Number of States = 1
 
 	Ground?  State     EOM Energy       R0
@@ -2287,61 +2316,61 @@ Total time:
 	One-electron energy        =    0.220328522694147
 	IJKL energy                =    0.041592574747020
 	IJKA energy                =   -0.001379373962124
-	IJAB energy                =   -0.410744548074898
+	IJAB energy                =   -0.410744548074897
 	IBJA energy                =   -0.100141809530600
 	CIAB energy                =   -0.000149333519092
 	ABCD energy                =    0.042258259583434
 	Total two-electron energy  =   -0.428564230756259
 	CCSD correlation energy    =   -0.208235708062113
-	Total CCSD energy          =  -76.231178435505768
+	Total CCSD energy          =  -76.231178435505782
 
 	Virial Theorem Data:
 	--------------------
-	Kinetic energy (ref)   =   75.798953229664349
-	Kinetic energy (corr)  =    0.147421665410914
-	Kinetic energy (total) =   75.946374895075266
-	-V/T (ref)             =    2.002955047375135
-	-V/T (corr)            =    2.412517674939685
+	Kinetic energy (ref)   =   75.798953229664278
+	Kinetic energy (corr)  =    0.147421665410939
+	Kinetic energy (total) =   75.946374895075223
+	-V/T (ref)             =    2.002955047375136
+	-V/T (corr)            =    2.412517674939440
 	-V/T (total)           =    2.003750061024293
 
 	Energies re-computed from Fock-adjusted CC density:
 	---------------------------------------------------
-	One-electron energy        =    0.246470721068977
-	IJKL energy                =   -0.666215046945857
-	IJKA energy                =   -0.047742718945195
-	IJAB energy                =   -0.410744548074898
-	IBJA energy                =    0.627886958770515
+	One-electron energy        =    0.246470721068950
+	IJKL energy                =   -0.666215046945855
+	IJKA energy                =   -0.047742718945169
+	IJAB energy                =   -0.410744548074897
+	IBJA energy                =    0.627886958770514
 	CIAB energy                =   -0.000149333519092
 	ABCD energy                =    0.042258259583434
-	Total two-electron energy  =   -0.454706429131093
-	CCSD correlation energy    =   -0.208235708062116
-	Total CCSD energy          =  -76.231178435505768
+	Total two-electron energy  =   -0.454706429131065
+	CCSD correlation energy    =   -0.208235708062115
+	Total CCSD energy          =  -76.231178435505782
 
 	Energies re-computed from Mulliken density:
 	-------------------------------------------
-	One-electron energy        =    0.246470721068977
-	IJKL energy                =   -0.666215046945857
-	IJKA energy                =   -0.047742718945195
+	One-electron energy        =    0.246470721068950
+	IJKL energy                =   -0.666215046945855
+	IJKA energy                =   -0.047742718945169
 	IJAB energy                =   -0.379840537315839
 	IBJA energy                =    0.596982948011456
 	CIAB energy                =   -0.000149333519092
 	ABCD energy                =    0.042258259583434
-	Total two-electron energy  =   -0.454706429131093
-	CCSD correlation energy    =   -0.208235708062116
-	Total CCSD energy          =  -76.231178435505768
+	Total two-electron energy  =   -0.454706429131065
+	CCSD correlation energy    =   -0.208235708062115
+	Total CCSD energy          =  -76.231178435505782
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:22 2012
 Module time:
-	user time   =       0.04 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.50 seconds =       0.03 minutes
-	system time =       0.87 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.35 seconds =       0.04 minutes
+	system time =       2.26 seconds =       0.04 minutes
+	total time  =         11 seconds =       0.18 minutes
 
-*** tstart() called on hypnos
-*** at Mon Feb 13 15:30:15 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:07:22 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -2388,15 +2417,13 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.124847178259
            H          0.000000000000    -1.431365049619     0.990707659168
-           H         -0.000000000000     1.431365049619     0.990707659168
+           H          0.000000000000     1.431365049619     0.990707659168
 
 	Presorting MO-basis TPDM.
 	Sorting File: MO TPDM (AA|AA) nbuckets = 1
 	Starting first half-transformation.
 	Sorting half-transformed TPDM.
 	First half integral transformation complete.
-
-
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
@@ -2439,15 +2466,15 @@ Total time:
        3        0.000000000000     0.000067209511    -0.000037368888
 
 
-*** tstop() called on hypnos at Mon Feb 13 15:30:15 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:07:22 2012
 Module time:
-	user time   =       0.11 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.15 seconds =       0.00 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.61 seconds =       0.03 minutes
-	system time =       0.87 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.50 seconds =       0.04 minutes
+	system time =       2.28 seconds =       0.04 minutes
+	total time  =         11 seconds =       0.18 minutes
 
 			----------------------------------
 			 OPTKING: for geometry optimizations  
@@ -2458,13 +2485,13 @@ Total time:
 	---Fragment 1 Geometry and Gradient---
 	 O           0.0000000000        0.0000000000       -0.1248471783
 	 H           0.0000000000       -1.4313650496        0.9907076592
-	 H          -0.0000000000        1.4313650496        0.9907076592
+	 H           0.0000000000        1.4313650496        0.9907076592
 	             0.0000000000        0.0000000000        0.0000747378
 	             0.0000000000       -0.0000672095       -0.0000373689
 	             0.0000000000        0.0000672095       -0.0000373689
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
 	 R(1,2)           =         1.814736	       0.960317
 	 R(1,3)           =         1.814736	       0.960317
 	 B(2,1,3)         =         1.817531	     104.136842
@@ -2478,7 +2505,7 @@ Total time:
 
 
 	Performing BFGS update with previous 1 gradient(s).
-	Following RFO solution 0.
+	Going to follow RFO solution 1.
 	Projected energy change by RFO approximation:        -0.0000000485
 
 	Back-transformation to cartesian coordinates...
@@ -2506,16 +2533,18 @@ Total time:
   ---------------------------------------------------------------------------------------------
 
 
-	 **** Optimization is complete! ****
+  **** Optimization is complete! ****
 
-	            ****  Optimization Summary  ****
-	----------------------------------------------------------------------------
-	 Step         Energy             Delta(E)      MAX force    MAX Delta(q)  
-	----------------------------------------------------------------------------
-	   1    -76.230988854575    -76.230988854575    9.16e-03     1.72e-02
-	   2    -76.231175005564     -0.000186150989    9.77e-04     6.84e-03
-	   3    -76.231178435506     -0.000003429942    1.28e-04     7.46e-04
-	----------------------------------------------------------------------
+  ==> Optimization Summary <==
+
+  Measures of convergence in internal coordinates in au.
+  --------------------------------------------------------------------------------------------------------------- ~
+   Step         Total Energy             Delta E       MAX Force       RMS Force        MAX Disp        RMS Disp  ~
+  --------------------------------------------------------------------------------------------------------------- ~
+      1     -76.230988854574    -76.230988854574      0.00916168      0.00757669      0.01715315      0.01589026  ~
+      2     -76.231175005564     -0.000186150990      0.00097714      0.00066579      0.00684009      0.00405822  ~
+      3     -76.231178435506     -0.000003429942      0.00012846      0.00007812      0.00074585      0.00043087  ~
+  --------------------------------------------------------------------------------------------------------------- ~
 
 	Writing optimization data to binary file.
 	Final energy is    -76.2311784355056
@@ -2523,7 +2552,7 @@ Total time:
 	Cartesian Geometry (au)
 	    O     0.0000000000   0.0000000000  -0.1248471783
 	    H     0.0000000000  -1.4313650496   0.9907076592
-	    H    -0.0000000000   1.4313650496   0.9907076592
+	    H     0.0000000000   1.4313650496   0.9907076592
 	Saving final (previous) structure.
 			--------------------------
 			 OPTKING Finished Execution 
@@ -2535,3 +2564,5 @@ Total time:
 	H     1    0.960317
 	H     1    0.960317     2  104.136842
 
+
+*** PSI4 exiting successfully. Buy a developer a beer!

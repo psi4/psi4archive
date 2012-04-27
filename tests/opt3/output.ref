@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -53,8 +55,8 @@ compare_values(refenergy, thisenergy, 3, "Reference energy")                    
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:18 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -76,19 +78,13 @@ compare_values(refenergy, thisenergy, 3, "Reference energy")                    
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.068516219310
+           O          0.000000000000     0.000000000000    -0.068516219310
            H          0.000000000000    -0.790689573744     0.543701060724
-           H         -0.000000000000     0.790689573744     0.543701060724
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.790689573744     0.543701060724
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    8.801465529972067
+  Nuclear repulsion =    8.801465529972068
 
   Charge       = 0
   Multiplicity = 1
@@ -107,9 +103,9 @@ compare_values(refenergy, thisenergy, 3, "Reference energy")                    
   Density threshold  = 1.00e-10
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: CC-PVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -162,64 +158,68 @@ compare_values(refenergy, thisenergy, 3, "Reference energy")                    
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.92345273387484   -1.02343e+01   0.00000e+00 
+   @RHF iter   1:   -68.92345273387485   -1.02343e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -69.87832927887139   -9.54877e-01   5.29715e-01 
+
+   @RHF iter   2:   -69.87832927887152   -9.54877e-01   5.29715e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.17381719698982   -3.29549e+00   5.07606e-01 
+
+   @RHF iter   3:   -73.17381719698986   -3.29549e+00   5.07606e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   4:   -73.28903720832687   -1.15220e-01   2.66304e-01 
+
+   @RHF iter   4:   -73.28903720832689   -1.15220e-01   2.66304e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   5:   -74.54558815131574   -1.25655e+00   2.56165e-01 
-   @RHF iter   6:   -75.39047850439607   -8.44890e-01   9.68663e-02 
-   @RHF iter   7:   -75.77718076399209   -3.86702e-01   6.45052e-02 
-   @RHF iter   8:   -75.92928340596848   -1.52103e-01   3.68552e-02 
-   @RHF iter   9:   -75.98785298210261   -5.85696e-02   2.34721e-02 
-   @RHF iter  10:   -76.00920864222195   -2.13557e-02   1.36457e-02 
-   @RHF iter  11:   -76.01701537685840   -7.80673e-03   8.41294e-03 
-   @RHF iter  12:   -76.01982813672541   -2.81276e-03   4.96503e-03 
-   @RHF iter  13:   -76.02084541722333   -1.01728e-03   3.01794e-03 
-   @RHF iter  14:   -76.02121177983462   -3.66363e-04   1.79669e-03 
-   @RHF iter  15:   -76.02134396455466   -1.32185e-04   1.08516e-03 
-   @RHF iter  16:   -76.02139159248878   -4.76279e-05   6.48783e-04 
-   @RHF iter  17:   -76.02140876621756   -1.71737e-05   3.90714e-04 
-   @RHF iter  18:   -76.02141495589353   -6.18968e-06   2.34065e-04 
-   @RHF iter  19:   -76.02141718737710   -2.23148e-06   1.40765e-04 
-   @RHF iter  20:   -76.02141799173666   -8.04360e-07   8.44112e-05 
+
+   @RHF iter   5:   -74.54558815131578   -1.25655e+00   2.56165e-01 
+   @RHF iter   6:   -75.39047850439611   -8.44890e-01   9.68663e-02 
+   @RHF iter   7:   -75.77718076399213   -3.86702e-01   6.45052e-02 
+   @RHF iter   8:   -75.92928340596855   -1.52103e-01   3.68552e-02 
+   @RHF iter   9:   -75.98785298210264   -5.85696e-02   2.34721e-02 
+   @RHF iter  10:   -76.00920864222196   -2.13557e-02   1.36457e-02 
+   @RHF iter  11:   -76.01701537685844   -7.80673e-03   8.41294e-03 
+   @RHF iter  12:   -76.01982813672547   -2.81276e-03   4.96503e-03 
+   @RHF iter  13:   -76.02084541722330   -1.01728e-03   3.01794e-03 
+   @RHF iter  14:   -76.02121177983464   -3.66363e-04   1.79669e-03 
+   @RHF iter  15:   -76.02134396455472   -1.32185e-04   1.08516e-03 
+   @RHF iter  16:   -76.02139159248887   -4.76279e-05   6.48783e-04 
+   @RHF iter  17:   -76.02140876621763   -1.71737e-05   3.90714e-04 
+   @RHF iter  18:   -76.02141495589358   -6.18968e-06   2.34065e-04 
+   @RHF iter  19:   -76.02141718737712   -2.23148e-06   1.40765e-04 
+   @RHF iter  20:   -76.02141799173667   -8.04360e-07   8.44112e-05 
    @RHF iter  21:   -76.02141828170609   -2.89969e-07   5.07286e-05 
-   @RHF iter  22:   -76.02141838623336   -1.04527e-07   3.04357e-05 
-   @RHF iter  23:   -76.02141842391462   -3.76813e-08   1.82840e-05 
-   @RHF iter  24:   -76.02141843749803   -1.35834e-08   1.09730e-05 
-   @RHF iter  25:   -76.02141844239469   -4.89666e-09   6.59055e-06 
-   @RHF iter  26:   -76.02141844415986   -1.76517e-09   3.95593e-06 
-   @RHF iter  27:   -76.02141844479625   -6.36390e-10   2.37568e-06 
-   @RHF iter  28:   -76.02141844502562   -2.29363e-10   1.42613e-06 
-   @RHF iter  29:   -76.02141844510827   -8.26503e-11   8.56374e-07 
-   @RHF iter  30:   -76.02141844513817   -2.98996e-11   5.14117e-07 
-   @RHF iter  31:   -76.02141844514887   -1.07008e-11   3.08706e-07 
-   @RHF iter  32:   -76.02141844515270   -3.83693e-12   1.85336e-07 
-   @RHF iter  33:   -76.02141844515413   -1.42109e-12   1.11283e-07 
-   @RHF iter  34:   -76.02141844515461   -4.83169e-13   6.68122e-08 
-   @RHF iter  35:   -76.02141844515482   -2.13163e-13   4.01159e-08 
-   @RHF iter  36:   -76.02141844515484   -1.42109e-14   2.40852e-08 
-   @RHF iter  37:   -76.02141844515489   -5.68434e-14   1.44612e-08 
-   @RHF iter  38:   -76.02141844515492   -2.84217e-14   8.68246e-09 
-   @RHF iter  39:   -76.02141844515492    0.00000e+00   5.21308e-09 
-   @RHF iter  40:   -76.02141844515494   -1.42109e-14   3.12993e-09 
-   @RHF iter  41:   -76.02141844515492    1.42109e-14   1.87925e-09 
-   @RHF iter  42:   -76.02141844515489    2.84217e-14   1.12830e-09 
-   @RHF iter  43:   -76.02141844515492   -2.84217e-14   6.77445e-10 
-   @RHF iter  44:   -76.02141844515492    0.00000e+00   4.06740e-10 
-   @RHF iter  45:   -76.02141844515494   -1.42109e-14   2.44211e-10 
-   @RHF iter  46:   -76.02141844515495   -1.42109e-14   1.46625e-10 
+   @RHF iter  22:   -76.02141838623338   -1.04527e-07   3.04357e-05 
+   @RHF iter  23:   -76.02141842391462   -3.76812e-08   1.82840e-05 
+   @RHF iter  24:   -76.02141843749804   -1.35834e-08   1.09730e-05 
+   @RHF iter  25:   -76.02141844239476   -4.89672e-09   6.59055e-06 
+   @RHF iter  26:   -76.02141844415993   -1.76517e-09   3.95593e-06 
+   @RHF iter  27:   -76.02141844479625   -6.36319e-10   2.37568e-06 
+   @RHF iter  28:   -76.02141844502565   -2.29392e-10   1.42613e-06 
+   @RHF iter  29:   -76.02141844510837   -8.27214e-11   8.56374e-07 
+   @RHF iter  30:   -76.02141844513818   -2.98144e-11   5.14117e-07 
+   @RHF iter  31:   -76.02141844514888   -1.07008e-11   3.08706e-07 
+   @RHF iter  32:   -76.02141844515276   -3.87956e-12   1.85336e-07 
+   @RHF iter  33:   -76.02141844515415   -1.39266e-12   1.11283e-07 
+   @RHF iter  34:   -76.02141844515464   -4.83169e-13   6.68122e-08 
+   @RHF iter  35:   -76.02141844515485   -2.13163e-13   4.01159e-08 
+   @RHF iter  36:   -76.02141844515488   -2.84217e-14   2.40852e-08 
+   @RHF iter  37:   -76.02141844515498   -9.94760e-14   1.44612e-08 
+   @RHF iter  38:   -76.02141844515491    7.10543e-14   8.68246e-09 
+   @RHF iter  39:   -76.02141844515489    1.42109e-14   5.21308e-09 
+   @RHF iter  40:   -76.02141844515491   -1.42109e-14   3.12993e-09 
+   @RHF iter  41:   -76.02141844515494   -2.84217e-14   1.87925e-09 
+   @RHF iter  42:   -76.02141844515495   -1.42109e-14   1.12830e-09 
+   @RHF iter  43:   -76.02141844515492    2.84217e-14   6.77445e-10 
+   @RHF iter  44:   -76.02141844515492    0.00000e+00   4.06741e-10 
+   @RHF iter  45:   -76.02141844515495   -2.84217e-14   2.44211e-10 
+   @RHF iter  46:   -76.02141844515498   -2.84217e-14   1.46626e-10 
 
   ==> Post-Iterations <==
 
@@ -247,25 +247,35 @@ compare_values(refenergy, thisenergy, 3, "Reference energy")                    
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02141844515495
+  @RHF Final Energy:   -76.02141844515498
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8014655299720683
+    One-Electron Energy =            -122.4453516117718550
+    Two-Electron Energy =              37.6224676366448136
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0214184451549784
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     1.0191
+     X:     0.0000      Y:     0.0000      Z:     1.0191
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.1947
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.8244     Total:     0.8244
+     X:     0.0000      Y:     0.0000      Z:     0.8244     Total:     0.8244
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:     0.0000      Z:     2.0955     Total:     2.0955
+     X:     0.0000      Y:     0.0000      Z:     2.0955     Total:     2.0955
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:18 2012
 Module time:
 	user time   =       0.09 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -275,8 +285,8 @@ Total time:
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:18 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -321,11 +331,9 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.129476890157
+           O          0.000000000000     0.000000000000    -0.129476890157
            H          0.000000000000    -1.494186750504     1.027446102928
-           H         -0.000000000000     1.494186750504     1.027446102928
-
-
+           H          0.000000000000     1.494186750504     1.027446102928
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
@@ -340,8 +348,8 @@ Total time:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     0.000000000000    -7.161184927967
-       2        0.000000000000    -4.775062277657     3.580592463983
-       3        0.000000000000     4.775062277657     3.580592463983
+       2        0.000000000000    -4.775062277658     3.580592463983
+       3        0.000000000000     4.775062277658     3.580592463983
 
 
   -Lagrangian contribution to gradient:
@@ -368,15 +376,15 @@ Total time:
        3        0.000000000000     0.043046460219     0.029792590446
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
 	user time   =       0.15 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
 	user time   =       0.24 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 
 			----------------------------------
 			 OPTKING: for geometry optimizations  
@@ -391,9 +399,9 @@ Total time:
 	 3 : 1
 
 	---Fragment 1 Geometry and Gradient---
-	 O          -0.0000000000        0.0000000000       -0.1294768902
+	 O           0.0000000000        0.0000000000       -0.1294768902
 	 H           0.0000000000       -1.4941867505        1.0274461029
-	 H          -0.0000000000        1.4941867505        1.0274461029
+	 H           0.0000000000        1.4941867505        1.0274461029
 	             0.0000000000        0.0000000000       -0.0595851809
 	             0.0000000000       -0.0430464602        0.0297925904
 	             0.0000000000        0.0430464602        0.0297925904
@@ -401,16 +409,16 @@ Total time:
 	Previous optimization step data not found.  Starting new optimization.
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
 	 R(1,2)           =         1.889726	       1.000000
 	 R(1,3)           =         1.889726	       1.000000
 	 B(2,1,3)         =         1.823869	     104.500000
 
 	Current energy   :       -76.0214184452
 
-	Generating empirical Hessian (Fischer & Almlof '92) for each fragment.
-	Following RFO solution 0.
-	Projected energy change by RFO approximation:        -0.0081170790
+	Generating empirical Hessian (Schlegel '84) for each fragment.
+	Going to follow RFO solution 1.
+	Projected energy change by RFO approximation:        -0.0056787056
 
 	Back-transformation to cartesian coordinates...
 	Successfully converged to displaced geometry.
@@ -419,30 +427,35 @@ Total time:
 	 ----------------------------------------------------------------------
 	 Coordinate             Previous        Force       Change         New 
 	 ----------             --------       ------       ------       ------
-	 R(1,2)          =      1.000000    -0.430687    -0.081661     0.918339
-	 R(1,3)          =      1.000000    -0.430687    -0.081661     0.918339
-	 B(2,1,3)        =    104.500000    -0.000402    -1.084203   103.415797
+	 R(1,2)          =      1.000000    -0.430687    -0.056659     0.943341
+	 R(1,3)          =      1.000000    -0.430687    -0.056659     0.943341
+	 B(2,1,3)        =    104.500000    -0.000402    -1.767364   102.732636
 	 ----------------------------------------------------------------------
 
-	Convergence Check Cycle    1: (using internal coordinates in au)
-	                    Actual        Tolerance     Converged?
-	----------------------------------------------------------
-	MAX Force           5.2e-02        3.0e-04          no
-	Energy Change      -7.6e+01        1.0e-06          no
-	MAX Displacement    1.5e-01        1.2e-03          no
-	----------------------------------------------------------
+  ==> Convergence Check <==
+
+  Measures of convergence in internal coordinates in au.
+  Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+  --------------------------------------------------------------------------------------------- ~
+   Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp    ~
+  --------------------------------------------------------------------------------------------- ~
+    Convergence Criteria    1.00e-06 *    3.00e-04 *             o    1.20e-03 *             o  ~
+  --------------------------------------------------------------------------------------------- ~
+      1     -76.02141845   -7.60e+01      5.23e-02      4.28e-02 o    1.07e-01      8.92e-02 o  ~
+  ---------------------------------------------------------------------------------------------
+
 	Writing optimization data to binary file.
 	Structure for next step:
 	Cartesian Geometry (au)
-	    O     0.0000000000   0.0000000000  -0.1203512838
-	    H     0.0000000000  -1.3620562788   0.9550311053
-	    H    -0.0000000000   1.3620562788   0.9550311053
+	    O     0.0000000000   0.0000000000  -0.1001826305
+	    H     0.0000000000  -1.3925282345   1.0127989731
+	    H     0.0000000000   1.3925282345   1.0127989731
 			--------------------------
 			 OPTKING Finished Execution 
 			--------------------------
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -464,19 +477,13 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.063687156410
-           H          0.000000000000    -0.720769139536     0.505380694432
-           H         -0.000000000000     0.720769139536     0.505380694432
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           O          0.000000000000     0.000000000000    -0.065913887183
+           H          0.000000000000    -0.736894203992     0.523050611059
+           H          0.000000000000     0.736894203992     0.523050611059
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.586820338598001
+  Nuclear repulsion =    9.334429993695304
 
   Charge       = 0
   Multiplicity = 1
@@ -495,9 +502,9 @@ Total time:
   Density threshold  = 1.00e-10
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: CC-PVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -506,11 +513,11 @@ Total time:
 
   ==> Pre-Iterations <==
 
-  Minimum eigenvalue in the overlap matrix is 3.1418714400E-02.
+  Minimum eigenvalue in the overlap matrix is 3.2990651599E-02.
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.43354751745285
+  Initial RHF energy:   -58.51391692999803
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -550,52 +557,64 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.81160469566075   -1.03781e+01   0.00000e+00 
+   @RHF iter   1:   -68.84906486044761   -1.03351e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -69.98646044954624   -1.17486e+00   5.85386e-01 
+
+   @RHF iter   2:   -69.94101726323609   -1.09195e+00   5.69410e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.41498044618935   -3.42852e+00   5.62402e-01 
-   @RHF iter   4:   -74.61101336669979   -1.19603e+00   1.64097e-01 
-   @RHF iter   5:   -75.48645171758912   -8.75438e-01   1.28738e-01 
-   @RHF iter   6:   -75.84496304292306   -3.58511e-01   5.38577e-02 
-   @RHF iter   7:   -75.96823623402292   -1.23273e-01   3.31244e-02 
-   @RHF iter   8:   -76.00730495413791   -3.90687e-02   1.73359e-02 
-   @RHF iter   9:   -76.01959800934929   -1.22931e-02   1.00184e-02 
-   @RHF iter  10:   -76.02339685084698   -3.79884e-03   5.42579e-03 
-   @RHF iter  11:   -76.02457545133696   -1.17860e-03   3.07071e-03 
-   @RHF iter  12:   -76.02493953755973   -3.64086e-04   1.68663e-03 
-   @RHF iter  13:   -76.02505223305471   -1.12695e-04   9.46144e-04 
-   @RHF iter  14:   -76.02508707580260   -3.48427e-05   5.22948e-04 
-   @RHF iter  15:   -76.02509785619270   -1.07804e-05   2.92190e-04 
-   @RHF iter  16:   -76.02510119061725   -3.33442e-06   1.61962e-04 
-   @RHF iter  17:   -76.02510222222874   -1.03161e-06   9.03205e-05 
-   @RHF iter  18:   -76.02510254136419   -3.19135e-07   5.01368e-05 
-   @RHF iter  19:   -76.02510264009918   -9.87350e-08   2.79312e-05 
-   @RHF iter  20:   -76.02510267064545   -3.05463e-08   1.55166e-05 
-   @RHF iter  21:   -76.02510268009605   -9.45060e-09   8.63932e-06 
-   @RHF iter  22:   -76.02510268301980   -2.92374e-09   4.80159e-06 
-   @RHF iter  23:   -76.02510268392450   -9.04706e-10   2.67248e-06 
-   @RHF iter  24:   -76.02510268420437   -2.79869e-10   1.48574e-06 
-   @RHF iter  25:   -76.02510268429093   -8.65583e-11   8.26753e-07 
-   @RHF iter  26:   -76.02510268431776   -2.68301e-11   4.59708e-07 
-   @RHF iter  27:   -76.02510268432601   -8.25651e-12   2.55772e-07 
-   @RHF iter  28:   -76.02510268432856   -2.54374e-12   1.42236e-07 
-   @RHF iter  29:   -76.02510268432941   -8.52651e-13   7.91298e-08 
-   @RHF iter  30:   -76.02510268432958   -1.70530e-13   4.40078e-08 
-   @RHF iter  31:   -76.02510268432974   -1.56319e-13   2.44812e-08 
-   @RHF iter  32:   -76.02510268432970    4.26326e-14   1.36158e-08 
-   @RHF iter  33:   -76.02510268432971   -1.42109e-14   7.57410e-09 
-   @RHF iter  34:   -76.02510268432974   -2.84217e-14   4.21266e-09 
-   @RHF iter  35:   -76.02510268432977   -2.84217e-14   2.34332e-09 
-   @RHF iter  36:   -76.02510268432974    2.84217e-14   1.30336e-09 
-   @RHF iter  37:   -76.02510268432971    2.84217e-14   7.24991e-10 
-   @RHF iter  38:   -76.02510268432975   -4.26326e-14   4.03249e-10 
-   @RHF iter  39:   -76.02510268432982   -7.10543e-14   2.24304e-10 
-   @RHF iter  40:   -76.02510268432972    9.94760e-14   1.24763e-10 
+
+   @RHF iter   3:   -73.33721356226094   -3.39620e+00   5.46891e-01 
+	Occupation by irrep:
+	         A1    A2    B1    B2 
+	DOCC [     4,    0,    0,    1 ]
+
+   @RHF iter   4:   -73.45465220989782   -1.17439e-01   2.69358e-01 
+	Occupation by irrep:
+	         A1    A2    B1    B2 
+	DOCC [     3,    0,    1,    1 ]
+
+   @RHF iter   5:   -74.73110305029674   -1.27645e+00   2.59186e-01 
+   @RHF iter   6:   -75.55217418287137   -8.21071e-01   8.72269e-02 
+   @RHF iter   7:   -75.86608080764948   -3.13907e-01   5.34563e-02 
+   @RHF iter   8:   -75.97316607332574   -1.07085e-01   2.95271e-02 
+   @RHF iter   9:   -76.00940450583407   -3.62384e-02   1.75263e-02 
+   @RHF iter  10:   -76.02120608778412   -1.18016e-02   9.75270e-03 
+   @RHF iter  11:   -76.02506855549885   -3.86247e-03   5.66012e-03 
+   @RHF iter  12:   -76.02632103099397   -1.25248e-03   3.18642e-03 
+   @RHF iter  13:   -76.02672843792800   -4.07407e-04   1.83075e-03 
+   @RHF iter  14:   -76.02686062475243   -1.32187e-04   1.03735e-03 
+   @RHF iter  15:   -76.02690356583611   -4.29411e-05   5.93372e-04 
+   @RHF iter  16:   -76.02691750474592   -1.39389e-05   3.37209e-04 
+   @RHF iter  17:   -76.02692203129239   -4.52655e-06   1.92514e-04 
+   @RHF iter  18:   -76.02692350090480   -1.46961e-06   1.09547e-04 
+   @RHF iter  19:   -76.02692397810438   -4.77200e-07   6.24863e-05 
+   @RHF iter  20:   -76.02692413304490   -1.54941e-07   3.55785e-05 
+   @RHF iter  21:   -76.02692418335434   -5.03094e-08   2.02855e-05 
+   @RHF iter  22:   -76.02692419968966   -1.63353e-08   1.15538e-05 
+   @RHF iter  23:   -76.02692420499373   -5.30407e-09   6.58601e-06 
+   @RHF iter  24:   -76.02692420671589   -1.72216e-09   3.75179e-06 
+   @RHF iter  25:   -76.02692420727509   -5.59197e-10   2.13834e-06 
+   @RHF iter  26:   -76.02692420745670   -1.81615e-10   1.21826e-06 
+   @RHF iter  27:   -76.02692420751563   -5.89324e-11   6.94293e-07 
+   @RHF iter  28:   -76.02692420753478   -1.91420e-11   3.95579e-07 
+   @RHF iter  29:   -76.02692420754103   -6.25278e-12   2.25431e-07 
+   @RHF iter  30:   -76.02692420754303   -2.00373e-12   1.28446e-07 
+   @RHF iter  31:   -76.02692420754369   -6.53699e-13   7.31961e-08 
+   @RHF iter  32:   -76.02692420754393   -2.41585e-13   4.17069e-08 
+   @RHF iter  33:   -76.02692420754396   -2.84217e-14   2.37665e-08 
+   @RHF iter  34:   -76.02692420754398   -2.84217e-14   1.35423e-08 
+   @RHF iter  35:   -76.02692420754403   -4.26326e-14   7.71691e-09 
+   @RHF iter  36:   -76.02692420754401    1.42109e-14   4.39718e-09 
+   @RHF iter  37:   -76.02692420754397    4.26326e-14   2.50566e-09 
+   @RHF iter  38:   -76.02692420754397    0.00000e+00   1.42777e-09 
+   @RHF iter  39:   -76.02692420754398   -1.42109e-14   8.13583e-10 
+   @RHF iter  40:   -76.02692420754398    0.00000e+00   4.63594e-10 
+   @RHF iter  41:   -76.02692420754398    0.00000e+00   2.64169e-10 
+   @RHF iter  42:   -76.02692420754406   -7.10543e-14   1.50529e-10 
 
   ==> Post-Iterations <==
 
@@ -604,18 +623,18 @@ Total time:
 
 	Doubly Occupied:                                                      
 
-	   1A1   -20.543996     2A1    -1.358509     1B2    -0.718520  
-	   3A1    -0.576119     1B1    -0.496595  
+	   1A1   -20.548900     2A1    -1.345379     1B2    -0.703306  
+	   3A1    -0.572842     1B1    -0.494813  
 
 	Virtual:                                                              
 
-	   4A1     0.191524     2B2     0.261748     3B2     0.814765  
-	   5A1     0.898197     6A1     1.161683     2B1     1.199114  
-	   4B2     1.252700     7A1     1.429637     1A2     1.491107  
-	   3B1     1.677193     8A1     1.857751     5B2     1.986677  
-	   6B2     2.544197     9A1     2.595418     4B1     3.327202  
-	   2A2     3.373746    10A1     3.566760    11A1     3.901465  
-	   7B2     4.199393  
+	   4A1     0.187450     2B2     0.258497     3B2     0.793374  
+	   5A1     0.875912     6A1     1.164198     2B1     1.199903  
+	   4B2     1.254359     7A1     1.425988     1A2     1.486116  
+	   3B1     1.667186     8A1     1.860614     5B2     1.961432  
+	   6B2     2.481206     9A1     2.529785     4B1     3.307728  
+	   2A2     3.345807    10A1     3.535655    11A1     3.867620  
+	   7B2     4.173888  
 
 	Final Occupation by Irrep:
 	         A1    A2    B1    B2 
@@ -623,25 +642,35 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02510268432972
+  @RHF Final Energy:   -76.02692420754406
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.3344299936953039
+    One-Electron Energy =            -123.3922295422587325
+    Two-Electron Energy =              38.0308753410193816
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0269242075440417
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.9473
+     X:     0.0000      Y:     0.0000      Z:     0.9804
 
   Electronic Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.1471
+     X:     0.0000      Y:     0.0000      Z:    -0.1662
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.8002     Total:     0.8002
+     X:     0.0000      Y:     0.0000      Z:     0.8142     Total:     0.8142
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     2.0338     Total:     2.0338
+     X:     0.0000      Y:     0.0000      Z:     2.0695     Total:     2.0695
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
 	user time   =       0.08 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -649,10 +678,10 @@ Module time:
 Total time:
 	user time   =       0.32 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -697,58 +726,56 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.120351283798
-           H          0.000000000000    -1.362056278758     0.955031105323
-           H         -0.000000000000     1.362056278758     0.955031105323
-
-
+           O          0.000000000000     0.000000000000    -0.124559195129
+           H          0.000000000000    -1.392528234456     0.988422408540
+           H          0.000000000000     1.392528234456     0.988422408540
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     3.292132642106
-       2        0.000000000000     2.219628868103    -1.646066321053
-       3       -0.000000000000    -2.219628868103    -1.646066321053
+       1        0.000000000000     0.000000000000     3.143440370592
+       2        0.000000000000     2.095411261544    -1.571720185296
+       3        0.000000000000    -2.095411261544    -1.571720185296
 
 
   -One-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -8.088699314006
-       2        0.000000000000    -5.259049632544     4.044349657003
-       3        0.000000000000     5.259049632544     4.044349657003
+       1        0.000000000000     0.000000000000    -7.911206963774
+       2        0.000000000000    -5.064716564595     3.955603481887
+       3        0.000000000000     5.064716564595     3.955603481887
 
 
   -Lagrangian contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.522735573709
-       2        0.000000000000     0.312573707831    -0.261367786854
-       3        0.000000000000    -0.312573707831    -0.261367786854
+       1        0.000000000000     0.000000000000     0.513877303369
+       2        0.000000000000     0.301929179859    -0.256938651685
+       3        0.000000000000    -0.301929179859    -0.256938651685
 
 
   -Two-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     4.312751724886
-       2        0.000000000000     2.758225047623    -2.156375862443
-       3        0.000000000000    -2.758225047623    -2.156375862443
+       1        0.000000000000     0.000000000000     4.253900010431
+       2        0.000000000000     2.673132610223    -2.126950005215
+       3        0.000000000000    -2.673132610223    -2.126950005215
 
 
   -Total gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.038920626695
-       2        0.000000000000     0.031377991013    -0.019460313347
-       3       -0.000000000000    -0.031377991013    -0.019460313347
+       1        0.000000000000     0.000000000000     0.000010720618
+       2        0.000000000000     0.005756487031    -0.000005360309
+       3        0.000000000000    -0.005756487031    -0.000005360309
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
 	user time   =       0.15 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
 	user time   =       0.47 seconds =       0.01 minutes
 	system time =       0.05 seconds =       0.00 minutes
@@ -761,28 +788,30 @@ Total time:
 
 	Previous internal coordinate definitions found.
 	---Fragment 1 Geometry and Gradient---
-	 O           0.0000000000        0.0000000000       -0.1203512838
-	 H           0.0000000000       -1.3620562788        0.9550311053
-	 H          -0.0000000000        1.3620562788        0.9550311053
-	             0.0000000000        0.0000000000        0.0389206267
-	             0.0000000000        0.0313779910       -0.0194603133
-	            -0.0000000000       -0.0313779910       -0.0194603133
+	 O           0.0000000000        0.0000000000       -0.1245591951
+	 H           0.0000000000       -1.3925282345        0.9884224085
+	 H           0.0000000000        1.3925282345        0.9884224085
+	             0.0000000000        0.0000000000        0.0000107206
+	             0.0000000000        0.0057564870       -0.0000053603
+	             0.0000000000       -0.0057564870       -0.0000053603
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
-	 R(1,2)           =         1.735409	       0.918339
-	 R(1,3)           =         1.735409	       0.918339
-	 B(2,1,3)         =         1.804946	     103.415797
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
+	 R(1,2)           =         1.782656	       0.943341
+	 R(1,3)           =         1.782656	       0.943341
+	 B(2,1,3)         =         1.793023	     102.732636
 
-	Current energy   :       -76.0251026843
+	Current energy   :       -76.0269242075
 
 	Energy change for the previous step:
-		Projected    :        -0.0081170790
-		Actual       :        -0.0036842392
+		Projected    :        -0.0056787056
+		Actual       :        -0.0055057624
+	Energy ratio indicates good step: Trust radius increased to 8.000e-01.
+
 
 	Performing BFGS update with previous 1 gradient(s).
-	Following RFO solution 0.
-	Projected energy change by RFO approximation:        -0.0023597267
+	Going to follow RFO solution 1.
+	Projected energy change by RFO approximation:        -0.0001431774
 
 	Back-transformation to cartesian coordinates...
 	Successfully converged to displaced geometry.
@@ -791,30 +820,35 @@ Total time:
 	 ----------------------------------------------------------------------
 	 Coordinate             Previous        Force       Change         New 
 	 ----------             --------       ------       ------       ------
-	 R(1,2)          =      0.918339     0.302249     0.033231     0.951570
-	 R(1,3)          =      0.918339     0.302249     0.033231     0.951570
-	 B(2,1,3)        =    103.415797     0.000551     0.884777   104.300574
+	 R(1,2)          =      0.943341     0.037075     0.003473     0.946814
+	 R(1,3)          =      0.943341     0.037075     0.003473     0.946814
+	 B(2,1,3)        =    102.732636     0.000487     2.034923   104.767559
 	 ----------------------------------------------------------------------
 
-	Convergence Check Cycle    2: (using internal coordinates in au)
-	                    Actual        Tolerance     Converged?
-	----------------------------------------------------------
-	MAX Force           3.7e-02        3.0e-04          no
-	Energy Change      -3.7e-03        1.0e-06          no
-	MAX Displacement    6.3e-02        1.2e-03          no
-	----------------------------------------------------------
+  ==> Convergence Check <==
+
+  Measures of convergence in internal coordinates in au.
+  Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+  ---------------------------------------------------------------------------------------------
+   Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp   
+  ---------------------------------------------------------------------------------------------
+    Convergence Criteria    1.00e-06 *    3.00e-04 *             o    1.20e-03 *             o
+  ---------------------------------------------------------------------------------------------
+      2     -76.02692421   -5.51e-03      6.40e-03      5.21e-03 o    3.55e-02      2.12e-02 o  ~
+  ---------------------------------------------------------------------------------------------
+
 	Writing optimization data to binary file.
 	Structure for next step:
 	Cartesian Geometry (au)
-	    O     0.0000000000   0.0000000000  -0.1234831164
-	    H     0.0000000000  -1.4199058476   0.9798833332
-	    H    -0.0000000000   1.4199058476   0.9798833332
+	    O     0.0000000000   0.0000000000  -0.1106281638
+	    H     0.0000000000  -1.4172711696   0.9814568929
+	    H     0.0000000000   1.4172711696   0.9814568929
 			--------------------------
 			 OPTKING Finished Execution 
 			--------------------------
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -836,19 +870,13 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.065344450834
-           H          0.000000000000    -0.751381812902     0.518531927014
-           H         -0.000000000000     0.751381812902     0.518531927014
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           O          0.000000000000     0.000000000000    -0.064676335155
+           H          0.000000000000    -0.749987601347     0.513230186685
+           H          0.000000000000     0.749987601347     0.513230186685
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.249885691772992
+  Nuclear repulsion =    9.295236045412548
 
   Charge       = 0
   Multiplicity = 1
@@ -867,9 +895,9 @@ Total time:
   Density threshold  = 1.00e-10
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: CC-PVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -878,11 +906,11 @@ Total time:
 
   ==> Pre-Iterations <==
 
-  Minimum eigenvalue in the overlap matrix is 3.3751616768E-02.
+  Minimum eigenvalue in the overlap matrix is 3.3481940083E-02.
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.54293026442127
+  Initial RHF energy:   -58.52878355268642
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -922,61 +950,64 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.86485417054162   -1.03219e+01   0.00000e+00 
+   @RHF iter   1:   -68.85929992484451   -1.03305e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -69.95629143226438   -1.09144e+00   5.59876e-01 
+
+   @RHF iter   2:   -69.97129931668967   -1.11200e+00   5.61903e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.32353613804644   -3.36724e+00   5.37306e-01 
+
+   @RHF iter   3:   -73.34105279505725   -3.36975e+00   5.39225e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   4:   -73.44455680995412   -1.21021e-01   2.69689e-01 
+
+   @RHF iter   4:   -73.46296576342478   -1.21913e-01   2.70252e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   5:   -74.71429592936607   -1.26974e+00   2.59553e-01 
-   @RHF iter   6:   -75.53797007498412   -8.23674e-01   8.80228e-02 
-   @RHF iter   7:   -75.85876101347051   -3.20791e-01   5.43820e-02 
-   @RHF iter   8:   -75.96995403593888   -1.11193e-01   3.02092e-02 
-   @RHF iter   9:   -76.00815200990536   -3.81980e-02   1.80709e-02 
-   @RHF iter  10:   -76.02076175747040   -1.26097e-02   1.01150e-02 
-   @RHF iter  11:   -76.02494453431466   -4.18278e-03   5.91241e-03 
-   @RHF iter  12:   -76.02631855862236   -1.37402e-03   3.34836e-03 
-   @RHF iter  13:   -76.02677136853295   -4.52810e-04   1.93709e-03 
-   @RHF iter  14:   -76.02692019176493   -1.48823e-04   1.10433e-03 
-   @RHF iter  15:   -76.02696916721521   -4.89755e-05   6.35957e-04 
-   @RHF iter  16:   -76.02698527122494   -1.61040e-05   3.63666e-04 
-   @RHF iter  17:   -76.02699056889861   -5.29767e-06   2.09003e-04 
-   @RHF iter  18:   -76.02699231121015   -1.74231e-06   1.19682e-04 
-   @RHF iter  19:   -76.02699288431396   -5.73104e-07   6.87177e-05 
-   @RHF iter  20:   -76.02699307281149   -1.88498e-07   3.93763e-05 
-   @RHF iter  21:   -76.02699313481268   -6.20012e-08   2.25980e-05 
-   @RHF iter  22:   -76.02699315520587   -2.03932e-08   1.29535e-05 
-   @RHF iter  23:   -76.02699316191359   -6.70772e-09   7.43209e-06 
-   @RHF iter  24:   -76.02699316411992   -2.20632e-09   4.26103e-06 
-   @RHF iter  25:   -76.02699316484555   -7.25635e-10   2.44440e-06 
-   @RHF iter  26:   -76.02699316508426   -2.38714e-10   1.40161e-06 
-   @RHF iter  27:   -76.02699316516282   -7.85576e-11   8.03978e-07 
-   @RHF iter  28:   -76.02699316518861   -2.57927e-11   4.61032e-07 
-   @RHF iter  29:   -76.02699316519710   -8.48388e-12   2.64437e-07 
-   @RHF iter  30:   -76.02699316519988   -2.78533e-12   1.51646e-07 
-   @RHF iter  31:   -76.02699316520085   -9.66338e-13   8.69772e-08 
-   @RHF iter  32:   -76.02699316520112   -2.70006e-13   4.98800e-08 
-   @RHF iter  33:   -76.02699316520122   -9.94760e-14   2.86082e-08 
-   @RHF iter  34:   -76.02699316520128   -5.68434e-14   1.64067e-08 
-   @RHF iter  35:   -76.02699316520128    0.00000e+00   9.40975e-09 
-   @RHF iter  36:   -76.02699316520132   -4.26326e-14   5.39651e-09 
-   @RHF iter  37:   -76.02699316520128    4.26326e-14   3.09504e-09 
-   @RHF iter  38:   -76.02699316520122    5.68434e-14   1.77503e-09 
-   @RHF iter  39:   -76.02699316520130   -8.52651e-14   1.01802e-09 
-   @RHF iter  40:   -76.02699316520129    1.42109e-14   5.83842e-10 
-   @RHF iter  41:   -76.02699316520126    2.84217e-14   3.34845e-10 
-   @RHF iter  42:   -76.02699316520126    0.00000e+00   1.92037e-10 
-   @RHF iter  43:   -76.02699316520128   -1.42109e-14   1.10137e-10 
+
+   @RHF iter   5:   -74.73232855464620   -1.26936e+00   2.60129e-01 
+   @RHF iter   6:   -75.55148437151041   -8.19156e-01   8.71000e-02 
+   @RHF iter   7:   -75.86542484722750   -3.13940e-01   5.33816e-02 
+   @RHF iter   8:   -75.97285251117623   -1.07428e-01   2.95699e-02 
+   @RHF iter   9:   -76.00933079136240   -3.64783e-02   1.75706e-02 
+   @RHF iter  10:   -76.02124941420692   -1.19186e-02   9.79640e-03 
+   @RHF iter  11:   -76.02516297714487   -3.91356e-03   5.69400e-03 
+   @RHF iter  12:   -76.02643606800301   -1.27309e-03   3.21051e-03 
+   @RHF iter  13:   -76.02685150738493   -4.15439e-04   1.84770e-03 
+   @RHF iter  14:   -76.02698672775627   -1.35220e-04   1.04848e-03 
+   @RHF iter  15:   -76.02703079413590   -4.40664e-05   6.00774e-04 
+   @RHF iter  16:   -76.02704514370139   -1.43496e-05   3.41911e-04 
+   @RHF iter  17:   -76.02704981842064   -4.67472e-06   1.95532e-04 
+   @RHF iter  18:   -76.02705134095937   -1.52254e-06   1.11429e-04 
+   @RHF iter  19:   -76.02705183691623   -4.95957e-07   6.36666e-05 
+   @RHF iter  20:   -76.02705199845875   -1.61543e-07   3.63053e-05 
+   @RHF iter  21:   -76.02705205107873   -5.26200e-08   2.07341e-05 
+   @RHF iter  22:   -76.02705206821840   -1.71397e-08   1.18275e-05 
+   @RHF iter  23:   -76.02705207380139   -5.58299e-09   6.75300e-06 
+   @RHF iter  24:   -76.02705207561998   -1.81859e-09   3.85289e-06 
+   @RHF iter  25:   -76.02705207621229   -5.92308e-10   2.19952e-06 
+   @RHF iter  26:   -76.02705207640525   -1.92969e-10   1.25507e-06 
+   @RHF iter  27:   -76.02705207646805   -6.27978e-11   7.16422e-07 
+   @RHF iter  28:   -76.02705207648854   -2.04921e-11   4.08828e-07 
+   @RHF iter  29:   -76.02705207649515   -6.60805e-12   2.33355e-07 
+   @RHF iter  30:   -76.02705207649738   -2.23110e-12   1.33171e-07 
+   @RHF iter  31:   -76.02705207649811   -7.24754e-13   7.60098e-08 
+   @RHF iter  32:   -76.02705207649832   -2.13163e-13   4.33785e-08 
+   @RHF iter  33:   -76.02705207649839   -7.10543e-14   2.47585e-08 
+   @RHF iter  34:   -76.02705207649839    0.00000e+00   1.41299e-08 
+   @RHF iter  35:   -76.02705207649841   -1.42109e-14   8.06456e-09 
+   @RHF iter  36:   -76.02705207649846   -5.68434e-14   4.60256e-09 
+   @RHF iter  37:   -76.02705207649839    7.10543e-14   2.62687e-09 
+   @RHF iter  38:   -76.02705207649845   -5.68434e-14   1.49920e-09 
+   @RHF iter  39:   -76.02705207649845    0.00000e+00   8.55650e-10 
+   @RHF iter  40:   -76.02705207649836    8.52651e-14   4.88337e-10 
+   @RHF iter  41:   -76.02705207649838   -1.42109e-14   2.78711e-10 
+   @RHF iter  42:   -76.02705207649845   -7.10543e-14   1.59068e-10 
 
   ==> Post-Iterations <==
 
@@ -985,18 +1016,18 @@ Total time:
 
 	Doubly Occupied:                                                      
 
-	   1A1   -20.549538     2A1    -1.339774     1B2    -0.701948  
-	   3A1    -0.568064     1B1    -0.493639  
+	   1A1   -20.548440     2A1    -1.341867     1B2    -0.705435  
+	   3A1    -0.567985     1B1    -0.493829  
 
 	Virtual:                                                              
 
-	   4A1     0.186473     2B2     0.257103     3B2     0.792695  
-	   5A1     0.860721     6A1     1.163275     2B1     1.200352  
-	   4B2     1.253200     7A1     1.441779     1A2     1.478471  
-	   3B1     1.674608     8A1     1.865643     5B2     1.942510  
-	   6B2     2.465812     9A1     2.505226     4B1     3.291860  
-	   2A2     3.343728    10A1     3.519068    11A1     3.870429  
-	   7B2     4.155262  
+	   4A1     0.187359     2B2     0.257715     3B2     0.797820  
+	   5A1     0.863152     6A1     1.162554     2B1     1.200444  
+	   4B2     1.252475     7A1     1.445350     1A2     1.478202  
+	   3B1     1.678262     8A1     1.865729     5B2     1.945066  
+	   6B2     2.478582     9A1     2.516516     4B1     3.293583  
+	   2A2     3.350282    10A1     3.523192    11A1     3.879617  
+	   7B2     4.157929  
 
 	Final Occupation by Irrep:
 	         A1    A2    B1    B2 
@@ -1004,27 +1035,37 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02699316520128
+  @RHF Final Energy:   -76.02705207649845
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.2952360454125476
+    One-Electron Energy =            -123.3294646152475167
+    Two-Electron Energy =              38.0071764933365159
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0270520764984497
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.9719
+     X:     0.0000      Y:     0.0000      Z:     0.9620
 
   Electronic Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.1638
+     X:     0.0000      Y:     0.0000      Z:    -0.1584
 
   Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.8081     Total:     0.8081
+     X:     0.0000      Y:     0.0000      Z:     0.8035     Total:     0.8035
 
   Dipole Moment: (Debye)
-     X:     0.0000      Y:     0.0000      Z:     2.0541     Total:     2.0541
+     X:     0.0000      Y:     0.0000      Z:     2.0424     Total:     2.0424
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
-	user time   =       0.09 seconds =       0.00 minutes
+	user time   =       0.08 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
@@ -1032,8 +1073,8 @@ Total time:
 	system time =       0.06 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -1078,54 +1119,52 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.123483116379
-           H          0.000000000000    -1.419905847616     0.979883333214
-           H         -0.000000000000     1.419905847616     0.979883333214
-
-
+           O          0.000000000000     0.000000000000    -0.122220560722
+           H          0.000000000000    -1.417271169605     0.969864495965
+           H          0.000000000000     1.417271169605     0.969864495965
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     3.036129962574
-       2        0.000000000000     2.077574990051    -1.518064981287
-       3        0.000000000000    -2.077574990051    -1.518064981287
+       1        0.000000000000     0.000000000000     3.050600884240
+       2        0.000000000000     2.103944726217    -1.525300442120
+       3        0.000000000000    -2.103944726217    -1.525300442120
 
 
   -One-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -7.661666715885
-       2        0.000000000000    -5.083999491871     3.830833357943
-       3        0.000000000000     5.083999491871     3.830833357943
+       1        0.000000000000     0.000000000000    -7.658709381043
+       2        0.000000000000    -5.136561215049     3.829354690521
+       3        0.000000000000     5.136561215049     3.829354690521
 
 
   -Lagrangian contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.499122845014
-       2        0.000000000000     0.303085610262    -0.249561422507
-       3        0.000000000000    -0.303085610262    -0.249561422507
+       1        0.000000000000     0.000000000000     0.498772537037
+       2        0.000000000000     0.306078298948    -0.249386268518
+       3        0.000000000000    -0.306078298948    -0.249386268518
 
 
   -Two-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     4.118831616465
-       2        0.000000000000     2.698811107826    -2.059415808233
-       3        0.000000000000    -2.698811107826    -2.059415808233
+       1        0.000000000000     0.000000000000     4.108969628734
+       2        0.000000000000     2.725798643842    -2.054484814367
+       3        0.000000000000    -2.725798643842    -2.054484814367
 
 
   -Total gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -0.007582291832
-       2        0.000000000000    -0.004527783733     0.003791145916
-       3        0.000000000000     0.004527783733     0.003791145916
+       1        0.000000000000     0.000000000000    -0.000366331032
+       2        0.000000000000    -0.000739546042     0.000183165516
+       3        0.000000000000     0.000739546042     0.000183165516
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
 	user time   =       0.15 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -1142,30 +1181,30 @@ Total time:
 
 	Previous internal coordinate definitions found.
 	---Fragment 1 Geometry and Gradient---
-	 O           0.0000000000        0.0000000000       -0.1234831164
-	 H           0.0000000000       -1.4199058476        0.9798833332
-	 H          -0.0000000000        1.4199058476        0.9798833332
-	             0.0000000000        0.0000000000       -0.0075822918
-	             0.0000000000       -0.0045277837        0.0037911459
-	             0.0000000000        0.0045277837        0.0037911459
+	 O           0.0000000000        0.0000000000       -0.1222205607
+	 H           0.0000000000       -1.4172711696        0.9698644960
+	 H           0.0000000000        1.4172711696        0.9698644960
+	             0.0000000000        0.0000000000       -0.0003663310
+	             0.0000000000       -0.0007395460        0.0001831655
+	             0.0000000000        0.0007395460        0.0001831655
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
-	 R(1,2)           =         1.798207	       0.951570
-	 R(1,3)           =         1.798207	       0.951570
-	 B(2,1,3)         =         1.820388	     104.300574
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
+	 R(1,2)           =         1.789220	       0.946814
+	 R(1,3)           =         1.789220	       0.946814
+	 B(2,1,3)         =         1.828539	     104.767559
 
-	Current energy   :       -76.0269931652
+	Current energy   :       -76.0270520765
 
 	Energy change for the previous step:
-		Projected    :        -0.0023597267
-		Actual       :        -0.0018904809
-	Energy ratio indicates good step: Trust radius increased to 8.000e-01.
+		Projected    :        -0.0001431774
+		Actual       :        -0.0001278690
+	Energy ratio indicates good step: Trust radius increased to 1.000e+00.
 
 
-	Performing BFGS update with previous 2 gradient(s).
-	Following RFO solution 0.
-	Projected energy change by RFO approximation:        -0.0000529112
+	Performing BFGS update with previous 1 gradient(s).
+	Going to follow RFO solution 1.
+	Projected energy change by RFO approximation:        -0.0000014340
 
 	Back-transformation to cartesian coordinates...
 	Successfully converged to displaced geometry.
@@ -1174,30 +1213,35 @@ Total time:
 	 ----------------------------------------------------------------------
 	 Coordinate             Previous        Force       Change         New 
 	 ----------             --------       ------       ------       ------
-	 R(1,2)          =      0.951570    -0.048620    -0.004693     0.946877
-	 R(1,3)          =      0.951570    -0.048620    -0.004693     0.946877
-	 B(2,1,3)        =    104.300574     0.000029     0.169638   104.470212
+	 R(1,2)          =      0.946814    -0.005747    -0.000561     0.946253
+	 R(1,3)          =      0.946814    -0.005747    -0.000561     0.946253
+	 B(2,1,3)        =    104.767559    -0.000042    -0.145101   104.622458
 	 ----------------------------------------------------------------------
 
-	Convergence Check Cycle    3: (using internal coordinates in au)
-	                    Actual        Tolerance     Converged?
-	----------------------------------------------------------
-	MAX Force           5.9e-03        3.0e-04          no
-	Energy Change      -1.9e-03        1.0e-06          no
-	MAX Displacement    8.9e-03        1.2e-03          no
-	----------------------------------------------------------
+  ==> Convergence Check <==
+
+  Measures of convergence in internal coordinates in au.
+  Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+  ---------------------------------------------------------------------------------------------
+   Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp   
+  ---------------------------------------------------------------------------------------------
+    Convergence Criteria    1.00e-06 *    3.00e-04 *             o    1.20e-03 *             o
+  ---------------------------------------------------------------------------------------------
+      3     -76.02705208   -1.28e-04      6.98e-04      6.52e-04 o    2.53e-03      1.70e-03 o  ~
+  ---------------------------------------------------------------------------------------------
+
 	Writing optimization data to binary file.
 	Structure for next step:
 	Cartesian Geometry (au)
-	    O    -0.0000000000   0.0000000000  -0.1226398878
-	    H     0.0000000000  -1.4145267489   0.9731920088
-	    H    -0.0000000000   1.4145267489   0.9731920088
+	    O     0.0000000000   0.0000000000  -0.1229840124
+	    H     0.0000000000  -1.4150477062   0.9702462218
+	    H     0.0000000000   1.4150477062   0.9702462218
 			--------------------------
 			 OPTKING Finished Execution 
 			--------------------------
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -1219,19 +1263,13 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.064898233511
-           H          0.000000000000    -0.748535316484     0.514991030658
-           H         -0.000000000000     0.748535316484     0.514991030658
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           O          0.000000000000     0.000000000000    -0.064744155771
+           H          0.000000000000    -0.748810995172     0.513768367884
+           H          0.000000000000     0.748810995172     0.513768367884
 
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.295325408141197
+  Nuclear repulsion =    9.301095504627467
 
   Charge       = 0
   Multiplicity = 1
@@ -1250,9 +1288,9 @@ Total time:
   Density threshold  = 1.00e-10
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: CC-PVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -1261,11 +1299,11 @@ Total time:
 
   ==> Pre-Iterations <==
 
-  Minimum eigenvalue in the overlap matrix is 3.3446729794E-02.
+  Minimum eigenvalue in the overlap matrix is 3.3423451992E-02.
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.52844380299095
+  Initial RHF energy:   -58.52674241986711
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -1305,60 +1343,64 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.85862414629109   -1.03302e+01   0.00000e+00 
+   @RHF iter   1:   -68.85811653199360   -1.03314e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -69.96612313425084   -1.10750e+00   5.62582e-01 
+
+   @RHF iter   2:   -69.96963178714816   -1.11152e+00   5.62629e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.33882360622189   -3.37270e+00   5.39933e-01 
+
+   @RHF iter   3:   -73.34173773730728   -3.37211e+00   5.39957e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   4:   -73.46011526225310   -1.21292e-01   2.70087e-01 
+
+   @RHF iter   4:   -73.46332344618924   -1.21586e-01   2.70210e-01 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   5:   -74.73037873903939   -1.27026e+00   2.59957e-01 
-   @RHF iter   6:   -75.55024050381982   -8.19862e-01   8.72075e-02 
-   @RHF iter   7:   -75.86486532677607   -3.14625e-01   5.34901e-02 
-   @RHF iter   8:   -75.97262658806589   -1.07761e-01   2.96285e-02 
-   @RHF iter   9:   -76.00924580060270   -3.66192e-02   1.76149e-02 
-   @RHF iter  10:   -76.02121816480546   -1.19724e-02   9.82273e-03 
-   @RHF iter  11:   -76.02515184229304   -3.93368e-03   5.71150e-03 
-   @RHF iter  12:   -76.02643224530954   -1.28040e-03   3.22121e-03 
-   @RHF iter  13:   -76.02685032393728   -4.18079e-04   1.85445e-03 
-   @RHF iter  14:   -76.02698648473391   -1.36161e-04   1.05262e-03 
-   @RHF iter  15:   -76.02703088427006   -4.43995e-05   6.03325e-04 
-   @RHF iter  16:   -76.02704535097902   -1.44667e-05   3.43468e-04 
-   @RHF iter  17:   -76.02705006668894   -4.71571e-06   1.96480e-04 
-   @RHF iter  18:   -76.02705160349841   -1.53681e-06   1.12004e-04 
-   @RHF iter  19:   -76.02705210440405   -5.00906e-07   6.40135e-05 
-   @RHF iter  20:   -76.02705226765617   -1.63252e-07   3.65144e-05 
-   @RHF iter  21:   -76.02705232086493   -5.32088e-08   2.08596e-05 
-   @RHF iter  22:   -76.02705233820680   -1.73419e-08   1.19027e-05 
-   @RHF iter  23:   -76.02705234385898   -5.65218e-09   6.79795e-06 
-   @RHF iter  24:   -76.02705234570114   -1.84215e-09   3.87972e-06 
-   @RHF iter  25:   -76.02705234630160   -6.00465e-10   2.21549e-06 
-   @RHF iter  26:   -76.02705234649730   -1.95698e-10   1.26457e-06 
-   @RHF iter  27:   -76.02705234656108   -6.37783e-11   7.22057e-07 
-   @RHF iter  28:   -76.02705234658195   -2.08757e-11   4.12168e-07 
-   @RHF iter  29:   -76.02705234658868   -6.72173e-12   2.35331e-07 
-   @RHF iter  30:   -76.02705234659089   -2.21689e-12   1.34339e-07 
-   @RHF iter  31:   -76.02705234659153   -6.39488e-13   7.66995e-08 
-   @RHF iter  32:   -76.02705234659180   -2.70006e-13   4.37853e-08 
-   @RHF iter  33:   -76.02705234659189   -8.52651e-14   2.49981e-08 
-   @RHF iter  34:   -76.02705234659192   -2.84217e-14   1.42709e-08 
-   @RHF iter  35:   -76.02705234659192    0.00000e+00   8.14749e-09 
-   @RHF iter  36:   -76.02705234659189    2.84217e-14   4.65129e-09 
-   @RHF iter  37:   -76.02705234659189    0.00000e+00   2.65547e-09 
-   @RHF iter  38:   -76.02705234659192   -2.84217e-14   1.51598e-09 
-   @RHF iter  39:   -76.02705234659199   -7.10543e-14   8.65487e-10 
-   @RHF iter  40:   -76.02705234659197    1.42109e-14   4.94101e-10 
-   @RHF iter  41:   -76.02705234659192    5.68434e-14   2.82085e-10 
-   @RHF iter  42:   -76.02705234659192    0.00000e+00   1.61041e-10 
+
+   @RHF iter   5:   -74.73325787853557   -1.26993e+00   2.60084e-01 
+   @RHF iter   6:   -75.55231075759409   -8.19053e-01   8.70580e-02 
+   @RHF iter   7:   -75.86586076736837   -3.13550e-01   5.33310e-02 
+   @RHF iter   8:   -75.97304870769136   -1.07188e-01   2.95302e-02 
+   @RHF iter   9:   -76.00941105111460   -3.63623e-02   1.75386e-02 
+   @RHF iter  10:   -76.02128153866063   -1.18705e-02   9.77482e-03 
+   @RHF iter  11:   -76.02517595757104   -3.89442e-03   5.67890e-03 
+   @RHF iter  12:   -76.02644177336171   -1.26582e-03   3.20077e-03 
+   @RHF iter  13:   -76.02685449489660   -4.12722e-04   1.84128e-03 
+   @RHF iter  14:   -76.02698872013019   -1.34225e-04   1.04443e-03 
+   @RHF iter  15:   -76.02703242604682   -4.37059e-05   5.98196e-04 
+   @RHF iter  16:   -76.02704664651424   -1.42205e-05   3.40309e-04 
+   @RHF iter  17:   -76.02705127535341   -4.62884e-06   1.94533e-04 
+   @RHF iter  18:   -76.02705278170666   -1.50635e-06   1.10815e-04 
+   @RHF iter  19:   -76.02705327198649   -4.90280e-07   6.32892e-05 
+   @RHF iter  20:   -76.02705343154811   -1.59562e-07   3.60755e-05 
+   @RHF iter  21:   -76.02705348348003   -5.19319e-08   2.05942e-05 
+   @RHF iter  22:   -76.02705350038165   -1.69016e-08   1.17429e-05 
+   @RHF iter  23:   -76.02705350588252   -5.50087e-09   6.70192e-06 
+   @RHF iter  24:   -76.02705350767287   -1.79035e-09   3.82218e-06 
+   @RHF iter  25:   -76.02705350825551   -5.82631e-10   2.18108e-06 
+   @RHF iter  26:   -76.02705350844518   -1.89672e-10   1.24404e-06 
+   @RHF iter  27:   -76.02705350850685   -6.16751e-11   7.09832e-07 
+   @RHF iter  28:   -76.02705350852698   -2.01226e-11   4.04901e-07 
+   @RHF iter  29:   -76.02705350853353   -6.55120e-12   2.31018e-07 
+   @RHF iter  30:   -76.02705350853564   -2.11742e-12   1.31783e-07 
+   @RHF iter  31:   -76.02705350853635   -7.10543e-13   7.51864e-08 
+   @RHF iter  32:   -76.02705350853653   -1.70530e-13   4.28909e-08 
+   @RHF iter  33:   -76.02705350853655   -2.84217e-14   2.44701e-08 
+   @RHF iter  34:   -76.02705350853665   -9.94760e-14   1.39595e-08 
+   @RHF iter  35:   -76.02705350853668   -2.84217e-14   7.96404e-09 
+   @RHF iter  36:   -76.02705350853665    2.84217e-14   4.54332e-09 
+   @RHF iter  37:   -76.02705350853667   -1.42109e-14   2.59199e-09 
+   @RHF iter  38:   -76.02705350853665    1.42109e-14   1.47869e-09 
+   @RHF iter  39:   -76.02705350853670   -4.26326e-14   8.43591e-10 
+   @RHF iter  40:   -76.02705350853667    2.84217e-14   4.81258e-10 
+   @RHF iter  41:   -76.02705350853667    0.00000e+00   2.74557e-10 
+   @RHF iter  42:   -76.02705350853665    1.42109e-14   1.56633e-10 
 
   ==> Post-Iterations <==
 
@@ -1367,18 +1409,18 @@ Total time:
 
 	Doubly Occupied:                                                      
 
-	   1A1   -20.548612     2A1    -1.342077     1B2    -0.704823  
-	   3A1    -0.568587     1B1    -0.493930  
+	   1A1   -20.548419     2A1    -1.342280     1B2    -0.705460  
+	   3A1    -0.568389     1B1    -0.493923  
 
 	Virtual:                                                              
 
-	   4A1     0.187284     2B2     0.257747     3B2     0.796729  
-	   5A1     0.864473     6A1     1.162796     2B1     1.200370  
-	   4B2     1.252780     7A1     1.442651     1A2     1.479175  
-	   3B1     1.676553     8A1     1.865074     5B2     1.946782  
-	   6B2     2.477543     9A1     2.516944     4B1     3.295148  
-	   2A2     3.349058    10A1     3.524536    11A1     3.877037  
-	   7B2     4.159644  
+	   4A1     0.187420     2B2     0.257814     3B2     0.797725  
+	   5A1     0.864372     6A1     1.162627     2B1     1.200402  
+	   4B2     1.252595     7A1     1.443952     1A2     1.478838  
+	   3B1     1.677558     8A1     1.865292     5B2     1.946572  
+	   6B2     2.479498     9A1     2.518252     4B1     3.294878  
+	   2A2     3.350276    10A1     3.524645    11A1     3.879017  
+	   7B2     4.159447  
 
 	Final Occupation by Irrep:
 	         A1    A2    B1    B2 
@@ -1386,36 +1428,46 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -76.02705234659192
+  @RHF Final Energy:   -76.02705350853665
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.3010955046274670
+    One-Electron Energy =            -123.3393571131184530
+    Two-Electron Energy =              38.0112080999543025
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0270535085366816
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.9653
+     X:     0.0000      Y:     0.0000      Z:     0.9630
 
   Electronic Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.1599
+     X:     0.0000      Y:     0.0000      Z:    -0.1588
 
   Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.8053     Total:     0.8053
+     X:     0.0000      Y:     0.0000      Z:     0.8042     Total:     0.8042
 
   Dipole Moment: (Debye)
-     X:     0.0000      Y:     0.0000      Z:     2.0470     Total:     2.0470
+     X:     0.0000      Y:     0.0000      Z:     2.0440     Total:     2.0440
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
-	user time   =       0.09 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       0.08 seconds =       0.00 minutes
+	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.80 seconds =       0.01 minutes
+	user time   =       0.79 seconds =       0.01 minutes
 	system time =       0.08 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:58:19 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -1460,60 +1512,58 @@ Total time:
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.122639887845
-           H          0.000000000000    -1.414526748948     0.973192008835
-           H         -0.000000000000     1.414526748948     0.973192008835
-
-
+           O          0.000000000000     0.000000000000    -0.122348723113
+           H          0.000000000000    -1.415047706168     0.970881511040
+           H          0.000000000000     1.415047706168     0.970881511040
 
 
   -Nuclear Repulsion Energy 1st Derivatives:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     3.060456113750
-       2        0.000000000000     2.100200644746    -1.530228056875
-       3        0.000000000000    -2.100200644746    -1.530228056875
+       1        0.000000000000     0.000000000000     3.059238031313
+       2        0.000000000000     2.104750238937    -1.529619015656
+       3        0.000000000000    -2.104750238937    -1.529619015656
 
 
   -One-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -7.690097949803
-       2        0.000000000000    -5.122613565907     3.845048974901
-       3        0.000000000000     5.122613565907     3.845048974901
+       1        0.000000000000     0.000000000000    -7.679903106607
+       2        0.000000000000    -5.133673659416     3.839951553304
+       3        0.000000000000     5.133673659416     3.839951553304
 
 
   -Lagrangian contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.500684922711
-       2        0.000000000000     0.305277084954    -0.250342461356
-       3        0.000000000000    -0.305277084954    -0.250342461356
+       1        0.000000000000     0.000000000000     0.500039945494
+       2        0.000000000000     0.305907175543    -0.250019972747
+       3        0.000000000000    -0.305907175543    -0.250019972747
 
 
   -Two-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     4.127864731974
-       2        0.000000000000     2.716781876647    -2.063932365987
-       3        0.000000000000    -2.716781876647    -2.063932365987
+       1        0.000000000000     0.000000000000     4.120689242738
+       2        0.000000000000     2.723034018911    -2.060344621369
+       3        0.000000000000    -2.723034018911    -2.060344621369
 
 
   -Total gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -0.001092181366
-       2        0.000000000000    -0.000353959561     0.000546090683
-       3        0.000000000000     0.000353959561     0.000546090683
+       1        0.000000000000     0.000000000000     0.000064112937
+       2        0.000000000000     0.000017773974    -0.000032056469
+       3        0.000000000000    -0.000017773974    -0.000032056469
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:58:19 2012
 Module time:
 	user time   =       0.16 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.96 seconds =       0.02 minutes
+	user time   =       0.95 seconds =       0.02 minutes
 	system time =       0.09 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
@@ -1524,30 +1574,28 @@ Total time:
 
 	Previous internal coordinate definitions found.
 	---Fragment 1 Geometry and Gradient---
-	 O          -0.0000000000        0.0000000000       -0.1226398878
-	 H           0.0000000000       -1.4145267489        0.9731920088
-	 H          -0.0000000000        1.4145267489        0.9731920088
-	             0.0000000000        0.0000000000       -0.0010921814
-	             0.0000000000       -0.0003539596        0.0005460907
-	             0.0000000000        0.0003539596        0.0005460907
+	 O           0.0000000000        0.0000000000       -0.1223487231
+	 H           0.0000000000       -1.4150477062        0.9708815110
+	 H           0.0000000000        1.4150477062        0.9708815110
+	             0.0000000000        0.0000000000        0.0000641129
+	             0.0000000000        0.0000177740       -0.0000320565
+	             0.0000000000       -0.0000177740       -0.0000320565
 
 	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
-	 R(1,2)           =         1.789339	       0.946877
-	 R(1,3)           =         1.789339	       0.946877
-	 B(2,1,3)         =         1.823349	     104.470212
+	 - Coordinate -           - BOHR/RAD -       - ANG/DEG -
+	 R(1,2)           =         1.788159	       0.946253
+	 R(1,3)           =         1.788159	       0.946253
+	 B(2,1,3)         =         1.826006	     104.622458
 
-	Current energy   :       -76.0270523466
+	Current energy   :       -76.0270535085
 
 	Energy change for the previous step:
-		Projected    :        -0.0000529112
-		Actual       :        -0.0000591814
-	Energy ratio indicates good step: Trust radius increased to 1.000e+00.
+		Projected    :        -0.0000014340
+		Actual       :        -0.0000014320
 
-
-	Performing BFGS update with previous 3 gradient(s).
-	Following RFO solution 0.
-	Projected energy change by RFO approximation:        -0.0000010610
+	Performing BFGS update with previous 1 gradient(s).
+	Going to follow RFO solution 1.
+	Projected energy change by RFO approximation:        -0.0000000049
 
 	Back-transformation to cartesian coordinates...
 	Successfully converged to displaced geometry.
@@ -1556,419 +1604,45 @@ Total time:
 	 ----------------------------------------------------------------------
 	 Coordinate             Previous        Force       Change         New 
 	 ----------             --------       ------       ------       ------
-	 R(1,2)          =      0.946877    -0.005061    -0.000602     0.946275
-	 R(1,3)          =      0.946877    -0.005061    -0.000602     0.946275
-	 B(2,1,3)        =    104.470212     0.000029     0.107953   104.578165
+	 R(1,2)          =      0.946253     0.000277     0.000038     0.946291
+	 R(1,3)          =      0.946253     0.000277     0.000038     0.946291
+	 B(2,1,3)        =    104.622458    -0.000002    -0.010914   104.611544
 	 ----------------------------------------------------------------------
 
-	Convergence Check Cycle    4: (using internal coordinates in au)
-	                    Actual        Tolerance     Converged?
-	----------------------------------------------------------
-	MAX Force           6.1e-04        3.0e-04          no
-	Energy Change      -5.9e-05        1.0e-06          no
-	MAX Displacement    1.9e-03        1.2e-03          no
-	----------------------------------------------------------
-	Writing optimization data to binary file.
-	Structure for next step:
-	Cartesian Geometry (au)
-	    O     0.0000000000   0.0000000000  -0.1224128275
-	    H     0.0000000000  -1.4146585579   0.9713902027
-	    H    -0.0000000000   1.4146585579   0.9713902027
-			--------------------------
-			 OPTKING Finished Execution 
-			--------------------------
-
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
-
-	There are an even number of electrons - assuming singlet.
-	Specify the multiplicity with the MULTP option in the
-	input if this is incorrect
-
-
-         ---------------------------------------------------------
-                                   SCF
-            by Justin Turney, Rob Parrish, and Andy Simmonett
-                              RHF Reference
-                        1 Threads,    250 MiB Core
-         ---------------------------------------------------------
-
-  ==> Geometry <==
-
-    Molecular point group: c2v
-
-    Geometry (in Angstrom), charge = 0, multiplicity = 1:
-
-       Center              X                  Y                   Z       
-    ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.064778078360
-           H          0.000000000000    -0.748605066785     0.514037555931
-           H         -0.000000000000     0.748605066785     0.514037555931
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
-
-  Running in c2v symmetry.
-
-  Nuclear repulsion =    9.300980668126480
-
-  Charge       = 0
-  Multiplicity = 1
-  Electrons    = 10
-  Nalpha       = 5
-  Nbeta        = 5
-
-  ==> Algorithm <==
-
-  SCF Algorithm Type is PK.
-  DIIS disabled.
-  MOM disabled.
-  Fractional occupation disabled.
-  Guess Type is CORE.
-  Energy threshold   = 1.00e-10
-  Density threshold  = 1.00e-10
-  Integral threshold = 0.00e+00
-
-  ==> Primary Basis: CC-PVDZ <==
-
-  Basis Set
-    Number of shells: 12
-    Number of basis function: 24
-    Number of Cartesian functions: 25
-    Spherical Harmonics?: true
-    Max angular momentum: 2
-
-  ==> Pre-Iterations <==
-
-  Minimum eigenvalue in the overlap matrix is 3.3419145703E-02.
-  Using Symmetric Orthogonalization.
-  SCF Guess: Core (One-Electron) Hamiltonian.
-
-  Initial RHF energy:   -58.52673310937671
-
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     A1        11      11       3       3       3       0
-     A2         2       2       0       0       0       0
-     B1         4       4       1       1       1       0
-     B2         7       7       1       1       1       0
-   -------------------------------------------------------
-    Total      24      24       5       5       5       0
-   -------------------------------------------------------
-
-  ==> Integral Setup <==
-
- MINTS: Wrapper to libmints.
-   by Justin Turney
-
-   Calculation information:
-      Number of atoms:                   3
-      Number of AO shells:              12
-      Number of SO shells:               9
-      Number of primitives:             32
-      Number of atomic orbitals:        25
-      Number of basis functions:        24
-
-      Number of irreps:                  4
-      Number of functions per irrep: [  11    2    4    7 ]
-
-      Overlap, kinetic, potential, dipole, and quadrupole integrals
-        stored in file 35.
-
-      Computing two-electron integrals...done
-      Computed 11412 non-zero two-electron integrals.
-        Stored in file 33.
-
-  ==> Iterations <==
-
-                        Total Energy        Delta E     Density RMS
-
-   @RHF iter   1:   -68.85803467822004   -1.03313e+01   0.00000e+00 
-	Occupation by irrep:
-	         A1    A2    B1    B2 
-	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -69.96884237455671   -1.11081e+00   5.62721e-01 
-	Occupation by irrep:
-	         A1    A2    B1    B2 
-	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -73.34136688065676   -3.37252e+00   5.40054e-01 
-	Occupation by irrep:
-	         A1    A2    B1    B2 
-	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   4:   -73.46286122408841   -1.21494e-01   2.70185e-01 
-	Occupation by irrep:
-	         A1    A2    B1    B2 
-	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   5:   -74.73292664376305   -1.27007e+00   2.60058e-01 
-   @RHF iter   6:   -75.55209472729243   -8.19168e-01   8.70761e-02 
-   @RHF iter   7:   -75.86576228712185   -3.13668e-01   5.33494e-02 
-   @RHF iter   8:   -75.97300852077291   -1.07246e-01   2.95404e-02 
-   @RHF iter   9:   -76.00939578064204   -3.63873e-02   1.75464e-02 
-   @RHF iter  10:   -76.02127584574873   -1.18801e-02   9.77947e-03 
-   @RHF iter  11:   -76.02517387050382   -3.89802e-03   5.68201e-03 
-   @RHF iter  12:   -76.02644100279038   -1.26713e-03   3.20268e-03 
-   @RHF iter  13:   -76.02685420105979   -4.13198e-04   1.84249e-03 
-   @RHF iter  14:   -76.02698859658935   -1.34396e-04   1.04518e-03 
-   @RHF iter  15:   -76.02703236295119   -4.37664e-05   5.98657e-04 
-   @RHF iter  16:   -76.02704660470354   -1.42418e-05   3.40591e-04 
-   @RHF iter  17:   -76.02705124099894   -4.63630e-06   1.94705e-04 
-   @RHF iter  18:   -76.02705274995031   -1.50895e-06   1.10920e-04 
-   @RHF iter  19:   -76.02705324113161   -4.91181e-07   6.33524e-05 
-   @RHF iter  20:   -76.02705340100484   -1.59873e-07   3.61136e-05 
-   @RHF iter  21:   -76.02705345304398   -5.20391e-08   2.06171e-05 
-   @RHF iter  22:   -76.02705346998253   -1.69386e-08   1.17566e-05 
-   @RHF iter  23:   -76.02705347549598   -5.51344e-09   6.71013e-06 
-   @RHF iter  24:   -76.02705347729064   -1.79466e-09   3.82709e-06 
-   @RHF iter  25:   -76.02705347787476   -5.84123e-10   2.18400e-06 
-   @RHF iter  26:   -76.02705347806497   -1.90212e-10   1.24578e-06 
-   @RHF iter  27:   -76.02705347812683   -6.18599e-11   7.10864e-07 
-   @RHF iter  28:   -76.02705347814697   -2.01368e-11   4.05513e-07 
-   @RHF iter  29:   -76.02705347815350   -6.53699e-12   2.31380e-07 
-   @RHF iter  30:   -76.02705347815568   -2.17426e-12   1.31997e-07 
-   @RHF iter  31:   -76.02705347815639   -7.10543e-13   7.53128e-08 
-   @RHF iter  32:   -76.02705347815656   -1.70530e-13   4.29655e-08 
-   @RHF iter  33:   -76.02705347815667   -1.13687e-13   2.45140e-08 
-   @RHF iter  34:   -76.02705347815669   -1.42109e-14   1.39854e-08 
-   @RHF iter  35:   -76.02705347815667    1.42109e-14   7.97925e-09 
-   @RHF iter  36:   -76.02705347815667    0.00000e+00   4.55226e-09 
-   @RHF iter  37:   -76.02705347815666    1.42109e-14   2.59723e-09 
-   @RHF iter  38:   -76.02705347815665    1.42109e-14   1.48176e-09 
-   @RHF iter  39:   -76.02705347815669   -4.26326e-14   8.45396e-10 
-   @RHF iter  40:   -76.02705347815670   -1.42109e-14   4.82315e-10 
-   @RHF iter  41:   -76.02705347815670    0.00000e+00   2.75175e-10 
-   @RHF iter  42:   -76.02705347815667    2.84217e-14   1.56994e-10 
-
-  ==> Post-Iterations <==
-
-	Orbital Energies (a.u.)
-	-----------------------
-
-	Doubly Occupied:                                                      
-
-	   1A1   -20.548447     2A1    -1.342304     1B2    -0.705361  
-	   3A1    -0.568476     1B1    -0.493937  
-
-	Virtual:                                                              
-
-	   4A1     0.187407     2B2     0.257817     3B2     0.797552  
-	   5A1     0.864557     6A1     1.162664     2B1     1.200391  
-	   4B2     1.252641     7A1     1.443552     1A2     1.478979  
-	   3B1     1.677300     8A1     1.865197     5B2     1.946813  
-	   6B2     2.479312     9A1     2.518283     4B1     3.295100  
-	   2A2     3.350081    10A1     3.524827    11A1     3.878618  
-	   7B2     4.159688  
-
-	Final Occupation by Irrep:
-	         A1    A2    B1    B2 
-	DOCC [     3,    0,    1,    1 ]
-
-  Energy converged.
-
-  @RHF Final Energy:   -76.02705347815667
-
-  ==> Properties <==
-  Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.9635
-
-  Electronic Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.1590
-
-  Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.8045     Total:     0.8045
-
-  Dipole Moment: (Debye)
-     X:    -0.0000      Y:     0.0000      Z:     2.0447     Total:     2.0447
-
-
-  Saving occupied orbitals to File 180.
-
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
-Module time:
-	user time   =       0.08 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       1.04 seconds =       0.02 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
-
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:43:33 2012
-
- DERIV: Derivative code.
-   by Justin Turney
-
-  Cartesian Displacement SALCs
-  By SALC:
-  Number of SALCs: 3, nirreps: 1
-  Project out translations: False
-  Project out rotations: False
-	irrep = 0, ncomponent = 1
-		0: atom 0, direction z, coef 1.000000
-	irrep = 0, ncomponent = 2
-		0: atom 1, direction y, coef 0.707107
-		1: atom 2, direction y, coef -0.707107
-	irrep = 0, ncomponent = 2
-		0: atom 1, direction z, coef 0.707107
-		1: atom 2, direction z, coef 0.707107
-
-  By Atomic Center:
-  Number of atomic centers: 3
-   Atomic Center 0:
-	x component, size = 0
-	y component, size = 0
-	z component, size = 1
-		0: salc 0, irrep 0, coef 1.000000
-   Atomic Center 1:
-	x component, size = 0
-	y component, size = 1
-		0: salc 1, irrep 0, coef 0.707107
-	z component, size = 1
-		0: salc 2, irrep 0, coef 0.707107
-   Atomic Center 2:
-	x component, size = 0
-	y component, size = 1
-		0: salc 1, irrep 0, coef -0.707107
-	z component, size = 1
-		0: salc 2, irrep 0, coef 0.707107
-
-    Molecular point group: c2v
-
-    Geometry (in Bohr), charge = 0, multiplicity = 1:
-
-       Center              X                  Y                   Z       
-    ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.122412827514
-           H          0.000000000000    -1.414658557914     0.971390202727
-           H         -0.000000000000     1.414658557914     0.971390202727
-
-
-
-
-  -Nuclear Repulsion Energy 1st Derivatives:
-     Atom            X                  Y                   Z
-    ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     3.060623319893
-       2        0.000000000000     2.104133740646    -1.530311659946
-       3        0.000000000000    -2.104133740646    -1.530311659946
-
-
-  -One-electron contribution to gradient:
-     Atom            X                  Y                   Z
-    ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -7.684451536697
-       2        0.000000000000    -5.131507074649     3.842225768349
-       3        0.000000000000     5.131507074649     3.842225768349
-
-
-  -Lagrangian contribution to gradient:
-     Atom            X                  Y                   Z
-    ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     0.500317479917
-       2        0.000000000000     0.305782905517    -0.250158739958
-       3        0.000000000000    -0.305782905517    -0.250158739958
-
-
-  -Two-electron contribution to gradient:
-     Atom            X                  Y                   Z
-    ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000     4.123449714686
-       2        0.000000000000     2.721653011988    -2.061724857343
-       3        0.000000000000    -2.721653011988    -2.061724857343
-
-
-  -Total gradient:
-     Atom            X                  Y                   Z
-    ------   -----------------  -----------------  -----------------
-       1        0.000000000000     0.000000000000    -0.000061022202
-       2        0.000000000000     0.000062583501     0.000030511101
-       3        0.000000000000    -0.000062583501     0.000030511101
-
-
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:33 2012
-Module time:
-	user time   =       0.16 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       1.20 seconds =       0.02 minutes
-	system time =       0.11 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
-
-			----------------------------------
-			 OPTKING: for geometry optimizations  
-			  - R.A. King,  Bethel University   
-			------------------------------------
-
-	Previous internal coordinate definitions found.
-	---Fragment 1 Geometry and Gradient---
-	 O           0.0000000000        0.0000000000       -0.1224128275
-	 H           0.0000000000       -1.4146585579        0.9713902027
-	 H          -0.0000000000        1.4146585579        0.9713902027
-	             0.0000000000        0.0000000000       -0.0000610222
-	             0.0000000000        0.0000625835        0.0000305111
-	             0.0000000000       -0.0000625835        0.0000305111
-
-	---Fragment 1 Intrafragment Coordinates---
-	 * Coordinate *           * BOHR/RAD *       * ANG/DEG *
-	 R(1,2)           =         1.788201	       0.946275
-	 R(1,3)           =         1.788201	       0.946275
-	 B(2,1,3)         =         1.825233	     104.578165
-
-	Current energy   :       -76.0270534782
-
-	Energy change for the previous step:
-		Projected    :        -0.0000010610
-		Actual       :        -0.0000011316
-
-	Performing BFGS update with previous 4 gradient(s).
-	Following RFO solution 0.
-	Projected energy change by RFO approximation:        -0.0000000286
-
-	Back-transformation to cartesian coordinates...
-	Successfully converged to displaced geometry.
-
-	---Internal Coordinate Step in ANG or DEG, aJ/ANG or AJ/DEG ---
-	 ----------------------------------------------------------------------
-	 Coordinate             Previous        Force       Change         New 
-	 ----------             --------       ------       ------       ------
-	 R(1,2)          =      0.946275     0.000254    -0.000000     0.946275
-	 R(1,3)          =      0.946275     0.000254    -0.000000     0.946275
-	 B(2,1,3)        =    104.578165     0.000008     0.029343   104.607508
-	 ----------------------------------------------------------------------
-
-	Convergence Check Cycle    5: (using internal coordinates in au)
-	                    Actual        Tolerance     Converged?
-	----------------------------------------------------------
-	MAX Force           1.1e-04        3.0e-04         yes
-	Energy Change      -1.1e-06        1.0e-06          no
-	MAX Displacement    5.1e-04        1.2e-03         yes
-	----------------------------------------------------------
-
-	 **** Optimization is complete! ****
-
-	            ****  Optimization Summary  ****
-	----------------------------------------------------------------------------
-	 Step         Energy             Delta(E)      MAX force    MAX Delta(q)  
-	----------------------------------------------------------------------------
-	   1    -76.021418445155    -76.021418445155    5.23e-02     5.23e-02
-	   2    -76.025102684330     -0.003684239175    3.67e-02     3.67e-02
-	   3    -76.026993165201     -0.001890480872    5.90e-03     5.90e-03
-	   4    -76.027052346592     -0.000059181391    6.14e-04     6.14e-04
-	   5    -76.027053478157     -0.000001131565    1.12e-04     1.12e-04
-	----------------------------------------------------------------------
+  ==> Convergence Check <==
+
+  Measures of convergence in internal coordinates in au.
+  Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+  ---------------------------------------------------------------------------------------------
+   Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp   
+  ---------------------------------------------------------------------------------------------
+    Convergence Criteria    1.00e-06 *    3.00e-04 *             o    1.20e-03 *             o
+  ---------------------------------------------------------------------------------------------
+      4     -76.02705351   -1.43e-06      3.37e-05 *    3.13e-05 o    1.90e-04 *    1.25e-04 o  ~
+  ---------------------------------------------------------------------------------------------
+
+
+  **** Optimization is complete! ****
+
+  ==> Optimization Summary <==
+
+  Measures of convergence in internal coordinates in au.
+  --------------------------------------------------------------------------------------------------------------- ~
+   Step         Total Energy             Delta E       MAX Force       RMS Force        MAX Disp        RMS Disp  ~
+  --------------------------------------------------------------------------------------------------------------- ~
+      1     -76.021418445155    -76.021418445155      0.05227593      0.04279207      0.10706999      0.08921782  ~
+      2     -76.026924207544     -0.005505762389      0.00639940      0.00521067      0.03551611      0.02119399  ~
+      3     -76.027052076498     -0.000127868954      0.00069761      0.00065158      0.00253249      0.00169943  ~
+      4     -76.027053508537     -0.000001432038      0.00003366      0.00003130      0.00019049      0.00012468  ~
+  --------------------------------------------------------------------------------------------------------------- ~
 
 	Writing optimization data to binary file.
-	Final energy is    -76.0270534781567
+	Final energy is    -76.0270535085367
 	Final (previous) structure:
 	Cartesian Geometry (au)
-	    O     0.0000000000   0.0000000000  -0.1224128275
-	    H     0.0000000000  -1.4146585579   0.9713902027
-	    H    -0.0000000000   1.4146585579   0.9713902027
+	    O     0.0000000000   0.0000000000  -0.1223487231
+	    H     0.0000000000  -1.4150477062   0.9708815110
+	    H     0.0000000000   1.4150477062   0.9708815110
 	Saving final (previous) structure.
 			--------------------------
 			 OPTKING Finished Execution 
@@ -1977,8 +1651,8 @@ Total time:
 	Final optimized geometry and variables (in Angstrom):
 
 	O
-	H     1    0.946275
-	H     1    0.946275     2  104.578165
+	H     1    0.946253
+	H     1    0.946253     2  104.622458
 
 
 *** PSI4 exiting successfully. Buy a developer a beer!

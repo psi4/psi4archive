@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -32,9 +34,8 @@ molecule h2o {
 }
 
 set {
-  wfn eom_cc2
   basis "cc-pVDZ"
-  states_per_irrep [2, 2, 2, 2]
+  roots_per_irrep [2, 2, 2, 2]
 }
 
 energy('eom-cc2')
@@ -55,8 +56,8 @@ for root in range(1,9):                                  #TEST
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:40 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:06 2012
 
 
          ---------------------------------------------------------
@@ -74,19 +75,13 @@ for root in range(1,9):                                  #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           H         -0.000000000000     0.709209678246    -0.492083819402
+           H          0.000000000000     0.709209678246    -0.492083819402
            O          0.000000000000     0.000000000000     0.062011508391
            H          0.000000000000    -0.709209678246    -0.492083819402
 
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 2 
-       unique atom 1: 1 
-
   Running in c2v symmetry.
 
-  Nuclear repulsion =    9.780670106434425
+  Nuclear repulsion =    9.780670106434426
 
   Charge       = 0
   Multiplicity = 1
@@ -105,9 +100,9 @@ for root in range(1,9):                                  #TEST
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: cc-pVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -120,7 +115,7 @@ for root in range(1,9):                                  #TEST
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.37199246272328
+  Initial RHF energy:   -58.37199246272327
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -164,20 +159,22 @@ for root in range(1,9):                                  #TEST
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -70.01688263578109   -1.23547e+00   5.97632e-01 DIIS
+
+   @RHF iter   2:   -70.01688263578113   -1.23547e+00   5.97632e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.67969251536516   -5.66281e+00   5.65813e-01 DIIS
-   @RHF iter   4:   -75.99208923697356   -3.12397e-01   1.96362e-02 DIIS
+
+   @RHF iter   3:   -75.67969251536515   -5.66281e+00   5.65813e-01 DIIS
+   @RHF iter   4:   -75.99208923697353   -3.12397e-01   1.96362e-02 DIIS
    @RHF iter   5:   -76.02145414043237   -2.93649e-02   9.12410e-03 DIIS
    @RHF iter   6:   -76.02167797879842   -2.23838e-04   1.22242e-03 DIIS
-   @RHF iter   7:   -76.02170850267184   -3.05239e-05   4.16770e-04 DIIS
-   @RHF iter   8:   -76.02170966471864   -1.16205e-06   8.75884e-05 DIIS
-   @RHF iter   9:   -76.02170973276102   -6.80424e-08   1.57852e-05 DIIS
-   @RHF iter  10:   -76.02170973314668   -3.85654e-10   1.72065e-06 DIIS
-   @RHF iter  11:   -76.02170973316815   -2.14726e-11   2.85926e-07 DIIS
-   @RHF iter  12:   -76.02170973316873   -5.82645e-13   4.07359e-08 DIIS
+   @RHF iter   7:   -76.02170850267188   -3.05239e-05   4.16770e-04 DIIS
+   @RHF iter   8:   -76.02170966471868   -1.16205e-06   8.75884e-05 DIIS
+   @RHF iter   9:   -76.02170973276098   -6.80423e-08   1.57852e-05 DIIS
+   @RHF iter  10:   -76.02170973314669   -3.85711e-10   1.72065e-06 DIIS
+   @RHF iter  11:   -76.02170973316814   -2.14442e-11   2.86013e-07 DIIS
+   @RHF iter  12:   -76.02170973316873   -5.96856e-13   4.07394e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -207,23 +204,33 @@ for root in range(1,9):                                  #TEST
 
   @RHF Final Energy:   -76.02170973316873
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.7806701064344264
+    One-Electron Energy =            -124.1736229693666331
+    Two-Electron Energy =              38.3712431297634851
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0217097331687199
+
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.9223
+     X:     0.0000      Y:    -0.0000      Z:    -0.9223
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.1331
 
   Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.7892     Total:     0.7892
+     X:     0.0000      Y:    -0.0000      Z:    -0.7892     Total:     0.7892
 
   Dipole Moment: (Debye)
-     X:     0.0000      Y:     0.0000      Z:    -2.0059     Total:     2.0059
+     X:     0.0000      Y:    -0.0000      Z:    -2.0059     Total:     2.0059
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:40 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:06 2012
 Module time:
 	user time   =       0.08 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -233,8 +240,8 @@ Total time:
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:40 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:06 2012
 
 
 	**************************************************
@@ -271,7 +278,7 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.78067010643442
+	Nuclear Rep. energy (chkpt) =      9.78067010643443
 	SCF energy          (chkpt) =    -76.02170973316873
 
 	Presorting SO-basis two-electron integrals.
@@ -282,7 +289,7 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:40 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:06 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -292,8 +299,8 @@ Total time:
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:40 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:06 2012
 
 
 			**************************
@@ -330,7 +337,7 @@ Total time:
 	 B1	   4	    0	    1	    0	    3	    0
 	 B2	   7	    0	    1	    0	    6	    0
 
-	Nuclear Rep. energy (chkpt) =      9.78067010643442
+	Nuclear Rep. energy (chkpt) =      9.78067010643443
 	SCF energy          (chkpt) =    -76.02170973316873
 
 	Size of irrep 0 of <ab|cd> integrals:      0.013 (MW) /      0.102 (MB)
@@ -359,15 +366,15 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -124.17362295341263
-	Two-electron (AA) energy     =     14.66489780591515
-	Two-electron (BB) energy     =     14.66489780591515
-	Two-electron (AB) energy     =     23.70634530789435
-	Two-electron energy          =     38.37124311380950
+	One-electron energy          =   -124.17362295340834
+	Two-electron (AA) energy     =     14.66489780591335
+	Two-electron (BB) energy     =     14.66489780591335
+	Two-electron (AB) energy     =     23.70634530789186
+	Two-electron energy          =     38.37124311380521
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -76.02170973316871
+	Reference energy             =    -76.02170973316869
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:40 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:06 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.04 seconds =       0.00 minutes
@@ -377,8 +384,8 @@ Total time:
 	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:40 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:06 2012
 
 			**************************
 			*                        *
@@ -386,9 +393,9 @@ Total time:
 			*                        *
 			**************************
 
-	Nuclear Rep. energy (chkpt)   =    9.780670106434425
+	Nuclear Rep. energy (chkpt)   =    9.780670106434426
 	SCF energy          (chkpt)   =  -76.021709733168734
-	Reference energy    (file100) =  -76.021709733168706
+	Reference energy    (file100) =  -76.021709733168692
 
 	Input parameters:
 	-----------------
@@ -418,17 +425,17 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.200137196495338    0.000e+00    0.000000    0.000000    0.000000
-     1        -0.200129980619184    1.132e-02    0.003581    0.007890    0.007890
-     2        -0.200769725535927    2.835e-03    0.004279    0.009388    0.009388
-     3        -0.200833650897701    9.064e-04    0.004575    0.009962    0.009962
-     4        -0.200822329190307    2.564e-04    0.004611    0.009977    0.009977
-     5        -0.200823086798831    8.748e-05    0.004628    0.009980    0.009980
-     6        -0.200823556828203    1.593e-05    0.004628    0.009972    0.009972
-     7        -0.200823544440248    2.987e-06    0.004629    0.009971    0.009971
-     8        -0.200823544263469    6.376e-07    0.004628    0.009971    0.009971
-     9        -0.200823545494592    1.052e-07    0.004628    0.009971    0.009971
-    10        -0.200823545823346    2.014e-08    0.004628    0.009971    0.009971
+     0        -0.200137196495339    0.000e+00    0.000000    0.000000    0.000000
+     1        -0.200129980619207    1.132e-02    0.003581    0.007890    0.007890
+     2        -0.200769725535929    2.835e-03    0.004279    0.009388    0.009388
+     3        -0.200833650897699    9.064e-04    0.004575    0.009962    0.009962
+     4        -0.200822329190305    2.564e-04    0.004611    0.009977    0.009977
+     5        -0.200823086798828    8.748e-05    0.004628    0.009980    0.009980
+     6        -0.200823556828201    1.593e-05    0.004628    0.009972    0.009972
+     7        -0.200823544440246    2.987e-06    0.004629    0.009971    0.009971
+     8        -0.200823544263467    6.376e-07    0.004628    0.009971    0.009971
+     9        -0.200823545494590    1.052e-07    0.004628    0.009971    0.009971
+    10        -0.200823545823343    2.014e-08    0.004628    0.009971    0.009971
 
 	Iterations converged.
 
@@ -438,7 +445,7 @@ Total time:
 	          4  17        -0.0065339319
 	          2   0         0.0059782809
 	          2   5        -0.0043114709
-	          1   0         0.0036088621
+	          1   0         0.0036088620
 	          4  15         0.0034033861
 	          1   2         0.0033053491
 	          3  11         0.0030153679
@@ -458,28 +465,28 @@ Total time:
 	  2   2  14  14        -0.0219525172
 
 	SCF energy       (chkpt)              =  -76.021709733168734
-	Reference energy (file100)            =  -76.021709733168706
+	Reference energy (file100)            =  -76.021709733168692
 
-	Opposite-spin MP2 correlation energy  =   -0.149220599172528
-	Same-spin MP2 correlation energy      =   -0.050916597322810
-	MP2 correlation energy                =   -0.200137196495338
-      * MP2 total energy                      =  -76.221846929664039
-	CC2 correlation energy     =   -0.200823545823346
-      * CC2 total energy           =  -76.222533278992046
+	Opposite-spin MP2 correlation energy  =   -0.149220599172533
+	Same-spin MP2 correlation energy      =   -0.050916597322807
+	MP2 correlation energy                =   -0.200137196495340
+      * MP2 total energy                      =  -76.221846929664025
+	CC2 correlation energy     =   -0.200823545823343
+      * CC2 total energy           =  -76.222533278992032
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:41 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:08 2012
 Module time:
-	user time   =       0.20 seconds =       0.00 minutes
-	system time =       0.25 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.21 seconds =       0.00 minutes
+	system time =       0.26 seconds =       0.00 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
 	user time   =       0.32 seconds =       0.01 minutes
-	system time =       0.31 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	system time =       0.32 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:41 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:08 2012
 
 
 			**************************
@@ -489,28 +496,28 @@ Total time:
 			**************************
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:41 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:08 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
+	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.35 seconds =       0.01 minutes
-	system time =       0.34 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.34 seconds =       0.01 minutes
+	system time =       0.35 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:13:41 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:08 2012
 
 
 	**********************************************************
 	*  CCEOM: An Equation of Motion Coupled Cluster Program  *
 	**********************************************************
 
-	Nuclear Rep. energy (chkpt)   =    9.780670106434425
+	Nuclear Rep. energy (chkpt)   =    9.780670106434426
 	SCF energy          (chkpt)   =  -76.021709733168734
-	Reference energy    (file100) =  -76.021709733168706
-	CC2 energy          (file100) =   -0.200823545823346
+	Reference energy    (file100) =  -76.021709733168692
+	CC2 energy          (file100) =   -0.200823545823343
 
 	Input parameters:
 	-----------------
@@ -582,8 +589,8 @@ Iter=10   L=19    Root    EOM Energy     Delta E   Res. Norm    Conv?
 Collapsing to only 2 vector(s).
 
 Procedure converged for 2 root(s).
-EOM CC2 R0 for root 0 =   0.01101416755
-EOM CC2 R0 for root 1 =   0.01559959427
+EOM CC2 R0 for root 0 =  -0.01101416755
+EOM CC2 R0 for root 1 =  -0.01559959427
 
 Final Energetic Summary for Converged Roots of Irrep A1
                      Excitation Energy              Total Energy
@@ -592,32 +599,32 @@ EOM State 1     11.246    90708.8   0.4132995578   -75.809233721144
 
 Largest components of excited wave function #1:
  RIA (libdpd indices) : (cscf notation)
-         2 >   0      :       3a1 >    4a1 :   -0.6865230915
-         2 >   1      :       3a1 >    5a1 :   -0.0493551708
-         0 >   0      :       1b2 >    2b2 :    0.0304160970
-         1 >   0      :       2a1 >    4a1 :    0.0251599856
-         0 >   0      :       1b1 >    2b1 :   -0.0206125093
+         2 >   0      :       3a1 >    4a1 :    0.6865230915
+         2 >   1      :       3a1 >    5a1 :    0.0493551708
+         0 >   0      :       1b2 >    2b2 :   -0.0304160970
+         1 >   0      :       2a1 >    4a1 :   -0.0251599856
+         0 >   0      :       1b1 >    2b1 :    0.0206125093
  RIjAb (libdpd indices)     : (cscf notation)
-        2   2 >   0   0     :    3a1    3a1 >    4a1    4a1 :    0.0568208261
-        2   0 >   0   0     :    3a1    1b2 >    4a1    2b2 :    0.0493741173
-        0   2 >   0   0     :    1b2    3a1 >    2b2    4a1 :    0.0493741173
-        2   2 >   0   2     :    3a1    3a1 >    4a1    6a1 :   -0.0477025941
-        2   2 >   2   0     :    3a1    3a1 >    6a1    4a1 :   -0.0477025941
+        2   2 >   0   0     :    3a1    3a1 >    4a1    4a1 :   -0.0568208261
+        2   0 >   0   0     :    3a1    1b2 >    4a1    2b2 :   -0.0493741173
+        0   2 >   0   0     :    1b2    3a1 >    2b2    4a1 :   -0.0493741173
+        2   2 >   0   2     :    3a1    3a1 >    4a1    6a1 :    0.0477025941
+        2   2 >   2   0     :    3a1    3a1 >    6a1    4a1 :    0.0477025941
 EOM State 2     18.732   151084.5   0.6883916023   -75.534141676691
 
 Largest components of excited wave function #2:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b2 >    2b2 :   -0.6831351691
-         0 >   0      :       1b1 >    2b1 :   -0.0710256368
-         2 >   2      :       3a1 >    6a1 :   -0.0539491008
-         2 >   1      :       3a1 >    5a1 :    0.0425218406
-         0 >   1      :       1b2 >    3b2 :   -0.0346180173
+         0 >   0      :       1b2 >    2b2 :    0.6831351691
+         0 >   0      :       1b1 >    2b1 :    0.0710256368
+         2 >   2      :       3a1 >    6a1 :    0.0539491008
+         2 >   1      :       3a1 >    5a1 :   -0.0425218406
+         0 >   1      :       1b2 >    3b2 :    0.0346180173
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b2    1b2 >    2b2    2b2 :    0.1003209537
-        0   0 >   0   0     :    1b1    1b2 >    2b1    2b2 :   -0.0380946750
-        0   0 >   0   0     :    1b2    1b1 >    2b2    2b1 :   -0.0380946750
-        2   0 >   2   0     :    3a1    1b2 >    6a1    2b2 :   -0.0308016918
-        0   2 >   0   2     :    1b2    3a1 >    2b2    6a1 :   -0.0308016918
+        0   0 >   0   0     :    1b2    1b2 >    2b2    2b2 :   -0.1003209537
+        0   0 >   0   0     :    1b1    1b2 >    2b1    2b2 :    0.0380946750
+        0   0 >   0   0     :    1b2    1b1 >    2b2    2b1 :    0.0380946750
+        2   0 >   2   0     :    3a1    1b2 >    6a1    2b2 :    0.0308016918
+        0   2 >   0   2     :    1b2    3a1 >    2b2    6a1 :    0.0308016918
 
 Symmetry of excited state: A2
 Symmetry of right eigenvector: A2
@@ -649,7 +656,7 @@ Iter=8    L=16    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3959792982  -5.06e-10    1.03e-07      Y
                      2   0.8410860743  -1.03e-09    1.50e-06      N
 Iter=9    L=17    Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.3959792982   3.72e-14    9.79e-08      Y
+                     1   0.3959792982   3.10e-14    9.79e-08      Y
                      2   0.8410860743   4.31e-11    1.64e-07      Y
 Collapsing to only 2 vector(s).
 
@@ -664,17 +671,17 @@ EOM State 3     10.775    86907.4   0.3959792982   -75.826553980784
 
 Largest components of excited wave function #3:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b1 >    2b2 :   -0.6842456137
-         0 >   1      :       1b1 >    3b2 :   -0.0833407448
-         0 >   2      :       1b1 >    4b2 :    0.0578521390
-         0 >   4      :       1b1 >    6b2 :   -0.0098134641
-         1 >   0      :       2a1 >    1a2 :   -0.0032330023
+         0 >   0      :       1b1 >    2b2 :    0.6842456137
+         0 >   1      :       1b1 >    3b2 :    0.0833407448
+         0 >   2      :       1b1 >    4b2 :   -0.0578521390
+         0 >   4      :       1b1 >    6b2 :    0.0098134641
+         1 >   0      :       2a1 >    1a2 :    0.0032330023
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b1    1b2 >    2b2    2b2 :    0.0552000453
-        0   0 >   0   0     :    1b2    1b1 >    2b2    2b2 :    0.0552000453
-        0   0 >   0   0     :    1b1    1b1 >    2b1    2b2 :   -0.0528674011
-        0   0 >   0   0     :    1b1    1b1 >    2b2    2b1 :   -0.0528674011
-        2   0 >   2   0     :    3a1    1b1 >    6a1    2b2 :   -0.0374006822
+        0   0 >   0   0     :    1b1    1b2 >    2b2    2b2 :   -0.0552000453
+        0   0 >   0   0     :    1b2    1b1 >    2b2    2b2 :   -0.0552000453
+        0   0 >   0   0     :    1b1    1b1 >    2b1    2b2 :    0.0528674011
+        0   0 >   0   0     :    1b1    1b1 >    2b2    2b1 :    0.0528674011
+        2   0 >   2   0     :    3a1    1b1 >    6a1    2b2 :    0.0374006822
 EOM State 4     22.887   184597.0   0.8410860743   -75.381447204658
 
 Largest components of excited wave function #4:
@@ -721,7 +728,7 @@ Iter=8    L=16    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3183310196  -2.58e-10    1.50e-07      Y
                      2   0.9265763794  -9.03e-08    3.11e-05      N
 Iter=9    L=17    Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.3183310196  -6.05e-14    1.50e-07      Y
+                     1   0.3183310196  -5.83e-14    1.50e-07      Y
                      2   0.9265763774  -2.04e-09    7.22e-06      N
 Iter=10   L=18    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3183310196  -1.42e-12    1.48e-07      Y
@@ -819,48 +826,46 @@ EOM State 7     13.426   108289.5   0.4934035540   -75.729129724988
 
 Largest components of excited wave function #7:
  RIA (libdpd indices) : (cscf notation)
-         2 >   0      :       3a1 >    2b2 :   -0.6862314266
-         2 >   2      :       3a1 >    4b2 :    0.0579056478
-         2 >   1      :       3a1 >    3b2 :   -0.0551717116
-         0 >   1      :       1b2 >    5a1 :    0.0179859887
-         0 >   0      :       1b2 >    4a1 :    0.0121127140
+         2 >   0      :       3a1 >    2b2 :    0.6862314266
+         2 >   2      :       3a1 >    4b2 :   -0.0579056478
+         2 >   1      :       3a1 >    3b2 :    0.0551717116
+         0 >   1      :       1b2 >    5a1 :   -0.0179859887
+         0 >   0      :       1b2 >    4a1 :   -0.0121127140
  RIjAb (libdpd indices)     : (cscf notation)
-        2   0 >   0   0     :    3a1    1b2 >    2b2    2b2 :    0.0535998890
-        0   2 >   0   0     :    1b2    3a1 >    2b2    2b2 :    0.0535998890
-        2   0 >   0   0     :    3a1    1b1 >    2b2    2b1 :   -0.0445219582
-        0   2 >   0   0     :    1b1    3a1 >    2b1    2b2 :   -0.0445219582
-        2   2 >   2   0     :    3a1    3a1 >    6a1    2b2 :   -0.0426370669
-
-	Putting into environment energy for root of R irrep 4 and root 2.
-	Putting into environment CURRENT ENERGY:              -75.6428575332
-	Putting into environment CURRENT CORRELATION ENERGY:    0.3788522000
-
+        2   0 >   0   0     :    3a1    1b2 >    2b2    2b2 :   -0.0535998890
+        0   2 >   0   0     :    1b2    3a1 >    2b2    2b2 :   -0.0535998890
+        2   0 >   0   0     :    3a1    1b1 >    2b2    2b1 :    0.0445219582
+        0   2 >   0   0     :    1b1    3a1 >    2b1    2b2 :    0.0445219582
+        2   2 >   2   0     :    3a1    3a1 >    6a1    2b2 :    0.0426370669
 EOM State 8     15.774   127224.1   0.5796757458   -75.642857533210
 
 Largest components of excited wave function #8:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b2 >    4a1 :    0.6912700096
-         0 >   1      :       1b2 >    5a1 :    0.0512615490
-         0 >   2      :       1b2 >    6a1 :   -0.0228714704
-         1 >   0      :       2a1 >    2b2 :    0.0178075200
-         2 >   1      :       3a1 >    3b2 :   -0.0165803805
+         0 >   0      :       1b2 >    4a1 :   -0.6912700096
+         0 >   1      :       1b2 >    5a1 :   -0.0512615490
+         0 >   2      :       1b2 >    6a1 :    0.0228714704
+         1 >   0      :       2a1 >    2b2 :   -0.0178075200
+         2 >   1      :       3a1 >    3b2 :    0.0165803805
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b2    1b2 >    4a1    2b2 :   -0.0599002445
-        0   0 >   0   0     :    1b2    1b2 >    2b2    4a1 :   -0.0599002445
-        0   0 >   0   0     :    1b1    1b2 >    2b1    4a1 :    0.0388947768
-        0   0 >   0   0     :    1b2    1b1 >    4a1    2b1 :    0.0388947768
-        2   0 >   2   0     :    3a1    1b2 >    6a1    4a1 :    0.0333808871
+        0   0 >   0   0     :    1b2    1b2 >    4a1    2b2 :    0.0599002445
+        0   0 >   0   0     :    1b2    1b2 >    2b2    4a1 :    0.0599002445
+        0   0 >   0   0     :    1b1    1b2 >    2b1    4a1 :   -0.0388947768
+        0   0 >   0   0     :    1b2    1b1 >    4a1    2b1 :   -0.0388947768
+        2   0 >   2   0     :    3a1    1b2 >    6a1    4a1 :   -0.0333808871
+
+	Putting into environment energy for root of R irrep 4 and root 2.
+	Putting into environment CURRENT ENERGY:              -75.6428575332
 
 	Total # of sigma evaluations: 74
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:13:43 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:09 2012
 Module time:
 	user time   =       0.56 seconds =       0.01 minutes
 	system time =       0.44 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.91 seconds =       0.02 minutes
-	system time =       0.78 seconds =       0.01 minutes
+	user time   =       0.90 seconds =       0.02 minutes
+	system time =       0.79 seconds =       0.01 minutes
 	total time  =          3 seconds =       0.05 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

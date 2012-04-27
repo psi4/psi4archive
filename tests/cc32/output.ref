@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -20,7 +22,7 @@
   ==> Input File <==
 
 --------------------------------------------------------------------------
-# H2O Re geom from Olsen et al., JCP 104, 8007 (1996)
+#! CC3/cc-pVDZ H2O $R@@e$ geom from Olsen et al., JCP 104, 8007 (1996)
 
 memory 250 mb
 
@@ -45,8 +47,8 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:10:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:26:52 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -72,12 +74,6 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
            H          0.000000000000    -1.515263000000    -0.932398798381
            H         -0.000000000000     1.515263000000    -0.932398798381
 
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
-
   Running in c2v symmetry.
 
   Nuclear repulsion =    9.009354229662666
@@ -99,9 +95,9 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: cc-pVDZ
     Number of shells: 12
     Number of basis function: 24
     Number of Cartesian functions: 25
@@ -114,7 +110,7 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.62669502110019
+  Initial RHF energy:   -58.62669502110025
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -154,25 +150,27 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.91181035042204   -1.02851e+01   0.00000e+00 
+   @RHF iter   1:   -68.91181035042207   -1.02851e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -70.02365422289380   -1.11184e+00   5.32225e-01 DIIS
+
+   @RHF iter   2:   -70.02365422289378   -1.11184e+00   5.32225e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.75026159159354   -5.72661e+00   4.98868e-01 DIIS
+
+   @RHF iter   3:   -75.75026159159350   -5.72661e+00   4.98868e-01 DIIS
    @RHF iter   4:   -76.00022160335732   -2.49960e-01   1.72192e-02 DIIS
-   @RHF iter   5:   -76.02375048566643   -2.35289e-02   7.99871e-03 DIIS
-   @RHF iter   6:   -76.02399416551877   -2.43680e-04   1.25149e-03 DIIS
-   @RHF iter   7:   -76.02403664935800   -4.24838e-05   4.64104e-04 DIIS
-   @RHF iter   8:   -76.02403841448688   -1.76513e-06   1.09284e-04 DIIS
-   @RHF iter   9:   -76.02403851009633   -9.56095e-08   1.88339e-05 DIIS
-   @RHF iter  10:   -76.02403851143171   -1.33538e-09   3.31413e-06 DIIS
-   @RHF iter  11:   -76.02403851151129   -7.95808e-11   6.09934e-07 DIIS
-   @RHF iter  12:   -76.02403851151320   -1.90425e-12   6.84942e-08 DIIS
-   @RHF iter  13:   -76.02403851151318    1.42109e-14   1.35251e-08 DIIS
+   @RHF iter   5:   -76.02375048566644   -2.35289e-02   7.99871e-03 DIIS
+   @RHF iter   6:   -76.02399416551876   -2.43680e-04   1.25149e-03 DIIS
+   @RHF iter   7:   -76.02403664935802   -4.24838e-05   4.64104e-04 DIIS
+   @RHF iter   8:   -76.02403841448692   -1.76513e-06   1.09284e-04 DIIS
+   @RHF iter   9:   -76.02403851009626   -9.56093e-08   1.88339e-05 DIIS
+   @RHF iter  10:   -76.02403851143173   -1.33547e-09   3.31412e-06 DIIS
+   @RHF iter  11:   -76.02403851151129   -7.95666e-11   6.09904e-07 DIIS
+   @RHF iter  12:   -76.02403851151311   -1.81899e-12   6.84936e-08 DIIS
+   @RHF iter  13:   -76.02403851151318   -7.10543e-14   1.35250e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -202,7 +200,17 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
 
   @RHF Final Energy:   -76.02403851151318
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.0093542296626659
+    One-Electron Energy =            -122.8396183722452690
+    Two-Electron Energy =              37.8062256310694238
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0240385115131829
+
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.9248
 
@@ -218,7 +226,7 @@ compare_values(ecc3, get_variable("CC3 TOTAL ENERGY"), 7, "CC3 energy") #TEST
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:10:03 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:26:52 2012
 Module time:
 	user time   =       0.08 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -228,8 +236,8 @@ Total time:
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:10:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:26:52 2012
 
 
 	**************************************************
@@ -277,7 +285,7 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:10:03 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:26:52 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
@@ -287,8 +295,8 @@ Total time:
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:10:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:26:52 2012
 
 
 			**************************
@@ -355,15 +363,15 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -122.83961835978145
-	Two-electron (AA) energy     =     14.42439696849172
-	Two-electron (BB) energy     =     14.42439696849172
-	Two-electron (AB) energy     =     23.38182865011391
-	Two-electron energy          =     37.80622561860562
+	One-electron energy          =   -122.83961835978130
+	Two-electron (AA) energy     =     14.42439696849167
+	Two-electron (BB) energy     =     14.42439696849167
+	Two-electron (AB) energy     =     23.38182865011384
+	Two-electron energy          =     37.80622561860551
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -76.02403851151317
+	Reference energy             =    -76.02403851151313
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:10:03 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:26:52 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.04 seconds =       0.00 minutes
@@ -373,8 +381,8 @@ Total time:
 	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:10:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:26:52 2012
 
 			**************************
 			*                        *
@@ -384,7 +392,7 @@ Total time:
 
 	Nuclear Rep. energy (chkpt)   =    9.009354229662666
 	SCF energy          (chkpt)   =  -76.024038511513183
-	Reference energy    (file100) =  -76.024038511513169
+	Reference energy    (file100) =  -76.024038511513126
 
 	Input parameters:
 	-----------------
@@ -415,17 +423,17 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.204690005353670    0.000e+00    0.000000    0.000000    0.000000
-     1        -0.212564207006114    2.781e-02    0.003598    0.007561    0.007561
-     2        -0.216986916912717    1.023e-02    0.004766    0.010065    0.010065
+     0        -0.204690005353676    0.000e+00    0.000000    0.000000    0.000000
+     1        -0.212564207006117    2.781e-02    0.003598    0.007561    0.007561
+     2        -0.216986916912719    1.023e-02    0.004766    0.010065    0.010065
      3        -0.217205216620992    2.238e-03    0.005153    0.011255    0.011255
      4        -0.217234524409601    6.156e-04    0.005230    0.011619    0.011619
-     5        -0.217238426691826    1.950e-04    0.005266    0.011787    0.011787
-     6        -0.217235476532927    6.010e-05    0.005276    0.011839    0.011839
+     5        -0.217238426691827    1.950e-04    0.005266    0.011787    0.011787
+     6        -0.217235476532928    6.010e-05    0.005276    0.011839    0.011839
      7        -0.217235576813216    1.545e-05    0.005279    0.011855    0.011855
      8        -0.217235377484113    2.814e-06    0.005280    0.011856    0.011856
-     9        -0.217235381736047    5.953e-07    0.005280    0.011857    0.011857
-    10        -0.217235383853712    1.269e-07    0.005280    0.011857    0.011857
+     9        -0.217235381736048    5.953e-07    0.005280    0.011857    0.011857
+    10        -0.217235383853713    1.269e-07    0.005280    0.011857    0.011857
     11        -0.217235382059388    2.245e-08    0.005280    0.011857    0.011857
 
 	Iterations converged.
@@ -456,24 +464,24 @@ Total time:
 	  4   2   1  14        -0.0232217909
 
 	SCF energy       (chkpt)              =  -76.024038511513183
-	Reference energy (file100)            =  -76.024038511513169
+	Reference energy (file100)            =  -76.024038511513126
 
-	Opposite-spin MP2 correlation energy  =   -0.153102750423152
-	Same-spin MP2 correlation energy      =   -0.051587254930518
-	MP2 correlation energy                =   -0.204690005353670
-      * MP2 total energy                      =  -76.228728516866838
+	Opposite-spin MP2 correlation energy  =   -0.153102750423156
+	Same-spin MP2 correlation energy      =   -0.051587254930520
+	MP2 correlation energy                =   -0.204690005353676
+      * MP2 total energy                      =  -76.228728516866809
 	CC3 correlation energy     =   -0.217235382059388
-      * CC3 total energy           =  -76.241273893572554
+      * CC3 total energy           =  -76.241273893572512
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:10:06 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:26:55 2012
 Module time:
-	user time   =       1.42 seconds =       0.02 minutes
-	system time =       1.65 seconds =       0.03 minutes
+	user time   =       1.43 seconds =       0.02 minutes
+	system time =       1.68 seconds =       0.03 minutes
 	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       1.53 seconds =       0.03 minutes
-	system time =       1.71 seconds =       0.03 minutes
+	user time   =       1.55 seconds =       0.03 minutes
+	system time =       1.74 seconds =       0.03 minutes
 	total time  =          3 seconds =       0.05 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

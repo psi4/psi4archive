@@ -2,10 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
-               Git: Rev d13abdba4a93b09d497f3529c6ae090883c9512a
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
 
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -45,8 +45,8 @@ property('eom-ccsd', properties=['oscillator_strength'])
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:07:58 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:27 2012
 
 
          ---------------------------------------------------------
@@ -65,7 +65,7 @@ property('eom-ccsd', properties=['oscillator_strength'])
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000    -0.695000000000    -0.049338350190
-           O         -0.000000000000     0.695000000000    -0.049338350190
+           O          0.000000000000     0.695000000000    -0.049338350190
            H          0.388142264171    -0.895248563098     0.783035421467
            H         -0.388142264171     0.895248563098     0.783035421467
 
@@ -105,7 +105,7 @@ property('eom-ccsd', properties=['oscillator_strength'])
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:  -114.35378891354756
+  Initial RHF energy:  -114.35378891354762
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -143,26 +143,28 @@ property('eom-ccsd', properties=['oscillator_strength'])
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:  -139.20516938778556   -2.48514e+01   0.00000e+00 
+   @RHF iter   1:  -139.20516938778579   -2.48514e+01   0.00000e+00 
 	Occupation by irrep:
 	          A     B 
 	DOCC [     4,    5 ]
-   @RHF iter   2:  -141.93429494911803   -2.72913e+00   2.77242e-01 DIIS
+
+   @RHF iter   2:  -141.93429494911823   -2.72913e+00   2.77242e-01 DIIS
 	Occupation by irrep:
 	          A     B 
 	DOCC [     5,    4 ]
-   @RHF iter   3:  -150.55773865647828   -8.62344e+00   2.48154e-01 DIIS
-   @RHF iter   4:  -150.76510613226327   -2.07367e-01   1.01209e-02 DIIS
-   @RHF iter   5:  -150.77832743031965   -1.32213e-02   2.98322e-03 DIIS
-   @RHF iter   6:  -150.77910358371346   -7.76153e-04   1.06341e-03 DIIS
-   @RHF iter   7:  -150.77917801137477   -7.44277e-05   3.86363e-04 DIIS
-   @RHF iter   8:  -150.77918341722690   -5.40585e-06   1.09129e-04 DIIS
+
+   @RHF iter   3:  -150.55773865647839   -8.62344e+00   2.48154e-01 DIIS
+   @RHF iter   4:  -150.76510613226330   -2.07367e-01   1.01209e-02 DIIS
+   @RHF iter   5:  -150.77832743031982   -1.32213e-02   2.98322e-03 DIIS
+   @RHF iter   6:  -150.77910358371358   -7.76153e-04   1.06341e-03 DIIS
+   @RHF iter   7:  -150.77917801137480   -7.44277e-05   3.86363e-04 DIIS
+   @RHF iter   8:  -150.77918341722688   -5.40585e-06   1.09129e-04 DIIS
    @RHF iter   9:  -150.77918383685969   -4.19633e-07   3.26630e-05 DIIS
-   @RHF iter  10:  -150.77918387111649   -3.42568e-08   1.11889e-05 DIIS
-   @RHF iter  11:  -150.77918387222692   -1.11044e-09   1.39903e-06 DIIS
-   @RHF iter  12:  -150.77918387235056   -1.23634e-10   5.50555e-07 DIIS
-   @RHF iter  13:  -150.77918387235789   -7.33280e-12   1.23775e-07 DIIS
-   @RHF iter  14:  -150.77918387235854   -6.53699e-13   4.67981e-08 DIIS
+   @RHF iter  10:  -150.77918387111643   -3.42567e-08   1.11889e-05 DIIS
+   @RHF iter  11:  -150.77918387222689   -1.11046e-09   1.39903e-06 DIIS
+   @RHF iter  12:  -150.77918387235056   -1.23663e-10   5.50555e-07 DIIS
+   @RHF iter  13:  -150.77918387235800   -7.44649e-12   1.23775e-07 DIIS
+   @RHF iter  14:  -150.77918387235863   -6.25278e-13   4.67981e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -194,7 +196,16 @@ property('eom-ccsd', properties=['oscillator_strength'])
 
   Energy converged.
 
-  @RHF Final Energy:  -150.77918387235854
+  @RHF Final Energy:  -150.77918387235863
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         38.2539683806803268
+    One-Electron Energy =            -284.0698921549654301
+    Two-Electron Energy =              95.0367399019264667
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -150.7791838723586295
 
   ==> Properties <==
 
@@ -213,18 +224,18 @@ property('eom-ccsd', properties=['oscillator_strength'])
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:07:58 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:28 2012
 Module time:
-	user time   =       0.50 seconds =       0.01 minutes
+	user time   =       0.25 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.50 seconds =       0.01 minutes
+	user time   =       0.25 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:07:58 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:28 2012
 
 
 	**************************************************
@@ -259,29 +270,29 @@ Total time:
 	 A	   19	    1	    4	    0	    14	    0
 	 B	   19	    1	    3	    0	    15	    0
 
-	Nuclear Rep. energy (chkpt) =     38.25396838068032
-	SCF energy          (chkpt) =   -150.77918387235854
+	Nuclear Rep. energy (chkpt) =     38.25396838068033
+	SCF energy          (chkpt) =   -150.77918387235863
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
-	Frozen-core energy = -132.274848242971103
+	Frozen-core energy = -132.274848242971132
 	Starting first half-transformation.
 	Sorting half-transformed integrals.
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:07:59 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:28 2012
 Module time:
-	user time   =       0.11 seconds =       0.00 minutes
+	user time   =       0.09 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.61 seconds =       0.01 minutes
+	user time   =       0.34 seconds =       0.01 minutes
 	system time =       0.05 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:07:59 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:28 2012
 
 
 			**************************
@@ -316,8 +327,8 @@ Total time:
 	 A	   19	    1	    4	    0	    14	    0
 	 B	   19	    1	    3	    0	    15	    0
 
-	Nuclear Rep. energy (chkpt) =     38.25396838068032
-	SCF energy          (chkpt) =   -150.77918387235854
+	Nuclear Rep. energy (chkpt) =     38.25396838068033
+	SCF energy          (chkpt) =   -150.77918387235863
 
 	Size of irrep 0 of <ab|cd> integrals:      0.177 (MW) /      1.418 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.176 (MW) /      1.411 (MB)
@@ -338,26 +349,26 @@ Total time:
 	Sorting File: D <ij|ab> nbuckets = 1
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
-	One-electron energy          =   -101.99691957479136
-	Two-electron (AA) energy     =     19.05943538985086
-	Two-electron (BB) energy     =     19.05943538985086
+	One-electron energy          =   -101.99691957479141
+	Two-electron (AA) energy     =     19.05943538985085
+	Two-electron (BB) energy     =     19.05943538985085
 	Two-electron (AB) energy     =     26.17918017487289
 	Two-electron energy          =     45.23861556472374
-	Frozen-core energy (transqt) =   -132.27484824297110
-	Reference energy             =   -150.77918387235840
+	Frozen-core energy (transqt) =   -132.27484824297113
+	Reference energy             =   -150.77918387235849
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:07:59 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:28 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.67 seconds =       0.01 minutes
-	system time =       0.09 seconds =       0.00 minutes
+	user time   =       0.38 seconds =       0.01 minutes
+	system time =       0.11 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:07:59 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:28 2012
 
 			**************************
 			*                        *
@@ -365,9 +376,9 @@ Total time:
 			*                        *
 			**************************
 
-	Nuclear Rep. energy (chkpt)   =   38.253968380680320
-	SCF energy          (chkpt)   = -150.779183872358544
-	Reference energy    (file100) = -150.779183872358402
+	Nuclear Rep. energy (chkpt)   =   38.253968380680327
+	SCF energy          (chkpt)   = -150.779183872358630
+	Reference energy    (file100) = -150.779183872358487
 
 	Input parameters:
 	-----------------
@@ -398,11 +409,11 @@ Total time:
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
      0        -0.380256305923399    0.000e+00    0.000000    0.000000    0.000000
-     1        -0.384252700328515    4.172e-02    0.006281    0.014957    0.014957
+     1        -0.384252700328514    4.172e-02    0.006281    0.014957    0.014957
      2        -0.393202764757955    1.580e-02    0.007156    0.016728    0.016728
-     3        -0.394603277983808    5.260e-03    0.008061    0.018516    0.018516
+     3        -0.394603277983807    5.260e-03    0.008061    0.018516    0.018516
      4        -0.394657650095780    1.398e-03    0.008198    0.018646    0.018646
-     5        -0.394690572726713    5.030e-04    0.008266    0.018685    0.018685
+     5        -0.394690572726712    5.030e-04    0.008266    0.018685    0.018685
      6        -0.394682677547634    1.898e-04    0.008293    0.018687    0.018687
      7        -0.394679309054347    5.979e-05    0.008301    0.018685    0.018685
      8        -0.394679268656269    2.095e-05    0.008303    0.018684    0.018684
@@ -440,32 +451,32 @@ Total time:
 	  1   1   1   1        -0.0213098148
 	  2   2  14  14        -0.0200419757
 
-	SCF energy       (chkpt)              = -150.779183872358544
-	Reference energy (file100)            = -150.779183872358402
+	SCF energy       (chkpt)              = -150.779183872358630
+	Reference energy (file100)            = -150.779183872358487
 
 	Opposite-spin MP2 correlation energy  =   -0.282698987939028
 	Same-spin MP2 correlation energy      =   -0.097557317984371
 	MP2 correlation energy                =   -0.380256305923399
-      * MP2 total energy                      = -151.159440178281812
+      * MP2 total energy                      = -151.159440178281898
 
 	Opposite-spin CCSD correlation energy =   -0.309012025198214
 	Same-spin CCSD correlation energy     =   -0.085667192066695
 	CCSD correlation energy               =   -0.394679217103710
-      * CCSD total energy                     = -151.173863089462117
+      * CCSD total energy                     = -151.173863089462202
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:08:00 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:35 2012
 Module time:
 	user time   =       0.75 seconds =       0.01 minutes
-	system time =       0.36 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	system time =       0.54 seconds =       0.01 minutes
+	total time  =          7 seconds =       0.12 minutes
 Total time:
-	user time   =       1.43 seconds =       0.02 minutes
-	system time =       0.45 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.14 seconds =       0.02 minutes
+	system time =       0.65 seconds =       0.01 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:08:00 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:35 2012
 
 
 			**************************
@@ -475,27 +486,27 @@ Total time:
 			**************************
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:08:00 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:35 2012
 Module time:
 	user time   =       0.08 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.51 seconds =       0.03 minutes
-	system time =       0.49 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.22 seconds =       0.02 minutes
+	system time =       0.71 seconds =       0.01 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:08:00 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:35 2012
 
 
 	**********************************************************
 	*  CCEOM: An Equation of Motion Coupled Cluster Program  *
 	**********************************************************
 
-	Nuclear Rep. energy (chkpt)   =   38.253968380680320
-	SCF energy          (chkpt)   = -150.779183872358544
-	Reference energy    (file100) = -150.779183872358402
+	Nuclear Rep. energy (chkpt)   =   38.253968380680327
+	SCF energy          (chkpt)   = -150.779183872358630
+	Reference energy    (file100) = -150.779183872358487
 	CCSD energy         (file100) =   -0.394679217103710
 
 	Input parameters:
@@ -572,8 +583,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2568491290  -5.71e-09    1.23e-05      N
                      2   0.3341136816  -8.94e-08    8.26e-05      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.2568491290  -7.22e-16    1.23e-05      N
-                     2   0.3341136816   3.33e-16    8.26e-05      N
+                     1   0.2568491290  -5.55e-17    1.23e-05      N
+                     2   0.3341136816  -2.78e-16    8.26e-05      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2568491232  -5.85e-09    6.06e-06      N
                      2   0.3341135707  -1.11e-07    4.45e-05      N
@@ -671,8 +682,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2535297269  -2.27e-08    1.52e-05      N
                      2   0.3346432379  -3.02e-06    4.36e-04      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.2535297269   2.83e-15    1.52e-05      N
-                     2   0.3346432379   5.00e-16    4.36e-04      N
+                     1   0.2535297269   3.16e-15    1.52e-05      N
+                     2   0.3346432379  -1.83e-15    4.36e-04      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2535297294   2.47e-09    5.73e-06      N
                      2   0.3346426886  -5.49e-07    2.14e-04      N
@@ -753,18 +764,18 @@ Largest components of excited wave function #4:
 
 	Total # of sigma evaluations: 70
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:08:03 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:40 2012
 Module time:
-	user time   =       2.56 seconds =       0.04 minutes
-	system time =       0.67 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
-Total time:
-	user time   =       4.07 seconds =       0.07 minutes
-	system time =       1.16 seconds =       0.02 minutes
+	user time   =       2.78 seconds =       0.05 minutes
+	system time =       0.98 seconds =       0.02 minutes
 	total time  =          5 seconds =       0.08 minutes
+Total time:
+	user time   =       4.00 seconds =       0.07 minutes
+	system time =       1.69 seconds =       0.03 minutes
+	total time  =         13 seconds =       0.22 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:08:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:40 2012
 
 
 			**************************
@@ -772,12 +783,12 @@ Total time:
 			**************************
 
 
-	Nuclear Rep. energy (chkpt)   =   38.253968380680320
+	Nuclear Rep. energy (chkpt)   =   38.253968380680327
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   = -150.779183872358544
-	Reference energy    (CC_INFO) = -150.779183872358402
+	SCF energy          (chkpt)   = -150.779183872358630
+	Reference energy    (CC_INFO) = -150.779183872358487
 	CCSD energy         (CC_INFO) =   -0.394679217103710
-	Total CCSD energy   (CC_INFO) = -151.173863089462117
+	Total CCSD energy   (CC_INFO) = -151.173863089462202
 
 	Input parameters:
 	-----------------
@@ -815,18 +826,18 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.394689328474655    0.000e+00
-	   1        -0.387343307962883    8.725e-03
-	   2        -0.386499946942484    2.080e-03
+	   0        -0.394689328474654    0.000e+00
+	   1        -0.387343307962882    8.725e-03
+	   2        -0.386499946942483    2.080e-03
 	   3        -0.386317947552030    6.944e-04
-	   4        -0.386312986075769    2.285e-04
-	   5        -0.386315057950466    9.110e-05
+	   4        -0.386312986075768    2.285e-04
+	   5        -0.386315057950465    9.110e-05
 	   6        -0.386314445470570    3.062e-05
 	   7        -0.386314752788334    9.313e-06
 	   8        -0.386314823426309    2.647e-06
-	   9        -0.386314806242048    8.092e-07
-	  10        -0.386314802755374    2.536e-07
-	  11        -0.386314802320423    7.125e-08
+	   9        -0.386314806242047    8.092e-07
+	  10        -0.386314802755373    2.536e-07
+	  11        -0.386314802320422    7.125e-08
 
 	Largest LIA Amplitudes:
 	          5  14        -0.0081755496
@@ -864,23 +875,23 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.000306007462939    7.125e-08
-	   1         0.000392190065369    5.148e-02
-	   2         0.000402867930155    1.320e-02
-	   3         0.000414479697718    2.782e-03
-	   4         0.000409620427421    1.310e-03
-	   5         0.000403692754257    6.259e-04
-	   6         0.000402425943758    3.344e-04
-	   7         0.000404098712932    1.426e-04
-	   8         0.000404934138621    6.009e-05
-	   9         0.000405387166619    2.248e-05
-	  10         0.000405574980077    1.105e-05
-	  11         0.000405660688691    4.797e-06
-	  12         0.000405708954670    2.345e-06
-	  13         0.000405734190806    1.130e-06
-	  14         0.000405745820327    5.487e-07
-	  15         0.000405750545463    2.600e-07
-	  16         0.000405750270103    9.794e-08
+	   0        -0.000306007462948    7.125e-08
+	   1         0.000392190065365    5.148e-02
+	   2         0.000402867930151    1.320e-02
+	   3         0.000414479697714    2.782e-03
+	   4         0.000409620427418    1.310e-03
+	   5         0.000403692754254    6.259e-04
+	   6         0.000402425943755    3.344e-04
+	   7         0.000404098712929    1.426e-04
+	   8         0.000404934138618    6.009e-05
+	   9         0.000405387166617    2.248e-05
+	  10         0.000405574980074    1.105e-05
+	  11         0.000405660688688    4.797e-06
+	  12         0.000405708954667    2.345e-06
+	  13         0.000405734190803    1.130e-06
+	  14         0.000405745820324    5.487e-07
+	  15         0.000405750545460    2.600e-07
+	  16         0.000405750270100    9.794e-08
 
 	Initial  <L|R>  =        0.9742431371
 	Normalizing L...
@@ -888,7 +899,7 @@ Total time:
 	L1 * R1 =        0.9289287108
 	L2 * R2 =        0.0710712892
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    0.000416477421956
+	Pseudoenergy or Norm of normalized L =    0.000416477421953
 
 	Largest LIA Amplitudes:
 	          3   0        -0.6694430521
@@ -925,26 +936,26 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0         0.000361991735623    9.794e-08
-	   1        -0.002780572348937    3.557e-02
-	   2        -0.002713091532528    8.772e-03
-	   3        -0.002791791441471    3.352e-03
+	   0         0.000361991735621    9.794e-08
+	   1        -0.002780572348938    3.557e-02
+	   2        -0.002713091532529    8.772e-03
+	   3        -0.002791791441472    3.352e-03
 	   4        -0.002783011303199    1.992e-03
-	   5        -0.002764864954189    1.265e-03
-	   6        -0.002764277334444    8.093e-04
-	   7        -0.002763678623866    4.003e-04
-	   8        -0.002764365293981    1.657e-04
-	   9        -0.002764555121627    7.307e-05
-	  10        -0.002764628031428    3.588e-05
-	  11        -0.002764826044514    1.699e-05
-	  12        -0.002764848256015    9.681e-06
-	  13        -0.002764985386309    5.368e-06
-	  14        -0.002765003956992    2.639e-06
-	  15        -0.002765001521108    1.306e-06
-	  16        -0.002764991626055    5.746e-07
-	  17        -0.002764987494219    3.473e-07
-	  18        -0.002764987850675    1.750e-07
-	  19        -0.002764987094475    9.799e-08
+	   5        -0.002764864954190    1.265e-03
+	   6        -0.002764277334445    8.093e-04
+	   7        -0.002763678623867    4.003e-04
+	   8        -0.002764365293982    1.657e-04
+	   9        -0.002764555121628    7.307e-05
+	  10        -0.002764628031429    3.588e-05
+	  11        -0.002764826044515    1.699e-05
+	  12        -0.002764848256016    9.681e-06
+	  13        -0.002764985386310    5.368e-06
+	  14        -0.002765003956993    2.639e-06
+	  15        -0.002765001521109    1.306e-06
+	  16        -0.002764991626056    5.746e-07
+	  17        -0.002764987494220    3.473e-07
+	  18        -0.002764987850676    1.750e-07
+	  19        -0.002764987094476    9.799e-08
 
 	Initial  <L|R>  =        0.9848427503
 	Normalizing L...
@@ -952,7 +963,7 @@ Total time:
 	L1 * R1 =        0.9287976765
 	L2 * R2 =        0.0712023235
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =   -0.002807541705172
+	Pseudoenergy or Norm of normalized L =   -0.002807541705173
 
 	Largest LIA Amplitudes:
 	          6  14        -0.5248421788
@@ -990,23 +1001,23 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    9.799e-08
-	   1         0.981916967683985    3.500e-02
-	   2         0.984667541065732    8.594e-03
-	   3         0.984825947180212    3.006e-03
-	   4         0.985072354746503    1.767e-03
-	   5         0.985363970295646    1.124e-03
-	   6         0.985596528434728    7.320e-04
-	   7         0.985752222865826    3.420e-04
-	   8         0.985807002612069    1.305e-04
-	   9         0.985824355205063    4.997e-05
-	  10         0.985830925227861    2.179e-05
-	  11         0.985831109948113    8.945e-06
-	  12         0.985832047184566    4.131e-06
-	  13         0.985831751190560    2.110e-06
-	  14         0.985831949247696    9.869e-07
-	  15         0.985831886665660    3.319e-07
-	  16         0.985831888266512    1.141e-07
-	  17         0.985831886319879    5.179e-08
+	   1         0.981916967684020    3.500e-02
+	   2         0.984667541065775    8.594e-03
+	   3         0.984825947180277    3.006e-03
+	   4         0.985072354746586    1.767e-03
+	   5         0.985363970295765    1.124e-03
+	   6         0.985596528434875    7.320e-04
+	   7         0.985752222865985    3.420e-04
+	   8         0.985807002612231    1.305e-04
+	   9         0.985824355205227    4.997e-05
+	  10         0.985830925228027    2.179e-05
+	  11         0.985831109948281    8.945e-06
+	  12         0.985832047184736    4.131e-06
+	  13         0.985831751190733    2.110e-06
+	  14         0.985831949247872    9.869e-07
+	  15         0.985831886665837    3.319e-07
+	  16         0.985831888266691    1.141e-07
+	  17         0.985831886320060    5.179e-08
 
 	Initial  <L|R>  =        0.9848795230
 	Normalizing L...
@@ -1014,7 +1025,7 @@ Total time:
 	L1 * R1 =        0.9388634041
 	L2 * R2 =        0.0611365959
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.000966984614265
+	Pseudoenergy or Norm of normalized L =    1.000966984614281
 
 	Largest LIA Amplitudes:
 	          3   0         0.5382212039
@@ -1052,26 +1063,26 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    5.179e-08
-	   1         0.976210351181040    4.248e-02
-	   2         0.979984908877109    1.011e-02
-	   3         0.980086469714893    2.931e-03
-	   4         0.980282740374657    1.391e-03
-	   5         0.980388478174911    6.901e-04
-	   6         0.980432642846906    5.324e-04
-	   7         0.980489074856276    4.319e-04
-	   8         0.980557875069262    3.615e-04
-	   9         0.980637980306162    2.753e-04
-	  10         0.980749404237837    1.972e-04
-	  11         0.980794526740647    9.796e-05
-	  12         0.980821516996058    5.026e-05
-	  13         0.980822907001608    2.507e-05
-	  14         0.980827405883877    1.367e-05
-	  15         0.980825501184893    5.991e-06
-	  16         0.980826299359112    2.470e-06
-	  17         0.980826068872871    9.527e-07
-	  18         0.980826073125513    4.018e-07
-	  19         0.980826026566128    1.955e-07
-	  20         0.980826024342156    7.984e-08
+	   1         0.976210351181028    4.248e-02
+	   2         0.979984908877099    1.011e-02
+	   3         0.980086469714878    2.931e-03
+	   4         0.980282740374637    1.391e-03
+	   5         0.980388478174885    6.901e-04
+	   6         0.980432642846871    5.324e-04
+	   7         0.980489074856224    4.319e-04
+	   8         0.980557875069181    3.615e-04
+	   9         0.980637980306058    2.753e-04
+	  10         0.980749404237713    1.972e-04
+	  11         0.980794526740518    9.796e-05
+	  12         0.980821516995926    5.026e-05
+	  13         0.980822907001471    2.507e-05
+	  14         0.980827405883736    1.367e-05
+	  15         0.980825501184748    5.991e-06
+	  16         0.980826299358964    2.470e-06
+	  17         0.980826068872721    9.527e-07
+	  18         0.980826073125359    4.018e-07
+	  19         0.980826026565972    1.955e-07
+	  20         0.980826024341997    7.984e-08
 
 	Initial  <L|R>  =        0.9797289194
 	Normalizing L...
@@ -1079,7 +1090,7 @@ Total time:
 	L1 * R1 =        0.9371748240
 	L2 * R2 =        0.0628251760
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001119804548292
+	Pseudoenergy or Norm of normalized L =    1.001119804548276
 
 	Largest LIA Amplitudes:
 	          6  14        -0.5709779878
@@ -1122,11 +1133,11 @@ Total time:
 
                  1            2            3            4            5
 
-    1    1.0000000   -0.0000000   -0.0000000  -99.0000000  -99.0000000
-    2    0.0000000    1.0000000   -0.0000000  -99.0000000  -99.0000000
+    1    1.0000000   -0.0000000    0.0000000  -99.0000000  -99.0000000
+    2    0.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000
     3    0.0000000    0.0000000    1.0000000  -99.0000000  -99.0000000
     4  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000
-    5  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000
+    5  -99.0000000  -99.0000000  -99.0000000   -0.0000000    1.0000000
 
 
 
@@ -1158,18 +1169,18 @@ Total time:
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0620685918
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:08:06 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:45 2012
 Module time:
-	user time   =       2.23 seconds =       0.04 minutes
-	system time =       0.70 seconds =       0.01 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.09 seconds =       0.03 minutes
+	system time =       1.02 seconds =       0.02 minutes
+	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =       6.30 seconds =       0.11 minutes
-	system time =       1.86 seconds =       0.03 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       6.09 seconds =       0.10 minutes
+	system time =       2.71 seconds =       0.05 minutes
+	total time  =         18 seconds =       0.30 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:08:06 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:45 2012
 
 
 			**************************
@@ -1193,11 +1204,11 @@ Total time:
 	Use Zeta         = No
 	Xi connected     = No
 
-	Nuclear Rep. energy (chkpt)   =   38.253968380680320
-	SCF energy          (chkpt)   = -150.779183872358544
-	Reference energy    (file100) = -150.779183872358402
+	Nuclear Rep. energy (chkpt)   =   38.253968380680327
+	SCF energy          (chkpt)   = -150.779183872358630
+	Reference energy    (file100) = -150.779183872358487
 	CCSD energy         (CC_INFO) =   -0.394679217103710
-	Total CCSD energy   (CC_INFO) = -151.173863089462117
+	Total CCSD energy   (CC_INFO) = -151.173863089462202
 	Number of States = 5
 
 	Ground?  State     EOM Energy       R0
@@ -1323,14 +1334,14 @@ Total time:
 	 2  B   9.106   73445.6   136.2   0.334643   0.0102   0.0767   0.1516
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:08:07 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:50 2012
 Module time:
-	user time   =       0.79 seconds =       0.01 minutes
-	system time =       0.14 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.62 seconds =       0.01 minutes
+	system time =       0.19 seconds =       0.00 minutes
+	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =       7.09 seconds =       0.12 minutes
-	system time =       2.00 seconds =       0.03 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       6.71 seconds =       0.11 minutes
+	system time =       2.90 seconds =       0.05 minutes
+	total time  =         23 seconds =       0.38 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

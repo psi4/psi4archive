@@ -2,10 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
-               Git: Rev d13abdba4a93b09d497f3529c6ae090883c9512a
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
 
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -34,7 +34,6 @@ molecule h2o {
 }
 
 set {
-  wfn eom_ccsd
   roots_per_irrep [2, 2, 2, 2]
   basis Sadlej-pVTZ
   freeze_core true
@@ -132,11 +131,11 @@ property('eom-ccsd',properties=['oscillator_strength'])
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:42 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:51 2012
 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
          ---------------------------------------------------------
                                    SCF
@@ -153,7 +152,7 @@ property('eom-ccsd',properties=['oscillator_strength'])
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           H         -0.000000000000     0.756689922073    -0.520321915113
+           H          0.000000000000     0.756689922073    -0.520321915113
            O          0.000000000000     0.000000000000     0.065570021880
            H          0.000000000000    -0.756689922073    -0.520321915113
 
@@ -193,7 +192,7 @@ property('eom-ccsd',properties=['oscillator_strength'])
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.34997560280998
+  Initial RHF energy:   -58.34997560281002
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -208,8 +207,8 @@ property('eom-ccsd',properties=['oscillator_strength'])
 
   ==> Integral Setup <==
 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
  MINTS: Wrapper to libmints.
    by Justin Turney
 
@@ -235,26 +234,28 @@ property('eom-ccsd',properties=['oscillator_strength'])
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -69.31757808372190   -1.09676e+01   0.00000e+00 
+   @RHF iter   1:   -69.31757808372195   -1.09676e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    2 ]
-   @RHF iter   2:   -67.14960143996984    2.16798e+00   2.05859e+00 DIIS
+
+   @RHF iter   2:   -67.14960143997000    2.16798e+00   2.05859e+00 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -74.56126912695404   -7.41167e+00   2.06759e+00 DIIS
-   @RHF iter   4:   -75.82793163771035   -1.26666e+00   4.09819e-02 DIIS
-   @RHF iter   5:   -76.05014049558538   -2.22209e-01   1.63302e-02 DIIS
-   @RHF iter   6:   -76.05277986010866   -2.63936e-03   6.36457e-03 DIIS
-   @RHF iter   7:   -76.05291630953110   -1.36449e-04   5.50917e-04 DIIS
-   @RHF iter   8:   -76.05293906791201   -2.27584e-05   1.70981e-04 DIIS
-   @RHF iter   9:   -76.05293962456213   -5.56650e-07   4.54924e-05 DIIS
-   @RHF iter  10:   -76.05293964557443   -2.10123e-08   1.06915e-05 DIIS
-   @RHF iter  11:   -76.05293964605889   -4.84462e-10   9.34059e-07 DIIS
-   @RHF iter  12:   -76.05293964607603   -1.71383e-11   1.87074e-07 DIIS
-   @RHF iter  13:   -76.05293964607648   -4.54747e-13   2.74522e-08 DIIS
-   @RHF iter  14:   -76.05293964607645    2.84217e-14   1.63920e-08 DIIS
+
+   @RHF iter   3:   -74.56126912695413   -7.41167e+00   2.06759e+00 DIIS
+   @RHF iter   4:   -75.82793163771045   -1.26666e+00   4.09819e-02 DIIS
+   @RHF iter   5:   -76.05014049558540   -2.22209e-01   1.63302e-02 DIIS
+   @RHF iter   6:   -76.05277986010874   -2.63936e-03   6.36457e-03 DIIS
+   @RHF iter   7:   -76.05291630953124   -1.36449e-04   5.50917e-04 DIIS
+   @RHF iter   8:   -76.05293906791202   -2.27584e-05   1.70981e-04 DIIS
+   @RHF iter   9:   -76.05293962456221   -5.56650e-07   4.54924e-05 DIIS
+   @RHF iter  10:   -76.05293964557443   -2.10122e-08   1.06915e-05 DIIS
+   @RHF iter  11:   -76.05293964605887   -4.84448e-10   9.34059e-07 DIIS
+   @RHF iter  12:   -76.05293964607604   -1.71667e-11   1.87073e-07 DIIS
+   @RHF iter  13:   -76.05293964607647   -4.26326e-13   2.74520e-08 DIIS
+   @RHF iter  14:   -76.05293964607644    2.84217e-14   1.63921e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -288,37 +289,46 @@ property('eom-ccsd',properties=['oscillator_strength'])
 
   Energy converged.
 
-  @RHF Final Energy:   -76.05293964607645
+  @RHF Final Energy:   -76.05293964607644
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          9.1969336781317317
+    One-Electron Energy =            -123.0259164717639351
+    Two-Electron Energy =              37.7760431475557681
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0529396460764389
 
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.9753
+     X:     0.0000      Y:    -0.0000      Z:    -0.9753
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.1950
 
   Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:    -0.7802     Total:     0.7802
+     X:     0.0000      Y:    -0.0000      Z:    -0.7802     Total:     0.7802
 
   Dipole Moment: (Debye)
-     X:     0.0000      Y:     0.0000      Z:    -1.9832     Total:     1.9832
+     X:     0.0000      Y:    -0.0000      Z:    -1.9832     Total:     1.9832
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:42 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:52 2012
 Module time:
-	user time   =       0.36 seconds =       0.01 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.36 seconds =       0.01 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:42 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:52 2012
 
 
 	**************************************************
@@ -356,28 +366,28 @@ Total time:
 	 B2	   12	    0	    1	    0	    11	    0
 
 	Nuclear Rep. energy (chkpt) =      9.19693367813173
-	SCF energy          (chkpt) =    -76.05293964607645
+	SCF energy          (chkpt) =    -76.05293964607644
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
-	Frozen-core energy =  -61.316619475672326
+	Frozen-core energy =  -61.316619475672361
 	Starting first half-transformation.
 	Sorting half-transformed integrals.
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:42 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:53 2012
 Module time:
-	user time   =       0.08 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.44 seconds =       0.01 minutes
-	system time =       0.04 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.24 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:42 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:53 2012
 
 
 			**************************
@@ -415,7 +425,7 @@ Total time:
 	 B2	   12	    0	    1	    0	    11	    0
 
 	Nuclear Rep. energy (chkpt) =      9.19693367813173
-	SCF energy          (chkpt) =    -76.05293964607645
+	SCF energy          (chkpt) =    -76.05293964607644
 
 	Size of irrep 0 of <ab|cd> integrals:      0.184 (MW) /      1.472 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.068 (MW) /      0.541 (MB)
@@ -442,28 +452,28 @@ Total time:
 	Sorting File: D <ij|ab> nbuckets = 1
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
-	One-electron energy          =    -41.52761130209172
+	One-electron energy          =    -41.52761130209171
 	Two-electron (AA) energy     =      6.84088689701766
 	Two-electron (BB) energy     =      6.84088689701766
-	Two-electron (AB) energy     =     10.75347055653819
-	Two-electron energy          =     17.59435745355585
-	Frozen-core energy (transqt) =    -61.31661947567233
-	Reference energy             =    -76.05293964607647
+	Two-electron (AB) energy     =     10.75347055653818
+	Two-electron energy          =     17.59435745355584
+	Frozen-core energy (transqt) =    -61.31661947567236
+	Reference energy             =    -76.05293964607651
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:42 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:54 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.50 seconds =       0.01 minutes
-	system time =       0.08 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+	user time   =       0.28 seconds =       0.00 minutes
+	system time =       0.11 seconds =       0.00 minutes
+	total time  =          3 seconds =       0.05 minutes
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:42 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:54 2012
 
 			**************************
 			*                        *
@@ -472,8 +482,8 @@ Total time:
 			**************************
 
 	Nuclear Rep. energy (chkpt)   =    9.196933678131732
-	SCF energy          (chkpt)   =  -76.052939646076453
-	Reference energy    (file100) =  -76.052939646076467
+	SCF energy          (chkpt)   =  -76.052939646076439
+	Reference energy    (file100) =  -76.052939646076510
 
 	Input parameters:
 	-----------------
@@ -503,20 +513,20 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.213351938998489    0.000e+00    0.000000    0.000000    0.000000
-     1        -0.216053274075062    3.927e-02    0.010473    0.021942    0.021942
-     2        -0.220342953683034    1.309e-02    0.010542    0.022372    0.022372
-     3        -0.221700840573761    5.711e-03    0.012356    0.026736    0.026736
-     4        -0.221647114012051    1.117e-03    0.012618    0.027509    0.027509
-     5        -0.221649066258802    3.817e-04    0.012701    0.027792    0.027792
-     6        -0.221653814686827    1.099e-04    0.012731    0.027899    0.027899
-     7        -0.221651762799827    3.222e-05    0.012735    0.027919    0.027919
-     8        -0.221651271530008    9.508e-06    0.012737    0.027925    0.027925
-     9        -0.221651364209599    3.004e-06    0.012737    0.027927    0.027927
-    10        -0.221651254617758    1.034e-06    0.012737    0.027927    0.027927
-    11        -0.221651259063782    3.709e-07    0.012737    0.027926    0.027926
-    12        -0.221651252978119    1.441e-07    0.012737    0.027926    0.027926
-    13        -0.221651255227396    4.162e-08    0.012737    0.027926    0.027926
+     0        -0.213351938998509    0.000e+00    0.000000    0.000000    0.000000
+     1        -0.216053274075057    3.927e-02    0.010473    0.021942    0.021942
+     2        -0.220342953683030    1.309e-02    0.010542    0.022372    0.022372
+     3        -0.221700840573757    5.711e-03    0.012356    0.026736    0.026736
+     4        -0.221647114012047    1.117e-03    0.012618    0.027509    0.027509
+     5        -0.221649066258798    3.817e-04    0.012701    0.027792    0.027792
+     6        -0.221653814686823    1.099e-04    0.012731    0.027899    0.027899
+     7        -0.221651762799823    3.222e-05    0.012735    0.027919    0.027919
+     8        -0.221651271530004    9.508e-06    0.012737    0.027925    0.027925
+     9        -0.221651364209595    3.004e-06    0.012737    0.027927    0.027927
+    10        -0.221651254617754    1.034e-06    0.012737    0.027927    0.027927
+    11        -0.221651259063778    3.709e-07    0.012737    0.027926    0.027926
+    12        -0.221651252978115    1.441e-07    0.012737    0.027926    0.027926
+    13        -0.221651255227392    4.162e-08    0.012737    0.027926    0.027926
 
 	Iterations converged.
 
@@ -545,32 +555,32 @@ Total time:
 	  1   2  10  23         0.0165268800
 	  2   1  23  10         0.0165268800
 
-	SCF energy       (chkpt)              =  -76.052939646076453
-	Reference energy (file100)            =  -76.052939646076467
+	SCF energy       (chkpt)              =  -76.052939646076439
+	Reference energy (file100)            =  -76.052939646076510
 
-	Opposite-spin MP2 correlation energy  =   -0.158282584503575
-	Same-spin MP2 correlation energy      =   -0.055069354494913
-	MP2 correlation energy                =   -0.213351938998489
-      * MP2 total energy                      =  -76.266291585074953
+	Opposite-spin MP2 correlation energy  =   -0.158282584503590
+	Same-spin MP2 correlation energy      =   -0.055069354494919
+	MP2 correlation energy                =   -0.213351938998509
+      * MP2 total energy                      =  -76.266291585075024
 
-	Opposite-spin CCSD correlation energy =   -0.172840749741530
-	Same-spin CCSD correlation energy     =   -0.048810505474891
-	CCSD correlation energy               =   -0.221651255227396
-      * CCSD total energy                     =  -76.274590901303867
+	Opposite-spin CCSD correlation energy =   -0.172840749741526
+	Same-spin CCSD correlation energy     =   -0.048810505474890
+	CCSD correlation energy               =   -0.221651255227392
+      * CCSD total energy                     =  -76.274590901303895
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:43 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:57 2012
 Module time:
-	user time   =       0.40 seconds =       0.01 minutes
-	system time =       0.29 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.39 seconds =       0.01 minutes
+	system time =       0.45 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       0.91 seconds =       0.02 minutes
-	system time =       0.37 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.68 seconds =       0.01 minutes
+	system time =       0.57 seconds =       0.01 minutes
+	total time  =          6 seconds =       0.10 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:43 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:57 2012
 
 
 			**************************
@@ -580,18 +590,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:43 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:30:58 2012
 Module time:
-	user time   =       0.05 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       0.96 seconds =       0.02 minutes
-	system time =       0.41 seconds =       0.01 minutes
+	user time   =       0.06 seconds =       0.00 minutes
+	system time =       0.06 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       0.74 seconds =       0.01 minutes
+	system time =       0.63 seconds =       0.01 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:43 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:30:58 2012
 
 
 	**********************************************************
@@ -599,9 +609,9 @@ Total time:
 	**********************************************************
 
 	Nuclear Rep. energy (chkpt)   =    9.196933678131732
-	SCF energy          (chkpt)   =  -76.052939646076453
-	Reference energy    (file100) =  -76.052939646076467
-	CCSD energy         (file100) =   -0.221651255227396
+	SCF energy          (chkpt)   =  -76.052939646076439
+	Reference energy    (file100) =  -76.052939646076510
+	CCSD energy         (file100) =   -0.221651255227392
 
 	Input parameters:
 	-----------------
@@ -677,8 +687,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3610022278   3.62e-08    7.52e-06      N
                      2   0.4151102617  -2.16e-07    6.40e-05      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.3610022278   2.38e-14    7.52e-06      N
-                     2   0.4151102617  -1.28e-15    6.40e-05      N
+                     1   0.3610022278   4.94e-15    7.52e-06      N
+                     2   0.4151102617  -3.89e-16    6.40e-05      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3610022303   2.47e-09    4.00e-06      N
                      2   0.4151101748  -8.69e-08    3.41e-05      N
@@ -698,7 +708,7 @@ Collapsing to only 2 vector(s).
 
 Procedure converged for 2 root(s).
 EOM CCSD R0 for root 0 =  -0.00310174762
-EOM CCSD R0 for root 1 =  -0.02955683303
+EOM CCSD R0 for root 1 =   0.02955683303
 
 Final Energetic Summary for Converged Roots of Irrep A1
                      Excitation Energy              Total Energy
@@ -722,17 +732,17 @@ EOM State 2     11.296    91106.1   0.4151101504   -75.859480750917
 
 Largest components of excited wave function #2:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b1 >    2b1 :    0.6482312478
-         1 >   0      :       3a1 >    4a1 :    0.1268535668
-         0 >   1      :       1b1 >    3b1 :   -0.1041858636
-         1 >   1      :       3a1 >    5a1 :    0.1036412538
-         1 >   4      :       3a1 >    8a1 :   -0.0389930917
+         0 >   0      :       1b1 >    2b1 :   -0.6482312478
+         1 >   0      :       3a1 >    4a1 :   -0.1268535667
+         0 >   1      :       1b1 >    3b1 :    0.1041858636
+         1 >   1      :       3a1 >    5a1 :   -0.1036412538
+         1 >   4      :       3a1 >    8a1 :    0.0389930917
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b1    1b1 >    2b1    2b1 :   -0.1096961485
-        0   0 >   0   3     :    1b1    1b1 >    2b1    5b1 :   -0.0494666877
-        0   0 >   3   0     :    1b1    1b1 >    5b1    2b1 :   -0.0494666877
-        0   0 >   0   1     :    1b1    1b1 >    2b1    3b1 :    0.0360882474
-        0   0 >   1   0     :    1b1    1b1 >    3b1    2b1 :    0.0360882474
+        0   0 >   0   0     :    1b1    1b1 >    2b1    2b1 :    0.1096961485
+        0   0 >   0   3     :    1b1    1b1 >    2b1    5b1 :    0.0494666877
+        0   0 >   3   0     :    1b1    1b1 >    5b1    2b1 :    0.0494666877
+        0   0 >   0   1     :    1b1    1b1 >    2b1    3b1 :   -0.0360882474
+        0   0 >   1   0     :    1b1    1b1 >    3b1    2b1 :   -0.0360882474
 
 Symmetry of excited state: A2
 Symmetry of right eigenvector: A2
@@ -776,8 +786,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3364570130   5.62e-09    1.47e-06      N
                      2   0.4315504238  -1.32e-07    2.51e-05      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.3364570130  -2.96e-14    1.47e-06      N
-                     2   0.4315504238  -4.83e-15    2.51e-05      N
+                     1   0.3364570130  -7.42e-14    1.47e-06      N
+                     2   0.4315504238  -2.44e-15    2.51e-05      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.3364570155   2.51e-09    3.83e-07      Y
                      2   0.4315503696  -5.42e-08    7.61e-06      N
@@ -800,32 +810,32 @@ EOM State 3      9.155    73843.8   0.3364570149   -75.938133886379
 
 Largest components of excited wave function #3:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b1 >    2b2 :   -0.5934116880
-         0 >   1      :       1b1 >    3b2 :    0.2579805338
-         0 >   2      :       1b1 >    4b2 :   -0.1981001482
-         0 >   4      :       1b1 >    6b2 :   -0.1054556039
-         0 >   6      :       1b1 >    8b2 :   -0.0263671047
+         0 >   0      :       1b1 >    2b2 :    0.5934116880
+         0 >   1      :       1b1 >    3b2 :   -0.2579805338
+         0 >   2      :       1b1 >    4b2 :    0.1981001482
+         0 >   4      :       1b1 >    6b2 :    0.1054556039
+         0 >   6      :       1b1 >    8b2 :    0.0263671047
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b1    1b1 >    2b1    2b2 :    0.0488095969
-        0   0 >   0   0     :    1b1    1b1 >    2b2    2b1 :    0.0488095969
-        0   0 >   3   0     :    1b1    1b1 >    5b1    2b2 :    0.0456377957
-        0   0 >   0   3     :    1b1    1b1 >    2b2    5b1 :    0.0456377957
-        0   0 >   0   4     :    1b1    1b2 >    2b2    6b2 :    0.0357011035
+        0   0 >   0   0     :    1b1    1b1 >    2b1    2b2 :   -0.0488095969
+        0   0 >   0   0     :    1b1    1b1 >    2b2    2b1 :   -0.0488095969
+        0   0 >   3   0     :    1b1    1b1 >    5b1    2b2 :   -0.0456377957
+        0   0 >   0   3     :    1b1    1b1 >    2b2    5b1 :   -0.0456377957
+        0   0 >   0   4     :    1b1    1b2 >    2b2    6b2 :   -0.0357011035
 EOM State 4     11.743    94714.3   0.4315503914   -75.843040509914
 
 Largest components of excited wave function #4:
  RIA (libdpd indices) : (cscf notation)
-         0 >   2      :       1b1 >    4b2 :    0.6029324930
-         0 >   0      :       1b1 >    2b2 :   -0.2578027258
-         0 >   4      :       1b1 >    6b2 :    0.1353564778
-         0 >   5      :       1b1 >    7b2 :    0.1150377488
-         0 >   1      :       1b1 >    3b2 :   -0.0686975344
+         0 >   2      :       1b1 >    4b2 :   -0.6029324930
+         0 >   0      :       1b1 >    2b2 :    0.2578027258
+         0 >   4      :       1b1 >    6b2 :   -0.1353564778
+         0 >   5      :       1b1 >    7b2 :   -0.1150377488
+         0 >   1      :       1b1 >    3b2 :    0.0686975344
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   2     :    1b1    1b1 >    2b1    4b2 :   -0.0457367862
-        0   0 >   2   0     :    1b1    1b1 >    4b2    2b1 :   -0.0457367862
-        0   0 >   3   2     :    1b1    1b1 >    5b1    4b2 :   -0.0435998817
-        0   0 >   2   3     :    1b1    1b1 >    4b2    5b1 :   -0.0435998817
-        0   0 >   2   4     :    1b1    1b2 >    4b2    6b2 :   -0.0359084318
+        0   0 >   0   2     :    1b1    1b1 >    2b1    4b2 :    0.0457367862
+        0   0 >   2   0     :    1b1    1b1 >    4b2    2b1 :    0.0457367862
+        0   0 >   3   2     :    1b1    1b1 >    5b1    4b2 :    0.0435998817
+        0   0 >   2   3     :    1b1    1b1 >    4b2    5b1 :    0.0435998817
+        0   0 >   2   4     :    1b1    1b2 >    4b2    6b2 :    0.0359084318
 
 Symmetry of excited state: B1
 Symmetry of right eigenvector: B1
@@ -869,8 +879,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2719408777  -2.89e-09    1.18e-06      N
                      2   0.3877337145  -2.00e-06    1.26e-04      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.2719408777  -3.71e-14    1.18e-06      N
-                     2   0.3877337145   2.72e-15    1.26e-04      N
+                     1   0.2719408777   1.19e-14    1.18e-06      N
+                     2   0.3877337145  -2.61e-15    1.26e-04      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.2719408753  -2.39e-09    4.07e-07      Y
                      2   0.3877338319   1.17e-07    4.13e-05      N
@@ -902,32 +912,32 @@ EOM State 5      7.400    59684.1   0.2719408757   -76.002650025644
 
 Largest components of excited wave function #5:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b1 >    4a1 :   -0.6131750586
-         0 >   2      :       1b1 >    6a1 :   -0.2603270487
-         0 >   1      :       1b1 >    5a1 :    0.1150292287
-         0 >   5      :       1b1 >    9a1 :   -0.0884590131
-         0 >   4      :       1b1 >    8a1 :    0.0439082248
+         0 >   0      :       1b1 >    4a1 :    0.6131750586
+         0 >   2      :       1b1 >    6a1 :    0.2603270487
+         0 >   1      :       1b1 >    5a1 :   -0.1150292287
+         0 >   5      :       1b1 >    9a1 :    0.0884590131
+         0 >   4      :       1b1 >    8a1 :   -0.0439082248
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b1    1b1 >    4a1    2b1 :    0.0511982194
-        0   0 >   0   0     :    1b1    1b1 >    2b1    4a1 :    0.0511982194
-        0   0 >   0   3     :    1b1    1b1 >    4a1    5b1 :    0.0471722286
-        0   0 >   3   0     :    1b1    1b1 >    5b1    4a1 :    0.0471722286
-        0   0 >   0   4     :    1b1    1b2 >    4a1    6b2 :    0.0365775676
-EOM State 6     10.551    85097.7   0.3877338666   -75.886857034739
+        0   0 >   0   0     :    1b1    1b1 >    4a1    2b1 :   -0.0511982194
+        0   0 >   0   0     :    1b1    1b1 >    2b1    4a1 :   -0.0511982194
+        0   0 >   0   3     :    1b1    1b1 >    4a1    5b1 :   -0.0471722286
+        0   0 >   3   0     :    1b1    1b1 >    5b1    4a1 :   -0.0471722286
+        0   0 >   0   4     :    1b1    1b2 >    4a1    6b2 :   -0.0365775676
+EOM State 6     10.551    85097.7   0.3877338666   -75.886857034740
 
 Largest components of excited wave function #6:
  RIA (libdpd indices) : (cscf notation)
-         0 >   1      :       1b1 >    5a1 :    0.6529977536
-         0 >   0      :       1b1 >    4a1 :    0.1254075592
-         0 >   5      :       1b1 >    9a1 :   -0.1032398978
-         0 >   4      :       1b1 >    8a1 :   -0.1005527896
-         0 >   3      :       1b1 >    7a1 :    0.0794903756
+         0 >   1      :       1b1 >    5a1 :   -0.6529977536
+         0 >   0      :       1b1 >    4a1 :   -0.1254075592
+         0 >   5      :       1b1 >    9a1 :    0.1032398978
+         0 >   4      :       1b1 >    8a1 :    0.1005527896
+         0 >   3      :       1b1 >    7a1 :   -0.0794903756
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   1   0     :    1b1    1b1 >    5a1    2b1 :   -0.0542251651
-        0   0 >   0   1     :    1b1    1b1 >    2b1    5a1 :   -0.0542251651
-        0   0 >   1   3     :    1b1    1b1 >    5a1    5b1 :   -0.0493082899
-        0   0 >   3   1     :    1b1    1b1 >    5b1    5a1 :   -0.0493082899
-        0   0 >   1   4     :    1b1    1b2 >    5a1    6b2 :   -0.0359777541
+        0   0 >   1   0     :    1b1    1b1 >    5a1    2b1 :    0.0542251651
+        0   0 >   0   1     :    1b1    1b1 >    2b1    5a1 :    0.0542251651
+        0   0 >   1   3     :    1b1    1b1 >    5a1    5b1 :    0.0493082899
+        0   0 >   3   1     :    1b1    1b1 >    5b1    5a1 :    0.0493082899
+        0   0 >   1   4     :    1b1    1b2 >    5a1    6b2 :    0.0359777541
 
 Symmetry of excited state: B2
 Symmetry of right eigenvector: B2
@@ -971,8 +981,8 @@ Iter=12   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.4250956952   6.16e-08    8.86e-06      N
                      2   0.4988127677  -9.44e-04    1.82e-02      N
 Iter=13   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.4250956952  -2.44e-15    8.86e-06      N
-                     2   0.4988127677  -1.11e-16    1.82e-02      N
+                     1   0.4250956952  -5.05e-15    8.86e-06      N
+                     2   0.4988127677   5.55e-17    1.82e-02      N
 Iter=14   L=6     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.4250956739  -2.13e-08    3.25e-06      N
                      2   0.4986060396  -2.07e-04    6.83e-03      N
@@ -1026,9 +1036,9 @@ Iter=30   L=24    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      2   0.4985609490  -6.16e-09    1.55e-06      N
 Iter=31   L=4     Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.4250956665  -4.06e-10    2.44e-07      Y
-                     2   0.4985609490  -2.11e-15    1.55e-06      N
+                     2   0.4985609490  -1.34e-13    1.55e-06      N
 Iter=32   L=5     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.4250956666   8.64e-11    2.46e-07      Y
+                     1   0.4250956666   8.63e-11    2.46e-07      Y
                      2   0.4985609483  -6.46e-10    5.42e-07      Y
 Collapsing to only 2 vector(s).
 
@@ -1041,54 +1051,54 @@ EOM CCSD R0 for root 1 =   0.00000000000
 Final Energetic Summary for Converged Roots of Irrep B2
                      Excitation Energy              Total Energy
                 (eV)     (cm^-1)     (au)             (au)
-EOM State 7     11.567    93297.7   0.4250956666   -75.849495234687
+EOM State 7     11.567    93297.7   0.4250956666   -75.849495234686
 
 Largest components of excited wave function #7:
  RIA (libdpd indices) : (cscf notation)
-         1 >   0      :       3a1 >    2b2 :   -0.6063176046
-         1 >   1      :       3a1 >    3b2 :    0.2587073734
-         1 >   2      :       3a1 >    4b2 :   -0.1574871521
-         1 >   4      :       3a1 >    6b2 :   -0.0895068612
-         0 >   0      :       1b1 >    1a2 :   -0.0424700141
+         1 >   0      :       3a1 >    2b2 :   -0.6063176045
+         1 >   1      :       3a1 >    3b2 :    0.2587073735
+         1 >   2      :       3a1 >    4b2 :   -0.1574871524
+         1 >   4      :       3a1 >    6b2 :   -0.0895068613
+         0 >   0      :       1b1 >    1a2 :   -0.0424700140
  RIjAb (libdpd indices)     : (cscf notation)
         1   1 >   5   0     :    3a1    3a1 >    9a1    2b2 :    0.0396788154
         1   1 >   0   5     :    3a1    3a1 >    2b2    9a1 :    0.0396788154
         1   0 >   0   0     :    3a1    1b1 >    2b2    2b1 :    0.0381902835
         0   1 >   0   0     :    1b1    3a1 >    2b1    2b2 :    0.0381902835
         1   1 >   1   0     :    3a1    3a1 >    5a1    2b2 :   -0.0371334543
-EOM State 8     13.567   109421.5   0.4985609483   -75.776029952963
+EOM State 8     13.567   109421.5   0.4985609483   -75.776029952964
 
 Largest components of excited wave function #8:
  RIA (libdpd indices) : (cscf notation)
-         0 >   0      :       1b1 >    1a2 :   -0.6617073105
-         1 >   2      :       3a1 >    4b2 :   -0.1140296991
-         1 >   0      :       3a1 >    2b2 :    0.0861755001
-         0 >   1      :       1b1 >    2a2 :   -0.0510017222
-         0 >   0      :       1b2 >    4a1 :   -0.0419409990
+         0 >   0      :       1b1 >    1a2 :    0.6617073102
+         1 >   2      :       3a1 >    4b2 :    0.1140297007
+         1 >   0      :       3a1 >    2b2 :   -0.0861755009
+         0 >   1      :       1b1 >    2a2 :    0.0510017222
+         0 >   0      :       1b2 >    4a1 :    0.0419409982
  RIjAb (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b1    1b1 >    1a2    2b1 :    0.0585451478
-        0   0 >   0   0     :    1b1    1b1 >    2b1    1a2 :    0.0585451478
-        0   0 >   0   3     :    1b1    1b1 >    1a2    5b1 :    0.0562267378
-        0   0 >   3   0     :    1b1    1b1 >    5b1    1a2 :    0.0562267378
-        0   0 >   0   4     :    1b1    1b2 >    1a2    6b2 :    0.0400246617
+        0   0 >   0   0     :    1b1    1b1 >    1a2    2b1 :   -0.0585451477
+        0   0 >   0   0     :    1b1    1b1 >    2b1    1a2 :   -0.0585451477
+        0   0 >   0   3     :    1b1    1b1 >    1a2    5b1 :   -0.0562267378
+        0   0 >   3   0     :    1b1    1b1 >    5b1    1a2 :   -0.0562267378
+        0   0 >   0   4     :    1b1    1b2 >    1a2    6b2 :   -0.0400246617
 
 	Putting into environment energy for root of R irrep 4 and root 2.
 	Putting into environment CURRENT ENERGY:              -75.7760299530
 
 	Total # of sigma evaluations: 136
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:46 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:31:04 2012
 Module time:
-	user time   =       2.18 seconds =       0.04 minutes
-	system time =       1.03 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.38 seconds =       0.04 minutes
+	system time =       1.40 seconds =       0.02 minutes
+	total time  =          6 seconds =       0.10 minutes
 Total time:
-	user time   =       3.14 seconds =       0.05 minutes
-	system time =       1.44 seconds =       0.02 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       3.12 seconds =       0.05 minutes
+	system time =       2.03 seconds =       0.03 minutes
+	total time  =         13 seconds =       0.22 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:46 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:31:04 2012
 
 
 			**************************
@@ -1098,10 +1108,10 @@ Total time:
 
 	Nuclear Rep. energy (chkpt)   =    9.196933678131732
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   =  -76.052939646076453
-	Reference energy    (CC_INFO) =  -76.052939646076467
-	CCSD energy         (CC_INFO) =   -0.221651255227396
-	Total CCSD energy   (CC_INFO) =  -76.274590901303867
+	SCF energy          (chkpt)   =  -76.052939646076439
+	Reference energy    (CC_INFO) =  -76.052939646076510
+	CCSD energy         (CC_INFO) =   -0.221651255227392
+	Total CCSD energy   (CC_INFO) =  -76.274590901303895
 
 	Input parameters:
 	-----------------
@@ -1118,7 +1128,7 @@ Total time:
 	    Irr   Root  Ground-State?    EOM energy        R0
 	  1   0     0        Yes       0.0000000000   1.0000000000
 	  2   0     1         No       0.3610022373  -0.0031017476
-	  3   0     2         No       0.4151101504  -0.0295568330
+	  3   0     2         No       0.4151101504   0.0295568330
 	  4   1     1         No       0.3364570149   0.0000000000
 	  5   1     2         No       0.4315503914   0.0000000000
 	  6   2     1         No       0.2719408757   0.0000000000
@@ -1151,17 +1161,17 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.221765112776064    0.000e+00
-	   1        -0.218383889278465    2.009e-02
-	   2        -0.217583719789703    3.197e-03
-	   3        -0.217477477563680    1.534e-03
-	   4        -0.217422263936832    4.596e-04
-	   5        -0.217425827499483    9.758e-05
-	   6        -0.217427980140180    2.712e-05
-	   7        -0.217427845545196    6.701e-06
-	   8        -0.217427776903125    1.742e-06
-	   9        -0.217427775658898    4.106e-07
-	  10        -0.217427777394765    9.661e-08
+	   0        -0.221765112776060    0.000e+00
+	   1        -0.218383889278460    2.009e-02
+	   2        -0.217583719789698    3.197e-03
+	   3        -0.217477477563675    1.534e-03
+	   4        -0.217422263936828    4.596e-04
+	   5        -0.217425827499478    9.758e-05
+	   6        -0.217427980140175    2.712e-05
+	   7        -0.217427845545192    6.701e-06
+	   8        -0.217427776903121    1.742e-06
+	   9        -0.217427775658893    4.106e-07
+	  10        -0.217427777394761    9.661e-08
 
 	Largest LIA Amplitudes:
 	          2  20         0.0145518926
@@ -1199,24 +1209,24 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.001148296698326    9.661e-08
-	   1        -0.001423933854216    5.221e-02
-	   2        -0.001301176254580    1.779e-02
-	   3        -0.001359235806917    2.481e-03
-	   4        -0.001348859998460    1.669e-03
-	   5        -0.001356344955127    8.641e-04
-	   6        -0.001352696107166    4.685e-04
-	   7        -0.001353856398122    1.916e-04
-	   8        -0.001354600544212    6.387e-05
-	   9        -0.001355215511174    2.766e-05
-	  10        -0.001355478101769    1.183e-05
-	  11        -0.001355599959887    6.348e-06
-	  12        -0.001355659150510    3.116e-06
-	  13        -0.001355676405954    1.497e-06
-	  14        -0.001355695852199    7.645e-07
-	  15        -0.001355710144056    3.963e-07
-	  16        -0.001355717528270    1.963e-07
-	  17        -0.001355718365193    9.179e-08
+	   0        -0.001148296698346    9.661e-08
+	   1        -0.001423933854369    5.221e-02
+	   2        -0.001301176254680    1.779e-02
+	   3        -0.001359235806986    2.481e-03
+	   4        -0.001348859998506    1.669e-03
+	   5        -0.001356344955142    8.641e-04
+	   6        -0.001352696107167    4.685e-04
+	   7        -0.001353856398114    1.916e-04
+	   8        -0.001354600544202    6.387e-05
+	   9        -0.001355215511163    2.766e-05
+	  10        -0.001355478101757    1.183e-05
+	  11        -0.001355599959875    6.348e-06
+	  12        -0.001355659150498    3.116e-06
+	  13        -0.001355676405941    1.497e-06
+	  14        -0.001355695852186    7.645e-07
+	  15        -0.001355710144044    3.963e-07
+	  16        -0.001355717528257    1.963e-07
+	  17        -0.001355718365180    9.179e-08
 
 	Initial  <L|R>  =        0.9756715130
 	Normalizing L...
@@ -1224,7 +1234,7 @@ Total time:
 	L1 * R1 =        0.9330684596
 	L2 * R2 =        0.0669315404
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =   -0.001389523366387
+	Pseudoenergy or Norm of normalized L =   -0.001389523366381
 
 	Largest LIA Amplitudes:
 	          1   0         0.6058228948
@@ -1261,58 +1271,58 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.006705435064866    9.179e-08
-	   1        -0.014503914924536    5.783e-02
-	   2        -0.013447108597980    1.955e-02
-	   3        -0.013608631564446    2.686e-03
-	   4        -0.013597534308722    1.297e-03
-	   5        -0.013593266669350    5.211e-04
-	   6        -0.013585887571818    3.269e-04
-	   7        -0.013580970259825    2.056e-04
-	   8        -0.013580230976877    1.080e-04
-	   9        -0.013579675428205    4.084e-05
-	  10        -0.013579707966004    1.399e-05
-	  11        -0.013579668514782    6.140e-06
-	  12        -0.013579690396256    3.570e-06
-	  13        -0.013579666333237    2.363e-06
-	  14        -0.013579659704225    1.362e-06
-	  15        -0.013579652246883    6.344e-07
-	  16        -0.013579653383494    3.622e-07
-	  17        -0.013579651642262    2.299e-07
-	  18        -0.013579648195982    1.478e-07
-	  19        -0.013579646211974    8.287e-08
+	   0         0.006705435064846    9.179e-08
+	   1         0.014503914924498    5.783e-02
+	   2         0.013447108597952    1.955e-02
+	   3         0.013608631564426    2.686e-03
+	   4         0.013597534308707    1.297e-03
+	   5         0.013593266669338    5.211e-04
+	   6         0.013585887571808    3.269e-04
+	   7         0.013580970259818    2.056e-04
+	   8         0.013580230976873    1.080e-04
+	   9         0.013579675428202    4.084e-05
+	  10         0.013579707966001    1.399e-05
+	  11         0.013579668514779    6.140e-06
+	  12         0.013579690396254    3.570e-06
+	  13         0.013579666333234    2.363e-06
+	  14         0.013579659704222    1.362e-06
+	  15         0.013579652246881    6.344e-07
+	  16         0.013579653383492    3.622e-07
+	  17         0.013579651642261    2.299e-07
+	  18         0.013579648195980    1.478e-07
+	  19         0.013579646211973    8.287e-08
 
 	Initial  <L|R>  =        0.9725662169
 	Normalizing L...
-	L0 * R0 =       -0.0000000000
+	L0 * R0 =        0.0000000000
 	L1 * R1 =        0.9319528706
 	L2 * R2 =        0.0680471294
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =   -0.013962695779944
+	Pseudoenergy or Norm of normalized L =    0.013962695779941
 
 	Largest LIA Amplitudes:
-	          2  20         0.6421154614
-	          1   0         0.1286392255
-	          1   1         0.1060359133
-	          2  21        -0.1030836827
-	          1   4        -0.0407200292
-	          3  27         0.0395259923
-	          3  28        -0.0372602916
-	          1   5        -0.0366007469
-	          3  30        -0.0362088847
-	          3  26        -0.0325041390
+	          2  20        -0.6421154614
+	          1   0        -0.1286392255
+	          1   1        -0.1060359133
+	          2  21         0.1030836827
+	          1   4         0.0407200292
+	          3  27        -0.0395259923
+	          3  28         0.0372602916
+	          1   5         0.0366007469
+	          3  30         0.0362088847
+	          3  26         0.0325041390
 
 	Largest LIjAb Amplitudes:
-	  2   2  20  20        -0.1075805765
-	  2   2  20  23        -0.0546958683
-	  2   2  23  20        -0.0546958683
-	  2   3  20  30        -0.0425394802
-	  3   2  30  20        -0.0425394802
-	  1   2   5  20        -0.0372059975
-	  2   1  20   5        -0.0372059975
-	  2   2  20  21         0.0360384331
-	  2   2  21  20         0.0360384331
-	  2   2  20  22        -0.0345218921
+	  2   2  20  20         0.1075805765
+	  2   2  20  23         0.0546958683
+	  2   2  23  20         0.0546958683
+	  2   3  20  30         0.0425394802
+	  3   2  30  20         0.0425394802
+	  1   2   5  20         0.0372059975
+	  2   1  20   5         0.0372059975
+	  2   2  20  21        -0.0360384331
+	  2   2  21  20        -0.0360384331
+	  2   2  20  22         0.0345218921
 
 	Iterations converged.
 
@@ -1325,21 +1335,21 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0         1.000000000000000    8.287e-08
-	   1         0.961970263500173    5.907e-02
-	   2         0.971584219995539    2.224e-02
-	   3         0.971788423988534    2.501e-03
-	   4         0.972159832050950    1.520e-03
-	   5         0.972400384263572    7.330e-04
-	   6         0.972521990739453    4.091e-04
-	   7         0.972577727660321    1.831e-04
-	   8         0.972595838247615    8.302e-05
-	   9         0.972600312190290    2.441e-05
-	  10         0.972602236698275    7.331e-06
-	  11         0.972602102386330    1.651e-06
-	  12         0.972602307792355    5.103e-07
-	  13         0.972602237782341    2.018e-07
-	  14         0.972602254073824    9.124e-08
+	   0         0.999999999999999    8.287e-08
+	   1         0.961970263500778    5.907e-02
+	   2         0.971584219996265    2.224e-02
+	   3         0.971788423989504    2.501e-03
+	   4         0.972159832052153    1.520e-03
+	   5         0.972400384264949    7.330e-04
+	   6         0.972521990740955    4.091e-04
+	   7         0.972577727662056    1.831e-04
+	   8         0.972595838249615    8.302e-05
+	   9         0.972600312192478    2.441e-05
+	  10         0.972602236700636    7.331e-06
+	  11         0.972602102388840    1.651e-06
+	  12         0.972602307795004    5.103e-07
+	  13         0.972602237785134    2.018e-07
+	  14         0.972602254076725    9.124e-08
 
 	Initial  <L|R>  =        0.9714981088
 	Normalizing L...
@@ -1347,31 +1357,31 @@ Total time:
 	L1 * R1 =        0.9333265395
 	L2 * R2 =        0.0666734605
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001136538792526
+	Pseudoenergy or Norm of normalized L =    1.001136538792557
 
 	Largest LIA Amplitudes:
-	          2  20        -0.5888179821
-	          2  21         0.2557106019
-	          2  22        -0.1958130637
-	          2  24        -0.1037674452
-	          2   0        -0.0252911393
-	          2  25        -0.0227107831
-	          2  26         0.0118246849
-	          2   0         0.0102083324
-	          0   0         0.0066578459
-	          2  27        -0.0046860763
+	          2  20         0.5888179821
+	          2  21        -0.2557106019
+	          2  22         0.1958130637
+	          2  24         0.1037674452
+	          2   8         0.0252911393
+	          2  25         0.0227107831
+	          2  26        -0.0118246849
+	          2  19        -0.0102083324
+	          0   0        -0.0066578459
+	          2  27         0.0046860763
 
 	Largest LIjAb Amplitudes:
-	  2   2  23  26         0.0520533886
-	  2   2  26  23         0.0520533886
-	  2   2  20  26         0.0484127920
-	  2   2  26  20         0.0484127920
-	  2   3  26  30         0.0437961662
-	  3   2  30  26         0.0437961662
-	  1   2   5  26         0.0381097054
-	  2   1  26   5         0.0381097054
-	  2   3  26  27        -0.0318835273
-	  3   2  27  26        -0.0318835273
+	  2   2  23  26        -0.0520533886
+	  2   2  26  23        -0.0520533886
+	  2   2  20  26        -0.0484127920
+	  2   2  26  20        -0.0484127920
+	  2   3  26  30        -0.0437961662
+	  3   2  30  26        -0.0437961662
+	  1   2   5  26        -0.0381097054
+	  2   1  26   5        -0.0381097054
+	  2   3  26  27         0.0318835273
+	  3   2  27  26         0.0318835273
 
 	Iterations converged.
 
@@ -1385,24 +1395,24 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    9.124e-08
-	   1         0.966285823598284    5.430e-02
-	   2         0.975093398225112    2.196e-02
-	   3         0.975334403129807    3.238e-03
-	   4         0.975854625674031    1.830e-03
-	   5         0.976225070316562    8.796e-04
-	   6         0.976374141907266    3.581e-04
-	   7         0.976415091538769    1.338e-04
-	   8         0.976423817036327    7.082e-05
-	   9         0.976431188305016    5.923e-05
-	  10         0.976445867307676    4.740e-05
-	  11         0.976460160392339    2.813e-05
-	  12         0.976465629613448    8.376e-06
-	  13         0.976464919660535    2.800e-06
-	  14         0.976465901563156    1.627e-06
-	  15         0.976465719066756    7.252e-07
-	  16         0.976465792988277    3.532e-07
-	  17         0.976465768033972    1.728e-07
-	  18         0.976465762764136    7.604e-08
+	   1         0.966285823598166    5.430e-02
+	   2         0.975093398224918    2.196e-02
+	   3         0.975334403129531    3.238e-03
+	   4         0.975854625673670    1.830e-03
+	   5         0.976225070316134    8.796e-04
+	   6         0.976374141906803    3.581e-04
+	   7         0.976415091538273    1.338e-04
+	   8         0.976423817035796    7.082e-05
+	   9         0.976431188304447    5.923e-05
+	  10         0.976445867307014    4.740e-05
+	  11         0.976460160391570    2.813e-05
+	  12         0.976465629612620    8.376e-06
+	  13         0.976464919659687    2.800e-06
+	  14         0.976465901562278    1.627e-06
+	  15         0.976465719065849    7.252e-07
+	  16         0.976465792987336    3.532e-07
+	  17         0.976465768032993    1.728e-07
+	  18         0.976465762763138    7.604e-08
 
 	Initial  <L|R>  =        0.9754030289
 	Normalizing L...
@@ -1410,31 +1420,31 @@ Total time:
 	L1 * R1 =        0.9331575553
 	L2 * R2 =        0.0668424447
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001089533104032
+	Pseudoenergy or Norm of normalized L =    1.001089533104025
 
 	Largest LIA Amplitudes:
-	          2  22         0.5979957879
-	          2  20        -0.2567458548
-	          2  24         0.1338910650
-	          2  25         0.1139273017
-	          2  21        -0.0684216364
-	          2  23         0.0456137292
-	          2   0         0.0376724743
-	          2  27         0.0104155735
-	          2  26        -0.0080749003
-	          3  26        -0.0063478681
+	          2  22        -0.5979957879
+	          2  20         0.2567458548
+	          2  24        -0.1338910650
+	          2  25        -0.1139273017
+	          2  21         0.0684216364
+	          2  23        -0.0456137292
+	          2   8        -0.0376724743
+	          2  27        -0.0104155735
+	          2  26         0.0080749003
+	          3  26         0.0063478681
 
 	Largest LIjAb Amplitudes:
-	  2   2  23  28        -0.0491720046
-	  2   2  28  23        -0.0491720046
-	  2   2  20  28        -0.0450620801
-	  2   2  28  20        -0.0450620801
-	  2   3  28  30        -0.0431578615
-	  3   2  30  28        -0.0431578615
-	  1   2   5  28        -0.0372043665
-	  2   1  28   5        -0.0372043665
-	  2   3  28  28        -0.0333119561
-	  3   2  28  28        -0.0333119561
+	  2   2  23  28         0.0491720046
+	  2   2  28  23         0.0491720046
+	  2   2  20  28         0.0450620801
+	  2   2  28  20         0.0450620801
+	  2   3  28  30         0.0431578615
+	  3   2  30  28         0.0431578615
+	  1   2   5  28         0.0372043665
+	  2   1  28   5         0.0372043665
+	  2   3  28  28         0.0333119561
+	  3   2  28  28         0.0333119561
 
 	Iterations converged.
 
@@ -1448,21 +1458,21 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    7.604e-08
-	   1         0.968315737861223    5.242e-02
-	   2         0.975526355096094    1.790e-02
-	   3         0.975918603389024    2.642e-03
-	   4         0.976451976992654    1.728e-03
-	   5         0.976810050082790    8.423e-04
-	   6         0.977000629657145    4.458e-04
-	   7         0.977064322260146    1.638e-04
-	   8         0.977074875799531    6.025e-05
-	   9         0.977077134747399    2.009e-05
-	  10         0.977078139703894    8.720e-06
-	  11         0.977077637917060    3.570e-06
-	  12         0.977078077710236    1.470e-06
-	  13         0.977077904706806    6.188e-07
-	  14         0.977077965540995    2.103e-07
-	  15         0.977077958316038    8.841e-08
+	   1         0.968315737858741    5.242e-02
+	   2         0.975526355093733    1.790e-02
+	   3         0.975918603386219    2.642e-03
+	   4         0.976451976989456    1.728e-03
+	   5         0.976810050079336    8.423e-04
+	   6         0.977000629653805    4.458e-04
+	   7         0.977064322256918    1.638e-04
+	   8         0.977074875796363    6.025e-05
+	   9         0.977077134744280    2.009e-05
+	  10         0.977078139700838    8.720e-06
+	  11         0.977077637914071    3.570e-06
+	  12         0.977078077707312    1.470e-06
+	  13         0.977077904703947    6.188e-07
+	  14         0.977077965538191    2.103e-07
+	  15         0.977077958313272    8.841e-08
 
 	Initial  <L|R>  =        0.9759674392
 	Normalizing L...
@@ -1470,31 +1480,31 @@ Total time:
 	L1 * R1 =        0.9325999818
 	L2 * R2 =        0.0674000182
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001137864899250
+	Pseudoenergy or Norm of normalized L =    1.001137864899187
 
 	Largest LIA Amplitudes:
-	          2  20        -0.6084966037
-	          2  22        -0.2578495989
-	          2  21         0.1144768179
-	          2  25        -0.0872999896
-	          2  24         0.0429402083
-	          2  23         0.0344090634
-	          2   0        -0.0324141043
-	          2   0        -0.0217866636
-	          2  26        -0.0128481462
-	          2  29        -0.0083641930
+	          2  20         0.6084966037
+	          2  22         0.2578495989
+	          2  21        -0.1144768179
+	          2  25         0.0872999896
+	          2  24        -0.0429402083
+	          2  23        -0.0344090634
+	          2   8         0.0324141043
+	          2  19         0.0217866636
+	          2  26         0.0128481462
+	          2  29         0.0083641930
 
 	Largest LIjAb Amplitudes:
-	  2   2   0  23         0.0533205850
-	  2   2  23   0         0.0533205850
-	  2   2   0  20         0.0501991291
-	  2   2  20   0         0.0501991291
-	  2   3   0  30         0.0447834324
-	  3   2  30   0         0.0447834324
-	  1   2   5   0         0.0386326710
-	  2   1   0   5         0.0386326710
-	  1   2   1   0        -0.0317047738
-	  2   1   0   1        -0.0317047738
+	  2   2   0  23        -0.0533205850
+	  2   2  23   0        -0.0533205850
+	  2   2   0  20        -0.0501991291
+	  2   2  20   0        -0.0501991291
+	  2   3   0  30        -0.0447834324
+	  3   2  30   0        -0.0447834324
+	  1   2   5   0        -0.0386326710
+	  2   1   0   5        -0.0386326710
+	  1   2   1   0         0.0317047738
+	  2   1   0   1         0.0317047738
 
 	Iterations converged.
 
@@ -1508,26 +1518,26 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    8.841e-08
-	   1         0.963914420183823    5.649e-02
-	   2         0.972439810755477    1.938e-02
-	   3         0.972720451583150    2.455e-03
-	   4         0.973099256341749    1.422e-03
-	   5         0.973296812438614    6.211e-04
-	   6         0.973390013695616    3.338e-04
-	   7         0.973432173116596    1.585e-04
-	   8         0.973442628250962    9.241e-05
-	   9         0.973450376935693    6.929e-05
-	  10         0.973458645192434    4.964e-05
-	  11         0.973462185834195    3.221e-05
-	  12         0.973466165441652    2.040e-05
-	  13         0.973465245223170    1.094e-05
-	  14         0.973466393940683    5.899e-06
-	  15         0.973465852251827    3.291e-06
-	  16         0.973466109740271    2.249e-06
-	  17         0.973466139990351    9.895e-07
-	  18         0.973466120757556    4.486e-07
-	  19         0.973466134972894    1.708e-07
-	  20         0.973466131513458    8.889e-08
+	   1         0.963914420183869    5.649e-02
+	   2         0.972439810755519    1.938e-02
+	   3         0.972720451583216    2.455e-03
+	   4         0.973099256341813    1.422e-03
+	   5         0.973296812438722    6.211e-04
+	   6         0.973390013695721    3.338e-04
+	   7         0.973432173116720    1.585e-04
+	   8         0.973442628251101    9.241e-05
+	   9         0.973450376935861    6.929e-05
+	  10         0.973458645192637    4.964e-05
+	  11         0.973462185834403    3.221e-05
+	  12         0.973466165441849    2.040e-05
+	  13         0.973465245223339    1.094e-05
+	  14         0.973466393940840    5.899e-06
+	  15         0.973465852251974    3.291e-06
+	  16         0.973466109740406    2.249e-06
+	  17         0.973466139990476    9.895e-07
+	  18         0.973466120757673    4.486e-07
+	  19         0.973466134973005    1.708e-07
+	  20         0.973466131513565    8.889e-08
 
 	Initial  <L|R>  =        0.9723315657
 	Normalizing L...
@@ -1535,31 +1545,31 @@ Total time:
 	L1 * R1 =        0.9351764402
 	L2 * R2 =        0.0648235598
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001166850797517
+	Pseudoenergy or Norm of normalized L =    1.001166850797548
 
 	Largest LIA Amplitudes:
-	          2  21         0.6477695972
-	          2  20         0.1246510502
-	          2  25        -0.1024773703
-	          2  24        -0.1000227370
-	          2  23         0.0773904833
-	          2   0         0.0256268894
-	          2  22         0.0181748978
-	          2  27        -0.0160998248
-	          2  26        -0.0159452286
-	          2  28         0.0143090593
+	          2  21        -0.6477695972
+	          2  20        -0.1246510502
+	          2  25         0.1024773703
+	          2  24         0.1000227370
+	          2  23        -0.0773904833
+	          2   8        -0.0256268894
+	          2  22        -0.0181748978
+	          2  27         0.0160998248
+	          2  26         0.0159452286
+	          2  28        -0.0143090593
 
 	Largest LIjAb Amplitudes:
-	  2   2   1  23        -0.0559021307
-	  2   2  23   1        -0.0559021307
-	  2   2   1  20        -0.0533637455
-	  2   2  20   1        -0.0533637455
-	  2   3   1  30        -0.0446245785
-	  3   2  30   1        -0.0446245785
-	  1   2   5   1        -0.0417085862
-	  2   1   1   5        -0.0417085862
-	  1   2   1   1         0.0377172706
-	  2   1   1   1         0.0377172706
+	  2   2   1  23         0.0559021307
+	  2   2  23   1         0.0559021307
+	  2   2   1  20         0.0533637455
+	  2   2  20   1         0.0533637455
+	  2   3   1  30         0.0446245785
+	  3   2  30   1         0.0446245785
+	  1   2   5   1         0.0417085862
+	  2   1   1   5         0.0417085862
+	  1   2   1   1        -0.0377172706
+	  2   1   1   1        -0.0377172706
 
 	Iterations converged.
 
@@ -1573,40 +1583,40 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    8.889e-08
-	   1         0.961150804338915    6.007e-02
-	   2         0.971115306791046    2.387e-02
-	   3         0.971431531125539    2.403e-03
-	   4         0.971860163596384    1.739e-03
-	   5         0.972270648280195    9.994e-04
-	   6         0.972563576492597    6.059e-04
-	   7         0.972707740443349    2.770e-04
-	   8         0.972748781493953    1.158e-04
-	   9         0.972766219666394    5.718e-05
-	  10         0.972770551903369    3.182e-05
-	  11         0.972773245238760    2.036e-05
-	  12         0.972774649861988    9.439e-06
-	  13         0.972774627189992    3.715e-06
-	  14         0.972774895431240    1.705e-06
-	  15         0.972774973449992    1.220e-06
-	  16         0.972775157437298    7.947e-07
-	  17         0.972775210071906    3.579e-07
-	  18         0.972775217433847    1.507e-07
-	  19         0.972775206145212    7.717e-08
+	   1         0.961150804375846    6.007e-02
+	   2         0.971115306828813    2.387e-02
+	   3         0.971431531176957    2.403e-03
+	   4         0.971860163661178    1.739e-03
+	   5         0.972270648367075    9.994e-04
+	   6         0.972563576597065    6.059e-04
+	   7         0.972707740553124    2.770e-04
+	   8         0.972748781605181    1.158e-04
+	   9         0.972766219779426    5.718e-05
+	  10         0.972770552018162    3.182e-05
+	  11         0.972773245355928    2.036e-05
+	  12         0.972774649981418    9.439e-06
+	  13         0.972774627311073    3.715e-06
+	  14         0.972774895553581    1.705e-06
+	  15         0.972774973574454    1.220e-06
+	  16         0.972775157564463    7.947e-07
+	  17         0.972775210201318    3.579e-07
+	  18         0.972775217564810    1.507e-07
+	  19         0.972775206277079    7.717e-08
 
-	Initial  <L|R>  =        0.9717459090
+	Initial  <L|R>  =        0.9717459091
 	Normalizing L...
 	L0 * R0 =        0.0000000000
 	L1 * R1 =        0.9340214375
 	L2 * R2 =        0.0659785625
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001059224579238
+	Pseudoenergy or Norm of normalized L =    1.001059224580895
 
 	Largest LIA Amplitudes:
 	          1   0        -0.6015289740
 	          1   1         0.2561684489
 	          1   2        -0.1564800279
 	          1   4        -0.0881956149
-	          2  20        -0.0415526662
+	          2  20        -0.0415526661
 	          1   6        -0.0230552801
 	          0   0         0.0189400742
 	          2  21        -0.0110863856
@@ -1637,71 +1647,71 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    7.717e-08
-	   1         0.965071062731158    5.745e-02
-	   2         0.972433879232179    1.697e-02
-	   3         0.972567938079070    2.413e-03
-	   4         0.972826677284826    1.418e-03
-	   5         0.972961538515954    9.160e-04
-	   6         0.973015553581837    8.001e-04
-	   7         0.973075994548214    7.274e-04
-	   8         0.973163983269434    6.161e-04
-	   9         0.973234404331985    4.253e-04
-	  10         0.973283618487427    3.254e-04
-	  11         0.973324869766593    2.895e-04
-	  12         0.973380916298000    2.535e-04
-	  13         0.973452935106059    2.010e-04
-	  14         0.973514438156447    1.381e-04
-	  15         0.973535931963680    9.487e-05
-	  16         0.973549536624353    6.028e-05
-	  17         0.973552119099892    4.596e-05
-	  18         0.973553589138629    2.972e-05
-	  19         0.973553952420974    2.217e-05
-	  20         0.973556283158020    1.651e-05
-	  21         0.973557571768886    1.007e-05
-	  22         0.973558263509284    6.214e-06
-	  23         0.973559024863057    5.105e-06
-	  24         0.973560107209768    4.512e-06
-	  25         0.973561158311534    3.683e-06
-	  26         0.973562401257925    3.091e-06
-	  27         0.973563739020441    2.651e-06
-	  28         0.973564854026371    1.777e-06
-	  29         0.973564985800316    1.069e-06
-	  30         0.973565033868394    7.037e-07
-	  31         0.973565055306001    4.276e-07
-	  32         0.973565049695875    1.819e-07
-	  33         0.973565050829059    6.046e-08
+	   1         0.965071062725362    5.745e-02
+	   2         0.972433879224906    1.697e-02
+	   3         0.972567938065904    2.413e-03
+	   4         0.972826677269664    1.418e-03
+	   5         0.972961538491254    9.160e-04
+	   6         0.973015553551279    8.001e-04
+	   7         0.973075994500763    7.274e-04
+	   8         0.973163983203445    6.161e-04
+	   9         0.973234404272140    4.253e-04
+	  10         0.973283618436527    3.254e-04
+	  11         0.973324869725514    2.895e-04
+	  12         0.973380916262260    2.535e-04
+	  13         0.973452935057663    2.010e-04
+	  14         0.973514438094064    1.381e-04
+	  15         0.973535931882521    9.487e-05
+	  16         0.973549536544970    6.028e-05
+	  17         0.973552119016033    4.596e-05
+	  18         0.973553589053704    2.972e-05
+	  19         0.973553952333986    2.217e-05
+	  20         0.973556283070488    1.651e-05
+	  21         0.973557571680894    1.007e-05
+	  22         0.973558263421576    6.214e-06
+	  23         0.973559024776009    5.105e-06
+	  24         0.973560107124251    4.512e-06
+	  25         0.973561158225363    3.683e-06
+	  26         0.973562401169975    3.091e-06
+	  27         0.973563738927781    2.651e-06
+	  28         0.973564853928088    1.777e-06
+	  29         0.973564985700331    1.069e-06
+	  30         0.973565033766510    7.037e-07
+	  31         0.973565055201394    4.276e-07
+	  32         0.973565049589982    1.819e-07
+	  33         0.973565050722553    6.046e-08
 
-	Initial  <L|R>  =        0.9716996088
+	Initial  <L|R>  =        0.9716996086
 	Normalizing L...
 	L0 * R0 =        0.0000000000
 	L1 * R1 =        0.9283563580
 	L2 * R2 =        0.0716436420
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001919772367513
+	Pseudoenergy or Norm of normalized L =    1.001919772401339
 
 	Largest LIA Amplitudes:
-	          2  20        -0.6524804639
-	          1   2        -0.1171540054
-	          1   0         0.0865899440
-	          3  26        -0.0619134586
-	          2  21        -0.0503089484
-	          3  28        -0.0453508061
-	          2  22         0.0378187741
-	          1   4        -0.0350505595
-	          1   5        -0.0329522908
-	          3  31        -0.0148482574
+	          2  20         0.6524804639
+	          1   2         0.1171540054
+	          1   0        -0.0865899440
+	          3  26         0.0619134586
+	          2  21         0.0503089484
+	          3  28         0.0453508061
+	          2  22        -0.0378187741
+	          1   4         0.0350505595
+	          1   5         0.0329522908
+	          3  31         0.0148482574
 
 	Largest LIjAb Amplitudes:
-	  2   2  16  23         0.0628420790
-	  2   2  23  16         0.0628420790
-	  2   2  16  20         0.0579627498
-	  2   2  20  16         0.0579627498
-	  2   3  16  30         0.0489110134
-	  3   2  30  16         0.0489110134
-	  1   2   5  16         0.0416446410
-	  2   1  16   5         0.0416446410
-	  2   2  16  22         0.0364156796
-	  2   2  22  16         0.0364156796
+	  2   2  16  23        -0.0628420790
+	  2   2  23  16        -0.0628420790
+	  2   2  16  20        -0.0579627498
+	  2   2  20  16        -0.0579627498
+	  2   3  16  30        -0.0489110134
+	  3   2  30  16        -0.0489110134
+	  1   2   5  16        -0.0416446410
+	  2   1  16   5        -0.0416446410
+	  2   2  16  22        -0.0364156796
+	  2   2  22  16        -0.0364156796
 
 	Iterations converged.
 
@@ -1709,15 +1719,15 @@ Total time:
 
                  1            2            3            4            5            6            7            8            9
 
-    1    1.0000000   -0.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
-    2    0.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
-    3    0.0000000    0.0000000    1.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
+    1    1.0000000   -0.0000000   -0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
+    2    0.0000000    1.0000000   -0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
+    3    0.0000000   -0.0000000    1.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
     4  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
     5  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
     6  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000
     7  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000   -0.0000000    1.0000000  -99.0000000  -99.0000000
-    8  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000   -0.0000000
-    9  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000   -0.0000000    1.0000000
+    8  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000
+    9  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000
 
 
 	<L|R> overlap matrix with RHF quantities (-99 => 0 by symmetry)
@@ -1725,12 +1735,12 @@ Total time:
                  1            2            3            4            5            6            7            8            9
 
     1    1.0000000    0.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
-    2    0.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
+    2    0.0000000    1.0000000   -0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
     3    0.0000000   -0.0000000    1.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
-    4  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
+    4  -99.0000000  -99.0000000  -99.0000000    1.0000000   -0.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
     5  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000
-    6  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000   -0.0000000  -99.0000000  -99.0000000
-    7  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000   -0.0000000    1.0000000  -99.0000000  -99.0000000
+    6  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000  -99.0000000  -99.0000000
+    7  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000  -99.0000000  -99.0000000
     8  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    1.0000000    0.0000000
     9  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000  -99.0000000    0.0000000    1.0000000
 
@@ -1751,59 +1761,59 @@ Total time:
 	Approx. excitation level =    1.0596088741
 
 	Projections for excited state, irrep A1, root 0:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9391125362
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0608874638
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0608874638
 
 	Projections for excited state, irrep A1, root 1:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9386288696
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0613711304
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0613711304
 
 	Projections for excited state, irrep A1, root 0:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9382319761
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0617680239
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0617680239
 
 	Projections for excited state, irrep A1, root 1:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9406978983
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0593021017
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0593021017
 
 	Projections for excited state, irrep A1, root 0:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9405049163
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0594950837
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0594950837
 
 	Projections for excited state, irrep A1, root 1:
-	<0|Le^(-T)|0><0|Re^T|0>  =   -0.0000000000
+	<0|Le^(-T)|0><0|Re^T|0>  =    0.0000000000
 	<0|Le^(-T)|S><S|Re^T|0>  =    0.9346385729
 	<0|Le^(-T)|D><D|Re^T|0>  =    0.0653614271
 	Sum of above             =    1.0000000000
 	Approx. excitation level =    1.0653614271
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:50 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:31:08 2012
 Module time:
-	user time   =       2.03 seconds =       0.03 minutes
-	system time =       1.29 seconds =       0.02 minutes
+	user time   =       1.86 seconds =       0.03 minutes
+	system time =       1.65 seconds =       0.03 minutes
 	total time  =          4 seconds =       0.07 minutes
 Total time:
-	user time   =       5.17 seconds =       0.09 minutes
-	system time =       2.73 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.98 seconds =       0.08 minutes
+	system time =       3.68 seconds =       0.06 minutes
+	total time  =         17 seconds =       0.28 minutes
 
-*** tstart() called on arrakis-2.local
-*** at Sun Apr  1 23:18:50 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:31:08 2012
 
 
 			**************************
@@ -1828,24 +1838,24 @@ Total time:
 	Xi connected     = No
 
 	Nuclear Rep. energy (chkpt)   =    9.196933678131732
-	SCF energy          (chkpt)   =  -76.052939646076453
-	Reference energy    (file100) =  -76.052939646076467
-	CCSD energy         (CC_INFO) =   -0.221651255227396
-	Total CCSD energy   (CC_INFO) =  -76.274590901303867
+	SCF energy          (chkpt)   =  -76.052939646076439
+	Reference energy    (file100) =  -76.052939646076510
+	CCSD energy         (CC_INFO) =   -0.221651255227392
+	Total CCSD energy   (CC_INFO) =  -76.274590901303895
 	Number of States = 9
 
 	Ground?  State     EOM Energy       R0
 	  Yes     0 A1    0.0000000000   1.00000000
 	   No     1 A1    0.3610022373  -0.00310175
-	   No     2 A1    0.4151101504  -0.02955683
+	   No     2 A1    0.4151101504   0.02955683
 	   No     1 A2    0.3364570149   0.00000000
 	   No     2 A2    0.4315503914   0.00000000
 	   No     1 B1    0.2719408757   0.00000000
 	   No     2 B1    0.3877338666   0.00000000
 	   No     1 B2    0.4250956666   0.00000000
 	   No     2 B2    0.4985609483   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 1 A1
 	                              X    	       Y    	       Z
@@ -1853,17 +1863,17 @@ Total time:
 	<n|mu_e|0>               0.00000000 	  0.00000000 	  0.65637508
 	Dipole Strength          0.40908847 
 	Oscillator Strength      0.09845457 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 1 A1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.62325411
 	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.00000000
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.65637508
 
@@ -1872,66 +1882,66 @@ Total time:
 
 	Velocity-Gauge Rotational Strength for 1 A1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.22987875
 	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.00000000
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.23301866
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 2 A1
 	                              X    	       Y    	       Z
-	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.09333246
-	<n|mu_e|0>               0.00000000 	  0.00000000 	  0.10156376
+	<0|mu_e|n>               0.00000000 	  0.00000000 	 -0.09333246
+	<n|mu_e|0>               0.00000000 	  0.00000000 	 -0.10156376
 	Dipole Strength          0.00947919 
 	Oscillator Strength      0.00262327 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 2 A1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.09333246
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.00000000 	  0.00000000 	 -0.09333246
 	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.10156376
+	<n|mu_e|0>*              0.00000000 	  0.00000000 	 -0.10156376
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
 
 	Velocity-Gauge Rotational Strength for 2 A1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.04352226
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.00000000 	  0.00000000 	 -0.04352226
 	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.04123809
+	<n|mu_e|0>*              0.00000000 	  0.00000000 	 -0.04123809
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 1 A2
 	                              X    	       Y    	       Z
@@ -1939,18 +1949,18 @@ Total time:
 	<n|mu_e|0>               0.00000000 	  0.00000000 	  0.00000000
 	Dipole Strength          0.00000000 
 	Oscillator Strength      0.00000000 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 1 A2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.00000000 	 -0.02212002
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00000000 	 -0.02475061
+	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.02212002
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.02475061
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
@@ -1958,23 +1968,23 @@ Total time:
 
 	Velocity-Gauge Rotational Strength for 1 A2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.00000000 	 -0.02212002
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00000000 	 -0.02475061
+	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.02212002
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.02475061
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 2 A2
 	                              X    	       Y    	       Z
@@ -1982,18 +1992,18 @@ Total time:
 	<n|mu_e|0>               0.00000000 	  0.00000000 	  0.00000000
 	Dipole Strength          0.00000000 
 	Oscillator Strength      0.00000000 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 2 A2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.10263545
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.10055735
+	<n|mu_m|0>               0.00000000 	  0.00000000 	 -0.10263545
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.00000000 	 -0.10055735
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
@@ -2001,109 +2011,109 @@ Total time:
 
 	Velocity-Gauge Rotational Strength for 2 A2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.00000000 	  0.10263545
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00000000 	  0.10055735
+	<n|mu_m|0>               0.00000000 	  0.00000000 	 -0.10263545
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.00000000 	 -0.10055735
 	<n|mu_e|0>*              0.00000000 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 1 B1
 	                              X    	       Y    	       Z
-	<0|mu_e|n>               0.53249475 	  0.00000000 	  0.00000000
-	<n|mu_e|0>               0.56607699 	  0.00000000 	  0.00000000
+	<0|mu_e|n>              -0.53249475 	  0.00000000 	  0.00000000
+	<n|mu_e|0>              -0.56607699 	  0.00000000 	  0.00000000
 	Dipole Strength          0.30143302 
 	Oscillator Strength      0.05464797 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 1 B1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.53249475 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	 -0.04449690 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	 -0.04354199 	  0.00000000
-	<n|mu_e|0>*              0.56607699 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>              -0.53249475 	  0.00000000 	  0.00000000
+	<n|mu_m|0>               0.00000000 	  0.04449690 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.04354199 	  0.00000000
+	<n|mu_e|0>*             -0.56607699 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
 
 	Velocity-Gauge Rotational Strength for 1 B1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.15446305 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	 -0.04449690 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	 -0.04354199 	  0.00000000
-	<n|mu_e|0>*              0.15404627 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>              -0.15446305 	  0.00000000 	  0.00000000
+	<n|mu_m|0>               0.00000000 	  0.04449690 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	  0.04354199 	  0.00000000
+	<n|mu_e|0>*             -0.15404627 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 2 B1
 	                              X    	       Y    	       Z
-	<0|mu_e|n>              -0.16673188 	  0.00000000 	  0.00000000
-	<n|mu_e|0>              -0.17511407 	  0.00000000 	  0.00000000
+	<0|mu_e|n>               0.16673188 	  0.00000000 	  0.00000000
+	<n|mu_e|0>               0.17511407 	  0.00000000 	  0.00000000
 	Dipole Strength          0.02919710 
 	Oscillator Strength      0.00754714 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 2 B1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>              -0.16673188 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.01123960 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00949198 	  0.00000000
-	<n|mu_e|0>*             -0.17511407 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.16673188 	  0.00000000 	  0.00000000
+	<n|mu_m|0>               0.00000000 	 -0.01123960 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	 -0.00949198 	  0.00000000
+	<n|mu_e|0>*              0.17511407 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
 
 	Velocity-Gauge Rotational Strength for 2 B1
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>              -0.06071429 	  0.00000000 	  0.00000000
-	<n|mu_m|0>               0.00000000 	  0.01123960 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*              0.00000000 	  0.00949198 	  0.00000000
-	<n|mu_e|0>*             -0.06383228 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.06071429 	  0.00000000 	  0.00000000
+	<n|mu_m|0>               0.00000000 	 -0.01123960 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.00000000 	 -0.00949198 	  0.00000000
+	<n|mu_e|0>*              0.06383228 	  0.00000000 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 1 B2
 	                              X    	       Y    	       Z
@@ -2111,17 +2121,17 @@ Total time:
 	<n|mu_e|0>               0.00000000 	  0.26018465 	  0.00000000
 	Dipole Strength          0.06406438 
 	Oscillator Strength      0.01815566 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 1 B2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.24622660 	  0.00000000
 	<n|mu_m|0>              -0.03024394 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*             -0.03107925 	  0.00000000 	  0.00000000
 	<n|mu_e|0>*              0.00000000 	  0.26018465 	  0.00000000
 
@@ -2130,61 +2140,61 @@ Total time:
 
 	Velocity-Gauge Rotational Strength for 1 B2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_e|n>               0.00000000 	  0.09819492 	  0.00000000
 	<n|mu_m|0>              -0.03024394 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 	<0|mu_m|n>*             -0.03107925 	  0.00000000 	  0.00000000
 	<n|mu_e|0>*              0.00000000 	  0.10307171 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Oscillator Strength for 2 B2
 	                              X    	       Y    	       Z
-	<0|mu_e|n>               0.00000000 	 -0.43952126 	  0.00000000
-	<n|mu_e|0>               0.00000000 	 -0.43191711 	  0.00000000
+	<0|mu_e|n>               0.00000000 	  0.43952126 	  0.00000000
+	<n|mu_e|0>               0.00000000 	  0.43191711 	  0.00000000
 	Dipole Strength          0.18983675 
 	Oscillator Strength      0.06309679 
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
 
 	Length-Gauge Rotational Strength for 2 B2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.00000000 	 -0.43952126 	  0.00000000
-	<n|mu_m|0>              -0.02049209 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*             -0.01994602 	  0.00000000 	  0.00000000
-	<n|mu_e|0>*              0.00000000 	 -0.43191711 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.00000000 	  0.43952126 	  0.00000000
+	<n|mu_m|0>               0.02049209 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.01994602 	  0.00000000 	  0.00000000
+	<n|mu_e|0>*              0.00000000 	  0.43191711 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
 
 	Velocity-Gauge Rotational Strength for 2 B2
 	                              X    	       Y    	       Z
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_e|n>               0.00000000 	 -0.22271202 	  0.00000000
-	<n|mu_m|0>              -0.02049209 	  0.00000000 	  0.00000000
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for H read from /tmp/sadlej-pvtz.gbs
-  Basis set SADLEJ-PVTZ for O read from /tmp/sadlej-pvtz.gbs
-	<0|mu_m|n>*             -0.01994602 	  0.00000000 	  0.00000000
-	<n|mu_e|0>*              0.00000000 	 -0.20743529 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_e|n>               0.00000000 	  0.22271202 	  0.00000000
+	<n|mu_m|0>               0.02049209 	  0.00000000 	  0.00000000
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for H read from /tmp1/andysim//sadlej-pvtz.gbs
+  Basis set SADLEJ-PVTZ for O read from /tmp1/andysim//sadlej-pvtz.gbs
+	<0|mu_m|n>*              0.01994602 	  0.00000000 	  0.00000000
+	<n|mu_e|0>*              0.00000000 	  0.20743529 	  0.00000000
 
 	Rotational Strength (au)                  0.00000000
 	Rotational Strength (10^-40 esu^2 cm^2)   0.00000000
@@ -2201,14 +2211,14 @@ Total time:
 	 2 B2  13.567  109421.5    91.4   0.498561   0.0631   0.0000   0.0000
 
 
-*** tstop() called on arrakis-2.local at Sun Apr  1 23:18:51 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:31:10 2012
 Module time:
-	user time   =       0.86 seconds =       0.01 minutes
-	system time =       0.18 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.57 seconds =       0.01 minutes
+	system time =       0.21 seconds =       0.00 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       6.03 seconds =       0.10 minutes
-	system time =       2.91 seconds =       0.05 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.55 seconds =       0.09 minutes
+	system time =       3.89 seconds =       0.06 minutes
+	total time  =         19 seconds =       0.32 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

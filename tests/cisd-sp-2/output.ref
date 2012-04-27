@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -51,8 +53,8 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:44:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:04:56 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -74,15 +76,9 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   Running in c2v symmetry.
 
@@ -105,9 +101,9 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: 6-31G** <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: 6-31G**
     Number of shells: 12
     Number of basis function: 25
     Number of Cartesian functions: 25
@@ -120,7 +116,7 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -58.75934053798493
+  Initial RHF energy:   -58.75934053798495
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -160,24 +156,26 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -68.35488457246657   -9.59554e+00   0.00000e+00 
+   @RHF iter   1:   -68.35488457246655   -9.59554e+00   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     4,    0,    0,    1 ]
-   @RHF iter   2:   -71.39794022308770   -3.04306e+00   5.03598e-01 DIIS
+
+   @RHF iter   2:   -71.39794022308756   -3.04306e+00   5.03598e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    1,    1 ]
-   @RHF iter   3:   -75.77170401393597   -4.37376e+00   4.76874e-01 DIIS
-   @RHF iter   4:   -76.00006701597415   -2.28363e-01   1.67735e-02 DIIS
-   @RHF iter   5:   -76.01682090954407   -1.67539e-02   7.81375e-03 DIIS
-   @RHF iter   6:   -76.01724892558653   -4.28016e-04   1.27860e-03 DIIS
-   @RHF iter   7:   -76.01729488133466   -4.59557e-05   5.67962e-04 DIIS
-   @RHF iter   8:   -76.01729645124901   -1.56991e-06   9.33669e-05 DIIS
+
+   @RHF iter   3:   -75.77170401393596   -4.37376e+00   4.76874e-01 DIIS
+   @RHF iter   4:   -76.00006701597407   -2.28363e-01   1.67735e-02 DIIS
+   @RHF iter   5:   -76.01682090954404   -1.67539e-02   7.81375e-03 DIIS
+   @RHF iter   6:   -76.01724892558659   -4.28016e-04   1.27860e-03 DIIS
+   @RHF iter   7:   -76.01729488133461   -4.59557e-05   5.67962e-04 DIIS
+   @RHF iter   8:   -76.01729645124902   -1.56991e-06   9.33669e-05 DIIS
    @RHF iter   9:   -76.01729655271537   -1.01466e-07   2.90504e-05 DIIS
-   @RHF iter  10:   -76.01729655526371   -2.54835e-09   4.41619e-06 DIIS
-   @RHF iter  11:   -76.01729655528253   -1.88152e-11   2.99635e-07 DIIS
-   @RHF iter  12:   -76.01729655528302   -4.97380e-13   5.49517e-08 DIIS
+   @RHF iter  10:   -76.01729655526366   -2.54829e-09   4.41619e-06 DIIS
+   @RHF iter  11:   -76.01729655528248   -1.88294e-11   2.99636e-07 DIIS
+   @RHF iter  12:   -76.01729655528301   -5.25802e-13   5.49518e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -205,36 +203,46 @@ compare_values(refcorr, get_variable("CI CORRELATION ENERGY"), 7, "CI correlatio
 
   Energy converged.
 
-  @RHF Final Energy:   -76.01729655528302
+  @RHF Final Energy:   -76.01729655528301
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.8046866186390531
+    One-Electron Energy =            -122.3894311909409538
+    Two-Electron Energy =              37.5674480170188900
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -76.0172965552830107
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     1.0351
+     X:     0.0000      Y:     0.0000      Z:     1.0351
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.1532
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:     0.0000      Z:     0.8819     Total:     0.8819
+     X:     0.0000      Y:     0.0000      Z:     0.8819     Total:     0.8819
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:     0.0000      Z:     2.2414     Total:     2.2414
+     X:     0.0000      Y:     0.0000      Z:     2.2414     Total:     2.2414
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:44:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:04:56 2012
 Module time:
-	user time   =       0.07 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.07 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:44:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:04:56 2012
 
 
 	**************************************************
@@ -272,7 +280,7 @@ Total time:
 	 B2	   7	    0	    1	    0	    6	    0
 
 	Nuclear Rep. energy (chkpt) =      8.80468661863905
-	SCF energy          (chkpt) =    -76.01729655528302
+	SCF energy          (chkpt) =    -76.01729655528301
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
@@ -282,18 +290,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:44:13 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:04:56 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.08 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:44:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:04:56 2012
 
 
 *******************************************************
@@ -405,42 +413,42 @@ Iter  5  Root  1 = -76.219847311   Delta_E -1.043E-06   Delta_C  5.125E-04
 Iter  6  Root  1 = -76.219847437   Delta_E -1.263E-07   Delta_C  1.835E-04  
 Iter  7  Root  1 = -76.219847449   Delta_E -1.146E-08   Delta_C  4.692E-05 c
 
-* ROOT 1 CI total energy = -76.2198474486343
+* ROOT 1 CI total energy = -76.2198474486344
 
 
 The 20 most important determinants
 
-    1   -0.973607  (  475,  475)  1A1X  2A1X  3A1X  1B1X  1B2X  
-    2    0.047867  (  503,  503)  1A1X  2A1X  3A1X  1B2X  2B1X  
-    3    0.038778  (  506,  506)  1A1X  2A1X  3A1X  1B1X  2B2X  
-    4    0.031727  (  482,  482)  1A1X  2A1X  1B1X  1B2X  6A1X  
-    5    0.027069  (  507,  507)  1A1X  2A1X  3A1X  1B1X  3B2X  
-    6    0.025589  (  482,  503)  1A1X  2A1X  3A1B  1B1A  1B2X  6A1A  2B1B  
-    7    0.025589  (  503,  482)  1A1X  2A1X  3A1A  1B1B  1B2X  6A1B  2B1A  
-    8   -0.022976  (  503,  508)  1A1X  2A1X  3A1X  1B1B  1B2A  2B1A  4B2B  
-    9   -0.022976  (  508,  503)  1A1X  2A1X  3A1X  1B1A  1B2B  2B1B  4B2A  
-   10   -0.022863  (  503,  506)  1A1X  2A1X  3A1X  1B1B  1B2A  2B1A  2B2B  
-   11   -0.022863  (  506,  503)  1A1X  2A1X  3A1X  1B1A  1B2B  2B1B  2B2A  
-   12    0.022766  ( 1011, 1011)  1A1X  2A1X  3A1X  1B1X  5A1X  
-*  13    0.022680  (  508,  508)  1A1X  2A1X  3A1X  1B1X  4B2X  
-   14    0.022587  (  476,  476)  1A1X  2A1X  1B1X  1B2X  4A1X  
-   15    0.021959  (  506,  508)  1A1X  2A1X  3A1X  1B1X  2B2A  4B2B  
-   16    0.021959  (  508,  506)  1A1X  2A1X  3A1X  1B1X  2B2B  4B2A  
-   17   -0.021324  (  476,  506)  1A1X  2A1X  3A1B  1B1X  1B2A  4A1A  2B2B  
-   18   -0.021324  (  506,  476)  1A1X  2A1X  3A1A  1B1X  1B2B  4A1B  2B2A  
-   19    0.020580  ( 1024, 1024)  1A1X  2A1X  1B1X  1B2X  3B2X  
-   20    0.018749  ( 1010, 1010)  1A1X  2A1X  3A1X  1B1X  4A1X  
+    1    0.973607  (  475,  475)  1A1X  2A1X  3A1X  1B1X  1B2X  
+    2   -0.047867  (  503,  503)  1A1X  2A1X  3A1X  1B2X  2B1X  
+    3   -0.038778  (  506,  506)  1A1X  2A1X  3A1X  1B1X  2B2X  
+    4   -0.031727  (  482,  482)  1A1X  2A1X  1B1X  1B2X  6A1X  
+    5   -0.027069  (  507,  507)  1A1X  2A1X  3A1X  1B1X  3B2X  
+    6   -0.025589  (  482,  503)  1A1X  2A1X  3A1B  1B1A  1B2X  6A1A  2B1B  
+    7   -0.025589  (  503,  482)  1A1X  2A1X  3A1A  1B1B  1B2X  6A1B  2B1A  
+    8    0.022976  (  503,  508)  1A1X  2A1X  3A1X  1B1B  1B2A  2B1A  4B2B  
+    9    0.022976  (  508,  503)  1A1X  2A1X  3A1X  1B1A  1B2B  2B1B  4B2A  
+   10    0.022863  (  503,  506)  1A1X  2A1X  3A1X  1B1B  1B2A  2B1A  2B2B  
+   11    0.022863  (  506,  503)  1A1X  2A1X  3A1X  1B1A  1B2B  2B1B  2B2A  
+   12   -0.022766  ( 1011, 1011)  1A1X  2A1X  3A1X  1B1X  5A1X  
+*  13   -0.022680  (  508,  508)  1A1X  2A1X  3A1X  1B1X  4B2X  
+   14   -0.022587  (  476,  476)  1A1X  2A1X  1B1X  1B2X  4A1X  
+   15   -0.021959  (  506,  508)  1A1X  2A1X  3A1X  1B1X  2B2A  4B2B  
+   16   -0.021959  (  508,  506)  1A1X  2A1X  3A1X  1B1X  2B2B  4B2A  
+   17    0.021324  (  476,  506)  1A1X  2A1X  3A1B  1B1X  1B2A  4A1A  2B2B  
+   18    0.021324  (  506,  476)  1A1X  2A1X  3A1A  1B1X  1B2B  4A1B  2B2A  
+   19   -0.020580  ( 1024, 1024)  1A1X  2A1X  1B1X  1B2X  3B2X  
+   20   -0.018749  ( 1010, 1010)  1A1X  2A1X  3A1X  1B1X  4A1X  
 
 
 
 
         Total Time (s)     %Time 		%Relative
  -----------------------------------------------------
- Read      0.006926
- Write     0.003087
- Sigma1    0.000285
- Sigma2    0.079300
- Sigma3    0.071458
+ Read      0.007021
+ Write     0.003217
+ Sigma1    0.000308
+ Sigma2    0.081304
+ Sigma3    0.070159
  S1 Thread 0.000000
  S2 Thread 0.000000
  S3 Thread 0.000000
@@ -454,13 +462,13 @@ The 20 most important determinants
 			 - Edward Valeev
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:44:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:04:57 2012
 Module time:
-	user time   =       0.60 seconds =       0.01 minutes
+	user time   =       0.58 seconds =       0.01 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.68 seconds =       0.01 minutes
+	user time   =       0.65 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 

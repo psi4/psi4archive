@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -82,8 +84,8 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:42:03 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:54:08 2012
 
 	There are an even number of electrons - assuming singlet.
 	Specify the multiplicity with the MULTP option in the
@@ -105,16 +107,16 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           C         -0.000000000000     1.950000000000    -1.391500000000
+           C          0.000000000000     1.950000000000    -1.391500000000
            C          1.205074349366     1.950000000000    -0.695750000000
            C          1.205074349366     1.950000000000     0.695750000000
-           C         -0.000000000000     1.950000000000     1.391500000000
+           C          0.000000000000     1.950000000000     1.391500000000
            C         -1.205074349366     1.950000000000     0.695750000000
            C         -1.205074349366     1.950000000000    -0.695750000000
-           H         -0.000000000000     1.950000000000    -2.471500000000
+           H          0.000000000000     1.950000000000    -2.471500000000
            H          2.140381785453     1.950000000000    -1.235750000000
            H          2.140381785453     1.950000000000     1.235750000000
-           H         -0.000000000000     1.950000000000     2.471500000000
+           H          0.000000000000     1.950000000000     2.471500000000
            H         -2.140381785453     1.950000000000     1.235750000000
            H         -2.140381785453     1.950000000000    -1.235750000000
            C          0.000000000000    -1.950000000000    -1.391500000000
@@ -129,14 +131,6 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
            H          0.000000000000    -1.950000000000     2.471500000000
            H          2.140381785453    -1.950000000000     1.235750000000
            H          2.140381785453    -1.950000000000    -1.235750000000
-
-    Number of unique atoms: 4
-
-    Atoms equivalency:
-       unique atom 0: 0 3 12 15 
-       unique atom 1: 1 2 4 5 13 14 16 17 
-       unique atom 2: 6 9 18 21 
-       unique atom 3: 7 8 10 11 19 20 22 23 
 
   Running in d2h symmetry.
 
@@ -159,9 +153,9 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVDZ <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: cc-pVDZ
     Number of shells: 108
     Number of basis function: 228
     Number of Cartesian functions: 240
@@ -193,38 +187,44 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  No auxiliary basis selected, defaulting to CC-PVDZ-JKFIT
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Disk
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
 
-  ==> Auxiliary Basis:  <==
+   => Auxiliary Basis Set <=
 
-  Basis Set
+  Basis Set: CC-PVDZ-JKFIT
     Number of shells: 396
     Number of basis function: 1116
     Number of Cartesian functions: 1272
     Spherical Harmonics?: true
     Max angular momentum: 3
 
-  Using Disk Algorithm.
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   0:  -465.55322232843582   -1.64957e+02   0.00000e+00 
-   @RHF iter   1:  -461.15824364882633    4.39498e+00   3.04064e-02 
-   @RHF iter   2:  -461.41305062813672   -2.54807e-01   8.36873e-03 DIIS
-   @RHF iter   3:  -461.43602129551073   -2.29707e-02   2.59888e-03 DIIS
-   @RHF iter   4:  -461.43934873949775   -3.32744e-03   8.50076e-04 DIIS
-   @RHF iter   5:  -461.43942967783596   -8.09383e-05   1.45286e-04 DIIS
-   @RHF iter   6:  -461.43943331448213   -3.63665e-06   3.61475e-05 DIIS
-   @RHF iter   7:  -461.43943374953642   -4.35054e-07   1.21175e-05 DIIS
-   @RHF iter   8:  -461.43943376395850   -1.44221e-08   2.78136e-06 DIIS
-   @RHF iter   9:  -461.43943376493075   -9.72250e-10   5.99426e-07 DIIS
-   @RHF iter  10:  -461.43943376500579   -7.50333e-11   2.12448e-07 DIIS
-   @RHF iter  11:  -461.43943376500806   -2.27374e-12   2.38483e-08 DIIS
+   @RHF iter   0:  -465.55322232926051   -1.64957e+02   0.00000e+00 
+   @RHF iter   1:  -461.15824364965511    4.39498e+00   3.04064e-02 
+   @RHF iter   2:  -461.41305062896708   -2.54807e-01   8.36873e-03 DIIS
+   @RHF iter   3:  -461.43602129634132   -2.29707e-02   2.59888e-03 DIIS
+   @RHF iter   4:  -461.43934874032880   -3.32744e-03   8.50076e-04 DIIS
+   @RHF iter   5:  -461.43942967866633   -8.09383e-05   1.45286e-04 DIIS
+   @RHF iter   6:  -461.43943331531227   -3.63665e-06   3.61475e-05 DIIS
+   @RHF iter   7:  -461.43943375036656   -4.35054e-07   1.21175e-05 DIIS
+   @RHF iter   8:  -461.43943376478910   -1.44225e-08   2.78136e-06 DIIS
+   @RHF iter   9:  -461.43943376576203   -9.72932e-10   5.99426e-07 DIIS
+   @RHF iter  10:  -461.43943376583661   -7.45786e-11   2.12448e-07 DIIS
+   @RHF iter  11:  -461.43943376583843   -1.81899e-12   2.38484e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -319,9 +319,19 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
 
   Energy converged.
 
-  @RHF Final Energy:  -461.43943376500806
+  @RHF Final Energy:  -461.43943376583843
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =        618.2896430864725517
+    One-Electron Energy =           -1849.8553183685294243
+    Two-Electron Energy =             770.1262415162186699
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -461.4394337658382028
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:    -0.0000      Z:    -0.0000
 
@@ -337,14 +347,14 @@ compare_values(refscf, get_variable("SCF TOTAL ENERGY"),     8, "SCF energy") #T
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:43:18 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:55:26 2012
 Module time:
-	user time   =      88.06 seconds =       1.47 minutes
-	system time =       2.83 seconds =       0.05 minutes
-	total time  =         75 seconds =       1.25 minutes
+	user time   =      88.20 seconds =       1.47 minutes
+	system time =       3.87 seconds =       0.06 minutes
+	total time  =         78 seconds =       1.30 minutes
 Total time:
-	user time   =      88.06 seconds =       1.47 minutes
-	system time =       2.83 seconds =       0.05 minutes
-	total time  =         75 seconds =       1.25 minutes
+	user time   =      88.20 seconds =       1.47 minutes
+	system time =       3.87 seconds =       0.06 minutes
+	total time  =         78 seconds =       1.30 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

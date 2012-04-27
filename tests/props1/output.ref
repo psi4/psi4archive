@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -89,8 +91,8 @@ compare_values(ref_5pt, dm_z_5point, 8, "Z dipole, using 5 point formula")
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:54 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:45 2012
 
 
          ---------------------------------------------------------
@@ -110,13 +112,7 @@ compare_values(ref_5pt, dm_z_5point, 8, "Z dipole, using 5 point formula")
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.071143036192
            H          0.000000000000    -0.758215806856     0.564545805801
-           H         -0.000000000000     0.758215806856     0.564545805801
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.758215806856     0.564545805801
 
   Running in c2v symmetry.
 
@@ -139,9 +135,9 @@ compare_values(ref_5pt, dm_z_5point, 8, "Z dipole, using 5 point formula")
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: sto-3g
     Number of shells: 5
     Number of basis function: 7
     Number of Cartesian functions: 7
@@ -195,14 +191,14 @@ compare_values(ref_5pt, dm_z_5point, 8, "Z dipole, using 5 point formula")
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -73.23950740834883   -1.86541e+01   0.00000e+00 
-   @RHF iter   2:   -74.93104988751865   -1.69154e+00   4.01736e-01 DIIS
-   @RHF iter   3:   -74.96489830965676   -3.38484e-02   5.33256e-02 DIIS
-   @RHF iter   4:   -74.96622870736998   -1.33040e-03   1.39304e-02 DIIS
-   @RHF iter   5:   -74.96628353809794   -5.48307e-05   2.45743e-03 DIIS
-   @RHF iter   6:   -74.96628817267333   -4.63458e-06   8.42766e-04 DIIS
-   @RHF iter   7:   -74.96628820891345   -3.62401e-08   7.69105e-05 DIIS
-   @RHF iter   8:   -74.96628820891345    0.00000e+00   2.30928e-08 DIIS
+   @RHF iter   1:   -73.23950740834887   -1.86541e+01   0.00000e+00 
+   @RHF iter   2:   -74.93104988751870   -1.69154e+00   4.01736e-01 DIIS
+   @RHF iter   3:   -74.96489830965680   -3.38484e-02   5.33256e-02 DIIS
+   @RHF iter   4:   -74.96622870737004   -1.33040e-03   1.39304e-02 DIIS
+   @RHF iter   5:   -74.96628353809800   -5.48307e-05   2.45743e-03 DIIS
+   @RHF iter   6:   -74.96628817267337   -4.63458e-06   8.42766e-04 DIIS
+   @RHF iter   7:   -74.96628820891351   -3.62401e-08   7.69105e-05 DIIS
+   @RHF iter   8:   -74.96628820891347    4.26326e-14   2.31025e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -224,36 +220,46 @@ compare_values(ref_5pt, dm_z_5point, 8, "Z dipole, using 5 point formula")
 
   Energy converged.
 
-  @RHF Final Energy:   -74.96628820891345 with 0.001000 perturbation
+  @RHF Final Energy:   -74.96628820891347 with 0.001000 perturbation
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.9061614944709540
+    One-Electron Energy =            -121.8282602693260088
+    Two-Electron Energy =              37.9558105659415901
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -74.9662882089134683
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     1.0581
+     X:     0.0000      Y:     0.0000      Z:     1.0581
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.3883
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.6698     Total:     0.6698
+     X:     0.0000      Y:     0.0000      Z:     0.6698     Total:     0.6698
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     1.7025     Total:     1.7025
+     X:     0.0000      Y:     0.0000      Z:     1.7025     Total:     1.7025
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:54 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:45 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:54 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:45 2012
 
 
          ---------------------------------------------------------
@@ -273,13 +279,7 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.071143036192
            H          0.000000000000    -0.758215806856     0.564545805801
-           H         -0.000000000000     0.758215806856     0.564545805801
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.758215806856     0.564545805801
 
   Running in c2v symmetry.
 
@@ -302,9 +302,9 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: sto-3g
     Number of shells: 5
     Number of basis function: 7
     Number of Cartesian functions: 7
@@ -318,7 +318,7 @@ Total time:
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -54.58700275927710
+  Initial RHF energy:   -54.58700275927707
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -359,13 +359,13 @@ Total time:
                         Total Energy        Delta E     Density RMS
 
    @RHF iter   1:   -73.24256456458895   -1.86556e+01   0.00000e+00 
-   @RHF iter   2:   -74.93097916309789   -1.68841e+00   4.01282e-01 DIIS
-   @RHF iter   3:   -74.96415452573049   -3.31754e-02   5.27522e-02 DIIS
-   @RHF iter   4:   -74.96545893529652   -1.30441e-03   1.37684e-02 DIIS
-   @RHF iter   5:   -74.96551216389152   -5.32286e-05   2.41864e-03 DIIS
+   @RHF iter   2:   -74.93097916309790   -1.68841e+00   4.01282e-01 DIIS
+   @RHF iter   3:   -74.96415452573055   -3.31754e-02   5.27522e-02 DIIS
+   @RHF iter   4:   -74.96545893529658   -1.30441e-03   1.37684e-02 DIIS
+   @RHF iter   5:   -74.96551216389150   -5.32286e-05   2.41864e-03 DIIS
    @RHF iter   6:   -74.96551666083867   -4.49695e-06   8.28164e-04 DIIS
-   @RHF iter   7:   -74.96551669679565   -3.59570e-08   7.64003e-05 DIIS
-   @RHF iter   8:   -74.96551669679566   -1.42109e-14   2.34737e-08 DIIS
+   @RHF iter   7:   -74.96551669679569   -3.59570e-08   7.64003e-05 DIIS
+   @RHF iter   8:   -74.96551669679566    2.84217e-14   2.35380e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -389,34 +389,44 @@ Total time:
 
   @RHF Final Energy:   -74.96551669679566 with -0.001000 perturbation
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.9061614944709540
+    One-Electron Energy =            -121.8390825496628196
+    Two-Electron Energy =              37.9674043583962089
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -74.9655166967956603
+
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     1.0581
+     X:     0.0000      Y:     0.0000      Z:     1.0581
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.3832
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.6750     Total:     0.6750
+     X:     0.0000      Y:     0.0000      Z:     0.6750     Total:     0.6750
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     1.7156     Total:     1.7156
+     X:     0.0000      Y:     0.0000      Z:     1.7156     Total:     1.7156
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:54 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:45 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.07 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:54 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:45 2012
 
 
          ---------------------------------------------------------
@@ -436,13 +446,7 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.071143036192
            H          0.000000000000    -0.758215806856     0.564545805801
-           H         -0.000000000000     0.758215806856     0.564545805801
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.758215806856     0.564545805801
 
   Running in c2v symmetry.
 
@@ -465,9 +469,9 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: sto-3g
     Number of shells: 5
     Number of basis function: 7
     Number of Cartesian functions: 7
@@ -481,7 +485,7 @@ Total time:
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -54.58461481213337
+  Initial RHF energy:   -54.58461481213338
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -521,14 +525,14 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -73.23797896853344   -1.86534e+01   0.00000e+00 
+   @RHF iter   1:   -73.23797896853350   -1.86534e+01   0.00000e+00 
    @RHF iter   2:   -74.93108505350277   -1.69311e+00   4.01962e-01 DIIS
    @RHF iter   3:   -74.96527386317415   -3.41888e-02   5.36140e-02 DIIS
-   @RHF iter   4:   -74.96661742669225   -1.34356e-03   1.40120e-02 DIIS
-   @RHF iter   5:   -74.96667307554429   -5.56489e-05   2.47705e-03 DIIS
-   @RHF iter   6:   -74.96667778017718   -4.70463e-06   8.50126e-04 DIIS
-   @RHF iter   7:   -74.96667781656001   -3.63828e-08   7.71683e-05 DIIS
-   @RHF iter   8:   -74.96667781656006   -5.68434e-14   2.29067e-08 DIIS
+   @RHF iter   4:   -74.96661742669230   -1.34356e-03   1.40120e-02 DIIS
+   @RHF iter   5:   -74.96667307554434   -5.56489e-05   2.47705e-03 DIIS
+   @RHF iter   6:   -74.96667778017716   -4.70463e-06   8.50126e-04 DIIS
+   @RHF iter   7:   -74.96667781656006   -3.63829e-08   7.71683e-05 DIIS
+   @RHF iter   8:   -74.96667781656008   -1.42109e-14   2.29120e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -550,36 +554,46 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -74.96667781656006 with 0.002000 perturbation
+  @RHF Final Energy:   -74.96667781656008 with 0.002000 perturbation
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.9061614944709540
+    One-Electron Energy =            -121.8228489320946579
+    Two-Electron Energy =              37.9500096210636286
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -74.9666778165600789
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     1.0581
+     X:     0.0000      Y:     0.0000      Z:     1.0581
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.3909
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.6673     Total:     0.6673
+     X:     0.0000      Y:     0.0000      Z:     0.6673     Total:     0.6673
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     1.6960     Total:     1.6960
+     X:     0.0000      Y:     0.0000      Z:     1.6960     Total:     1.6960
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:54 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:45 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.09 seconds =       0.00 minutes
+	user time   =       0.10 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:54 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:45 2012
 
 
          ---------------------------------------------------------
@@ -599,13 +613,7 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.071143036192
            H          0.000000000000    -0.758215806856     0.564545805801
-           H         -0.000000000000     0.758215806856     0.564545805801
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.758215806856     0.564545805801
 
   Running in c2v symmetry.
 
@@ -628,9 +636,9 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: sto-3g
     Number of shells: 5
     Number of basis function: 7
     Number of Cartesian functions: 7
@@ -684,14 +692,14 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -73.24409328068296   -1.86563e+01   0.00000e+00 
-   @RHF iter   2:   -74.93094362470202   -1.68685e+00   4.01056e-01 DIIS
-   @RHF iter   3:   -74.96378628895174   -3.28427e-02   5.24671e-02 DIIS
+   @RHF iter   1:   -73.24409328068300   -1.86563e+01   0.00000e+00 
+   @RHF iter   2:   -74.93094362470208   -1.68685e+00   4.01056e-01 DIIS
+   @RHF iter   3:   -74.96378628895178   -3.28427e-02   5.24671e-02 DIIS
    @RHF iter   4:   -74.96507787458975   -1.29159e-03   1.36880e-02 DIIS
-   @RHF iter   5:   -74.96513031891617   -5.24443e-05   2.39947e-03 DIIS
-   @RHF iter   6:   -74.96513474828137   -4.42937e-06   8.20921e-04 DIIS
+   @RHF iter   5:   -74.96513031891622   -5.24443e-05   2.39947e-03 DIIS
+   @RHF iter   6:   -74.96513474828143   -4.42937e-06   8.20921e-04 DIIS
    @RHF iter   7:   -74.96513478409800   -3.58166e-08   7.61477e-05 DIIS
-   @RHF iter   8:   -74.96513478409796    4.26326e-14   2.37998e-08 DIIS
+   @RHF iter   8:   -74.96513478409803   -2.84217e-14   2.37826e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -713,36 +721,46 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -74.96513478409796 with -0.002000 perturbation
+  @RHF Final Energy:   -74.96513478409803 with -0.002000 perturbation
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.9061614944709540
+    One-Electron Energy =            -121.8444934835453211
+    Two-Electron Energy =              37.9731972049763300
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -74.9651347840980407
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     1.0581
+     X:     0.0000      Y:     0.0000      Z:     1.0581
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.3806
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.6775     Total:     0.6775
+     X:     0.0000      Y:     0.0000      Z:     0.6775     Total:     0.6775
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     1.7221     Total:     1.7221
+     X:     0.0000      Y:     0.0000      Z:     1.7221     Total:     1.7221
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:54 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:45 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.12 seconds =       0.00 minutes
+	user time   =       0.13 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:54 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:45 2012
 
 
          ---------------------------------------------------------
@@ -762,13 +780,7 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.071143036192
            H          0.000000000000    -0.758215806856     0.564545805801
-           H         -0.000000000000     0.758215806856     0.564545805801
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.758215806856     0.564545805801
 
   Running in c2v symmetry.
 
@@ -791,9 +803,9 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: sto-3g
     Number of shells: 5
     Number of basis function: 7
     Number of Cartesian functions: 7
@@ -806,7 +818,7 @@ Total time:
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:   -54.58620676392351
+  Initial RHF energy:   -54.58620676392350
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -846,14 +858,14 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:   -73.24103594042246   -1.86548e+01   0.00000e+00 
-   @RHF iter   2:   -74.93101458737586   -1.68998e+00   4.01509e-01 DIIS
+   @RHF iter   1:   -73.24103594042249   -1.86548e+01   0.00000e+00 
+   @RHF iter   2:   -74.93101458737587   -1.68998e+00   4.01509e-01 DIIS
    @RHF iter   3:   -74.96452519823920   -3.35106e-02   5.30384e-02 DIIS
-   @RHF iter   4:   -74.96584254489953   -1.31735e-03   1.38492e-02 DIIS
-   @RHF iter   5:   -74.96589656891842   -5.40240e-05   2.43796e-03 DIIS
+   @RHF iter   4:   -74.96584254489956   -1.31735e-03   1.38492e-02 DIIS
+   @RHF iter   5:   -74.96589656891848   -5.40240e-05   2.43796e-03 DIIS
    @RHF iter   6:   -74.96590113426713   -4.56535e-06   8.35445e-04 DIIS
-   @RHF iter   7:   -74.96590117036533   -3.60982e-08   7.66545e-05 DIIS
-   @RHF iter   8:   -74.96590117036530    2.84217e-14   2.32958e-08 DIIS
+   @RHF iter   7:   -74.96590117036537   -3.60982e-08   7.66545e-05 DIIS
+   @RHF iter   8:   -74.96590117036537    0.00000e+00   2.33112e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -875,43 +887,53 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:   -74.96590117036530
+  @RHF Final Energy:   -74.96590117036537
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.9061614944709540
+    One-Electron Energy =            -121.8336714767226141
+    Two-Electron Energy =              37.9616088118862862
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -74.9659011703653846
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     1.0581
+     X:     0.0000      Y:     0.0000      Z:     1.0581
 
   Electronic Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:    -0.3858
 
   Dipole Moment: (a.u.)
-     X:    -0.0000      Y:    -0.0000      Z:     0.6724     Total:     0.6724
+     X:     0.0000      Y:     0.0000      Z:     0.6724     Total:     0.6724
 
   Dipole Moment: (Debye)
-     X:    -0.0000      Y:    -0.0000      Z:     1.7090     Total:     1.7090
+     X:     0.0000      Y:     0.0000      Z:     1.7090     Total:     1.7090
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:54 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:45 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.15 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Perturbation strength =  0.0010, computed energy =   -74.9662882089
 Perturbation strength = -0.0010, computed energy =   -74.9655166968
 Perturbation strength =  0.0020, computed energy =   -74.9666778166
 Perturbation strength = -0.0020, computed energy =   -74.9651347841
-nuclear z component    =   1.058147 ea0,   2.689545 Debye
+nuclear z component    =   1.058147 ea0,   2.689541 Debye
 Electronic contributions:
-3 Point formula: mu(z) =  -0.385756 ea0,  -0.980495 Debye
-5 Point formula: mu(z) =  -0.385755 ea0,  -0.980494 Debye
+3 Point formula: mu(z) =  -0.385756 ea0,  -0.980494 Debye
+5 Point formula: mu(z) =  -0.385755 ea0,  -0.980492 Debye
 Total dipoles
-3 Point formula: mu(z) =   0.672391 ea0,   1.709050 Debye
-5 Point formula: mu(z) =   0.672392 ea0,   1.709052 Debye
+3 Point formula: mu(z) =   0.672391 ea0,   1.709047 Debye
+5 Point formula: mu(z) =   0.672392 ea0,   1.709049 Debye
 
 *** PSI4 exiting successfully. Buy a developer a beer!

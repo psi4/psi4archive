@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -43,18 +45,17 @@ molecule smo {
 set {
   basis "STO-3G"
   freeze_core true
-  property rotation
   gauge length
   omega [589, 355, nm]
 }
 
-response('cc2')
+property('cc2',properties=['rotation'])
 --------------------------------------------------------------------------
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:13 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:43 2012
 
 
          ---------------------------------------------------------
@@ -83,20 +84,6 @@ response('cc2')
            H          2.124083522566     0.939980992405     0.329511120079
            H          1.464513522566     0.354044992405    -1.207812879921
 
-    Number of unique atoms: 10
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 
-       unique atom 2: 2 
-       unique atom 3: 3 
-       unique atom 4: 4 
-       unique atom 5: 5 
-       unique atom 6: 6 
-       unique atom 7: 7 
-       unique atom 8: 8 
-       unique atom 9: 9 
-
   Running in c1 symmetry.
 
   Nuclear repulsion =  124.788534121264817
@@ -118,9 +105,9 @@ response('cc2')
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: STO-3G <==
+  ==> Primary Basis <==
 
-  Basis Set
+  Basis Set: STO-3G
     Number of shells: 18
     Number of basis function: 26
     Number of Cartesian functions: 26
@@ -133,7 +120,7 @@ response('cc2')
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial RHF energy:  -143.29386230779642
+  Initial RHF energy:  -143.29386230779659
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -170,22 +157,22 @@ response('cc2')
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:  -171.29770901863384   -2.80038e+01   0.00000e+00 
-   @RHF iter   2:  -167.97481929054192    3.32289e+00   3.19252e-01 DIIS
+   @RHF iter   1:  -171.29770901863407   -2.80038e+01   0.00000e+00 
+   @RHF iter   2:  -167.97481929054180    3.32289e+00   3.19252e-01 DIIS
    @RHF iter   3:  -188.49224725660730   -2.05174e+01   2.23450e-01 DIIS
-   @RHF iter   4:  -189.07347626315709   -5.81229e-01   3.82030e-02 DIIS
-   @RHF iter   5:  -189.19622702011333   -1.22751e-01   1.20165e-02 DIIS
-   @RHF iter   6:  -189.40514050692832   -2.08913e-01   1.63129e-02 DIIS
-   @RHF iter   7:  -189.49760626594713   -9.24658e-02   1.18651e-02 DIIS
+   @RHF iter   4:  -189.07347626315715   -5.81229e-01   3.82030e-02 DIIS
+   @RHF iter   5:  -189.19622702011338   -1.22751e-01   1.20165e-02 DIIS
+   @RHF iter   6:  -189.40514050692838   -2.08913e-01   1.63129e-02 DIIS
+   @RHF iter   7:  -189.49760626594718   -9.24658e-02   1.18651e-02 DIIS
    @RHF iter   8:  -189.51238733186420   -1.47811e-02   5.46871e-03 DIIS
-   @RHF iter   9:  -189.51340789361115   -1.02056e-03   1.72110e-03 DIIS
-   @RHF iter  10:  -189.51341601946496   -8.12585e-06   1.75947e-04 DIIS
-   @RHF iter  11:  -189.51341715793677   -1.13847e-06   5.72232e-05 DIIS
-   @RHF iter  12:  -189.51341723308752   -7.51508e-08   1.72902e-05 DIIS
-   @RHF iter  13:  -189.51341723745998   -4.37245e-09   4.45934e-06 DIIS
-   @RHF iter  14:  -189.51341723757685   -1.16870e-10   7.16716e-07 DIIS
-   @RHF iter  15:  -189.51341723758020   -3.35376e-12   1.14739e-07 DIIS
-   @RHF iter  16:  -189.51341723758031   -1.13687e-13   2.57419e-08 DIIS
+   @RHF iter   9:  -189.51340789361092   -1.02056e-03   1.72110e-03 DIIS
+   @RHF iter  10:  -189.51341601946501   -8.12585e-06   1.75947e-04 DIIS
+   @RHF iter  11:  -189.51341715793689   -1.13847e-06   5.72232e-05 DIIS
+   @RHF iter  12:  -189.51341723308764   -7.51508e-08   1.72902e-05 DIIS
+   @RHF iter  13:  -189.51341723746026   -4.37262e-09   4.45934e-06 DIIS
+   @RHF iter  14:  -189.51341723757668   -1.16415e-10   7.16716e-07 DIIS
+   @RHF iter  15:  -189.51341723758031   -3.63798e-12   1.14739e-07 DIIS
+   @RHF iter  16:  -189.51341723758043   -1.13687e-13   2.57419e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -214,9 +201,19 @@ response('cc2')
 
   Energy converged.
 
-  @RHF Final Energy:  -189.51341723758031
+  @RHF Final Energy:  -189.51341723758043
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =        124.7885341212648171
+    One-Electron Energy =            -505.7302694316940688
+    Two-Electron Energy =             191.4283180728489526
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -189.5134172375802848
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     3.0005      Y:     2.3096      Z:     0.2664
 
@@ -232,18 +229,18 @@ response('cc2')
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:44 2012
 Module time:
-	user time   =       0.35 seconds =       0.01 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.31 seconds =       0.01 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.35 seconds =       0.01 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.31 seconds =       0.01 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:44 2012
 
 
 	**************************************************
@@ -261,7 +258,7 @@ Total time:
 	Print Level     =	1
 	Print TEIs      =	No
 	Reference wfn   =	RHF
-	Derivative      =	Response
+	Derivative      =	None
 	Delete TEI File =	Yes
 	Memory (Mbytes) =	250.0
 	Cache Level     =	2
@@ -278,28 +275,28 @@ Total time:
 	 A	   26	    4	    12	    0	    10	    0
 
 	Nuclear Rep. energy (chkpt) =    124.78853412126482
-	SCF energy          (chkpt) =   -189.51341723758031
+	SCF energy          (chkpt) =   -189.51341723758043
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
-	Frozen-core energy = -209.079836135209831
+	Frozen-core energy = -209.079836135209661
 	Starting first half-transformation.
 	Sorting half-transformed integrals.
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:44 2012
 Module time:
 	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.39 seconds =       0.01 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.35 seconds =       0.01 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:44 2012
 
 
 			**************************
@@ -313,7 +310,7 @@ Total time:
 	-----------------
 	Wave function   =	CC2
 	Reference wfn   =	RHF
-	Derivative      =	Response
+	Derivative      =	None
 	Memory (Mbytes) =	250.0
 	AO Basis        =	NONE
 	Make (ab|cd)    =	True
@@ -334,7 +331,7 @@ Total time:
 	 A	   26	    4	    12	    0	    10	    0
 
 	Nuclear Rep. energy (chkpt) =    124.78853412126482
-	SCF energy          (chkpt) =   -189.51341723758031
+	SCF energy          (chkpt) =   -189.51341723758043
 
 	Size of irrep 0 of <ab|cd> integrals:      0.010 (MW) /      0.080 (MB)
 	Total:                                     0.010 (MW) /      0.080 (MB)
@@ -353,26 +350,26 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -194.60728307746831
+	One-electron energy          =   -194.60728307746845
 	Two-electron (AA) energy     =     39.61731807435147
 	Two-electron (BB) energy     =     39.61731807435147
-	Two-electron (AB) energy     =     49.76784977948137
-	Two-electron energy          =     89.38516785383283
-	Frozen-core energy (transqt) =   -209.07983613520983
-	Reference energy             =   -189.51341723758048
+	Two-electron (AB) energy     =     49.76784977948140
+	Two-electron energy          =     89.38516785383287
+	Frozen-core energy (transqt) =   -209.07983613520966
+	Reference energy             =   -189.51341723758043
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:14 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:44 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.42 seconds =       0.01 minutes
+	user time   =       0.38 seconds =       0.01 minutes
 	system time =       0.08 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:14 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:44 2012
 
 			**************************
 			*                        *
@@ -381,8 +378,8 @@ Total time:
 			**************************
 
 	Nuclear Rep. energy (chkpt)   =  124.788534121264817
-	SCF energy          (chkpt)   = -189.513417237580313
-	Reference energy    (file100) = -189.513417237580484
+	SCF energy          (chkpt)   = -189.513417237580427
+	Reference energy    (file100) = -189.513417237580427
 
 	Input parameters:
 	-----------------
@@ -412,8 +409,8 @@ Total time:
 	            ------------------------------
   Iter             Energy              RMS        T1Diag      D1Diag    New D1Diag
   ----     ---------------------    ---------   ----------  ----------  ----------
-     0        -0.198498353992661    0.000e+00    0.000000    0.000000    0.000000
-     1        -0.198386689405298    2.456e-02    0.005013    0.019208    0.019208
+     0        -0.198498353992662    0.000e+00    0.000000    0.000000    0.000000
+     1        -0.198386689405299    2.456e-02    0.005013    0.019208    0.019208
      2        -0.199744020175786    7.393e-03    0.005756    0.022873    0.022873
      3        -0.200084920579535    3.729e-03    0.006768    0.027963    0.027963
      4        -0.200115319638708    6.852e-04    0.006878    0.028762    0.028762
@@ -422,7 +419,7 @@ Total time:
      7        -0.200118408150348    1.039e-05    0.006898    0.028968    0.028968
      8        -0.200118429827609    3.934e-06    0.006898    0.028968    0.028968
      9        -0.200118429166665    1.144e-06    0.006898    0.028968    0.028968
-    10        -0.200118431507811    4.391e-07    0.006898    0.028968    0.028968
+    10        -0.200118431507812    4.391e-07    0.006898    0.028968    0.028968
     11        -0.200118431198152    9.823e-08    0.006898    0.028968    0.028968
 
 	Iterations converged.
@@ -452,29 +449,29 @@ Total time:
 	 10   9   0   1         0.0182861872
 	  8   8   8   8        -0.0174521683
 
-	SCF energy       (chkpt)              = -189.513417237580313
-	Reference energy (file100)            = -189.513417237580484
+	SCF energy       (chkpt)              = -189.513417237580427
+	Reference energy (file100)            = -189.513417237580427
 
-	Opposite-spin MP2 correlation energy  =   -0.172369087003128
+	Opposite-spin MP2 correlation energy  =   -0.172369087003129
 	Same-spin MP2 correlation energy      =   -0.026129266989534
 	MP2 correlation energy                =   -0.198498353992662
-      * MP2 total energy                      = -189.711915591573131
+      * MP2 total energy                      = -189.711915591573103
 	CC2 correlation energy     =   -0.200118431198152
-      * CC2 total energy           = -189.713535668778633
+      * CC2 total energy           = -189.713535668778576
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:16 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:46 2012
 Module time:
-	user time   =       0.38 seconds =       0.01 minutes
-	system time =       0.30 seconds =       0.01 minutes
+	user time   =       0.40 seconds =       0.01 minutes
+	system time =       0.32 seconds =       0.01 minutes
 	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       0.80 seconds =       0.01 minutes
-	system time =       0.38 seconds =       0.01 minutes
+	user time   =       0.79 seconds =       0.01 minutes
+	system time =       0.40 seconds =       0.01 minutes
 	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:16 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:46 2012
 
 
 			**************************
@@ -484,18 +481,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:16 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:46 2012
 Module time:
-	user time   =       0.04 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.84 seconds =       0.01 minutes
-	system time =       0.42 seconds =       0.01 minutes
+	user time   =       0.82 seconds =       0.01 minutes
+	system time =       0.43 seconds =       0.01 minutes
 	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:16 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:46 2012
 
 
 			**************************
@@ -505,10 +502,10 @@ Total time:
 
 	Nuclear Rep. energy (chkpt)   =  124.788534121264817
 	Reference           (chkpt)   = 0
-	SCF energy          (chkpt)   = -189.513417237580313
-	Reference energy    (CC_INFO) = -189.513417237580484
+	SCF energy          (chkpt)   = -189.513417237580427
+	Reference energy    (CC_INFO) = -189.513417237580427
 	CC2 energy          (CC_INFO) =   -0.200118431198152
-	Total CC2 energy    (CC_INFO) = -189.713535668778633
+	Total CC2 energy    (CC_INFO) = -189.713535668778576
 
 	Input parameters:
 	-----------------
@@ -534,13 +531,13 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0        -0.200255252194543    0.000e+00
-	   1        -0.200237820873711    1.045e-02
+	   0        -0.200255252194544    0.000e+00
+	   1        -0.200237820873712    1.045e-02
 	   2        -0.199973107657240    1.485e-03
-	   3        -0.199954623738962    4.864e-04
+	   3        -0.199954623738963    4.864e-04
 	   4        -0.199946897398539    1.053e-04
-	   5        -0.199946308642875    2.929e-05
-	   6        -0.199946158041619    6.703e-06
+	   5        -0.199946308642876    2.929e-05
+	   6        -0.199946158041620    6.703e-06
 	   7        -0.199946138689789    1.596e-06
 	   8        -0.199946137135689    5.076e-07
 	   9        -0.199946135354454    1.768e-07
@@ -574,18 +571,18 @@ Total time:
 
 	Overlap <L|e^T> =        0.91534388551
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:17 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:47 2012
 Module time:
 	user time   =       0.09 seconds =       0.00 minutes
 	system time =       0.06 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.93 seconds =       0.02 minutes
-	system time =       0.48 seconds =       0.01 minutes
+	user time   =       0.91 seconds =       0.02 minutes
+	system time =       0.49 seconds =       0.01 minutes
 	total time  =          4 seconds =       0.07 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 15:12:17 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:28:47 2012
 
 			**************************
 			*                        *
@@ -619,133 +616,6 @@ Total time:
 	Analyze X2 Amps  =    No
 	Local CC         =    No
 
-    Molecular point group: c1
-
-    Geometry (in Angstrom), charge = 0, multiplicity = 1:
-
-       Center              X                  Y                   Z       
-    ------------   -----------------  -----------------  -----------------
-           C          0.201751522566     0.002392992405     0.490202120079
-           C         -0.989856477434     0.654130992405    -0.056843879921
-           C          1.556762522566     0.135998992405    -0.144054879921
-           O         -0.778596477434    -0.750055007595    -0.235025879921
-           H          0.203343522566    -0.211065007595     1.556541120079
-           H         -1.813559477434     0.920113992405     0.597738120079
-           H         -0.900188477434     1.252402992405    -0.958365879921
-           H          2.126424522566    -0.787996007595    -0.032265879921
-           H          2.124083522566     0.939980992405     0.329511120079
-           H          1.464513522566     0.354044992405    -1.207812879921
-
-    Number of unique atoms: 10
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 
-       unique atom 2: 2 
-       unique atom 3: 3 
-       unique atom 4: 4 
-       unique atom 5: 5 
-       unique atom 6: 6 
-       unique atom 7: 7 
-       unique atom 8: 8 
-       unique atom 9: 9 
-
-  -AO BASIS SET INFORMATION:
-    Total number of shells = 18
-    Number of primitives   = 54
-    Number of AO           = 26
-    Number of SO           = 26
-    Maximum AM             = 1
-    Spherical Harmonics    = TRUE
-
-  -Contraction Scheme:
-    Atom   Type   All Primitives // Shells:
-   ------ ------ --------------------------
-       1     C     6s 3p // 2s 1p 
-       2     C     6s 3p // 2s 1p 
-       3     C     6s 3p // 2s 1p 
-       4     O     6s 3p // 2s 1p 
-       5     H     3s // 1s 
-       6     H     3s // 1s 
-       7     H     3s // 1s 
-       8     H     3s // 1s 
-       9     H     3s // 1s 
-      10     H     3s // 1s 
-
-  -Basis set on unique center 1: C
-     S (         71.61683700           2.70781445)
-       (         13.04509600           2.61888016)
-       (          3.53051220           0.81619058)
-     S (          2.94124940          -0.16001719)
-       (          0.68348310           0.21403592)
-       (          0.22228990           0.16153609)
-     P (          2.94124940           0.85604451)
-       (          0.68348310           0.53830377)
-       (          0.22228990           0.08527635)
-
-  -Basis set on unique center 2: C
-     S (         71.61683700           2.70781445)
-       (         13.04509600           2.61888016)
-       (          3.53051220           0.81619058)
-     S (          2.94124940          -0.16001719)
-       (          0.68348310           0.21403592)
-       (          0.22228990           0.16153609)
-     P (          2.94124940           0.85604451)
-       (          0.68348310           0.53830377)
-       (          0.22228990           0.08527635)
-
-  -Basis set on unique center 3: C
-     S (         71.61683700           2.70781445)
-       (         13.04509600           2.61888016)
-       (          3.53051220           0.81619058)
-     S (          2.94124940          -0.16001719)
-       (          0.68348310           0.21403592)
-       (          0.22228990           0.16153609)
-     P (          2.94124940           0.85604451)
-       (          0.68348310           0.53830377)
-       (          0.22228990           0.08527635)
-
-  -Basis set on unique center 4: O
-     S (        130.70932000           4.25194328)
-       (         23.80886100           4.11229372)
-       (          6.44360830           1.28162253)
-     S (          5.03315130          -0.23941300)
-       (          1.16959610           0.32023423)
-       (          0.38038900           0.24168557)
-     P (          5.03315130           1.67545012)
-       (          1.16959610           1.05356801)
-       (          0.38038900           0.16690290)
-
-  -Basis set on unique center 5: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
-  -Basis set on unique center 6: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
-  -Basis set on unique center 7: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
-  -Basis set on unique center 8: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
-  -Basis set on unique center 9: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
-  -Basis set on unique center 10: H
-     S (          3.42525091           0.27693436)
-       (          0.62391373           0.26783885)
-       (          0.16885540           0.08347367)
-
 
 	Computing Mu_X-Perturbed Wave Function (-0.077 E_h).
 	Iter   Pseudopolarizability       RMS 
@@ -755,11 +625,11 @@ Total time:
 	   2        19.385113336325    1.883e-01
 	   3        19.407847587561    2.113e-02
 	   4        19.414241724807    7.755e-03
-	   5        19.415176445266    1.032e-03
-	   6        19.415012980816    3.160e-04
+	   5        19.415176445267    1.032e-03
+	   6        19.415012980817    3.160e-04
 	   7        19.415033948568    5.837e-05
-	   8        19.415041984024    1.888e-05
-	   9        19.415040939816    5.204e-06
+	   8        19.415041984025    1.888e-05
+	   9        19.415040939817    5.204e-06
 	  10        19.415040537114    1.666e-06
 	  11        19.415040725055    4.928e-07
 	  12        19.415040984455    1.203e-07
@@ -782,7 +652,7 @@ Total time:
 	  10         3.777798807076    1.539e-05
 	  11         3.777800011361    3.124e-06
 	  12         3.777800853477    1.120e-06
-	  13         3.777801089224    2.688e-07
+	  13         3.777801089223    2.688e-07
 	  14         3.777801251973    1.261e-07
 	-----------------------------------------
 	Converged L_X-Perturbed Wfn to 5.107e-08
@@ -801,7 +671,7 @@ Total time:
 	   8        14.362980628897    1.635e-05
 	   9        14.362980593316    4.161e-06
 	  10        14.362980697681    1.472e-06
-	  11        14.362980838044    3.685e-07
+	  11        14.362980838043    3.685e-07
 	  12        14.362980972065    1.227e-07
 	-----------------------------------------
 	Converged Mu_Y-Perturbed Wfn to 2.970e-08
@@ -837,7 +707,7 @@ Total time:
 	   4        14.996460690743    6.152e-03
 	   5        14.996903740647    6.700e-04
 	   6        14.996856796464    2.049e-04
-	   7        14.996864218770    4.712e-05
+	   7        14.996864218769    4.712e-05
 	   8        14.996864924540    1.506e-05
 	   9        14.996864495304    3.809e-06
 	  10        14.996864380016    1.116e-06
@@ -875,8 +745,8 @@ Total time:
 	   1        20.786899877998    6.883e-01
 	   2        24.160856169039    2.921e-01
 	   3        24.214077971903    4.032e-02
-	   4        24.234866561481    1.778e-02
-	   5        24.238122114136    2.752e-03
+	   4        24.234866561482    1.778e-02
+	   5        24.238122114137    2.752e-03
 	   6        24.237360530615    1.007e-03
 	   7        24.237431160402    2.677e-04
 	   8        24.237469308916    1.165e-04
@@ -885,7 +755,7 @@ Total time:
 	  11        24.237451880124    4.708e-06
 	  12        24.237455846270    1.235e-06
 	  13        24.237456999121    4.415e-07
-	  14        24.237457114212    1.411e-07
+	  14        24.237457114213    1.411e-07
 	-----------------------------------------
 	Converged Mu_X-Perturbed Wfn to 5.856e-08
 
@@ -921,8 +791,8 @@ Total time:
 	   8        17.313625719331    6.399e-05
 	   9        17.313624293914    2.184e-05
 	  10        17.313624723250    1.014e-05
-	  11        17.313625508743    3.150e-06
-	  12        17.313626820651    1.169e-06
+	  11        17.313625508742    3.150e-06
+	  12        17.313626820650    1.169e-06
 	  13        17.313626963084    3.666e-07
 	  14        17.313627007330    1.344e-07
 	-----------------------------------------
@@ -994,9 +864,9 @@ Total time:
 
                 0                  1                  2        
 
-    0  -0.116653158511943  0.136050294597282  0.040317664564477
-    1  -0.020178809753828 -0.045708805727611  0.130530471490732
-    2   0.189602214184464 -0.207372490914594  0.145086273466123
+    0  -0.116653158511940  0.136050294597288  0.040317664564474
+    1  -0.020178809753831 -0.045708805727609  0.130530471490732
+    2   0.189602214184463 -0.207372490914596  0.145086273466120
 
    Specific rotation using length-gauge electric-dipole Rosenfeld tensor.
 	[alpha]_(0.077) =  -49.62375 deg/[dm (g/cm^3)]
@@ -1008,7 +878,7 @@ Total time:
 	   1        16.451915035421    4.754e-01
 	   2        18.210045309685    1.656e-01
 	   3        18.228206566114    1.761e-02
-	   4        18.232861744474    6.133e-03
+	   4        18.232861744475    6.133e-03
 	   5        18.233517868998    7.884e-04
 	   6        18.233413044013    2.307e-04
 	   7        18.233428238366    3.953e-05
@@ -1022,7 +892,7 @@ Total time:
 	Computing L_X-Perturbed Wave Function (0.128 E_h).
 	Iter   Pseudopolarizability       RMS 
 	----   --------------------   -----------
-	   0         2.417820603450
+	   0         2.417820603449
 	   1         3.324263602370    3.187e-01
 	   2         4.083972324970    1.549e-01
 	   3         4.107116386071    3.248e-02
@@ -1133,7 +1003,7 @@ Total time:
 	   2        26.326603016862    3.442e-01
 	   3        26.402828122435    5.204e-02
 	   4        26.436612019601    2.459e-02
-	   5        26.441960293216    4.103e-03
+	   5        26.441960293217    4.103e-03
 	   6        26.440596188732    1.628e-03
 	   7        26.440721947778    5.123e-04
 	   8        26.440796391931    2.487e-04
@@ -1174,7 +1044,7 @@ Total time:
 	   3        18.566084740609    4.406e-02
 	   4        18.584310427025    1.722e-02
 	   5        18.587536228357    3.424e-03
-	   6        18.587011348177    1.160e-03
+	   6        18.587011348176    1.160e-03
 	   7        18.587126797183    3.058e-04
 	   8        18.587161120725    1.080e-04
 	   9        18.587156889337    4.128e-05
@@ -1254,9 +1124,9 @@ Total time:
 
                 0                  1                  2        
 
-    0  -0.199315155073636  0.236145103897931  0.075627034575823
-    1  -0.033233677476627 -0.078305708094967  0.216237850001618
-    2   0.318543396936903 -0.348340079405350  0.247304234469851
+    0  -0.199315155073632  0.236145103897942  0.075627034575819
+    1  -0.033233677476632 -0.078305708094964  0.216237850001617
+    2   0.318543396936901 -0.348340079405355  0.247304234469846
 
    Specific rotation using length-gauge electric-dipole Rosenfeld tensor.
 	[alpha]_(0.128) = -144.48474 deg/[dm (g/cm^3)]
@@ -1270,14 +1140,14 @@ Total time:
    0.077   589.00       -49.62375
    0.128   355.00      -144.48474
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 15:12:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:28:55 2012
 Module time:
-	user time   =       3.89 seconds =       0.06 minutes
-	system time =       2.49 seconds =       0.04 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       3.83 seconds =       0.06 minutes
+	system time =       2.41 seconds =       0.04 minutes
+	total time  =          8 seconds =       0.13 minutes
 Total time:
-	user time   =       4.82 seconds =       0.08 minutes
-	system time =       2.97 seconds =       0.05 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       4.74 seconds =       0.08 minutes
+	system time =       2.90 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!

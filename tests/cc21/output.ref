@@ -2,10 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
-               Git: Rev 547f9d26eb84c53ed6db08be313f968f9ed38529
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
 
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -59,8 +59,8 @@ compare_matrices(analytic_grad, findif_grad, 6, "ROHF-EOM-CCSD findif (5-pt.) vs
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:21 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:02 2012
 
 
          ---------------------------------------------------------
@@ -118,7 +118,7 @@ compare_matrices(analytic_grad, findif_grad, 6, "ROHF-EOM-CCSD findif (5-pt.) vs
   Using Symmetric Orthogonalization.
   SCF Guess: Core (One-Electron) Hamiltonian.
 
-  Initial ROHF energy:   -52.78677512567592
+  Initial ROHF energy:   -52.78677512567598
 
    -------------------------------------------------------
     Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
@@ -158,26 +158,28 @@ compare_matrices(analytic_grad, findif_grad, 6, "ROHF-EOM-CCSD findif (5-pt.) vs
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79500741995454   -1.90082e+01   1.91562e+53 
+   @ROHF iter   1:   -71.79500741995460   -1.90082e+01   6.93723e-310 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
-   @ROHF iter   2:   -73.51457382482282   -1.71957e+00   8.45431e-01 DIIS
+
+   @ROHF iter   2:   -73.51457382482293   -1.71957e+00   8.45431e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
-   @ROHF iter   3:   -75.41946464293542   -1.90489e+00   6.42415e-01 DIIS
-   @ROHF iter   4:   -75.59280193995370   -1.73337e-01   6.52495e-02 DIIS
-   @ROHF iter   5:   -75.59654612502143   -3.74419e-03   9.92567e-03 DIIS
-   @ROHF iter   6:   -75.59667160197465   -1.25477e-04   2.32461e-03 DIIS
-   @ROHF iter   7:   -75.59667207656108   -4.74586e-07   1.23745e-04 DIIS
-   @ROHF iter   8:   -75.59667211171481   -3.51537e-08   4.11908e-05 DIIS
-   @ROHF iter   9:   -75.59667211496877   -3.25396e-09   1.43368e-05 DIIS
-   @ROHF iter  10:   -75.59667211502290   -5.41291e-11   1.94814e-06 DIIS
-   @ROHF iter  11:   -75.59667211502368   -7.81597e-13   2.28138e-07 DIIS
-   @ROHF iter  12:   -75.59667211502365    2.84217e-14   1.74344e-08 DIIS
+
+   @ROHF iter   3:   -75.41946464293551   -1.90489e+00   6.42415e-01 DIIS
+   @ROHF iter   4:   -75.59280193995377   -1.73337e-01   6.52495e-02 DIIS
+   @ROHF iter   5:   -75.59654612502146   -3.74419e-03   9.92567e-03 DIIS
+   @ROHF iter   6:   -75.59667160197472   -1.25477e-04   2.32461e-03 DIIS
+   @ROHF iter   7:   -75.59667207656118   -4.74586e-07   1.23745e-04 DIIS
+   @ROHF iter   8:   -75.59667211171489   -3.51537e-08   4.11908e-05 DIIS
+   @ROHF iter   9:   -75.59667211496880   -3.25390e-09   1.43368e-05 DIIS
+   @ROHF iter  10:   -75.59667211502297   -5.41718e-11   1.94814e-06 DIIS
+   @ROHF iter  11:   -75.59667211502374   -7.67386e-13   2.28138e-07 DIIS
+   @ROHF iter  12:   -75.59667211502368    5.68434e-14   1.74344e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -206,7 +208,16 @@ compare_matrices(analytic_grad, findif_grad, 6, "ROHF-EOM-CCSD findif (5-pt.) vs
 
   Energy converged.
 
-  @ROHF Final Energy:   -75.59667211502365
+  @ROHF Final Energy:   -75.59667211502368
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6471668881518582
+    One-Electron Energy =            -117.1401097946173309
+    Two-Electron Energy =              32.8962707914418075
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5966721150236651
 
   ==> Properties <==
 
@@ -225,18 +236,18 @@ compare_matrices(analytic_grad, findif_grad, 6, "ROHF-EOM-CCSD findif (5-pt.) vs
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:21 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:02 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:21 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:02 2012
 
 
 	**************************************************
@@ -274,7 +285,7 @@ Total time:
 	 B2	   4	    0	    1	    0	    3	    0
 
 	Nuclear Rep. energy (chkpt) =      8.64716688815186
-	SCF energy          (chkpt) =    -75.59667211502365
+	SCF energy          (chkpt) =    -75.59667211502368
 
 	Presorting SO-basis two-electron integrals.
 	Sorting File: SO Ints (pq,rs) nbuckets = 1
@@ -284,18 +295,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:21 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:02 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
+	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.07 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:21 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:02 2012
 
 
 			**************************
@@ -333,7 +344,7 @@ Total time:
 	 B2	   4	    0	    1	    0	    3	    0
 
 	Nuclear Rep. energy (chkpt) =      8.64716688815186
-	SCF energy          (chkpt) =    -75.59667211502365
+	SCF energy          (chkpt) =    -75.59667211502368
 
 	Size of irrep 0 of <ab|cd> integrals:      0.001 (MW) /      0.012 (MB)
 	Size of irrep 1 of <ab|cd> integrals:      0.000 (MW) /      0.001 (MB)
@@ -361,26 +372,26 @@ Total time:
 	Sorting File: E <ai|jk> nbuckets = 1
 	Sorting File: F <ia|bc> nbuckets = 1
 	Sorting File: F <ai|bc> nbuckets = 1
-	One-electron energy          =   -117.14010978889314
-	Two-electron (AA) energy     =     15.41303672177256
-	Two-electron (BB) energy     =      9.33518748295254
-	Two-electron (AB) energy     =     20.52215868335504
-	Two-electron energy          =     32.89627078571759
+	One-electron energy          =   -117.14010978889326
+	Two-electron (AA) energy     =     15.41303672177260
+	Two-electron (BB) energy     =      9.33518748295257
+	Two-electron (AB) energy     =     20.52215868335510
+	Two-electron energy          =     32.89627078571769
 	Frozen-core energy (transqt) =      0.00000000000000
-	Reference energy             =    -75.59667211502369
+	Reference energy             =    -75.59667211502371
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:21 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:02 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       0.08 seconds =       0.00 minutes
+	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
+Total time:
+	user time   =       0.06 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:21 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:02 2012
 
 			**************************
 			*                        *
@@ -389,8 +400,8 @@ Total time:
 			**************************
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (file100) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (file100) =  -75.596672115023708
 
 	Input parameters:
 	-----------------
@@ -425,9 +436,9 @@ Total time:
      2        -0.116057760804708    1.502e-02    0.007707    0.014629    0.014629
      3        -0.117014007692471    5.657e-03    0.008317    0.016143    0.016143
      4        -0.117097862170011    2.369e-03    0.008264    0.016162    0.016162
-     5        -0.117126152901988    8.858e-04    0.008258    0.016134    0.016134
-     6        -0.117137544905683    2.853e-04    0.008258    0.016130    0.016130
-     7        -0.117138549120907    9.235e-05    0.008258    0.016134    0.016134
+     5        -0.117126152901989    8.858e-04    0.008258    0.016134    0.016134
+     6        -0.117137544905684    2.853e-04    0.008258    0.016130    0.016130
+     7        -0.117138549120908    9.235e-05    0.008258    0.016134    0.016134
      8        -0.117139118984028    2.776e-05    0.008259    0.016137    0.016137
      9        -0.117139054340180    8.950e-06    0.008259    0.016137    0.016137
     10        -0.117139022773012    3.122e-06    0.008259    0.016137    0.016137
@@ -498,27 +509,27 @@ Total time:
 	  2   4   1   7         0.0271711014
 	  4   2   7   1         0.0268068244
 
-	SCF energy       (chkpt)              =  -75.596672115023651
-	Reference energy (file100)            =  -75.596672115023694
+	SCF energy       (chkpt)              =  -75.596672115023679
+	Reference energy (file100)            =  -75.596672115023708
 
 	Opposite-spin CCSD correlation energy =    0.000000000000000
 	Same-spin CCSD correlation energy     =    0.000000000000000
 	CCSD correlation energy               =   -0.117138982680376
-      * CCSD total energy                     =  -75.713811097704067
+      * CCSD total energy                     =  -75.713811097704081
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:03 2012
 Module time:
-	user time   =       0.27 seconds =       0.00 minutes
-	system time =       0.23 seconds =       0.00 minutes
+	user time   =       0.34 seconds =       0.01 minutes
+	system time =       0.36 seconds =       0.01 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.36 seconds =       0.01 minutes
-	system time =       0.27 seconds =       0.00 minutes
+	user time   =       0.40 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:03 2012
 
 
 			**************************
@@ -528,18 +539,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:03 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.39 seconds =       0.01 minutes
-	system time =       0.30 seconds =       0.01 minutes
+	user time   =       0.43 seconds =       0.01 minutes
+	system time =       0.45 seconds =       0.01 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:03 2012
 
 
 	**********************************************************
@@ -547,8 +558,8 @@ Total time:
 	**********************************************************
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (file100) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (file100) =  -75.596672115023708
 	CCSD energy         (file100) =   -0.117138982680376
 
 	Input parameters:
@@ -612,69 +623,69 @@ Iter=11   L=11    Root    EOM Energy     Delta E   Res. Norm    Conv?
 Iter=12   L=12    Root    EOM Energy     Delta E   Res. Norm    Conv?
                      1   0.0856276307   9.83e-09    5.12e-07      Y
 Iter=13   L=2     Root    EOM Energy     Delta E   Res. Norm    Conv?
-                     1   0.0856276307   5.12e-13    5.12e-07      Y
+                     1   0.0856276307   1.11e-13    5.12e-07      Y
 Collapsing to only 1 vector(s).
 
 Procedure converged for 1 root(s).
 Energy written to chkpt:Etot  -75.6281834670
 States per irrep written to chkpt.
-<R|R> =   1.0000000000000000
+<R|R> =   1.0000000000000002
 EOM CCSD R0 for root 0 =   0.00000000000
 
 Final Energetic Summary for Converged Roots of Irrep A1
                      Excitation Energy              Total Energy
                 (eV)     (cm^-1)     (au)             (au)
-EOM State 1      2.330    18793.1   0.0856276307   -75.628183467001
+EOM State 1      2.330    18793.1   0.0856276307   -75.628183467002
 
 Largest components of excited wave function #1:
  RIA (libdpd indices) : (cscf notation)
-         2 >   0      :       3a1 >    2b1 :    0.0207129467
-         0 >   1      :       1b1 >    5a1 :    0.0107959480
-         1 >   0      :       2a1 >    2b1 :   -0.0089109243
-         0 >   0      :       1b1 >    4a1 :    0.0058672634
-         0 >   2      :       1b1 >    6a1 :    0.0047465046
+         2 >   0      :       3a1 >    2b1 :   -0.0207129467
+         0 >   1      :       1b1 >    5a1 :   -0.0107959480
+         1 >   0      :       2a1 >    2b1 :    0.0089109243
+         0 >   0      :       1b1 >    4a1 :   -0.0058672634
+         0 >   2      :       1b1 >    6a1 :   -0.0047465046
  Ria (libdpd indices) : (cscf notation)
-         2 >   1      :       3a1 >    1b1 :   -0.9884955304
-         2 >   0      :       3a1 >    2b1 :    0.0697008282
-         1 >   1      :       2a1 >    1b1 :    0.0427350937
-         1 >   0      :       2a1 >    2b1 :   -0.0043932099
-         0 >   0      :       1a1 >    2b1 :   -0.0006441542
+         2 >   1      :       3a1 >    1b1 :    0.9884955304
+         2 >   0      :       3a1 >    2b1 :   -0.0697008282
+         1 >   1      :       2a1 >    1b1 :   -0.0427350937
+         1 >   0      :       2a1 >    2b1 :    0.0043932099
+         0 >   0      :       1a1 >    2b1 :    0.0006441542
  RIjAb (libdpd indices)     : (cscf notation)
-        0   2 >   0   0     :    1b1    3a1 >    2b1    2b1 :    0.0472141547
-        0   2 >   0   1     :    1b1    3a1 >    2b1    1b1 :    0.0370733553
-        2   2 >   1   0     :    3a1    3a1 >    5a1    2b1 :    0.0341649908
-        0   1 >   0   1     :    1b2    2a1 >    2b2    1b1 :   -0.0275811208
-        0   2 >   0   0     :    1b2    3a1 >    2b2    2b1 :   -0.0275690347
+        0   2 >   0   0     :    1b1    3a1 >    2b1    2b1 :   -0.0472141547
+        0   2 >   0   1     :    1b1    3a1 >    2b1    1b1 :   -0.0370733553
+        2   2 >   1   0     :    3a1    3a1 >    5a1    2b1 :   -0.0341649908
+        0   1 >   0   1     :    1b2    2a1 >    2b2    1b1 :    0.0275811209
+        0   2 >   0   0     :    1b2    3a1 >    2b2    2b1 :    0.0275690347
  RIJAB (libdpd indices)     : (cscf notation)
-        0   0 >   0   0     :    1b2    1b1 >    2b2    4a1 :   -0.0008656788
-        0   1 >   0   0     :    1b2    2a1 >    2b2    2b1 :    0.0007774622
-        0   2 >   1   0     :    1b1    3a1 >    5a1    4a1 :   -0.0007181416
-        0   0 >   0   2     :    1b2    1b1 >    2b2    6a1 :   -0.0005666087
-        0   0 >   2   0     :    1b2    1b1 >    4b2    4a1 :   -0.0005131930
+        0   0 >   0   0     :    1b2    1b1 >    2b2    4a1 :    0.0008656788
+        0   1 >   0   0     :    1b2    2a1 >    2b2    2b1 :   -0.0007774622
+        0   2 >   1   0     :    1b1    3a1 >    5a1    4a1 :    0.0007181416
+        0   0 >   0   2     :    1b2    1b1 >    2b2    6a1 :    0.0005666087
+        0   0 >   2   0     :    1b2    1b1 >    4b2    4a1 :    0.0005131930
  Rijab (libdpd indices)     : (cscf notation)
-        0   2 >   0   0     :    1b2    3a1 >    2b2    2b1 :   -0.0204751699
-        0   2 >   2   0     :    1b2    3a1 >    4b2    2b1 :   -0.0143243346
-        0   2 >   1   0     :    1b2    3a1 >    3b2    2b1 :    0.0128385055
-        0   1 >   0   1     :    1b2    2a1 >    2b2    1b1 :   -0.0117854192
-        2   1 >   0   0     :    3a1    2a1 >    2b1    4a1 :   -0.0115494303
+        0   2 >   0   0     :    1b2    3a1 >    2b2    2b1 :    0.0204751699
+        0   2 >   2   0     :    1b2    3a1 >    4b2    2b1 :    0.0143243346
+        0   2 >   1   0     :    1b2    3a1 >    3b2    2b1 :   -0.0128385055
+        0   1 >   0   1     :    1b2    2a1 >    2b2    1b1 :    0.0117854192
+        2   1 >   0   0     :    3a1    2a1 >    2b1    4a1 :    0.0115494303
 
 	Putting into environment energy for root of R irrep 3 and root 1.
 	Putting into environment CURRENT ENERGY:              -75.6281834670
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:03 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.53 seconds =       0.01 minutes
-	system time =       0.40 seconds =       0.01 minutes
+	user time   =       0.60 seconds =       0.01 minutes
+	system time =       0.59 seconds =       0.01 minutes
 	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:03 2012
 
 
 			**************************
@@ -684,10 +695,10 @@ Total time:
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
 	Reference           (chkpt)   = 1
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (CC_INFO) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (CC_INFO) =  -75.596672115023708
 	CCSD energy         (CC_INFO) =   -0.117138982680376
-	Total CCSD energy   (CC_INFO) =  -75.713811097704067
+	Total CCSD energy   (CC_INFO) =  -75.713811097704081
 
 	Input parameters:
 	-----------------
@@ -716,18 +727,18 @@ Total time:
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
 	   0         1.000000000000000    0.000e+00
-	   1         0.998516885573265    2.141e-02
-	   2         0.999038931602496    1.011e-02
-	   3         0.999850196095388    4.730e-03
-	   4         1.000011878407377    1.426e-03
-	   5         1.000028473448597    2.899e-04
-	   6         1.000037141341056    7.459e-05
-	   7         1.000039283941456    2.170e-05
-	   8         1.000039713242640    7.430e-06
-	   9         1.000039880019104    2.169e-06
-	  10         1.000039940131534    6.770e-07
-	  11         1.000039954159930    2.243e-07
-	  12         1.000039954355862    7.208e-08
+	   1         0.998516885572828    2.141e-02
+	   2         0.999038931601354    1.011e-02
+	   3         0.999850196093051    4.730e-03
+	   4         1.000011878403919    1.426e-03
+	   5         1.000028473444273    2.899e-04
+	   6         1.000037141335890    7.459e-05
+	   7         1.000039283935407    2.170e-05
+	   8         1.000039713235600    7.430e-06
+	   9         1.000039880011177    2.169e-06
+	  10         1.000039940122746    6.770e-07
+	  11         1.000039954150200    2.243e-07
+	  12         1.000039954345602    7.208e-08
 
 	Initial  <L|R>  =        0.9989539490
 	Normalizing L...
@@ -735,77 +746,77 @@ Total time:
 	L1 * R1 =        0.9844714308
 	L2 * R2 =        0.0155285692
 	 <L|R>  =        1.0000000000
-	Pseudoenergy or Norm of normalized L =    1.001087142557711
+	Pseudoenergy or Norm of normalized L =    1.001087142557185
 
 	Largest LIA Amplitudes:
-	          2   0         0.0210960164
-	          3   6         0.0112580672
-	          1   0        -0.0084723972
-	          3   5         0.0064649574
-	          3 -1975840513         0.0048030359
-	          3 1610614778        -0.0034054137
-	          0   0        -0.0005124680
-	          3   7        -0.0000188097
+	          2   0        -0.0210960164
+	          3   6        -0.0112580672
+	          1   0         0.0084723972
+	          3   5        -0.0064649574
+	          3 1070614190        -0.0048030359
+	          3 -1342175237         0.0034054137
+	          0   0         0.0005124680
+	          3   0         0.0000188097
 
 	Largest Lia Amplitudes:
-	          2   1        -0.9882783069
-	          2   0         0.0712451648
-	          1   1         0.0438567800
-	          1   0        -0.0037481895
-	          0   0        -0.0006410355
-	          0   1        -0.0005706664
+	          2   1         0.9882783069
+	          2   0        -0.0712451648
+	          1   1        -0.0438567800
+	          1   0         0.0037481895
+	          0   0         0.0006410355
+	          0   1         0.0005706664
 
 	Largest LIJAB Amplitudes:
-	  4   3   7   0        -0.0013012246
-	  3   2   1   0        -0.0010520889
-	  4   3   9   0        -0.0007830823
-	  4   1   7   5         0.0007826194
-	  4   3   7   2        -0.0006591161
-	  4   2   7   5        -0.0006486219
-	  3   2   2   1         0.0005304004
-	  2   1   5   0        -0.0004993698
-	  4   1   9   5         0.0004851318
-	  2   1   5   2        -0.0004242790
+	  4   3   7   0         0.0013012246
+	  3   2   1   0         0.0010520889
+	  4   3   9   0         0.0007830823
+	  4   1   7   5        -0.0007826194
+	  4   3   7   2         0.0006591161
+	  4   2   7   5         0.0006486219
+	  3   2   2   1        -0.0005304004
+	  2   1   5   0         0.0004993698
+	  4   1   9   5        -0.0004851318
+	  2   1   5   2         0.0004242790
 
 	Largest Lijab Amplitudes:
-	  4   2   7   5        -0.0269177938
-	  4   2   9   5        -0.0183893288
-	  4   2   8   5         0.0156219189
-	  2   1   5   0        -0.0149375927
-	  4   2   7   6        -0.0146219744
-	  4   1   7   6        -0.0141137953
-	  4   2   8   6         0.0115157823
-	  2   1   5   3         0.0114252041
-	  2   1   6   3         0.0103521925
-	  2   1   6   0        -0.0098512123
+	  4   2   7   5         0.0269177938
+	  4   2   9   5         0.0183893288
+	  4   2   8   5        -0.0156219189
+	  2   1   5   0         0.0149375927
+	  4   2   7   6         0.0146219744
+	  4   1   7   6         0.0141137953
+	  4   2   8   6        -0.0115157823
+	  2   1   5   3        -0.0114252041
+	  2   1   6   3        -0.0103521925
+	  2   1   6   0         0.0098512123
 
 	Largest LIjAb Amplitudes:
-	  3   2   5   5         0.0509129189
-	  2   2   1   5         0.0388410480
-	  3   2   5   6         0.0355124284
-	  4   2   7   5        -0.0335537460
-	  4   1   7   6        -0.0298718735
-	  2   2   1   6        -0.0265147476
-	  4   2   9   5        -0.0246756117
-	  1   2   0   5        -0.0238184231
-	  4   1   9   6        -0.0221192072
-	  1   2   3   5         0.0206075599
+	  3   2   5   5        -0.0509129189
+	  2   2   1   5        -0.0388410480
+	  3   2   5   6        -0.0355124284
+	  4   2   7   5         0.0335537460
+	  4   1   7   6         0.0298718735
+	  2   2   1   6         0.0265147476
+	  4   2   9   5         0.0246756117
+	  1   2   0   5         0.0238184231
+	  4   1   9   6         0.0221192072
+	  1   2   3   5        -0.0206075599
 
 	Iterations converged.
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:04 2012
 Module time:
-	user time   =       0.08 seconds =       0.00 minutes
-	system time =       0.05 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       0.61 seconds =       0.01 minutes
-	system time =       0.45 seconds =       0.01 minutes
+	user time   =       0.09 seconds =       0.00 minutes
+	system time =       0.07 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       0.69 seconds =       0.01 minutes
+	system time =       0.66 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:04 2012
 
 
 			**************************
@@ -830,32 +841,32 @@ Total time:
 	Xi connected     = Yes
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (file100) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (file100) =  -75.596672115023708
 	CCSD energy         (CC_INFO) =   -0.117138982680376
-	Total CCSD energy   (CC_INFO) =  -75.713811097704067
+	Total CCSD energy   (CC_INFO) =  -75.713811097704081
 	Number of States = 1
 
 	Ground?  State     EOM Energy       R0
 	   No     1 B1    0.0856276307   0.00000000
 
 energy:    0.0856276307
-XIA amplitudes: norm=   0.065710147488578 dot=   0.004317823482971
-X1 amplitudes:  norm=   0.077827158332915 dot=   0.006057066574177
-Norm of Xi:    1.399201380630982
+XIA amplitudes: norm=   0.065710147489016 dot=   0.004317823483028
+X1 amplitudes:  norm=   0.077827158333837 dot=   0.006057066574320
+Norm of Xi:    1.399201380631103
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:04 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.64 seconds =       0.01 minutes
-	system time =       0.48 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.73 seconds =       0.01 minutes
+	system time =       0.71 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:04 2012
 
 
 			**************************
@@ -865,10 +876,10 @@ Total time:
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
 	Reference           (chkpt)   = 1
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (CC_INFO) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (CC_INFO) =  -75.596672115023708
 	CCSD energy         (CC_INFO) =   -0.117138982680376
-	Total CCSD energy   (CC_INFO) =  -75.713811097704067
+	Total CCSD energy   (CC_INFO) =  -75.713811097704081
 	Irrep of Zeta       (CC_INFO) = 0
 
 	Input parameters:
@@ -895,20 +906,20 @@ Total time:
 	          ------------------------
 	Iter     PseudoEnergy or Norm         RMS  
 	----     ---------------------     --------
-	   0         0.117406450360388    7.208e-08
-	   1         0.153431103267180    5.594e-02
-	   2         0.164157351887260    1.556e-02
-	   3         0.166850544462648    4.191e-03
-	   4         0.167159894533950    1.127e-03
-	   5         0.167201298368607    3.909e-04
-	   6         0.167204750395018    1.556e-04
-	   7         0.167204104176865    5.845e-05
-	   8         0.167203638981533    1.967e-05
-	   9         0.167204069974081    5.553e-06
-	  10         0.167203982130309    2.002e-06
-	  11         0.167203909545440    7.715e-07
-	  12         0.167203918515191    1.903e-07
-	  13         0.167203919008700    4.466e-08
+	   0         0.117406450360588    7.208e-08
+	   1         0.153431103267590    5.594e-02
+	   2         0.164157351887836    1.556e-02
+	   3         0.166850544463302    4.191e-03
+	   4         0.167159894534625    1.127e-03
+	   5         0.167201298369288    3.909e-04
+	   6         0.167204750395699    1.556e-04
+	   7         0.167204104177546    5.845e-05
+	   8         0.167203638982213    1.967e-05
+	   9         0.167204069974760    5.553e-06
+	  10         0.167203982130989    2.002e-06
+	  11         0.167203909546120    7.715e-07
+	  12         0.167203918515871    1.903e-07
+	  13         0.167203919009380    4.466e-08
 
 	Largest LIA Amplitudes:
 	          3   5        -0.0395879146
@@ -972,20 +983,20 @@ Total time:
 
 	Iterations converged.
 
-Norm of Zeta:    0.167203919008700
+Norm of Zeta:    0.167203919009380
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:22 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:04 2012
 Module time:
-	user time   =       0.10 seconds =       0.00 minutes
-	system time =       0.06 seconds =       0.00 minutes
+	user time   =       0.11 seconds =       0.00 minutes
+	system time =       0.09 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.74 seconds =       0.01 minutes
-	system time =       0.54 seconds =       0.01 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.84 seconds =       0.01 minutes
+	system time =       0.80 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:22 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:04 2012
 
 
 			**************************
@@ -1010,10 +1021,10 @@ Total time:
 	Xi connected     = Yes
 
 	Nuclear Rep. energy (chkpt)   =    8.647166888151858
-	SCF energy          (chkpt)   =  -75.596672115023651
-	Reference energy    (file100) =  -75.596672115023694
+	SCF energy          (chkpt)   =  -75.596672115023679
+	Reference energy    (file100) =  -75.596672115023708
 	CCSD energy         (CC_INFO) =   -0.117138982680376
-	Total CCSD energy   (CC_INFO) =  -75.713811097704067
+	Total CCSD energy   (CC_INFO) =  -75.713811097704081
 	Number of States = 1
 
 	Ground?  State     EOM Energy       R0
@@ -1021,67 +1032,67 @@ Total time:
 
 	Energies re-computed from CC density:
 	-------------------------------------
-	One-electron energy        =    0.862740480322615
-	IJKL energy                =    0.030742451779096
-	IJKA energy                =   -0.006347799070129
-	IJAB energy                =   -0.159270112009230
-	IBJA energy                =   -0.724973858496940
-	CIAB energy                =   -0.060573354181130
-	ABCD energy                =    0.026170844784927
-	Total two-electron energy  =   -0.894251827193407
+	One-electron energy        =    0.862740480322422
+	IJKL energy                =    0.030742451779551
+	IJKA energy                =   -0.006347799073179
+	IJAB energy                =   -0.159270112009353
+	IBJA energy                =   -0.724973858497417
+	CIAB energy                =   -0.060573354177958
+	ABCD energy                =    0.026170844785142
+	Total two-electron energy  =   -0.894251827193215
 	Total EOM CCSD correlation energy        =   -0.031511346870792
-	CCSD correlation + EOM excitation energy =   -0.031511351977805
-	Total EOM CCSD energy                    =  -75.628183461894480
+	CCSD correlation + EOM excitation energy =   -0.031511351978207
+	Total EOM CCSD energy                    =  -75.628183461894494
 
 	Virial Theorem Data:
 	--------------------
-	Kinetic energy (ref)   =   75.635518029068109
-	Kinetic energy (corr)  =   -0.094972382134274
-	Kinetic energy (total) =   75.540545646933836
-	-V/T (ref)             =    1.999486406452198
-	-V/T (corr)            =   -0.233400490205269
-	-V/T (total)           =    2.002293674864093
+	Kinetic energy (ref)   =   75.635518029068180
+	Kinetic energy (corr)  =   -0.094972382132081
+	Kinetic energy (total) =   75.540545646936096
+	-V/T (ref)             =    1.999486406452197
+	-V/T (corr)            =   -0.233400490233749
+	-V/T (total)           =    2.002293674864063
 
 	Energies re-computed from Fock-adjusted CC density:
 	---------------------------------------------------
-	One-electron energy        =    0.216238034179754
-	IJKL energy                =   -6.448230447533183
-	IJKA energy                =   -0.134282486556539
-	IJAB energy                =   -0.159270112009230
-	IBJA energy                =    6.528436174444059
-	CIAB energy                =   -0.060573354181130
-	ABCD energy                =    0.026170844784927
-	Total two-electron energy  =   -0.247749381051096
-	Total EOM CCSD correlation energy        =   -0.031511346871343
-	CCSD correlation + EOM excitation energy =   -0.031511351977805
-	Total EOM CCSD energy                    =  -75.628183461895034
+	One-electron energy        =    0.216238034179896
+	IJKL energy                =   -6.448230447537575
+	IJKA energy                =   -0.134282486551453
+	IJAB energy                =   -0.159270112009353
+	IBJA energy                =    6.528436174439956
+	CIAB energy                =   -0.060573354177958
+	ABCD energy                =    0.026170844785142
+	Total two-electron energy  =   -0.247749381051240
+	Total EOM CCSD correlation energy        =   -0.031511346871345
+	CCSD correlation + EOM excitation energy =   -0.031511351978207
+	Total EOM CCSD energy                    =  -75.628183461895048
 
 	Energies re-computed from Mulliken density:
 	-------------------------------------------
-	One-electron energy        =    0.216238034179754
-	IJKL energy                =   -6.448230447533183
-	IJKA energy                =   -0.134282486556539
-	IJAB energy                =   -0.346338855885681
-	IBJA energy                =    6.715504918320510
-	CIAB energy                =   -0.060573354181130
-	ABCD energy                =    0.026170844784927
-	Total two-electron energy  =   -0.247749381051096
+	One-electron energy        =    0.216238034179896
+	IJKL energy                =   -6.448230447537574
+	IJKA energy                =   -0.134282486551453
+	IJAB energy                =   -0.346338855885634
+	IBJA energy                =    6.715504918316238
+	CIAB energy                =   -0.060573354177958
+	ABCD energy                =    0.026170844785142
+	Total two-electron energy  =   -0.247749381051238
 	Total EOM CCSD correlation energy        =   -0.031511346871343
-	CCSD correlation + EOM excitation energy =   -0.031511351977805
-	Total EOM CCSD energy                    =  -75.628183461895034
+	CCSD correlation + EOM excitation energy =   -0.031511351978207
+	Total EOM CCSD energy                    =  -75.628183461895048
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:04 2012
 Module time:
-	user time   =       0.08 seconds =       0.00 minutes
-	system time =       0.08 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.09 seconds =       0.00 minutes
+	system time =       0.11 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.82 seconds =       0.01 minutes
-	system time =       0.62 seconds =       0.01 minutes
+	user time   =       0.93 seconds =       0.02 minutes
+	system time =       0.91 seconds =       0.02 minutes
 	total time  =          2 seconds =       0.03 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:04 2012
 
  DERIV: Derivative code.
    by Justin Turney
@@ -1137,38 +1148,36 @@ Total time:
 	First half integral transformation complete.
 
 
-
-
   -Nuclear Repulsion Energy 1st Derivatives:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     1.732636842258    -1.426777654799
        2        0.000000000000     0.000000000000     2.853555309597
-       3        0.000000000000    -1.732636842258    -1.426777654799
+       3       -0.000000000000    -1.732636842258    -1.426777654799
 
 
   -One-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000    -3.292168682346     3.545864265090
-       2        0.000000000000     0.000000000000    -7.091728530181
-       3        0.000000000000     3.292168682346     3.545864265090
+       1        0.000000000000    -3.292168682347     3.545864265093
+       2        0.000000000000     0.000000000000    -7.091728530186
+       3        0.000000000000     3.292168682347     3.545864265093
 
 
   -Lagrangian contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     0.242131363984    -0.336279089795
-       2        0.000000000000     0.000000000000     0.672558179590
+       2        0.000000000000     0.000000000000     0.672558179591
        3        0.000000000000    -0.242131363984    -0.336279089795
 
 
   -Two-electron contribution to gradient:
      Atom            X                  Y                   Z
     ------   -----------------  -----------------  -----------------
-       1        0.000000000000     1.372711458236    -1.729095758822
-       2        0.000000000000     0.000000000000     3.458191517644
-       3        0.000000000000    -1.372711458236    -1.729095758822
+       1        0.000000000000     1.372711458237    -1.729095758824
+       2        0.000000000000     0.000000000000     3.458191517648
+       3        0.000000000000    -1.372711458237    -1.729095758824
 
 
   -Total gradient:
@@ -1176,17 +1185,17 @@ Total time:
     ------   -----------------  -----------------  -----------------
        1        0.000000000000     0.055310982132     0.053711761674
        2        0.000000000000     0.000000000000    -0.107423523349
-       3        0.000000000000    -0.055310982132     0.053711761674
+       3       -0.000000000000    -0.055310982132     0.053711761674
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:04 2012
 Module time:
-	user time   =       0.09 seconds =       0.00 minutes
+	user time   =       0.06 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.91 seconds =       0.02 minutes
-	system time =       0.63 seconds =       0.01 minutes
+	user time   =       0.99 seconds =       0.02 minutes
+	system time =       0.92 seconds =       0.02 minutes
 	total time  =          2 seconds =       0.03 minutes
 
 -------------------------------------------------------------
@@ -1204,8 +1213,8 @@ Total time:
   //    Loading displacement 1 of 5    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:05 2012
 
 
          ---------------------------------------------------------
@@ -1303,16 +1312,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79523076159865   -1.90044e+01   1.53750e+00 
+   @ROHF iter   1:   -71.79523076159865   -1.90044e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51093706451789   -1.71571e+00   8.44919e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41852834481833   -1.90759e+00   6.41864e-01 DIIS
    @ROHF iter   4:   -75.59284653489487   -1.74318e-01   6.54221e-02 DIIS
    @ROHF iter   5:   -75.59660576387313   -3.75923e-03   9.94061e-03 DIIS
@@ -1353,6 +1364,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59673279587605
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6349744709892846
+    One-Electron Energy =            -117.1216293372436041
+    Two-Electron Energy =              32.8899220703782760
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5967327958760507
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -1370,18 +1390,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:05 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.05 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.97 seconds =       0.02 minutes
-	system time =       0.64 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.04 seconds =       0.02 minutes
+	system time =       0.93 seconds =       0.02 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:05 2012
 
 
 	**************************************************
@@ -1429,18 +1449,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:05 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
+	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       0.98 seconds =       0.02 minutes
-	system time =       0.64 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.04 seconds =       0.02 minutes
+	system time =       0.93 seconds =       0.02 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:05 2012
 
 
 			**************************
@@ -1514,18 +1534,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59673279587602
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:05 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.00 seconds =       0.02 minutes
-	system time =       0.67 seconds =       0.01 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.06 seconds =       0.02 minutes
+	system time =       0.97 seconds =       0.02 minutes
+	total time  =          3 seconds =       0.05 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:05 2012
 
 			**************************
 			*                        *
@@ -1652,18 +1672,18 @@ Total time:
       * CCSD total energy                     =  -75.713980566298247
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.25 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       1.29 seconds =       0.02 minutes
-	system time =       0.92 seconds =       0.02 minutes
+	user time   =       0.35 seconds =       0.01 minutes
+	system time =       0.39 seconds =       0.01 minutes
 	total time  =          2 seconds =       0.03 minutes
+Total time:
+	user time   =       1.42 seconds =       0.02 minutes
+	system time =       1.36 seconds =       0.02 minutes
+	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 
 			**************************
@@ -1673,18 +1693,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:23 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.32 seconds =       0.02 minutes
-	system time =       0.95 seconds =       0.02 minutes
-	total time  =          2 seconds =       0.03 minutes
+	user time   =       1.46 seconds =       0.02 minutes
+	system time =       1.41 seconds =       0.02 minutes
+	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:23 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 
 	**********************************************************
@@ -1808,22 +1828,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.16 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.46 seconds =       0.02 minutes
-	system time =       1.05 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       1.62 seconds =       0.03 minutes
+	system time =       1.55 seconds =       0.03 minutes
+	total time  =          5 seconds =       0.08 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 2 of 5    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 
          ---------------------------------------------------------
@@ -1921,16 +1941,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79477646330341   -1.90121e+01   8.13177e-02 
+   @ROHF iter   1:   -71.79477646330341   -1.90121e+01   1.12303e+219 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51819503760552   -1.72342e+00   8.45940e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42039262308252   -1.90220e+00   6.42962e-01 DIIS
    @ROHF iter   4:   -75.59274927887638   -1.72357e-01   6.50763e-02 DIIS
    @ROHF iter   5:   -75.59647861200200   -3.72933e-03   9.91089e-03 DIIS
@@ -1971,6 +1993,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59660357303078
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6593823487344341
+    One-Electron Energy =            -117.1586194900023088
+    Two-Electron Energy =              32.9026335682370927
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5966035730307766
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -1988,18 +2019,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.52 seconds =       0.03 minutes
-	system time =       1.06 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       1.67 seconds =       0.03 minutes
+	system time =       1.56 seconds =       0.03 minutes
+	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 
 	**************************************************
@@ -2047,18 +2078,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
 	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.52 seconds =       0.03 minutes
-	system time =       1.06 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       1.67 seconds =       0.03 minutes
+	system time =       1.56 seconds =       0.03 minutes
+	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 
 			**************************
@@ -2132,18 +2163,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59660357303083
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:07 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       1.54 seconds =       0.03 minutes
-	system time =       1.09 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       1.70 seconds =       0.03 minutes
+	system time =       1.60 seconds =       0.03 minutes
+	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:07 2012
 
 			**************************
 			*                        *
@@ -2270,18 +2301,18 @@ Total time:
       * CCSD total energy                     =  -75.713633788717814
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:09 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.26 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.36 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       1.84 seconds =       0.03 minutes
-	system time =       1.35 seconds =       0.02 minutes
-	total time  =          3 seconds =       0.05 minutes
+	user time   =       2.06 seconds =       0.03 minutes
+	system time =       2.01 seconds =       0.03 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:09 2012
 
 
 			**************************
@@ -2291,18 +2322,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:10 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       1.87 seconds =       0.03 minutes
-	system time =       1.38 seconds =       0.02 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       2.09 seconds =       0.03 minutes
+	system time =       2.06 seconds =       0.03 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:10 2012
 
 
 	**********************************************************
@@ -2426,22 +2457,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:10 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.09 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.13 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.01 seconds =       0.03 minutes
-	system time =       1.47 seconds =       0.02 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       2.26 seconds =       0.04 minutes
+	system time =       2.19 seconds =       0.04 minutes
+	total time  =          8 seconds =       0.13 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 3 of 5    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:10 2012
 
 
          ---------------------------------------------------------
@@ -2539,16 +2570,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79544246141973   -1.90113e+01   3.46365e-80 
+   @ROHF iter   1:   -71.79544246141973   -1.90113e+01   -1.36730e-05 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.52075960911321   -1.72532e+00   8.45626e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42091362972894   -1.90015e+00   6.42541e-01 DIIS
    @ROHF iter   4:   -75.59309042237263   -1.72177e-01   6.50522e-02 DIIS
    @ROHF iter   5:   -75.59681306644413   -3.72264e-03   9.90996e-03 DIIS
@@ -2589,6 +2622,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59693761198587
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6578358524893417
+    One-Electron Energy =            -117.1578493802905712
+    Two-Electron Energy =              32.9030759158153643
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5969376119858651
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -2606,18 +2648,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:10 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.07 seconds =       0.03 minutes
-	system time =       1.48 seconds =       0.02 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       2.30 seconds =       0.04 minutes
+	system time =       2.20 seconds =       0.04 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:10 2012
 
 
 	**************************************************
@@ -2665,18 +2707,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:10 2012
 Module time:
-	user time   =       0.00 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.01 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.07 seconds =       0.03 minutes
-	system time =       1.48 seconds =       0.02 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       2.31 seconds =       0.04 minutes
+	system time =       2.21 seconds =       0.04 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:10 2012
 
 
 			**************************
@@ -2750,18 +2792,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59693761198588
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:10 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.09 seconds =       0.03 minutes
-	system time =       1.51 seconds =       0.03 minutes
-	total time  =          4 seconds =       0.07 minutes
+	user time   =       2.33 seconds =       0.04 minutes
+	system time =       2.25 seconds =       0.04 minutes
+	total time  =          8 seconds =       0.13 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:10 2012
 
 			**************************
 			*                        *
@@ -2888,18 +2930,18 @@ Total time:
       * CCSD total energy                     =  -75.713936610907268
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.26 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =       2.39 seconds =       0.04 minutes
-	system time =       1.77 seconds =       0.03 minutes
+	user time   =       0.39 seconds =       0.01 minutes
+	system time =       0.44 seconds =       0.01 minutes
 	total time  =          4 seconds =       0.07 minutes
+Total time:
+	user time   =       2.72 seconds =       0.05 minutes
+	system time =       2.69 seconds =       0.04 minutes
+	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 
 			**************************
@@ -2909,18 +2951,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	system time =       0.04 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.42 seconds =       0.04 minutes
-	system time =       1.80 seconds =       0.03 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       2.75 seconds =       0.05 minutes
+	system time =       2.73 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 
 	**********************************************************
@@ -3044,22 +3086,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.09 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.56 seconds =       0.04 minutes
-	system time =       1.89 seconds =       0.03 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       2.92 seconds =       0.05 minutes
+	system time =       2.87 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 4 of 5    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 
          ---------------------------------------------------------
@@ -3157,16 +3199,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79456799267324   -1.90052e+01   -7.41556e-02 
+   @ROHF iter   1:   -71.79456799267324   -1.90052e+01   5.64020e-67 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.50837324310365   -1.71381e+00   8.45232e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41800265437979   -1.90963e+00   6.42283e-01 DIIS
    @ROHF iter   4:   -75.59250785411675   -1.74505e-01   6.54474e-02 DIIS
    @ROHF iter   5:   -75.59627395796041   -3.76610e-03   9.94161e-03 DIIS
@@ -3207,6 +3251,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59640143575757
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6365078211009028
+    One-Electron Energy =            -117.1223811307814913
+    Two-Electron Energy =              32.8894718739230214
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5964014357575707
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -3224,18 +3277,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.62 seconds =       0.04 minutes
-	system time =       1.90 seconds =       0.03 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       2.96 seconds =       0.05 minutes
+	system time =       2.88 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 
 	**************************************************
@@ -3283,18 +3336,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
-	user time   =       0.00 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.01 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.62 seconds =       0.04 minutes
-	system time =       1.90 seconds =       0.03 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       2.97 seconds =       0.05 minutes
+	system time =       2.89 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 
 			**************************
@@ -3368,18 +3421,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59640143575763
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:14 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.64 seconds =       0.04 minutes
-	system time =       1.92 seconds =       0.03 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       2.99 seconds =       0.05 minutes
+	system time =       2.92 seconds =       0.05 minutes
+	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:14 2012
 
 			**************************
 			*                        *
@@ -3506,18 +3559,18 @@ Total time:
       * CCSD total energy                     =  -75.713680687899881
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:17 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.25 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.36 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       2.94 seconds =       0.05 minutes
-	system time =       2.17 seconds =       0.04 minutes
-	total time  =          5 seconds =       0.08 minutes
+	user time   =       3.35 seconds =       0.06 minutes
+	system time =       3.33 seconds =       0.06 minutes
+	total time  =         15 seconds =       0.25 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:17 2012
 
 
 			**************************
@@ -3527,18 +3580,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:17 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       2.97 seconds =       0.05 minutes
-	system time =       2.20 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.39 seconds =       0.06 minutes
+	system time =       3.37 seconds =       0.06 minutes
+	total time  =         15 seconds =       0.25 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:17 2012
 
 
 	**********************************************************
@@ -3662,22 +3715,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:17 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.09 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.11 seconds =       0.05 minutes
-	system time =       2.29 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.56 seconds =       0.06 minutes
+	system time =       3.51 seconds =       0.06 minutes
+	total time  =         15 seconds =       0.25 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 5 of 5    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:17 2012
 
 
          ---------------------------------------------------------
@@ -3775,16 +3828,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79500741995454   -1.90082e+01   -1.16286e-04 
+   @ROHF iter   1:   -71.79500741995454   -1.90082e+01   6.93723e-310 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51457382482282   -1.71957e+00   8.45431e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41946464293542   -1.90489e+00   6.42415e-01 DIIS
    @ROHF iter   4:   -75.59280193995370   -1.73337e-01   6.52495e-02 DIIS
    @ROHF iter   5:   -75.59654612502143   -3.74419e-03   9.92567e-03 DIIS
@@ -3825,6 +3880,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59667211502365
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6471668881518582
+    One-Electron Energy =            -117.1401097946173167
+    Two-Electron Energy =              32.8962707914418075
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5966721150236509
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -3842,18 +3906,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:17 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.17 seconds =       0.05 minutes
-	system time =       2.30 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.60 seconds =       0.06 minutes
+	system time =       3.52 seconds =       0.06 minutes
+	total time  =         15 seconds =       0.25 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:17 2012
 
 
 	**************************************************
@@ -3901,18 +3965,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:17 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.18 seconds =       0.05 minutes
-	system time =       2.31 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.61 seconds =       0.06 minutes
+	system time =       3.53 seconds =       0.06 minutes
+	total time  =         15 seconds =       0.25 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:17 2012
 
 
 			**************************
@@ -3986,18 +4050,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59667211502369
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:18 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       3.20 seconds =       0.05 minutes
-	system time =       2.33 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.63 seconds =       0.06 minutes
+	system time =       3.56 seconds =       0.06 minutes
+	total time  =         16 seconds =       0.27 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:18 2012
 
 			**************************
 			*                        *
@@ -4124,18 +4188,18 @@ Total time:
       * CCSD total energy                     =  -75.713811097704067
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:27 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:19 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.24 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.35 seconds =       0.01 minutes
+	system time =       0.40 seconds =       0.01 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       3.49 seconds =       0.06 minutes
-	system time =       2.57 seconds =       0.04 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       3.98 seconds =       0.07 minutes
+	system time =       3.96 seconds =       0.07 minutes
+	total time  =         17 seconds =       0.28 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:27 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:19 2012
 
 
 			**************************
@@ -4145,18 +4209,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:20 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       3.52 seconds =       0.06 minutes
-	system time =       2.60 seconds =       0.04 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.02 seconds =       0.07 minutes
+	system time =       4.01 seconds =       0.07 minutes
+	total time  =         18 seconds =       0.30 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:20 2012
 
 
 	**********************************************************
@@ -4280,15 +4344,15 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:20 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.66 seconds =       0.06 minutes
-	system time =       2.70 seconds =       0.05 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.19 seconds =       0.07 minutes
+	system time =       4.15 seconds =       0.07 minutes
+	total time  =         18 seconds =       0.30 minutes
 
 -------------------------------------------------------------
 
@@ -4322,8 +4386,8 @@ Total time:
   //    Loading displacement 1 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:20 2012
 
 
          ---------------------------------------------------------
@@ -4426,11 +4490,13 @@ Total time:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.50728490388701   -1.71184e+00   8.44404e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41758436022226   -1.91030e+00   6.41309e-01 DIIS
    @ROHF iter   4:   -75.59288315224209   -1.75299e-01   6.55940e-02 DIIS
    @ROHF iter   5:   -75.59665758700771   -3.77443e-03   9.95566e-03 DIIS
@@ -4471,6 +4537,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59678567350971
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6228050890539087
+    One-Electron Energy =            -117.1031781948809112
+    Two-Electron Energy =              32.8835874323172845
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5967856735097143
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -4488,18 +4563,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:21 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       3.72 seconds =       0.06 minutes
-	system time =       2.71 seconds =       0.05 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.23 seconds =       0.07 minutes
+	system time =       4.16 seconds =       0.07 minutes
+	total time  =         19 seconds =       0.32 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:21 2012
 
 
 	**************************************************
@@ -4547,18 +4622,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:21 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
+	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.73 seconds =       0.06 minutes
-	system time =       2.71 seconds =       0.05 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.23 seconds =       0.07 minutes
+	system time =       4.16 seconds =       0.07 minutes
+	total time  =         19 seconds =       0.32 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:21 2012
 
 
 			**************************
@@ -4632,18 +4707,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59678567350960
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:21 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       3.75 seconds =       0.06 minutes
-	system time =       2.73 seconds =       0.05 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.25 seconds =       0.07 minutes
+	system time =       4.19 seconds =       0.07 minutes
+	total time  =         19 seconds =       0.32 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:21 2012
 
 			**************************
 			*                        *
@@ -4770,18 +4845,18 @@ Total time:
       * CCSD total energy                     =  -75.714142251111227
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:28 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:22 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.24 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.36 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       4.04 seconds =       0.07 minutes
-	system time =       2.97 seconds =       0.05 minutes
-	total time  =          7 seconds =       0.12 minutes
+	user time   =       4.62 seconds =       0.08 minutes
+	system time =       4.60 seconds =       0.08 minutes
+	total time  =         20 seconds =       0.33 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:28 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:22 2012
 
 
 			**************************
@@ -4791,18 +4866,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:29 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:23 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       4.07 seconds =       0.07 minutes
-	system time =       3.00 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.66 seconds =       0.08 minutes
+	system time =       4.64 seconds =       0.08 minutes
+	total time  =         21 seconds =       0.35 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:29 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:23 2012
 
 
 	**********************************************************
@@ -4926,22 +5001,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:29 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:23 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.21 seconds =       0.07 minutes
-	system time =       3.10 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.83 seconds =       0.08 minutes
+	system time =       4.78 seconds =       0.08 minutes
+	total time  =         21 seconds =       0.35 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 2 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:29 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:23 2012
 
 
          ---------------------------------------------------------
@@ -5039,16 +5114,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79523076159865   -1.90044e+01   6.27592e-02 
+   @ROHF iter   1:   -71.79523076159865   -1.90044e+01   1.37905e-05 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51093706451789   -1.71571e+00   8.44919e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41852834481833   -1.90759e+00   6.41864e-01 DIIS
    @ROHF iter   4:   -75.59284653489487   -1.74318e-01   6.54221e-02 DIIS
    @ROHF iter   5:   -75.59660576387313   -3.75923e-03   9.94061e-03 DIIS
@@ -5089,6 +5166,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59673279587605
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6349744709892846
+    One-Electron Energy =            -117.1216293372436041
+    Two-Electron Energy =              32.8899220703782760
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5967327958760507
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -5106,18 +5192,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:29 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:23 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.27 seconds =       0.07 minutes
-	system time =       3.10 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.87 seconds =       0.08 minutes
+	system time =       4.79 seconds =       0.08 minutes
+	total time  =         21 seconds =       0.35 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:29 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:23 2012
 
 
 	**************************************************
@@ -5165,18 +5251,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:29 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:23 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
+	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.28 seconds =       0.07 minutes
-	system time =       3.11 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.87 seconds =       0.08 minutes
+	system time =       4.80 seconds =       0.08 minutes
+	total time  =         21 seconds =       0.35 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:29 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:23 2012
 
 
 			**************************
@@ -5250,18 +5336,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59673279587602
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:29 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:23 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.30 seconds =       0.07 minutes
-	system time =       3.13 seconds =       0.05 minutes
-	total time  =          8 seconds =       0.13 minutes
+	user time   =       4.90 seconds =       0.08 minutes
+	system time =       4.84 seconds =       0.08 minutes
+	total time  =         21 seconds =       0.35 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:29 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:23 2012
 
 			**************************
 			*                        *
@@ -5388,18 +5474,18 @@ Total time:
       * CCSD total energy                     =  -75.713980566298247
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:26 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.37 seconds =       0.01 minutes
+	system time =       0.42 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       4.59 seconds =       0.08 minutes
-	system time =       3.40 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.27 seconds =       0.09 minutes
+	system time =       5.26 seconds =       0.09 minutes
+	total time  =         24 seconds =       0.40 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:26 2012
 
 
 			**************************
@@ -5409,18 +5495,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:26 2012
 Module time:
 	user time   =       0.04 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.63 seconds =       0.08 minutes
-	system time =       3.43 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.31 seconds =       0.09 minutes
+	system time =       5.31 seconds =       0.09 minutes
+	total time  =         24 seconds =       0.40 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:26 2012
 
 
 	**********************************************************
@@ -5544,22 +5630,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:27 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.11 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       4.77 seconds =       0.08 minutes
-	system time =       3.54 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.48 seconds =       0.09 minutes
+	system time =       5.45 seconds =       0.09 minutes
+	total time  =         25 seconds =       0.42 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 3 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:27 2012
 
 
          ---------------------------------------------------------
@@ -5657,16 +5743,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79477646330341   -1.90121e+01   0.00000e+00 
+   @ROHF iter   1:   -71.79477646330341   -1.90121e+01   -2.57271e-02 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51819503760552   -1.72342e+00   8.45940e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42039262308252   -1.90220e+00   6.42962e-01 DIIS
    @ROHF iter   4:   -75.59274927887638   -1.72357e-01   6.50763e-02 DIIS
    @ROHF iter   5:   -75.59647861200200   -3.72933e-03   9.91089e-03 DIIS
@@ -5707,6 +5795,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59660357303078
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6593823487344341
+    One-Electron Energy =            -117.1586194900023088
+    Two-Electron Energy =              32.9026335682370927
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5966035730307766
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -5724,18 +5821,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:27 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.83 seconds =       0.08 minutes
-	system time =       3.54 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.52 seconds =       0.09 minutes
+	system time =       5.46 seconds =       0.09 minutes
+	total time  =         25 seconds =       0.42 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:27 2012
 
 
 	**************************************************
@@ -5783,18 +5880,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:27 2012
 Module time:
 	user time   =       0.01 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.84 seconds =       0.08 minutes
-	system time =       3.55 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.53 seconds =       0.09 minutes
+	system time =       5.47 seconds =       0.09 minutes
+	total time  =         25 seconds =       0.42 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:27 2012
 
 
 			**************************
@@ -5868,18 +5965,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59660357303083
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:30 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:27 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       4.86 seconds =       0.08 minutes
-	system time =       3.57 seconds =       0.06 minutes
-	total time  =          9 seconds =       0.15 minutes
+	user time   =       5.55 seconds =       0.09 minutes
+	system time =       5.50 seconds =       0.09 minutes
+	total time  =         25 seconds =       0.42 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:30 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:27 2012
 
 			**************************
 			*                        *
@@ -6006,18 +6103,18 @@ Total time:
       * CCSD total energy                     =  -75.713633788717814
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
-	user time   =       0.30 seconds =       0.00 minutes
-	system time =       0.28 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.37 seconds =       0.01 minutes
+	system time =       0.42 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       5.16 seconds =       0.09 minutes
-	system time =       3.85 seconds =       0.06 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       5.92 seconds =       0.10 minutes
+	system time =       5.92 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 
 			**************************
@@ -6027,18 +6124,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.19 seconds =       0.09 minutes
-	system time =       3.88 seconds =       0.06 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       5.96 seconds =       0.10 minutes
+	system time =       5.97 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 
 	**********************************************************
@@ -6162,22 +6259,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.33 seconds =       0.09 minutes
-	system time =       3.98 seconds =       0.07 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       6.13 seconds =       0.10 minutes
+	system time =       6.11 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 4 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 
          ---------------------------------------------------------
@@ -6275,16 +6372,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79453783167520   -1.90160e+01   -1.87846e-02 
+   @ROHF iter   1:   -71.79453783167520   -1.90160e+01   5.64020e-67 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.52180055704179   -1.72726e+00   8.46445e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42131159267154   -1.89951e+00   6.43504e-01 DIIS
    @ROHF iter   4:   -75.59268846202949   -1.71377e-01   6.49025e-02 DIIS
    @ROHF iter   5:   -75.59640316619770   -3.71470e-03   9.89628e-03 DIIS
@@ -6325,6 +6424,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59652711182829
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6716208604428999
+    One-Electron Energy =            -117.1771583450690173
+    Two-Electron Energy =              32.9090103727978303
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5965271118282942
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -6342,18 +6450,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.40 seconds =       0.09 minutes
-	system time =       3.99 seconds =       0.07 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       6.17 seconds =       0.10 minutes
+	system time =       6.12 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 
 	**************************************************
@@ -6401,18 +6509,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
-	user time   =       0.00 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.01 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.40 seconds =       0.09 minutes
-	system time =       3.99 seconds =       0.07 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       6.18 seconds =       0.10 minutes
+	system time =       6.13 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 
 			**************************
@@ -6486,18 +6594,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59652711182831
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:30 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.42 seconds =       0.09 minutes
-	system time =       4.02 seconds =       0.07 minutes
-	total time  =         10 seconds =       0.17 minutes
+	user time   =       6.20 seconds =       0.10 minutes
+	system time =       6.16 seconds =       0.10 minutes
+	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:30 2012
 
 			**************************
 			*                        *
@@ -6624,18 +6732,18 @@ Total time:
       * CCSD total energy                     =  -75.713448582593614
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:33 2012
 Module time:
-	user time   =       0.30 seconds =       0.00 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.36 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       5.73 seconds =       0.10 minutes
-	system time =       4.29 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.57 seconds =       0.11 minutes
+	system time =       6.57 seconds =       0.11 minutes
+	total time  =         31 seconds =       0.52 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:33 2012
 
 
 			**************************
@@ -6645,18 +6753,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:33 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.76 seconds =       0.10 minutes
-	system time =       4.33 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.61 seconds =       0.11 minutes
+	system time =       6.62 seconds =       0.11 minutes
+	total time  =         31 seconds =       0.52 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:33 2012
 
 
 	**********************************************************
@@ -6780,22 +6888,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:34 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.16 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       5.90 seconds =       0.10 minutes
-	system time =       4.43 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.77 seconds =       0.11 minutes
+	system time =       6.76 seconds =       0.11 minutes
+	total time  =         32 seconds =       0.53 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 5 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:34 2012
 
 
          ---------------------------------------------------------
@@ -6893,16 +7001,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79587311025055   -1.90143e+01   1.60729e-03 
+   @ROHF iter   1:   -71.79587311025055   -1.90143e+01   6.93723e-310 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.52693026746442   -1.73106e+00   8.45815e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42234907775422   -1.89542e+00   6.42661e-01 DIIS
    @ROHF iter   4:   -75.59337325576755   -1.71024e-01   6.48553e-02 DIIS
    @ROHF iter   5:   -75.59707474961010   -3.70149e-03   9.89447e-03 DIIS
@@ -6943,6 +7053,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59719789332078
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6685146167402145
+    One-Electron Energy =            -117.1755996832424813
+    Two-Electron Energy =              32.9098871731814882
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5971978933207822
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -6960,18 +7079,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:34 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.05 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.97 seconds =       0.10 minutes
-	system time =       4.44 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.82 seconds =       0.11 minutes
+	system time =       6.77 seconds =       0.11 minutes
+	total time  =         32 seconds =       0.53 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:34 2012
 
 
 	**************************************************
@@ -7019,18 +7138,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:34 2012
 Module time:
 	user time   =       0.00 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.97 seconds =       0.10 minutes
-	system time =       4.45 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.82 seconds =       0.11 minutes
+	system time =       6.77 seconds =       0.11 minutes
+	total time  =         32 seconds =       0.53 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:34 2012
 
 
 			**************************
@@ -7104,18 +7223,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59719789332078
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:34 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       5.99 seconds =       0.10 minutes
-	system time =       4.47 seconds =       0.07 minutes
-	total time  =         11 seconds =       0.18 minutes
+	user time   =       6.85 seconds =       0.11 minutes
+	system time =       6.81 seconds =       0.11 minutes
+	total time  =         32 seconds =       0.53 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:34 2012
 
 			**************************
 			*                        *
@@ -7242,18 +7361,18 @@ Total time:
       * CCSD total energy                     =  -75.714057196311828
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:39 2012
 Module time:
-	user time   =       0.30 seconds =       0.01 minutes
-	system time =       0.29 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.38 seconds =       0.01 minutes
+	system time =       0.43 seconds =       0.01 minutes
+	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =       6.30 seconds =       0.11 minutes
-	system time =       4.76 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.23 seconds =       0.12 minutes
+	system time =       7.24 seconds =       0.12 minutes
+	total time  =         37 seconds =       0.62 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:39 2012
 
 
 			**************************
@@ -7263,18 +7382,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:39 2012
 Module time:
-	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       6.33 seconds =       0.11 minutes
-	system time =       4.79 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.27 seconds =       0.12 minutes
+	system time =       7.28 seconds =       0.12 minutes
+	total time  =         37 seconds =       0.62 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:39 2012
 
 
 	**********************************************************
@@ -7398,22 +7517,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:40 2012
 Module time:
-	user time   =       0.15 seconds =       0.00 minutes
-	system time =       0.11 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.15 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       6.48 seconds =       0.11 minutes
-	system time =       4.90 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.44 seconds =       0.12 minutes
+	system time =       7.43 seconds =       0.12 minutes
+	total time  =         38 seconds =       0.63 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 6 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:40 2012
 
 
          ---------------------------------------------------------
@@ -7511,16 +7630,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79544246141973   -1.90113e+01   1.53596e-03 
+   @ROHF iter   1:   -71.79544246141973   -1.90113e+01   5.64020e-67 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.52075960911321   -1.72532e+00   8.45626e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.42091362972894   -1.90015e+00   6.42541e-01 DIIS
    @ROHF iter   4:   -75.59309042237263   -1.72177e-01   6.50522e-02 DIIS
    @ROHF iter   5:   -75.59681306644413   -3.72264e-03   9.90996e-03 DIIS
@@ -7561,6 +7682,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59693761198587
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6578358524893417
+    One-Electron Energy =            -117.1578493802905712
+    Two-Electron Energy =              32.9030759158153643
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5969376119858651
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -7578,18 +7708,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:40 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       6.54 seconds =       0.11 minutes
-	system time =       4.91 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.48 seconds =       0.12 minutes
+	system time =       7.44 seconds =       0.12 minutes
+	total time  =         38 seconds =       0.63 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:40 2012
 
 
 	**************************************************
@@ -7637,18 +7767,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:41 2012
 Module time:
-	user time   =       0.01 seconds =       0.00 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.00 seconds =       0.00 minutes
+	system time =       0.00 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       6.55 seconds =       0.11 minutes
-	system time =       4.92 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.49 seconds =       0.12 minutes
+	system time =       7.44 seconds =       0.12 minutes
+	total time  =         39 seconds =       0.65 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:41 2012
 
 
 			**************************
@@ -7722,18 +7852,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59693761198588
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:42 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       6.57 seconds =       0.11 minutes
-	system time =       4.94 seconds =       0.08 minutes
-	total time  =         12 seconds =       0.20 minutes
+	user time   =       7.52 seconds =       0.13 minutes
+	system time =       7.49 seconds =       0.12 minutes
+	total time  =         40 seconds =       0.67 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:42 2012
 
 			**************************
 			*                        *
@@ -7860,18 +7990,18 @@ Total time:
       * CCSD total energy                     =  -75.713936610907268
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:34 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:44 2012
 Module time:
-	user time   =       0.30 seconds =       0.00 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.38 seconds =       0.01 minutes
+	system time =       0.42 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       6.87 seconds =       0.11 minutes
-	system time =       5.21 seconds =       0.09 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       7.90 seconds =       0.13 minutes
+	system time =       7.91 seconds =       0.13 minutes
+	total time  =         42 seconds =       0.70 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:34 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:44 2012
 
 
 			**************************
@@ -7881,18 +8011,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:34 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:44 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       6.90 seconds =       0.12 minutes
-	system time =       5.24 seconds =       0.09 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       7.93 seconds =       0.13 minutes
+	system time =       7.95 seconds =       0.13 minutes
+	total time  =         42 seconds =       0.70 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:34 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:44 2012
 
 
 	**********************************************************
@@ -8016,22 +8146,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:34 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:45 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.11 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.15 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       7.04 seconds =       0.12 minutes
-	system time =       5.35 seconds =       0.09 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       8.11 seconds =       0.14 minutes
+	system time =       8.10 seconds =       0.14 minutes
+	total time  =         43 seconds =       0.72 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 7 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:34 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:45 2012
 
 
          ---------------------------------------------------------
@@ -8129,16 +8259,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79456799267324   -1.90052e+01   2.11836e-03 
+   @ROHF iter   1:   -71.79456799267324   -1.90052e+01   6.93723e-310 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.50837324310365   -1.71381e+00   8.45232e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41800265437979   -1.90963e+00   6.42283e-01 DIIS
    @ROHF iter   4:   -75.59250785411675   -1.74505e-01   6.54474e-02 DIIS
    @ROHF iter   5:   -75.59627395796041   -3.76610e-03   9.94161e-03 DIIS
@@ -8179,6 +8311,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59640143575757
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6365078211009028
+    One-Electron Energy =            -117.1223811307814913
+    Two-Electron Energy =              32.8894718739230214
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5964014357575707
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -8196,18 +8337,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:34 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:45 2012
 Module time:
-	user time   =       0.06 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.11 seconds =       0.12 minutes
-	system time =       5.36 seconds =       0.09 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       8.15 seconds =       0.14 minutes
+	system time =       8.11 seconds =       0.14 minutes
+	total time  =         43 seconds =       0.72 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:34 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:45 2012
 
 
 	**************************************************
@@ -8255,18 +8396,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:34 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:45 2012
 Module time:
 	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.00 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.11 seconds =       0.12 minutes
-	system time =       5.36 seconds =       0.09 minutes
-	total time  =         13 seconds =       0.22 minutes
+	user time   =       8.15 seconds =       0.14 minutes
+	system time =       8.11 seconds =       0.14 minutes
+	total time  =         43 seconds =       0.72 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:34 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:45 2012
 
 
 			**************************
@@ -8340,18 +8481,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59640143575763
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:35 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:45 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.13 seconds =       0.12 minutes
-	system time =       5.39 seconds =       0.09 minutes
-	total time  =         14 seconds =       0.23 minutes
+	user time   =       8.18 seconds =       0.14 minutes
+	system time =       8.15 seconds =       0.14 minutes
+	total time  =         43 seconds =       0.72 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:35 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:45 2012
 
 			**************************
 			*                        *
@@ -8478,18 +8619,18 @@ Total time:
       * CCSD total energy                     =  -75.713680687899881
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:35 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:48 2012
 Module time:
-	user time   =       0.30 seconds =       0.00 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.36 seconds =       0.01 minutes
+	system time =       0.39 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       7.44 seconds =       0.12 minutes
-	system time =       5.66 seconds =       0.09 minutes
-	total time  =         14 seconds =       0.23 minutes
+	user time   =       8.54 seconds =       0.14 minutes
+	system time =       8.54 seconds =       0.14 minutes
+	total time  =         46 seconds =       0.77 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:35 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:48 2012
 
 
 			**************************
@@ -8499,18 +8640,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:35 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:49 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       7.47 seconds =       0.12 minutes
-	system time =       5.69 seconds =       0.09 minutes
-	total time  =         14 seconds =       0.23 minutes
+	user time   =       8.57 seconds =       0.14 minutes
+	system time =       8.58 seconds =       0.14 minutes
+	total time  =         47 seconds =       0.78 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:35 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:49 2012
 
 
 	**********************************************************
@@ -8634,22 +8775,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:49 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.11 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.17 seconds =       0.00 minutes
+	system time =       0.14 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.61 seconds =       0.13 minutes
-	system time =       5.80 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       8.74 seconds =       0.15 minutes
+	system time =       8.72 seconds =       0.15 minutes
+	total time  =         47 seconds =       0.78 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 8 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:49 2012
 
 
          ---------------------------------------------------------
@@ -8747,16 +8888,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79412418662835   -1.90021e+01   -2.26450e-05 
+   @ROHF iter   1:   -71.79412418662835   -1.90021e+01   0.00000e+00 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.50215819056869   -1.70803e+00   8.45029e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41652822511966   -1.91437e+00   6.42145e-01 DIIS
    @ROHF iter   4:   -75.59220821201666   -1.75680e-01   6.56455e-02 DIIS
    @ROHF iter   5:   -75.59599659802998   -3.78839e-03   9.95777e-03 DIIS
@@ -8797,6 +8940,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59612560762322
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6258587475045374
+    One-Electron Energy =            -117.1046635915242575
+    Two-Electron Energy =              32.8826792363965055
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5961256076232075
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -8814,18 +8966,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:49 2012
 Module time:
-	user time   =       0.07 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	user time   =       0.04 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.68 seconds =       0.13 minutes
-	system time =       5.80 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       8.78 seconds =       0.15 minutes
+	system time =       8.73 seconds =       0.15 minutes
+	total time  =         47 seconds =       0.78 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:49 2012
 
 
 	**************************************************
@@ -8873,18 +9025,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:49 2012
 Module time:
 	user time   =       0.00 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.68 seconds =       0.13 minutes
-	system time =       5.81 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       8.79 seconds =       0.15 minutes
+	system time =       8.74 seconds =       0.15 minutes
+	total time  =         47 seconds =       0.78 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:49 2012
 
 
 			**************************
@@ -8958,18 +9110,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59612560762322
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:49 2012
 Module time:
 	user time   =       0.02 seconds =       0.00 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       7.70 seconds =       0.13 minutes
-	system time =       5.84 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       8.81 seconds =       0.15 minutes
+	system time =       8.77 seconds =       0.15 minutes
+	total time  =         47 seconds =       0.78 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:49 2012
 
 			**************************
 			*                        *
@@ -9096,18 +9248,18 @@ Total time:
       * CCSD total energy                     =  -75.713545412792897
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:52 2012
 Module time:
-	user time   =       0.30 seconds =       0.01 minutes
-	system time =       0.28 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.37 seconds =       0.01 minutes
+	system time =       0.41 seconds =       0.01 minutes
+	total time  =          3 seconds =       0.05 minutes
 Total time:
-	user time   =       8.01 seconds =       0.13 minutes
-	system time =       6.12 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       9.19 seconds =       0.15 minutes
+	system time =       9.18 seconds =       0.15 minutes
+	total time  =         50 seconds =       0.83 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:52 2012
 
 
 			**************************
@@ -9117,18 +9269,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:36 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:53 2012
 Module time:
 	user time   =       0.03 seconds =       0.00 minutes
-	system time =       0.04 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	system time =       0.03 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       8.04 seconds =       0.13 minutes
-	system time =       6.16 seconds =       0.10 minutes
-	total time  =         15 seconds =       0.25 minutes
+	user time   =       9.22 seconds =       0.15 minutes
+	system time =       9.21 seconds =       0.15 minutes
+	total time  =         51 seconds =       0.85 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:36 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:53 2012
 
 
 	**********************************************************
@@ -9252,22 +9404,22 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:37 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:53 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.15 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       8.18 seconds =       0.14 minutes
-	system time =       6.26 seconds =       0.10 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =       9.40 seconds =       0.16 minutes
+	system time =       9.36 seconds =       0.16 minutes
+	total time  =         51 seconds =       0.85 minutes
 
   //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
   //    Loading displacement 9 of 9    //
   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:37 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:53 2012
 
 
          ---------------------------------------------------------
@@ -9365,16 +9517,18 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:   -71.79500741995454   -1.90082e+01   1.66513e-03 
+   @ROHF iter   1:   -71.79500741995454   -1.90082e+01   1.38015e-05 
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     1,    0,    0,    0 ]
+
    @ROHF iter   2:   -73.51457382482282   -1.71957e+00   8.45431e-01 DIIS
 	Occupation by irrep:
 	         A1    A2    B1    B2 
 	DOCC [     3,    0,    0,    1 ]
 	SOCC [     0,    0,    1,    0 ]
+
    @ROHF iter   3:   -75.41946464293542   -1.90489e+00   6.42415e-01 DIIS
    @ROHF iter   4:   -75.59280193995370   -1.73337e-01   6.52495e-02 DIIS
    @ROHF iter   5:   -75.59654612502143   -3.74419e-03   9.92567e-03 DIIS
@@ -9415,6 +9569,15 @@ Total time:
 
   @ROHF Final Energy:   -75.59667211502365
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =          8.6471668881518582
+    One-Electron Energy =            -117.1401097946173167
+    Two-Electron Energy =              32.8962707914418075
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                    -75.5966721150236509
+
   ==> Properties <==
 
   Nuclear Dipole Moment: (a.u.)
@@ -9432,18 +9595,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:37 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:53 2012
 Module time:
-	user time   =       0.07 seconds =       0.00 minutes
+	user time   =       0.05 seconds =       0.00 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       8.25 seconds =       0.14 minutes
-	system time =       6.27 seconds =       0.10 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =       9.45 seconds =       0.16 minutes
+	system time =       9.37 seconds =       0.16 minutes
+	total time  =         51 seconds =       0.85 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:37 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:53 2012
 
 
 	**************************************************
@@ -9491,18 +9654,18 @@ Total time:
 	Starting second half-transformation.
 	Two-electron integral transformation complete.
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:37 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:53 2012
 Module time:
 	user time   =       0.00 seconds =       0.00 minutes
-	system time =       0.00 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       8.25 seconds =       0.14 minutes
-	system time =       6.27 seconds =       0.10 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =       9.45 seconds =       0.16 minutes
+	system time =       9.38 seconds =       0.16 minutes
+	total time  =         51 seconds =       0.85 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:37 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:53 2012
 
 
 			**************************
@@ -9576,18 +9739,18 @@ Total time:
 	Frozen-core energy (transqt) =      0.00000000000000
 	Reference energy             =    -75.59667211502369
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:37 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:54 2012
 Module time:
-	user time   =       0.02 seconds =       0.00 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
+	system time =       0.04 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       8.27 seconds =       0.14 minutes
-	system time =       6.30 seconds =       0.11 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =       9.48 seconds =       0.16 minutes
+	system time =       9.42 seconds =       0.16 minutes
+	total time  =         52 seconds =       0.87 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:37 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:54 2012
 
 			**************************
 			*                        *
@@ -9714,18 +9877,18 @@ Total time:
       * CCSD total energy                     =  -75.713811097704067
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:37 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:56 2012
 Module time:
-	user time   =       0.29 seconds =       0.00 minutes
-	system time =       0.28 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.34 seconds =       0.01 minutes
+	system time =       0.36 seconds =       0.01 minutes
+	total time  =          2 seconds =       0.03 minutes
 Total time:
-	user time   =       8.57 seconds =       0.14 minutes
-	system time =       6.58 seconds =       0.11 minutes
-	total time  =         16 seconds =       0.27 minutes
+	user time   =       9.82 seconds =       0.16 minutes
+	system time =       9.78 seconds =       0.16 minutes
+	total time  =         54 seconds =       0.90 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:37 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:56 2012
 
 
 			**************************
@@ -9735,18 +9898,18 @@ Total time:
 			**************************
 
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:38 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:57 2012
 Module time:
-	user time   =       0.04 seconds =       0.00 minutes
+	user time   =       0.03 seconds =       0.00 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       8.61 seconds =       0.14 minutes
-	system time =       6.62 seconds =       0.11 minutes
-	total time  =         17 seconds =       0.28 minutes
+	user time   =       9.85 seconds =       0.16 minutes
+	system time =       9.82 seconds =       0.16 minutes
+	total time  =         55 seconds =       0.92 minutes
 
-*** tstart() called on ganymede.local
-*** at Mon Apr  2 12:06:38 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 14:19:57 2012
 
 
 	**********************************************************
@@ -9870,15 +10033,15 @@ Largest components of excited wave function #1:
 
 	Total # of sigma evaluations: 12
 
-*** tstop() called on ganymede.local at Mon Apr  2 12:06:38 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 14:19:57 2012
 Module time:
-	user time   =       0.14 seconds =       0.00 minutes
-	system time =       0.10 seconds =       0.00 minutes
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.15 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       8.75 seconds =       0.15 minutes
-	system time =       6.72 seconds =       0.11 minutes
-	total time  =         17 seconds =       0.28 minutes
+	user time   =      10.03 seconds =       0.17 minutes
+	system time =       9.97 seconds =       0.17 minutes
+	total time  =         55 seconds =       0.92 minutes
 
 -------------------------------------------------------------
 

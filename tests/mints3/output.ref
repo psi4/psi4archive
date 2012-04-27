@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -207,15 +209,10 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
     Total number of shells = 5
     Number of primitives   = 15
     Number of AO           = 7
@@ -257,17 +254,12 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = 6-311G**
     Total number of shells = 16
     Number of primitives   = 29
     Number of AO           = 31
@@ -323,17 +315,12 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pVTZ
     Total number of shells = 22
     Number of primitives   = 42
     Number of AO           = 65
@@ -402,17 +389,12 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = sto-3g
     Total number of shells = 5
     Number of primitives   = 15
     Number of AO           = 7
@@ -454,17 +436,12 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = 6-311G**
     Total number of shells = 16
     Number of primitives   = 29
     Number of AO           = 31
@@ -520,17 +497,12 @@ compare_matrices(RefZ, Pi[2], 12, "SO Pz")                           #TEST
 
        Center              X                  Y                   Z       
     ------------   -----------------  -----------------  -----------------
-           O         -0.000000000000     0.000000000000    -0.069592187390
+           O          0.000000000000     0.000000000000    -0.069592187390
            H          0.000000000000    -0.783151105291     0.552239257844
-           H         -0.000000000000     0.783151105291     0.552239257844
-
-    Number of unique atoms: 2
-
-    Atoms equivalency:
-       unique atom 0: 0 
-       unique atom 1: 1 2 
+           H          0.000000000000     0.783151105291     0.552239257844
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pVTZ
     Total number of shells = 22
     Number of primitives   = 42
     Number of AO           = 65

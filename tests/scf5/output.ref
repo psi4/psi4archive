@@ -2,8 +2,10 @@
           PSI4: An Open-Source Ab Initio Electronic Structure Package
                               PSI 4.0.0-beta1 Driver
 
+               Git: Rev 8268e5ba0276eef671d5bc4a44cf66fa46407463
+
     J. M. Turney, A. C. Simmonett, R. M. Parrish, E. G. Hohenstein,
-    F. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
+    F. A. Evangelista, J. T. Fermann, B. J. Mintz, L. A. Burns, J. J. Wilke,
     M. L. Abrams, N. J. Russ, M. L. Leininger, C. L. Janssen, E. T. Seidl,
     W. D. Allen, H. F. Schaefer, R. A. King, E. F. Valeev, C. D. Sherrill,
     and T. D. Crawford, WIREs Comput. Mol. Sci., (2011) (doi: 10.1002/wcms.93)
@@ -200,8 +202,8 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
 
   Memory set to 250.000 MiB by Python script.
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:05 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:51:55 2012
 
 
          ---------------------------------------------------------
@@ -221,11 +223,6 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -248,9 +245,10 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -319,16 +317,17 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
+
    @RHF iter   2:  -140.04253152363867   -9.16299e+00   2.20869e-01 DIIS
-   @RHF iter   3:  -149.17635355329762   -9.13382e+00   2.03083e-01 DIIS
-   @RHF iter   4:  -149.57809876181392   -4.01745e-01   1.46708e-02 DIIS
-   @RHF iter   5:  -149.59038744607497   -1.22887e-02   3.98344e-03 DIIS
-   @RHF iter   6:  -149.59059079586575   -2.03350e-04   4.93283e-04 DIIS
-   @RHF iter   7:  -149.59059711351483   -6.31765e-06   9.62861e-05 DIIS
-   @RHF iter   8:  -149.59059723201258   -1.18498e-07   1.30989e-05 DIIS
-   @RHF iter   9:  -149.59059723617762   -4.16503e-09   2.01100e-06 DIIS
-   @RHF iter  10:  -149.59059723621081   -3.31966e-11   1.77929e-07 DIIS
-   @RHF iter  11:  -149.59059723621161   -7.95808e-13   2.99466e-08 DIIS
+   @RHF iter   3:  -149.17635355329770   -9.13382e+00   2.03083e-01 DIIS
+   @RHF iter   4:  -149.57809876181389   -4.01745e-01   1.46708e-02 DIIS
+   @RHF iter   5:  -149.59038744607491   -1.22887e-02   3.98344e-03 DIIS
+   @RHF iter   6:  -149.59059079586578   -2.03350e-04   4.93283e-04 DIIS
+   @RHF iter   7:  -149.59059711351475   -6.31765e-06   9.62861e-05 DIIS
+   @RHF iter   8:  -149.59059723201250   -1.18498e-07   1.30989e-05 DIIS
+   @RHF iter   9:  -149.59059723617759   -4.16509e-09   2.01100e-06 DIIS
+   @RHF iter  10:  -149.59059723621095   -3.33671e-11   1.77924e-07 DIIS
+   @RHF iter  11:  -149.59059723621152   -5.68434e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -368,9 +367,19 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
 
   Energy converged.
 
-  @RHF Final Energy:  -149.59059723621161
+  @RHF Final Energy:  -149.59059723621152
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451002703
+    Two-Electron Energy =              84.0843996507554152
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -401,18 +410,18 @@ compare_values(Eref_rohf_df, E, 9, 'Triplet DF CUHF energy') #TEST
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:05 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:51:56 2012
 Module time:
-	user time   =       0.56 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.53 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.56 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.53 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:05 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:51:56 2012
 
 
          ---------------------------------------------------------
@@ -432,11 +441,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -459,9 +463,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -510,16 +515,17 @@ Total time:
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
+
    @RHF iter   2:  -140.04253152363884   -9.16299e+00   2.20869e-01 DIIS
-   @RHF iter   3:  -149.17635355329773   -9.13382e+00   2.03083e-01 DIIS
-   @RHF iter   4:  -149.57809876181398   -4.01745e-01   1.46708e-02 DIIS
-   @RHF iter   5:  -149.59038744607497   -1.22887e-02   3.98344e-03 DIIS
-   @RHF iter   6:  -149.59059079586586   -2.03350e-04   4.93283e-04 DIIS
+   @RHF iter   3:  -149.17635355329764   -9.13382e+00   2.03083e-01 DIIS
+   @RHF iter   4:  -149.57809876181392   -4.01745e-01   1.46708e-02 DIIS
+   @RHF iter   5:  -149.59038744607494   -1.22887e-02   3.98344e-03 DIIS
+   @RHF iter   6:  -149.59059079586581   -2.03350e-04   4.93283e-04 DIIS
    @RHF iter   7:  -149.59059711351478   -6.31765e-06   9.62861e-05 DIIS
-   @RHF iter   8:  -149.59059723201253   -1.18498e-07   1.30989e-05 DIIS
-   @RHF iter   9:  -149.59059723617750   -4.16497e-09   2.01100e-06 DIIS
-   @RHF iter  10:  -149.59059723621090   -3.33955e-11   1.77926e-07 DIIS
-   @RHF iter  11:  -149.59059723621149   -5.96856e-13   3.01079e-08 DIIS
+   @RHF iter   8:  -149.59059723201250   -1.18498e-07   1.30989e-05 DIIS
+   @RHF iter   9:  -149.59059723617762   -4.16512e-09   2.01100e-06 DIIS
+   @RHF iter  10:  -149.59059723621087   -3.32534e-11   1.77924e-07 DIIS
+   @RHF iter  11:  -149.59059723621158   -7.10543e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -559,9 +565,19 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:  -149.59059723621149
+  @RHF Final Energy:  -149.59059723621158
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451003271
+    Two-Electron Energy =              84.0843996507554721
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -584,26 +600,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000  0.00000
-       2     O     4.00000  4.00000  0.00000  0.00000
+       1     O     4.00000  4.00000  0.00000 -0.00000
+       2     O     4.00000  4.00000  0.00000 -0.00000
 
    Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:10 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:00 2012
 Module time:
-	user time   =       4.77 seconds =       0.08 minutes
+	user time   =       4.55 seconds =       0.08 minutes
 	system time =       0.01 seconds =       0.00 minutes
-	total time  =          5 seconds =       0.08 minutes
+	total time  =          4 seconds =       0.07 minutes
 Total time:
-	user time   =       5.33 seconds =       0.09 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       5.08 seconds =       0.08 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:10 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:00 2012
 
 
          ---------------------------------------------------------
@@ -623,11 +639,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -650,9 +661,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -720,16 +732,17 @@ Total time:
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
+
    @RHF iter   2:  -140.04253152363884   -9.16299e+00   2.20869e-01 DIIS
-   @RHF iter   3:  -149.17635355329773   -9.13382e+00   2.03083e-01 DIIS
-   @RHF iter   4:  -149.57809876181398   -4.01745e-01   1.46708e-02 DIIS
-   @RHF iter   5:  -149.59038744607497   -1.22887e-02   3.98344e-03 DIIS
-   @RHF iter   6:  -149.59059079586586   -2.03350e-04   4.93283e-04 DIIS
+   @RHF iter   3:  -149.17635355329764   -9.13382e+00   2.03083e-01 DIIS
+   @RHF iter   4:  -149.57809876181392   -4.01745e-01   1.46708e-02 DIIS
+   @RHF iter   5:  -149.59038744607494   -1.22887e-02   3.98344e-03 DIIS
+   @RHF iter   6:  -149.59059079586581   -2.03350e-04   4.93283e-04 DIIS
    @RHF iter   7:  -149.59059711351478   -6.31765e-06   9.62861e-05 DIIS
-   @RHF iter   8:  -149.59059723201253   -1.18498e-07   1.30989e-05 DIIS
-   @RHF iter   9:  -149.59059723617750   -4.16497e-09   2.01100e-06 DIIS
-   @RHF iter  10:  -149.59059723621090   -3.33955e-11   1.77926e-07 DIIS
-   @RHF iter  11:  -149.59059723621149   -5.96856e-13   3.01079e-08 DIIS
+   @RHF iter   8:  -149.59059723201250   -1.18498e-07   1.30989e-05 DIIS
+   @RHF iter   9:  -149.59059723617762   -4.16512e-09   2.01100e-06 DIIS
+   @RHF iter  10:  -149.59059723621087   -3.32534e-11   1.77924e-07 DIIS
+   @RHF iter  11:  -149.59059723621158   -7.10543e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -769,9 +782,19 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:  -149.59059723621149
+  @RHF Final Energy:  -149.59059723621158
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451003271
+    Two-Electron Energy =              84.0843996507554721
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -794,26 +817,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000  0.00000
-       2     O     4.00000  4.00000  0.00000  0.00000
+       1     O     4.00000  4.00000  0.00000 -0.00000
+       2     O     4.00000  4.00000  0.00000 -0.00000
 
    Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:11 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:01 2012
 Module time:
-	user time   =       0.67 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.65 seconds =       0.01 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       6.00 seconds =       0.10 minutes
+	user time   =       5.73 seconds =       0.10 minutes
 	system time =       0.07 seconds =       0.00 minutes
 	total time  =          6 seconds =       0.10 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:11 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:01 2012
 
 
          ---------------------------------------------------------
@@ -833,11 +856,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -860,9 +878,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -901,12 +920,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -920,38 +950,25 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @RHF iter   1:  -130.87666606811291   -1.78493e+01   0.00000e+00 
+   @RHF iter   1:  -130.87666606811288   -1.78493e+01   0.00000e+00 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
-   @RHF iter   2:  -140.04491881778978   -9.16825e+00   2.20218e-01 DIIS
-   @RHF iter   3:  -149.17612867870011   -9.13121e+00   2.02367e-01 DIIS
-   @RHF iter   4:  -149.57802401404558   -4.01895e-01   1.46825e-02 DIIS
+
+   @RHF iter   2:  -140.04491881778961   -9.16825e+00   2.20218e-01 DIIS
+   @RHF iter   3:  -149.17612867870025   -9.13121e+00   2.02367e-01 DIIS
+   @RHF iter   4:  -149.57802401404544   -4.01895e-01   1.46825e-02 DIIS
    @RHF iter   5:  -149.59031867142508   -1.22947e-02   3.99086e-03 DIIS
-   @RHF iter   6:  -149.59052228892395   -2.03617e-04   4.94869e-04 DIIS
-   @RHF iter   7:  -149.59052866262513   -6.37370e-06   9.66301e-05 DIIS
-   @RHF iter   8:  -149.59052878226566   -1.19641e-07   1.32731e-05 DIIS
-   @RHF iter   9:  -149.59052878643425   -4.16858e-09   2.01301e-06 DIIS
-   @RHF iter  10:  -149.59052878646776   -3.35092e-11   1.79208e-07 DIIS
-   @RHF iter  11:  -149.59052878646830   -5.40012e-13   3.00696e-08 DIIS
+   @RHF iter   6:  -149.59052228892389   -2.03617e-04   4.94869e-04 DIIS
+   @RHF iter   7:  -149.59052866262522   -6.37370e-06   9.66301e-05 DIIS
+   @RHF iter   8:  -149.59052878226561   -1.19640e-07   1.32731e-05 DIIS
+   @RHF iter   9:  -149.59052878643431   -4.16870e-09   2.01301e-06 DIIS
+   @RHF iter  10:  -149.59052878646756   -3.32534e-11   1.79205e-07 DIIS
+   @RHF iter  11:  -149.59052878646821   -6.53699e-13   2.99868e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -991,9 +1008,19 @@ Total time:
 
   Energy converged.
 
-  @RHF Final Energy:  -149.59052878646830
+  @RHF Final Energy:  -149.59052878646821
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8973267367788367
+    Two-Electron Energy =              84.0840134921772631
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905287864682407
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -1016,26 +1043,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000 -0.00000
-       2     O     4.00000  4.00000  0.00000 -0.00000
+       1     O     4.00000  4.00000  0.00000  0.00000
+       2     O     4.00000  4.00000  0.00000  0.00000
 
    Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:11 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:02 2012
 Module time:
-	user time   =       0.40 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.38 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       6.40 seconds =       0.11 minutes
-	system time =       0.10 seconds =       0.00 minutes
-	total time  =          6 seconds =       0.10 minutes
+	user time   =       6.11 seconds =       0.10 minutes
+	system time =       0.09 seconds =       0.00 minutes
+	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:11 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:02 2012
 
 
          ---------------------------------------------------------
@@ -1055,11 +1082,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -1082,9 +1104,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -1154,18 +1177,25 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -140.04253152363862   -9.16299e+00   2.20869e-01 DIIS
-   @UHF iter   3:  -149.17635355329770   -9.13382e+00   2.03083e-01 DIIS
-   @UHF iter   4:  -149.57809876181395   -4.01745e-01   1.46708e-02 DIIS
-   @UHF iter   5:  -149.59038744607500   -1.22887e-02   3.98344e-03 DIIS
-   @UHF iter   6:  -149.59059079586575   -2.03350e-04   4.93283e-04 DIIS
-   @UHF iter   7:  -149.59059711351466   -6.31765e-06   9.62861e-05 DIIS
-   @UHF iter   8:  -149.59059723201250   -1.18498e-07   1.30989e-05 DIIS
-   @UHF iter   9:  -149.59059723617770   -4.16520e-09   2.01100e-06 DIIS
-   @UHF iter  10:  -149.59059723621087   -3.31681e-11   1.77929e-07 DIIS
-   @UHF iter  11:  -149.59059723621158   -7.10543e-13   3.00170e-08 DIIS
+   @UHF iter   3:  -149.17635355329767   -9.13382e+00   2.03083e-01 DIIS
+   @UHF iter   4:  -149.57809876181381   -4.01745e-01   1.46708e-02 DIIS
+   @UHF iter   5:  -149.59038744607494   -1.22887e-02   3.98344e-03 DIIS
+   @UHF iter   6:  -149.59059079586581   -2.03350e-04   4.93283e-04 DIIS
+   @UHF iter   7:  -149.59059711351489   -6.31765e-06   9.62861e-05 DIIS
+   @UHF iter   8:  -149.59059723201264   -1.18498e-07   1.30989e-05 DIIS
+   @UHF iter   9:  -149.59059723617753   -4.16489e-09   2.01100e-06 DIIS
+   @UHF iter  10:  -149.59059723621090   -3.33671e-11   1.77924e-07 DIIS
+   @UHF iter  11:  -149.59059723621149   -5.96856e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   5.329070518E-15
+   @S^2 Expected:                0.000000000E+00
+   @S^2 Observed:                5.329070518E-15
+   @S   Expected:                0.000000000E+00
+   @S   Observed:                0.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -1231,9 +1261,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.59059723621158
+  @UHF Final Energy:  -149.59059723621149
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451002135
+    Two-Electron Energy =              84.0843996507553584
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -1259,27 +1299,23 @@ Total time:
        1     O     4.00000  4.00000  0.00000  0.00000
        2     O     4.00000  4.00000  0.00000  0.00000
 
-   Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
+   Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
 
-
-  @Spin Contamination Metric:  0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:               0.00000
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:12 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:02 2012
 Module time:
-	user time   =       0.57 seconds =       0.01 minutes
-	system time =       0.02 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	user time   =       0.55 seconds =       0.01 minutes
+	system time =       0.03 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =       6.97 seconds =       0.12 minutes
+	user time   =       6.66 seconds =       0.11 minutes
 	system time =       0.12 seconds =       0.00 minutes
 	total time  =          7 seconds =       0.12 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:12 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:02 2012
 
 
          ---------------------------------------------------------
@@ -1299,11 +1335,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -1326,9 +1357,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -1378,18 +1410,25 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -140.04253152363884   -9.16299e+00   2.20869e-01 DIIS
-   @UHF iter   3:  -149.17635355329773   -9.13382e+00   2.03083e-01 DIIS
-   @UHF iter   4:  -149.57809876181395   -4.01745e-01   1.46708e-02 DIIS
-   @UHF iter   5:  -149.59038744607503   -1.22887e-02   3.98344e-03 DIIS
+   @UHF iter   3:  -149.17635355329767   -9.13382e+00   2.03083e-01 DIIS
+   @UHF iter   4:  -149.57809876181383   -4.01745e-01   1.46708e-02 DIIS
+   @UHF iter   5:  -149.59038744607494   -1.22887e-02   3.98344e-03 DIIS
    @UHF iter   6:  -149.59059079586575   -2.03350e-04   4.93283e-04 DIIS
-   @UHF iter   7:  -149.59059711351469   -6.31765e-06   9.62861e-05 DIIS
-   @UHF iter   8:  -149.59059723201258   -1.18498e-07   1.30989e-05 DIIS
-   @UHF iter   9:  -149.59059723617756   -4.16497e-09   2.01100e-06 DIIS
-   @UHF iter  10:  -149.59059723621095   -3.33955e-11   1.77928e-07 DIIS
-   @UHF iter  11:  -149.59059723621152   -5.68434e-13   2.98146e-08 DIIS
+   @UHF iter   7:  -149.59059711351489   -6.31765e-06   9.62861e-05 DIIS
+   @UHF iter   8:  -149.59059723201256   -1.18498e-07   1.30989e-05 DIIS
+   @UHF iter   9:  -149.59059723617764   -4.16509e-09   2.01100e-06 DIIS
+   @UHF iter  10:  -149.59059723621095   -3.33102e-11   1.77924e-07 DIIS
+   @UHF iter  11:  -149.59059723621149   -5.40012e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:  -3.552713679E-15
+   @S^2 Expected:                0.000000000E+00
+   @S^2 Observed:               -3.552713679E-15
+   @S   Expected:                0.000000000E+00
+   @S   Observed:                0.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -1455,9 +1494,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.59059723621152
+  @UHF Final Energy:  -149.59059723621149
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451003271
+    Two-Electron Energy =              84.0843996507555005
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362114937
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -1480,30 +1529,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000  0.00000
-       2     O     4.00000  4.00000  0.00000  0.00000
+       1     O     4.00000  4.00000  0.00000 -0.00000
+       2     O     4.00000  4.00000  0.00000 -0.00000
 
    Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:              -0.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:17 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:07 2012
 Module time:
-	user time   =       4.81 seconds =       0.08 minutes
+	user time   =       4.56 seconds =       0.08 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      11.78 seconds =       0.20 minutes
+	user time   =      11.22 seconds =       0.19 minutes
 	system time =       0.13 seconds =       0.00 minutes
 	total time  =         12 seconds =       0.20 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:17 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:07 2012
 
 
          ---------------------------------------------------------
@@ -1523,11 +1568,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -1550,9 +1590,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -1621,18 +1662,25 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -140.04253152363884   -9.16299e+00   2.20869e-01 DIIS
-   @UHF iter   3:  -149.17635355329773   -9.13382e+00   2.03083e-01 DIIS
-   @UHF iter   4:  -149.57809876181395   -4.01745e-01   1.46708e-02 DIIS
-   @UHF iter   5:  -149.59038744607503   -1.22887e-02   3.98344e-03 DIIS
+   @UHF iter   3:  -149.17635355329767   -9.13382e+00   2.03083e-01 DIIS
+   @UHF iter   4:  -149.57809876181383   -4.01745e-01   1.46708e-02 DIIS
+   @UHF iter   5:  -149.59038744607494   -1.22887e-02   3.98344e-03 DIIS
    @UHF iter   6:  -149.59059079586575   -2.03350e-04   4.93283e-04 DIIS
-   @UHF iter   7:  -149.59059711351469   -6.31765e-06   9.62861e-05 DIIS
-   @UHF iter   8:  -149.59059723201258   -1.18498e-07   1.30989e-05 DIIS
-   @UHF iter   9:  -149.59059723617756   -4.16497e-09   2.01100e-06 DIIS
-   @UHF iter  10:  -149.59059723621095   -3.33955e-11   1.77928e-07 DIIS
-   @UHF iter  11:  -149.59059723621152   -5.68434e-13   2.98146e-08 DIIS
+   @UHF iter   7:  -149.59059711351489   -6.31765e-06   9.62861e-05 DIIS
+   @UHF iter   8:  -149.59059723201256   -1.18498e-07   1.30989e-05 DIIS
+   @UHF iter   9:  -149.59059723617764   -4.16509e-09   2.01100e-06 DIIS
+   @UHF iter  10:  -149.59059723621095   -3.33102e-11   1.77924e-07 DIIS
+   @UHF iter  11:  -149.59059723621149   -5.40012e-13   2.99869e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:  -3.552713679E-15
+   @S^2 Expected:                0.000000000E+00
+   @S^2 Observed:               -3.552713679E-15
+   @S   Expected:                0.000000000E+00
+   @S   Observed:                0.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -1698,9 +1746,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.59059723621152
+  @UHF Final Energy:  -149.59059723621149
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451003271
+    Two-Electron Energy =              84.0843996507555005
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362114937
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -1723,30 +1781,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000  0.00000
-       2     O     4.00000  4.00000  0.00000  0.00000
+       1     O     4.00000  4.00000  0.00000 -0.00000
+       2     O     4.00000  4.00000  0.00000 -0.00000
 
    Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:              -0.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:18 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:08 2012
 Module time:
-	user time   =       0.70 seconds =       0.01 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.67 seconds =       0.01 minutes
+	system time =       0.03 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      12.48 seconds =       0.21 minutes
-	system time =       0.17 seconds =       0.00 minutes
+	user time   =      11.89 seconds =       0.20 minutes
+	system time =       0.16 seconds =       0.00 minutes
 	total time  =         13 seconds =       0.22 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:18 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:08 2012
 
 
          ---------------------------------------------------------
@@ -1766,11 +1820,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -1793,9 +1842,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -1834,12 +1884,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -1853,20 +1914,6 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
@@ -1876,18 +1923,25 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
-   @UHF iter   2:  -140.04491881778981   -9.16825e+00   2.20218e-01 DIIS
-   @UHF iter   3:  -149.17612867870019   -9.13121e+00   2.02367e-01 DIIS
-   @UHF iter   4:  -149.57802401404544   -4.01895e-01   1.46825e-02 DIIS
-   @UHF iter   5:  -149.59031867142517   -1.22947e-02   3.99086e-03 DIIS
-   @UHF iter   6:  -149.59052228892398   -2.03617e-04   4.94869e-04 DIIS
-   @UHF iter   7:  -149.59052866262522   -6.37370e-06   9.66301e-05 DIIS
-   @UHF iter   8:  -149.59052878226558   -1.19640e-07   1.32731e-05 DIIS
-   @UHF iter   9:  -149.59052878643428   -4.16870e-09   2.01301e-06 DIIS
-   @UHF iter  10:  -149.59052878646762   -3.33387e-11   1.79205e-07 DIIS
-   @UHF iter  11:  -149.59052878646835   -7.38964e-13   2.99572e-08 DIIS
+
+   @UHF iter   2:  -140.04491881778964   -9.16825e+00   2.20218e-01 DIIS
+   @UHF iter   3:  -149.17612867870011   -9.13121e+00   2.02367e-01 DIIS
+   @UHF iter   4:  -149.57802401404550   -4.01895e-01   1.46825e-02 DIIS
+   @UHF iter   5:  -149.59031867142511   -1.22947e-02   3.99086e-03 DIIS
+   @UHF iter   6:  -149.59052228892386   -2.03617e-04   4.94869e-04 DIIS
+   @UHF iter   7:  -149.59052866262530   -6.37370e-06   9.66301e-05 DIIS
+   @UHF iter   8:  -149.59052878226564   -1.19640e-07   1.32731e-05 DIIS
+   @UHF iter   9:  -149.59052878643431   -4.16867e-09   2.01301e-06 DIIS
+   @UHF iter  10:  -149.59052878646770   -3.33955e-11   1.79205e-07 DIIS
+   @UHF iter  11:  -149.59052878646827   -5.68434e-13   2.99868e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:  -3.552713679E-15
+   @S^2 Expected:                0.000000000E+00
+   @S^2 Observed:               -3.552713679E-15
+   @S   Expected:                0.000000000E+00
+   @S   Observed:                0.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -1953,9 +2007,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.59052878646835
+  @UHF Final Energy:  -149.59052878646827
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8973267367789504
+    Two-Electron Energy =              84.0840134921773199
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905287864682975
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -1978,30 +2042,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000  0.00000
-       2     O     4.00000  4.00000  0.00000  0.00000
+       1     O     4.00000  4.00000  0.00000 -0.00000
+       2     O     4.00000  4.00000  0.00000 -0.00000
 
-   Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
+   Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
 
-
-  @Spin Contamination Metric:  0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:               0.00000
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:18 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:08 2012
 Module time:
-	user time   =       0.52 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.51 seconds =       0.01 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =      13.00 seconds =       0.22 minutes
+	user time   =      12.40 seconds =       0.21 minutes
 	system time =       0.20 seconds =       0.00 minutes
 	total time  =         13 seconds =       0.22 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:18 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:08 2012
 
 
          ---------------------------------------------------------
@@ -2021,11 +2081,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -2048,9 +2103,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -2120,19 +2176,24 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @CUHF iter   2:  -140.04253152363867   -9.16299e+00   4.41738e-01 DIIS
-   @CUHF iter   3:  -149.17635355329764   -9.13382e+00   4.06166e-01 DIIS
-   @CUHF iter   4:  -149.57809876181389   -4.01745e-01   2.93417e-02 DIIS
-   @CUHF iter   5:  -149.59038744607500   -1.22887e-02   7.96689e-03 DIIS
-   @CUHF iter   6:  -149.59059079586581   -2.03350e-04   9.86565e-04 DIIS
-   @CUHF iter   7:  -149.59059711351478   -6.31765e-06   1.92572e-04 DIIS
-   @CUHF iter   8:  -149.59059723201253   -1.18498e-07   2.61978e-05 DIIS
-   @CUHF iter   9:  -149.59059723617759   -4.16506e-09   4.02201e-06 DIIS
-   @CUHF iter  10:  -149.59059723621101   -3.34239e-11   3.55845e-07 DIIS
-   @CUHF iter  11:  -149.59059723621158   -5.68434e-13   5.98697e-08 DIIS
+   @CUHF iter   3:  -149.17635355329759   -9.13382e+00   4.06166e-01 DIIS
+   @CUHF iter   4:  -149.57809876181381   -4.01745e-01   2.93417e-02 DIIS
+   @CUHF iter   5:  -149.59038744607506   -1.22887e-02   7.96689e-03 DIIS
+   @CUHF iter   6:  -149.59059079586572   -2.03350e-04   9.86565e-04 DIIS
+   @CUHF iter   7:  -149.59059711351475   -6.31765e-06   1.92572e-04 DIIS
+   @CUHF iter   8:  -149.59059723201233   -1.18498e-07   2.61978e-05 DIIS
+   @CUHF iter   9:  -149.59059723617756   -4.16523e-09   4.02201e-06 DIIS
+   @CUHF iter  10:  -149.59059723621095   -3.33955e-11   3.55849e-07 DIIS
+   @CUHF iter  11:  -149.59059723621158   -6.25278e-13   5.99739e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               0.00000
+  @S^2 Observed:               0.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -2199,7 +2260,17 @@ Total time:
 
   @CUHF Final Energy:  -149.59059723621158
 
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451002703
+    Two-Electron Energy =              84.0843996507553584
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115790
+
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -2222,30 +2293,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000 -0.00000
+       1     O     4.00000  4.00000  0.00000  0.00000
        2     O     4.00000  4.00000  0.00000  0.00000
 
-   Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
+   Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
-
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:              -0.00000
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:19 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:09 2012
 Module time:
-	user time   =       0.58 seconds =       0.01 minutes
+	user time   =       0.56 seconds =       0.01 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      13.58 seconds =       0.23 minutes
+	user time   =      12.96 seconds =       0.22 minutes
 	system time =       0.22 seconds =       0.00 minutes
 	total time  =         14 seconds =       0.23 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:19 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:09 2012
 
 
          ---------------------------------------------------------
@@ -2265,11 +2332,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -2292,9 +2354,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -2344,19 +2407,24 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @CUHF iter   2:  -140.04253152363896   -9.16299e+00   4.41738e-01 DIIS
    @CUHF iter   3:  -149.17635355329764   -9.13382e+00   4.06166e-01 DIIS
-   @CUHF iter   4:  -149.57809876181389   -4.01745e-01   2.93417e-02 DIIS
+   @CUHF iter   4:  -149.57809876181392   -4.01745e-01   2.93417e-02 DIIS
    @CUHF iter   5:  -149.59038744607500   -1.22887e-02   7.96689e-03 DIIS
-   @CUHF iter   6:  -149.59059079586575   -2.03350e-04   9.86565e-04 DIIS
-   @CUHF iter   7:  -149.59059711351486   -6.31765e-06   1.92572e-04 DIIS
-   @CUHF iter   8:  -149.59059723201256   -1.18498e-07   2.61978e-05 DIIS
-   @CUHF iter   9:  -149.59059723617764   -4.16509e-09   4.02201e-06 DIIS
-   @CUHF iter  10:  -149.59059723621090   -3.32534e-11   3.55848e-07 DIIS
-   @CUHF iter  11:  -149.59059723621161   -7.10543e-13   6.01049e-08 DIIS
+   @CUHF iter   6:  -149.59059079586572   -2.03350e-04   9.86565e-04 DIIS
+   @CUHF iter   7:  -149.59059711351478   -6.31765e-06   1.92572e-04 DIIS
+   @CUHF iter   8:  -149.59059723201253   -1.18498e-07   2.61978e-05 DIIS
+   @CUHF iter   9:  -149.59059723617767   -4.16514e-09   4.02201e-06 DIIS
+   @CUHF iter  10:  -149.59059723621084   -3.31681e-11   3.55849e-07 DIIS
+   @CUHF iter  11:  -149.59059723621149   -6.53699e-13   5.99739e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               0.00000
+  @S^2 Observed:               0.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -2421,9 +2489,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.59059723621161
+  @CUHF Final Energy:  -149.59059723621149
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451002135
+    Two-Electron Energy =              84.0843996507553584
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -2446,30 +2524,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000 -0.00000
+       1     O     4.00000  4.00000  0.00000  0.00000
        2     O     4.00000  4.00000  0.00000 -0.00000
 
-   Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
+   Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
-
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:              -0.00000
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:24 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:14 2012
 Module time:
-	user time   =       4.78 seconds =       0.08 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       4.60 seconds =       0.08 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      18.36 seconds =       0.31 minutes
-	system time =       0.23 seconds =       0.00 minutes
+	user time   =      17.56 seconds =       0.29 minutes
+	system time =       0.24 seconds =       0.00 minutes
 	total time  =         19 seconds =       0.32 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:24 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:14 2012
 
 
          ---------------------------------------------------------
@@ -2489,11 +2563,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -2516,9 +2585,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -2587,19 +2657,24 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    1,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
+
    @CUHF iter   2:  -140.04253152363896   -9.16299e+00   4.41738e-01 DIIS
    @CUHF iter   3:  -149.17635355329764   -9.13382e+00   4.06166e-01 DIIS
-   @CUHF iter   4:  -149.57809876181389   -4.01745e-01   2.93417e-02 DIIS
+   @CUHF iter   4:  -149.57809876181392   -4.01745e-01   2.93417e-02 DIIS
    @CUHF iter   5:  -149.59038744607500   -1.22887e-02   7.96689e-03 DIIS
-   @CUHF iter   6:  -149.59059079586575   -2.03350e-04   9.86565e-04 DIIS
-   @CUHF iter   7:  -149.59059711351486   -6.31765e-06   1.92572e-04 DIIS
-   @CUHF iter   8:  -149.59059723201256   -1.18498e-07   2.61978e-05 DIIS
-   @CUHF iter   9:  -149.59059723617764   -4.16509e-09   4.02201e-06 DIIS
-   @CUHF iter  10:  -149.59059723621090   -3.32534e-11   3.55848e-07 DIIS
-   @CUHF iter  11:  -149.59059723621161   -7.10543e-13   6.01049e-08 DIIS
+   @CUHF iter   6:  -149.59059079586572   -2.03350e-04   9.86565e-04 DIIS
+   @CUHF iter   7:  -149.59059711351478   -6.31765e-06   1.92572e-04 DIIS
+   @CUHF iter   8:  -149.59059723201253   -1.18498e-07   2.61978e-05 DIIS
+   @CUHF iter   9:  -149.59059723617767   -4.16514e-09   4.02201e-06 DIIS
+   @CUHF iter  10:  -149.59059723621084   -3.31681e-11   3.55849e-07 DIIS
+   @CUHF iter  11:  -149.59059723621149   -6.53699e-13   5.99739e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               0.00000
+  @S^2 Observed:               0.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -2664,9 +2739,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.59059723621161
+  @CUHF Final Energy:  -149.59059723621149
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8977813451002135
+    Two-Electron Energy =              84.0843996507553584
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905972362115222
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -2689,30 +2774,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.00000  4.00000  0.00000 -0.00000
+       1     O     4.00000  4.00000  0.00000  0.00000
        2     O     4.00000  4.00000  0.00000 -0.00000
 
-   Total alpha =  8.00000, Total beta =  8.00000, Total charge = -0.00000
+   Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
-
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:              -0.00000
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:14 2012
 Module time:
-	user time   =       0.69 seconds =       0.01 minutes
+	user time   =       0.67 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
+	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =      19.05 seconds =       0.32 minutes
-	system time =       0.27 seconds =       0.00 minutes
-	total time  =         20 seconds =       0.33 minutes
+	user time   =      18.23 seconds =       0.30 minutes
+	system time =       0.28 seconds =       0.00 minutes
+	total time  =         19 seconds =       0.32 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:14 2012
 
 
          ---------------------------------------------------------
@@ -2732,11 +2813,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -2759,9 +2835,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -2800,12 +2877,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -2819,20 +2907,6 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
@@ -2842,19 +2916,24 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    1,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    0,    0,    0,    0,    0,    0 ]
-   @CUHF iter   2:  -140.04491881778966   -9.16825e+00   4.40436e-01 DIIS
-   @CUHF iter   3:  -149.17612867870019   -9.13121e+00   4.04734e-01 DIIS
-   @CUHF iter   4:  -149.57802401404550   -4.01895e-01   2.93650e-02 DIIS
-   @CUHF iter   5:  -149.59031867142514   -1.22947e-02   7.98172e-03 DIIS
-   @CUHF iter   6:  -149.59052228892389   -2.03617e-04   9.89738e-04 DIIS
-   @CUHF iter   7:  -149.59052866262522   -6.37370e-06   1.93260e-04 DIIS
-   @CUHF iter   8:  -149.59052878226561   -1.19640e-07   2.65461e-05 DIIS
-   @CUHF iter   9:  -149.59052878643425   -4.16864e-09   4.02601e-06 DIIS
-   @CUHF iter  10:  -149.59052878646767   -3.34239e-11   3.58404e-07 DIIS
-   @CUHF iter  11:  -149.59052878646833   -6.53699e-13   5.99934e-08 DIIS
+
+   @CUHF iter   2:  -140.04491881778964   -9.16825e+00   4.40436e-01 DIIS
+   @CUHF iter   3:  -149.17612867870014   -9.13121e+00   4.04734e-01 DIIS
+   @CUHF iter   4:  -149.57802401404547   -4.01895e-01   2.93650e-02 DIIS
+   @CUHF iter   5:  -149.59031867142522   -1.22947e-02   7.98172e-03 DIIS
+   @CUHF iter   6:  -149.59052228892381   -2.03617e-04   9.89738e-04 DIIS
+   @CUHF iter   7:  -149.59052866262527   -6.37370e-06   1.93260e-04 DIIS
+   @CUHF iter   8:  -149.59052878226564   -1.19640e-07   2.65461e-05 DIIS
+   @CUHF iter   9:  -149.59052878643428   -4.16864e-09   4.02601e-06 DIIS
+   @CUHF iter  10:  -149.59052878646770   -3.34239e-11   3.58410e-07 DIIS
+   @CUHF iter  11:  -149.59052878646830   -5.96856e-13   5.99736e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               0.00000
+  @S^2 Observed:               0.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -2919,9 +2998,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.59052878646833
+  @CUHF Final Energy:  -149.59052878646830
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.8973267367788935
+    Two-Electron Energy =              84.0840134921772631
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.5905287864682975
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -2950,24 +3039,20 @@ Total time:
    Total alpha =  8.00000, Total beta =  8.00000, Total charge =  0.00000
 
 
-  @Spin Contamination Metric:  0.00000
-  @S^2 Expected:               0.00000
-  @S^2 Observed:               0.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:25 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:15 2012
 Module time:
-	user time   =       0.53 seconds =       0.01 minutes
+	user time   =       0.51 seconds =       0.01 minutes
 	system time =       0.03 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      19.58 seconds =       0.33 minutes
-	system time =       0.30 seconds =       0.01 minutes
+	user time   =      18.74 seconds =       0.31 minutes
+	system time =       0.31 seconds =       0.01 minutes
 	total time  =         20 seconds =       0.33 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:25 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:15 2012
 
 
          ---------------------------------------------------------
@@ -2987,11 +3072,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -3014,9 +3094,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -3086,19 +3167,26 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -141.40018502732153   -9.65223e+00   1.71760e-01 DIIS
-   @UHF iter   3:  -149.33099461417331   -7.93081e+00   1.49114e-01 DIIS
-   @UHF iter   4:  -149.66371146962183   -3.32717e-01   1.21200e-02 DIIS
-   @UHF iter   5:  -149.67566978574911   -1.19583e-02   3.07880e-03 DIIS
-   @UHF iter   6:  -149.67635182308251   -6.82037e-04   4.29452e-04 DIIS
-   @UHF iter   7:  -149.67638627727453   -3.44542e-05   1.29476e-04 DIIS
-   @UHF iter   8:  -149.67638743967220   -1.16240e-06   1.80818e-05 DIIS
+   @UHF iter   3:  -149.33099461417339   -7.93081e+00   1.49114e-01 DIIS
+   @UHF iter   4:  -149.66371146962189   -3.32717e-01   1.21200e-02 DIIS
+   @UHF iter   5:  -149.67566978574902   -1.19583e-02   3.07880e-03 DIIS
+   @UHF iter   6:  -149.67635182308248   -6.82037e-04   4.29452e-04 DIIS
+   @UHF iter   7:  -149.67638627727450   -3.44542e-05   1.29476e-04 DIIS
+   @UHF iter   8:  -149.67638743967228   -1.16240e-06   1.80818e-05 DIIS
    @UHF iter   9:  -149.67638746459895   -2.49267e-08   4.31741e-06 DIIS
-   @UHF iter  10:  -149.67638746521044   -6.11493e-10   6.75591e-07 DIIS
-   @UHF iter  11:  -149.67638746522076   -1.03171e-11   7.59497e-08 DIIS
-   @UHF iter  12:  -149.67638746522147   -7.10543e-13   1.79292e-08 DIIS
+   @UHF iter  10:  -149.67638746521047   -6.11522e-10   6.75593e-07 DIIS
+   @UHF iter  11:  -149.67638746522078   -1.03171e-11   7.59529e-08 DIIS
+   @UHF iter  12:  -149.67638746522138   -5.96856e-13   1.79312e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   4.196535919E-02
+   @S^2 Expected:                2.000000000E+00
+   @S^2 Observed:                2.041965359E+00
+   @S   Expected:                1.000000000E+00
+   @S   Observed:                1.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -3120,8 +3208,8 @@ Total time:
 	   3B3g    2.458871     4B3u    3.851032     4B2u    3.851032  
 	   8Ag     4.065309     4B2g    4.141885     4B3g    4.141885  
 	   9Ag     4.973698     2B1g    4.973698     5B3u    5.057519  
-	   5B2u    5.057519     8B1u    5.189906     6B3u    5.307077  
-	   6B2u    5.307077    10Ag     5.331181     5B2g    5.562141  
+	   5B2u    5.057519     8B1u    5.189906     6B2u    5.307077  
+	   6B3u    5.307077    10Ag     5.331181     5B2g    5.562141  
 	   5B3g    5.562141     9B1u    6.133213     2Au     6.133213  
 	  10B1u    6.201050    11Ag     6.486598     3B1g    6.486598  
 	  11B1u    6.704879     3Au     6.704879     6B2g    6.778386  
@@ -3149,7 +3237,7 @@ Total time:
 	   9Ag     5.012387     5B2u    5.090550     5B3u    5.090550  
 	   8B1u    5.224506    10Ag     5.368700     6B2u    5.370931  
 	   6B3u    5.370931     5B2g    5.632481     5B3g    5.632481  
-	   9B1u    6.190515     2Au     6.190515    10B1u    6.247381  
+	   2Au     6.190515     9B1u    6.190515    10B1u    6.247381  
 	   3B1g    6.617843    11Ag     6.617843    11B1u    6.824813  
 	   3Au     6.824813     6B3g    6.851613     6B2g    6.851613  
 	   7B2u    6.950969     7B3u    6.950969    12B1u    7.223832  
@@ -3163,9 +3251,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.67638746522147
+  @UHF Final Energy:  -149.67638746522138
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9871637058887472
+    Two-Electron Energy =              84.0879917825340328
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6763874652213815
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -3194,24 +3292,20 @@ Total time:
    Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric:  0.04197
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.04197
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:26 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:16 2012
 Module time:
-	user time   =       0.57 seconds =       0.01 minutes
+	user time   =       0.56 seconds =       0.01 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      20.15 seconds =       0.34 minutes
-	system time =       0.32 seconds =       0.01 minutes
+	user time   =      19.31 seconds =       0.32 minutes
+	system time =       0.33 seconds =       0.01 minutes
 	total time  =         21 seconds =       0.35 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:26 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:16 2012
 
 
          ---------------------------------------------------------
@@ -3231,11 +3325,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -3258,9 +3347,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -3310,19 +3400,26 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -141.40018502732170   -9.65223e+00   1.71760e-01 DIIS
    @UHF iter   3:  -149.33099461417345   -7.93081e+00   1.49114e-01 DIIS
-   @UHF iter   4:  -149.66371146962175   -3.32717e-01   1.21200e-02 DIIS
-   @UHF iter   5:  -149.67566978574908   -1.19583e-02   3.07880e-03 DIIS
-   @UHF iter   6:  -149.67635182308260   -6.82037e-04   4.29452e-04 DIIS
+   @UHF iter   4:  -149.66371146962183   -3.32717e-01   1.21200e-02 DIIS
+   @UHF iter   5:  -149.67566978574902   -1.19583e-02   3.07880e-03 DIIS
+   @UHF iter   6:  -149.67635182308263   -6.82037e-04   4.29452e-04 DIIS
    @UHF iter   7:  -149.67638627727450   -3.44542e-05   1.29476e-04 DIIS
-   @UHF iter   8:  -149.67638743967220   -1.16240e-06   1.80818e-05 DIIS
-   @UHF iter   9:  -149.67638746459900   -2.49268e-08   4.31741e-06 DIIS
-   @UHF iter  10:  -149.67638746521041   -6.11408e-10   6.75592e-07 DIIS
-   @UHF iter  11:  -149.67638746522061   -1.02034e-11   7.59466e-08 DIIS
-   @UHF iter  12:  -149.67638746522147   -8.52651e-13   1.79371e-08 DIIS
+   @UHF iter   8:  -149.67638743967223   -1.16240e-06   1.80818e-05 DIIS
+   @UHF iter   9:  -149.67638746459897   -2.49267e-08   4.31741e-06 DIIS
+   @UHF iter  10:  -149.67638746521038   -6.11408e-10   6.75593e-07 DIIS
+   @UHF iter  11:  -149.67638746522070   -1.03171e-11   7.59529e-08 DIIS
+   @UHF iter  12:  -149.67638746522155   -8.52651e-13   1.79312e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   4.196535919E-02
+   @S^2 Expected:                2.000000000E+00
+   @S^2 Observed:                2.041965359E+00
+   @S   Expected:                1.000000000E+00
+   @S   Observed:                1.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -3373,7 +3470,7 @@ Total time:
 	   9Ag     5.012387     5B2u    5.090550     5B3u    5.090550  
 	   8B1u    5.224506    10Ag     5.368700     6B3u    5.370931  
 	   6B2u    5.370931     5B2g    5.632481     5B3g    5.632481  
-	   2Au     6.190515     9B1u    6.190515    10B1u    6.247381  
+	   9B1u    6.190515     2Au     6.190515    10B1u    6.247381  
 	   3B1g    6.617843    11Ag     6.617843    11B1u    6.824813  
 	   3Au     6.824813     6B3g    6.851613     6B2g    6.851613  
 	   7B2u    6.950969     7B3u    6.950969    12B1u    7.223832  
@@ -3387,9 +3484,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.67638746522147
+  @UHF Final Energy:  -149.67638746522155
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9871637058885767
+    Two-Electron Energy =              84.0879917825336918
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6763874652215520
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -3413,29 +3520,25 @@ Total time:
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
        1     O     4.50000  3.50000  1.00000  0.00000
-       2     O     4.50000  3.50000  1.00000 -0.00000
+       2     O     4.50000  3.50000  1.00000  0.00000
 
    Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric:  0.04197
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.04197
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:31 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:21 2012
 Module time:
-	user time   =       5.22 seconds =       0.09 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       5.05 seconds =       0.08 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      25.37 seconds =       0.42 minutes
-	system time =       0.33 seconds =       0.01 minutes
+	user time   =      24.36 seconds =       0.41 minutes
+	system time =       0.35 seconds =       0.01 minutes
 	total time  =         26 seconds =       0.43 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:31 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:21 2012
 
 
          ---------------------------------------------------------
@@ -3455,11 +3558,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -3482,9 +3580,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -3553,19 +3652,26 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @UHF iter   2:  -141.40018502732170   -9.65223e+00   1.71760e-01 DIIS
    @UHF iter   3:  -149.33099461417345   -7.93081e+00   1.49114e-01 DIIS
-   @UHF iter   4:  -149.66371146962175   -3.32717e-01   1.21200e-02 DIIS
-   @UHF iter   5:  -149.67566978574908   -1.19583e-02   3.07880e-03 DIIS
-   @UHF iter   6:  -149.67635182308260   -6.82037e-04   4.29452e-04 DIIS
+   @UHF iter   4:  -149.66371146962183   -3.32717e-01   1.21200e-02 DIIS
+   @UHF iter   5:  -149.67566978574902   -1.19583e-02   3.07880e-03 DIIS
+   @UHF iter   6:  -149.67635182308263   -6.82037e-04   4.29452e-04 DIIS
    @UHF iter   7:  -149.67638627727450   -3.44542e-05   1.29476e-04 DIIS
-   @UHF iter   8:  -149.67638743967220   -1.16240e-06   1.80818e-05 DIIS
-   @UHF iter   9:  -149.67638746459900   -2.49268e-08   4.31741e-06 DIIS
-   @UHF iter  10:  -149.67638746521041   -6.11408e-10   6.75592e-07 DIIS
-   @UHF iter  11:  -149.67638746522061   -1.02034e-11   7.59466e-08 DIIS
-   @UHF iter  12:  -149.67638746522147   -8.52651e-13   1.79371e-08 DIIS
+   @UHF iter   8:  -149.67638743967223   -1.16240e-06   1.80818e-05 DIIS
+   @UHF iter   9:  -149.67638746459897   -2.49267e-08   4.31741e-06 DIIS
+   @UHF iter  10:  -149.67638746521038   -6.11408e-10   6.75593e-07 DIIS
+   @UHF iter  11:  -149.67638746522070   -1.03171e-11   7.59529e-08 DIIS
+   @UHF iter  12:  -149.67638746522155   -8.52651e-13   1.79312e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   4.196535919E-02
+   @S^2 Expected:                2.000000000E+00
+   @S^2 Observed:                2.041965359E+00
+   @S   Expected:                1.000000000E+00
+   @S   Observed:                1.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -3616,7 +3722,7 @@ Total time:
 	   9Ag     5.012387     5B2u    5.090550     5B3u    5.090550  
 	   8B1u    5.224506    10Ag     5.368700     6B3u    5.370931  
 	   6B2u    5.370931     5B2g    5.632481     5B3g    5.632481  
-	   2Au     6.190515     9B1u    6.190515    10B1u    6.247381  
+	   9B1u    6.190515     2Au     6.190515    10B1u    6.247381  
 	   3B1g    6.617843    11Ag     6.617843    11B1u    6.824813  
 	   3Au     6.824813     6B3g    6.851613     6B2g    6.851613  
 	   7B2u    6.950969     7B3u    6.950969    12B1u    7.223832  
@@ -3630,9 +3736,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.67638746522147
+  @UHF Final Energy:  -149.67638746522155
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9871637058885767
+    Two-Electron Energy =              84.0879917825336918
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6763874652215520
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -3656,29 +3772,25 @@ Total time:
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
        1     O     4.50000  3.50000  1.00000  0.00000
-       2     O     4.50000  3.50000  1.00000 -0.00000
+       2     O     4.50000  3.50000  1.00000  0.00000
 
    Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric:  0.04197
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.04197
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:22 2012
 Module time:
-	user time   =       0.71 seconds =       0.01 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       0.69 seconds =       0.01 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      26.08 seconds =       0.43 minutes
-	system time =       0.37 seconds =       0.01 minutes
+	user time   =      25.05 seconds =       0.42 minutes
+	system time =       0.40 seconds =       0.01 minutes
 	total time  =         27 seconds =       0.45 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:22 2012
 
 
          ---------------------------------------------------------
@@ -3698,11 +3810,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -3725,9 +3832,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -3766,12 +3874,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -3785,42 +3904,35 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @UHF iter   1:  -131.74516984948585   -1.89291e+01   0.00000e+00 
+   @UHF iter   1:  -131.74516984948590   -1.89291e+01   0.00000e+00 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
-   @UHF iter   2:  -141.40057915459090   -9.65541e+00   1.71297e-01 DIIS
-   @UHF iter   3:  -149.33084003074680   -7.93026e+00   1.48573e-01 DIIS
-   @UHF iter   4:  -149.66363325354914   -3.32793e-01   1.21300e-02 DIIS
+
+   @UHF iter   2:  -141.40057915459082   -9.65541e+00   1.71297e-01 DIIS
+   @UHF iter   3:  -149.33084003074674   -7.93026e+00   1.48573e-01 DIIS
+   @UHF iter   4:  -149.66363325354905   -3.32793e-01   1.21300e-02 DIIS
    @UHF iter   5:  -149.67558845208441   -1.19552e-02   3.08508e-03 DIIS
-   @UHF iter   6:  -149.67627051344732   -6.82061e-04   4.30241e-04 DIIS
-   @UHF iter   7:  -149.67630490250792   -3.43891e-05   1.30118e-04 DIIS
-   @UHF iter   8:  -149.67630607599008   -1.17348e-06   1.80279e-05 DIIS
-   @UHF iter   9:  -149.67630610197585   -2.59858e-08   4.41291e-06 DIIS
-   @UHF iter  10:  -149.67630610259113   -6.15273e-10   6.78637e-07 DIIS
-   @UHF iter  11:  -149.67630610260130   -1.01750e-11   7.59153e-08 DIIS
-   @UHF iter  12:  -149.67630610260213   -8.24230e-13   1.77635e-08 DIIS
+   @UHF iter   6:  -149.67627051344735   -6.82061e-04   4.30241e-04 DIIS
+   @UHF iter   7:  -149.67630490250804   -3.43891e-05   1.30118e-04 DIIS
+   @UHF iter   8:  -149.67630607599020   -1.17348e-06   1.80279e-05 DIIS
+   @UHF iter   9:  -149.67630610197583   -2.59856e-08   4.41291e-06 DIIS
+   @UHF iter  10:  -149.67630610259113   -6.15302e-10   6.78635e-07 DIIS
+   @UHF iter  11:  -149.67630610260139   -1.02602e-11   7.59229e-08 DIIS
+   @UHF iter  12:  -149.67630610260201   -6.25278e-13   1.77759e-08 DIIS
 
   ==> Post-Iterations <==
+
+   @Spin Contamination Metric:   4.196335187E-02
+   @S^2 Expected:                2.000000000E+00
+   @S^2 Observed:                2.041963352E+00
+   @S   Expected:                1.000000000E+00
+   @S   Observed:                1.000000000E+00
 
 	Orbital Energies (a.u.)
 	-----------------------
@@ -3885,9 +3997,19 @@ Total time:
 
   Energy converged.
 
-  @UHF Final Energy:  -149.67630610260213
+  @UHF Final Energy:  -149.67630610260201
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9867347749076316
+    Two-Electron Energy =              84.0876442141722862
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6763061026020125
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -3910,30 +4032,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.50000  3.50000  1.00000  0.00000
-       2     O     4.50000  3.50000  1.00000  0.00000
+       1     O     4.50000  3.50000  1.00000 -0.00000
+       2     O     4.50000  3.50000  1.00000 -0.00000
 
-   Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
+   Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
-
-  @Spin Contamination Metric:  0.04196
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.04196
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:32 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:22 2012
 Module time:
-	user time   =       0.55 seconds =       0.01 minutes
+	user time   =       0.56 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =      26.63 seconds =       0.44 minutes
-	system time =       0.41 seconds =       0.01 minutes
+	user time   =      25.61 seconds =       0.43 minutes
+	system time =       0.44 seconds =       0.01 minutes
 	total time  =         27 seconds =       0.45 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:32 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:22 2012
 
 
          ---------------------------------------------------------
@@ -3953,11 +4071,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -3980,9 +4093,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -4047,22 +4161,23 @@ Total time:
                         Total Energy        Delta E     Density RMS
 
   Forming PK and K matrices.
-   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   1.00000e+00 
+   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   2.12200e-314 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @ROHF iter   2:  -140.68710759047389   -8.93915e+00   3.76242e-01 DIIS
-   @ROHF iter   3:  -149.19263890017729   -8.50553e+00   3.38437e-01 DIIS
-   @ROHF iter   4:  -149.62158245591812   -4.28944e-01   2.55280e-02 DIIS
-   @ROHF iter   5:  -149.65378771354764   -3.22053e-02   1.10300e-02 DIIS
-   @ROHF iter   6:  -149.65395970213712   -1.71989e-04   1.26864e-03 DIIS
-   @ROHF iter   7:  -149.65398651442234   -2.68123e-05   3.01362e-04 DIIS
-   @ROHF iter   8:  -149.65398718360510   -6.69183e-07   5.36520e-05 DIIS
-   @ROHF iter   9:  -149.65398718690525   -3.30016e-09   5.81571e-06 DIIS
-   @ROHF iter  10:  -149.65398718699518   -8.99263e-11   6.14907e-07 DIIS
-   @ROHF iter  11:  -149.65398718700038   -5.20117e-12   1.87510e-07 DIIS
-   @ROHF iter  12:  -149.65398718700044   -5.68434e-14   1.41861e-08 DIIS
+   @ROHF iter   3:  -149.19263890017723   -8.50553e+00   3.38437e-01 DIIS
+   @ROHF iter   4:  -149.62158245591806   -4.28944e-01   2.55280e-02 DIIS
+   @ROHF iter   5:  -149.65378771354762   -3.22053e-02   1.10300e-02 DIIS
+   @ROHF iter   6:  -149.65395970213723   -1.71989e-04   1.26864e-03 DIIS
+   @ROHF iter   7:  -149.65398651442237   -2.68123e-05   3.01362e-04 DIIS
+   @ROHF iter   8:  -149.65398718360521   -6.69183e-07   5.36520e-05 DIIS
+   @ROHF iter   9:  -149.65398718690534   -3.30013e-09   5.81571e-06 DIIS
+   @ROHF iter  10:  -149.65398718699518   -8.98410e-11   6.14910e-07 DIIS
+   @ROHF iter  11:  -149.65398718700052   -5.34328e-12   1.87430e-07 DIIS
+   @ROHF iter  12:  -149.65398718700050    2.84217e-14   1.41355e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -4087,15 +4202,15 @@ Total time:
 	   6Ag     1.472581     1B1g    1.472581     3B3u    1.571033  
 	   3B2u    1.571033     1Au     1.910730     6B1u    1.910730  
 	   7Ag     2.411120     7B1u    2.463715     3B2g    2.483862  
-	   3B3g    2.483862     4B2u    3.908307     4B3u    3.908307  
+	   3B3g    2.483862     4B3u    3.908307     4B2u    3.908307  
 	   8Ag     4.076410     4B3g    4.195564     4B2g    4.195564  
 	   9Ag     4.993098     2B1g    4.993098     5B3u    5.073922  
 	   5B2u    5.073922     8B1u    5.206432     6B3u    5.339066  
-	   6B2u    5.339066    10Ag     5.349556     5B2g    5.597400  
-	   5B3g    5.597400     9B1u    6.162184     2Au     6.162184  
-	  10B1u    6.223598    11Ag     6.551435     3B1g    6.551435  
-	   3Au     6.763890    11B1u    6.763890     6B3g    6.814391  
-	   6B2g    6.814391     7B2u    6.917041     7B3u    6.917041  
+	   6B2u    5.339066    10Ag     5.349556     5B3g    5.597400  
+	   5B2g    5.597400     2Au     6.162184     9B1u    6.162184  
+	  10B1u    6.223598     3B1g    6.551435    11Ag     6.551435  
+	   3Au     6.763890    11B1u    6.763890     6B2g    6.814391  
+	   6B3g    6.814391     7B2u    6.917041     7B3u    6.917041  
 	  12B1u    7.203948    12Ag     7.544995     7B3g    7.686167  
 	   7B2g    7.686167    13Ag     8.091871    13B1u   13.029268  
 
@@ -4106,9 +4221,19 @@ Total time:
 
   Energy converged.
 
-  @ROHF Final Energy:  -149.65398718700044
+  @ROHF Final Energy:  -149.65398718700050
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954449070449414
+    Two-Electron Energy =              84.1186732619111126
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871870004959
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -4134,23 +4259,23 @@ Total time:
        1     O     4.50000  3.50000  1.00000  0.00000
        2     O     4.50000  3.50000  1.00000  0.00000
 
-   Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
+   Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:33 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:23 2012
 Module time:
 	user time   =       0.56 seconds =       0.01 minutes
 	system time =       0.02 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      27.19 seconds =       0.45 minutes
-	system time =       0.43 seconds =       0.01 minutes
+	user time   =      26.17 seconds =       0.44 minutes
+	system time =       0.46 seconds =       0.01 minutes
 	total time  =         28 seconds =       0.47 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:33 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:23 2012
 
 
          ---------------------------------------------------------
@@ -4170,11 +4295,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -4197,9 +4317,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -4244,22 +4365,23 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   1.00000e+00 
+   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   -3.90528e-02 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @ROHF iter   2:  -140.68710759047408   -8.93915e+00   3.76242e-01 DIIS
-   @ROHF iter   3:  -149.19263890017723   -8.50553e+00   3.38437e-01 DIIS
-   @ROHF iter   4:  -149.62158245591803   -4.28944e-01   2.55280e-02 DIIS
-   @ROHF iter   5:  -149.65378771354762   -3.22053e-02   1.10300e-02 DIIS
-   @ROHF iter   6:  -149.65395970213717   -1.71989e-04   1.26864e-03 DIIS
-   @ROHF iter   7:  -149.65398651442248   -2.68123e-05   3.01362e-04 DIIS
-   @ROHF iter   8:  -149.65398718360524   -6.69183e-07   5.36520e-05 DIIS
-   @ROHF iter   9:  -149.65398718690531   -3.30007e-09   5.81571e-06 DIIS
-   @ROHF iter  10:  -149.65398718699518   -8.98694e-11   6.14910e-07 DIIS
-   @ROHF iter  11:  -149.65398718700050   -5.31486e-12   1.87567e-07 DIIS
-   @ROHF iter  12:  -149.65398718700044    5.68434e-14   1.43355e-08 DIIS
+   @ROHF iter   3:  -149.19263890017729   -8.50553e+00   3.38437e-01 DIIS
+   @ROHF iter   4:  -149.62158245591812   -4.28944e-01   2.55280e-02 DIIS
+   @ROHF iter   5:  -149.65378771354759   -3.22053e-02   1.10300e-02 DIIS
+   @ROHF iter   6:  -149.65395970213712   -1.71989e-04   1.26864e-03 DIIS
+   @ROHF iter   7:  -149.65398651442229   -2.68123e-05   3.01362e-04 DIIS
+   @ROHF iter   8:  -149.65398718360521   -6.69183e-07   5.36520e-05 DIIS
+   @ROHF iter   9:  -149.65398718690537   -3.30016e-09   5.81571e-06 DIIS
+   @ROHF iter  10:  -149.65398718699512   -8.97558e-11   6.14910e-07 DIIS
+   @ROHF iter  11:  -149.65398718700033   -5.20117e-12   1.87430e-07 DIIS
+   @ROHF iter  12:  -149.65398718700041   -8.52651e-14   1.41355e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -4284,15 +4406,15 @@ Total time:
 	   6Ag     1.472581     1B1g    1.472581     3B3u    1.571033  
 	   3B2u    1.571033     1Au     1.910730     6B1u    1.910730  
 	   7Ag     2.411120     7B1u    2.463715     3B2g    2.483862  
-	   3B3g    2.483862     4B2u    3.908307     4B3u    3.908307  
+	   3B3g    2.483862     4B3u    3.908307     4B2u    3.908307  
 	   8Ag     4.076410     4B3g    4.195564     4B2g    4.195564  
 	   9Ag     4.993098     2B1g    4.993098     5B3u    5.073922  
-	   5B2u    5.073922     8B1u    5.206432     6B2u    5.339066  
-	   6B3u    5.339066    10Ag     5.349556     5B2g    5.597400  
-	   5B3g    5.597400     2Au     6.162184     9B1u    6.162184  
+	   5B2u    5.073922     8B1u    5.206432     6B3u    5.339066  
+	   6B2u    5.339066    10Ag     5.349556     5B3g    5.597400  
+	   5B2g    5.597400     2Au     6.162184     9B1u    6.162184  
 	  10B1u    6.223598    11Ag     6.551435     3B1g    6.551435  
-	  11B1u    6.763890     3Au     6.763890     6B3g    6.814391  
-	   6B2g    6.814391     7B2u    6.917041     7B3u    6.917041  
+	   3Au     6.763890    11B1u    6.763890     6B2g    6.814391  
+	   6B3g    6.814391     7B2u    6.917041     7B3u    6.917041  
 	  12B1u    7.203948    12Ag     7.544995     7B3g    7.686167  
 	   7B2g    7.686167    13Ag     8.091871    13B1u   13.029268  
 
@@ -4303,9 +4425,19 @@ Total time:
 
   Energy converged.
 
-  @ROHF Final Energy:  -149.65398718700044
+  @ROHF Final Energy:  -149.65398718700041
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954449070447708
+    Two-Electron Energy =              84.1186732619110273
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871870004106
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -4331,23 +4463,23 @@ Total time:
        1     O     4.50000  3.50000  1.00000  0.00000
        2     O     4.50000  3.50000  1.00000  0.00000
 
-   Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
+   Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:38 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:28 2012
 Module time:
-	user time   =       5.18 seconds =       0.09 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       4.98 seconds =       0.08 minutes
+	system time =       0.02 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      32.37 seconds =       0.54 minutes
-	system time =       0.44 seconds =       0.01 minutes
+	user time   =      31.15 seconds =       0.52 minutes
+	system time =       0.48 seconds =       0.01 minutes
 	total time  =         33 seconds =       0.55 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:38 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:28 2012
 
 
          ---------------------------------------------------------
@@ -4367,11 +4499,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -4394,9 +4521,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -4460,22 +4588,23 @@ Total time:
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   1.00000e+00 
+   @ROHF iter   1:  -131.74795839881585   -2.43861e+01   0.00000e+00 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @ROHF iter   2:  -140.68710759047408   -8.93915e+00   3.76242e-01 DIIS
-   @ROHF iter   3:  -149.19263890017723   -8.50553e+00   3.38437e-01 DIIS
-   @ROHF iter   4:  -149.62158245591803   -4.28944e-01   2.55280e-02 DIIS
-   @ROHF iter   5:  -149.65378771354762   -3.22053e-02   1.10300e-02 DIIS
-   @ROHF iter   6:  -149.65395970213717   -1.71989e-04   1.26864e-03 DIIS
-   @ROHF iter   7:  -149.65398651442248   -2.68123e-05   3.01362e-04 DIIS
-   @ROHF iter   8:  -149.65398718360524   -6.69183e-07   5.36520e-05 DIIS
-   @ROHF iter   9:  -149.65398718690531   -3.30007e-09   5.81571e-06 DIIS
-   @ROHF iter  10:  -149.65398718699518   -8.98694e-11   6.14910e-07 DIIS
-   @ROHF iter  11:  -149.65398718700050   -5.31486e-12   1.87567e-07 DIIS
-   @ROHF iter  12:  -149.65398718700044    5.68434e-14   1.43355e-08 DIIS
+   @ROHF iter   3:  -149.19263890017729   -8.50553e+00   3.38437e-01 DIIS
+   @ROHF iter   4:  -149.62158245591812   -4.28944e-01   2.55280e-02 DIIS
+   @ROHF iter   5:  -149.65378771354759   -3.22053e-02   1.10300e-02 DIIS
+   @ROHF iter   6:  -149.65395970213712   -1.71989e-04   1.26864e-03 DIIS
+   @ROHF iter   7:  -149.65398651442229   -2.68123e-05   3.01362e-04 DIIS
+   @ROHF iter   8:  -149.65398718360521   -6.69183e-07   5.36520e-05 DIIS
+   @ROHF iter   9:  -149.65398718690537   -3.30016e-09   5.81571e-06 DIIS
+   @ROHF iter  10:  -149.65398718699512   -8.97558e-11   6.14910e-07 DIIS
+   @ROHF iter  11:  -149.65398718700033   -5.20117e-12   1.87430e-07 DIIS
+   @ROHF iter  12:  -149.65398718700041   -8.52651e-14   1.41355e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -4500,15 +4629,15 @@ Total time:
 	   6Ag     1.472581     1B1g    1.472581     3B3u    1.571033  
 	   3B2u    1.571033     1Au     1.910730     6B1u    1.910730  
 	   7Ag     2.411120     7B1u    2.463715     3B2g    2.483862  
-	   3B3g    2.483862     4B2u    3.908307     4B3u    3.908307  
+	   3B3g    2.483862     4B3u    3.908307     4B2u    3.908307  
 	   8Ag     4.076410     4B3g    4.195564     4B2g    4.195564  
 	   9Ag     4.993098     2B1g    4.993098     5B3u    5.073922  
-	   5B2u    5.073922     8B1u    5.206432     6B2u    5.339066  
-	   6B3u    5.339066    10Ag     5.349556     5B2g    5.597400  
-	   5B3g    5.597400     2Au     6.162184     9B1u    6.162184  
+	   5B2u    5.073922     8B1u    5.206432     6B3u    5.339066  
+	   6B2u    5.339066    10Ag     5.349556     5B3g    5.597400  
+	   5B2g    5.597400     2Au     6.162184     9B1u    6.162184  
 	  10B1u    6.223598    11Ag     6.551435     3B1g    6.551435  
-	  11B1u    6.763890     3Au     6.763890     6B3g    6.814391  
-	   6B2g    6.814391     7B2u    6.917041     7B3u    6.917041  
+	   3Au     6.763890    11B1u    6.763890     6B2g    6.814391  
+	   6B3g    6.814391     7B2u    6.917041     7B3u    6.917041  
 	  12B1u    7.203948    12Ag     7.544995     7B3g    7.686167  
 	   7B2g    7.686167    13Ag     8.091871    13B1u   13.029268  
 
@@ -4519,9 +4648,19 @@ Total time:
 
   Energy converged.
 
-  @ROHF Final Energy:  -149.65398718700044
+  @ROHF Final Energy:  -149.65398718700041
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954449070447708
+    Two-Electron Energy =              84.1186732619110273
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871870004106
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -4547,23 +4686,23 @@ Total time:
        1     O     4.50000  3.50000  1.00000  0.00000
        2     O     4.50000  3.50000  1.00000  0.00000
 
-   Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
+   Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
 
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:39 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:29 2012
 Module time:
-	user time   =       0.70 seconds =       0.01 minutes
+	user time   =       0.67 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      33.07 seconds =       0.55 minutes
-	system time =       0.48 seconds =       0.01 minutes
+	user time   =      31.82 seconds =       0.53 minutes
+	system time =       0.52 seconds =       0.01 minutes
 	total time  =         34 seconds =       0.57 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:39 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:29 2012
 
 
          ---------------------------------------------------------
@@ -4583,11 +4722,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -4610,9 +4744,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -4651,12 +4786,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -4670,40 +4816,27 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @ROHF iter   1:  -131.74516984948590   -2.43833e+01   1.00000e+00 
+   @ROHF iter   1:  -131.74516984948590   -2.43833e+01   0.00000e+00 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @ROHF iter   2:  -140.68802871962998   -8.94286e+00   3.75032e-01 DIIS
-   @ROHF iter   3:  -149.19089597986468   -8.50287e+00   3.37084e-01 DIIS
-   @ROHF iter   4:  -149.62147979313619   -4.30584e-01   2.55834e-02 DIIS
-   @ROHF iter   5:  -149.65370610563798   -3.22263e-02   1.10562e-02 DIIS
-   @ROHF iter   6:  -149.65387846814772   -1.72363e-04   1.27539e-03 DIIS
-   @ROHF iter   7:  -149.65390535900264   -2.68909e-05   3.01954e-04 DIIS
-   @ROHF iter   8:  -149.65390603183516   -6.72833e-07   5.37877e-05 DIIS
-   @ROHF iter   9:  -149.65390603519720   -3.36203e-09   5.87976e-06 DIIS
-   @ROHF iter  10:  -149.65390603528894   -9.17453e-11   6.18250e-07 DIIS
-   @ROHF iter  11:  -149.65390603529414   -5.20117e-12   1.87692e-07 DIIS
-   @ROHF iter  12:  -149.65390603529437   -2.27374e-13   1.42092e-08 DIIS
+   @ROHF iter   3:  -149.19089597986465   -8.50287e+00   3.37084e-01 DIIS
+   @ROHF iter   4:  -149.62147979313610   -4.30584e-01   2.55834e-02 DIIS
+   @ROHF iter   5:  -149.65370610563809   -3.22263e-02   1.10562e-02 DIIS
+   @ROHF iter   6:  -149.65387846814775   -1.72363e-04   1.27539e-03 DIIS
+   @ROHF iter   7:  -149.65390535900269   -2.68909e-05   3.01954e-04 DIIS
+   @ROHF iter   8:  -149.65390603183519   -6.72832e-07   5.37877e-05 DIIS
+   @ROHF iter   9:  -149.65390603519717   -3.36198e-09   5.87976e-06 DIIS
+   @ROHF iter  10:  -149.65390603528900   -9.18305e-11   6.18263e-07 DIIS
+   @ROHF iter  11:  -149.65390603529431   -5.31486e-12   1.87896e-07 DIIS
+   @ROHF iter  12:  -149.65390603529417    1.42109e-13   1.41698e-08 DIIS
 
   ==> Post-Iterations <==
 
@@ -4728,15 +4861,15 @@ Total time:
 	   6Ag     1.473137     1B1g    1.473137     3B3u    1.571407  
 	   3B2u    1.571407     6B1u    1.911236     1Au     1.911236  
 	   7Ag     2.411464     7B1u    2.464213     3B2g    2.484350  
-	   3B3g    2.484350     4B2u    3.908931     4B3u    3.908931  
+	   3B3g    2.484350     4B3u    3.908931     4B2u    3.908931  
 	   8Ag     4.077594     4B3g    4.196310     4B2g    4.196310  
-	   2B1g    4.998211     9Ag     4.998211     5B3u    5.079509  
+	   9Ag     4.998211     2B1g    4.998211     5B3u    5.079509  
 	   5B2u    5.079509     8B1u    5.207595     6B3u    5.343952  
 	   6B2u    5.343952    10Ag     5.354761     5B2g    5.602418  
 	   5B3g    5.602418     9B1u    6.168015     2Au     6.168015  
 	  10B1u    6.226991    11Ag     6.559294     3B1g    6.559294  
-	  11B1u    6.771662     3Au     6.771662     6B3g    6.821894  
-	   6B2g    6.821894     7B2u    6.924406     7B3u    6.924406  
+	  11B1u    6.771662     3Au     6.771662     6B2g    6.821894  
+	   6B3g    6.821894     7B2u    6.924406     7B3u    6.924406  
 	  12B1u    7.209416    12Ag     7.546385     7B3g    7.692180  
 	   7B2g    7.692180    13Ag     8.099318    13B1u   13.032350  
 
@@ -4747,9 +4880,19 @@ Total time:
 
   Energy converged.
 
-  @ROHF Final Energy:  -149.65390603529437
+  @ROHF Final Energy:  -149.65390603529417
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9950193605417326
+    Two-Electron Energy =              84.1183288671142293
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539060352941704
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -4780,18 +4923,18 @@ Total time:
 
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:40 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:30 2012
 Module time:
-	user time   =       0.53 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.54 seconds =       0.01 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      33.60 seconds =       0.56 minutes
-	system time =       0.51 seconds =       0.01 minutes
+	user time   =      32.36 seconds =       0.54 minutes
+	system time =       0.56 seconds =       0.01 minutes
 	total time  =         35 seconds =       0.58 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:40 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:30 2012
 
 
          ---------------------------------------------------------
@@ -4811,11 +4954,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -4838,9 +4976,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -4910,19 +5049,254 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @CUHF iter   2:  -141.34745775350322   -9.59950e+00   3.43643e-01 DIIS
    @CUHF iter   3:  -149.32186865387416   -7.97441e+00   2.98430e-01 DIIS
-   @CUHF iter   4:  -149.64447293218811   -3.22604e-01   2.40639e-02 DIIS
-   @CUHF iter   5:  -149.65389481517076   -9.42188e-03   6.36417e-03 DIIS
+   @CUHF iter   4:  -149.64447293218819   -3.22604e-01   2.40639e-02 DIIS
+   @CUHF iter   5:  -149.65389481517093   -9.42188e-03   6.36417e-03 DIIS
    @CUHF iter   6:  -149.65398666571477   -9.18505e-05   7.58265e-04 DIIS
-   @CUHF iter   7:  -149.65398572744482    9.38270e-07   2.24224e-04 DIIS
-   @CUHF iter   8:  -149.65398715246818   -1.42502e-06   2.04427e-05 DIIS
-   @CUHF iter   9:  -149.65398720586504   -5.33969e-08   1.09084e-06 DIIS
-   @CUHF iter  10:  -149.65398719125463    1.46104e-08   2.51089e-07 DIIS
-   @CUHF iter  11:  -149.65398718668436    4.57027e-09   3.87810e-08 DIIS
+   @CUHF iter   7:  -149.65398572744488    9.38270e-07   2.24224e-04 DIIS
+   @CUHF iter   8:  -149.65398715246803   -1.42502e-06   2.04427e-05 DIIS
+   @CUHF iter   9:  -149.65398720586506   -5.33970e-08   1.09084e-06 DIIS
+   @CUHF iter  10:  -149.65398719125517    1.46099e-08   2.51082e-07 DIIS
+   @CUHF iter  11:  -149.65398718669246    4.56271e-09   3.87180e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               2.00000
+  @S^2 Observed:               2.00000
+	Orbital Energies (a.u.)
+	-----------------------
+
+	Alpha Occupied:                                                       
+
+	   1Ag   -20.748118     1B1u  -20.747498     2Ag    -1.709706  
+	   2B1u   -1.185219     1B3u   -0.822494     1B2u   -0.822494  
+	   3Ag    -0.768922     1B2g   -0.526668     1B3g   -0.526668  
+
+	Alpha Virtual:                                                        
+
+	   3B1u    0.385403     2B3u    0.683564     2B2u    0.683564  
+	   4Ag     0.727493     4B1u    0.740301     2B2g    0.795901  
+	   2B3g    0.795901     5Ag     0.872401     5B1u    1.428549  
+	   1B1g    1.441899     6Ag     1.441899     3B2u    1.537491  
+	   3B3u    1.537491     1Au     1.863025     6B1u    1.863025  
+	   7Ag     2.387459     7B1u    2.450697     3B2g    2.458606  
+	   3B3g    2.458606     4B3u    3.860476     4B2u    3.860476  
+	   8Ag     4.064237     4B2g    4.150390     4B3g    4.150390  
+	   2B1g    4.973826     9Ag     4.973826     5B3u    5.057941  
+	   5B2u    5.057941     8B1u    5.190542     6B3u    5.310288  
+	   6B2u    5.310288    10Ag     5.332900     5B2g    5.566030  
+	   5B3g    5.566030     2Au     6.136203     9B1u    6.136203  
+	  10B1u    6.203159     3B1g    6.499301    11Ag     6.499301  
+	   3Au     6.715764    11B1u    6.715764     6B2g    6.784201  
+	   6B3g    6.784201     7B3u    6.889268     7B2u    6.889268  
+	  12B1u    7.187780    12Ag     7.526604     7B3g    7.670966  
+	   7B2g    7.670966    13Ag     8.071985    13B1u   13.011964  
+
+	Beta Occupied:                                                        
+
+	   1Ag   -20.707159     1B1u  -20.705838     2Ag    -1.601457  
+	   2B1u   -1.004650     3Ag    -0.700323     1B3u   -0.590442  
+	   1B2u   -0.590442  
+
+	Beta Virtual:                                                         
+
+	   1B2g    0.094284     1B3g    0.094284     3B1u    0.430848  
+	   2B3u    0.738686     2B2u    0.738686     4Ag     0.741112  
+	   4B1u    0.782622     2B2g    0.876077     2B3g    0.876077  
+	   5Ag     0.901160     5B1u    1.466615     6Ag     1.502984  
+	   1B1g    1.502984     3B3u    1.604840     3B2u    1.604840  
+	   6B1u    1.958105     1Au     1.958105     7Ag     2.434719  
+	   7B1u    2.476759     3B2g    2.509522     3B3g    2.509522  
+	   4B3u    3.956648     4B2u    3.956648     8Ag     4.088608  
+	   4B3g    4.241920     4B2g    4.241920     9Ag     5.012375  
+	   2B1g    5.012375     5B2u    5.089933     5B3u    5.089933  
+	   8B1u    5.222344    10Ag     5.366253     6B3u    5.367843  
+	   6B2u    5.367843     5B3g    5.628769     5B2g    5.628769  
+	   9B1u    6.187840     2Au     6.187840    10B1u    6.244051  
+	  11Ag     6.603844     3B1g    6.603844    11B1u    6.812670  
+	   3Au     6.812670     6B3g    6.844679     6B2g    6.844679  
+	   7B2u    6.944886     7B3u    6.944886    12B1u    7.220239  
+	  12Ag     7.563255     7B3g    7.701470     7B2g    7.701470  
+	  13Ag     8.112038    13B1u   13.046614  
+
+	Final Occupation by Irrep:
+	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
+	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
+  Energy converged.
+
+  @CUHF Final Energy:  -149.65398718669246
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954448360562083
+    Two-Electron Energy =              84.1186731912304282
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871866924614
+
+  ==> Properties <==
+
+  Nuclear Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: (a.u.)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: (Debye)
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Quadrupole Moment: (Debye Ang)
+    XX:    -9.9023     YY:    -9.9023     ZZ:   -10.3546
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Traceless Quadrupole Moment: (Debye Ang)
+    XX:     0.1508     YY:     0.1508     ZZ:    -0.3016
+    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
+
+  Mulliken Charges: (a.u.)
+   Center  Symbol    Alpha    Beta     Spin     Total
+       1     O     4.50000  3.50000  1.00000  0.00000
+       2     O     4.50000  3.50000  1.00000  0.00000
+
+   Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
+
+
+  Saving occupied orbitals to File 180.
+
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:30 2012
+Module time:
+	user time   =       0.55 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
+Total time:
+	user time   =      32.91 seconds =       0.55 minutes
+	system time =       0.58 seconds =       0.01 minutes
+	total time  =         35 seconds =       0.58 minutes
+
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:30 2012
+
+
+         ---------------------------------------------------------
+                                   SCF
+            by Justin Turney, Rob Parrish, and Andy Simmonett
+                             CUHF Reference
+                        1 Threads,    250 MiB Core
+         ---------------------------------------------------------
+
+  ==> Geometry <==
+
+    Molecular point group: d2h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 3:
+
+       Center              X                  Y                   Z       
+    ------------   -----------------  -----------------  -----------------
+           O          0.000000000000     0.000000000000    -0.600000000000
+           O          0.000000000000     0.000000000000     0.600000000000
+
+  Running in d2h symmetry.
+
+  Nuclear repulsion =   28.222784458133336
+
+  Charge       = 0
+  Multiplicity = 3
+  Electrons    = 16
+  Nalpha       = 9
+  Nbeta        = 7
+
+  ==> Algorithm <==
+
+  SCF Algorithm Type is DIRECT.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is CORE.
+  Energy threshold   = 1.00e-08
+  Density threshold  = 1.00e-08
+  Integral threshold = 0.00e+00
+
+  ==> Primary Basis <==
+
+  -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
+    Total number of shells = 20
+    Number of primitives   = 52
+    Number of AO           = 70
+    Number of SO           = 60
+    Maximum AM             = 3
+    Spherical Harmonics    = TRUE
+
+  -Contraction Scheme:
+    Atom   Type   All Primitives // Shells:
+   ------ ------ --------------------------
+       1     O     18s 5p 2d 1f // 4s 3p 2d 1f 
+       2     O     18s 5p 2d 1f // 4s 3p 2d 1f 
+
+  ==> Pre-Iterations <==
+
+  Minimum eigenvalue in the overlap matrix is 4.2858401312E-03.
+  Using Symmetric Orthogonalization.
+  SCF Guess: Core (One-Electron) Hamiltonian.
+
+  Initial CUHF energy:  -112.81603870657221
+
+   -------------------------------------------------------
+    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
+   -------------------------------------------------------
+     Ag        13      13       2       2       2       0
+     B1g        3       3       0       0       0       0
+     B2g        7       7       1       0       0       1
+     B3g        7       7       1       1       1       0
+     Au         3       3       0       0       0       0
+     B1u       13      13       3       2       2       1
+     B2u        7       7       1       1       1       0
+     B3u        7       7       1       1       1       0
+   -------------------------------------------------------
+    Total      60      60       9       7       7       2
+   -------------------------------------------------------
+
+  ==> Integral Setup <==
+
+  Building Direct Integral Objects...
+
+  ==> Iterations <==
+
+                        Total Energy        Delta E     Density RMS
+
+   @CUHF iter   1:  -131.74795839881580   -1.89319e+01   0.00000e+00 
+	Occupation by irrep:
+	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
+	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
+   @CUHF iter   2:  -141.34745775350353   -9.59950e+00   3.43643e-01 DIIS
+   @CUHF iter   3:  -149.32186865387422   -7.97441e+00   2.98430e-01 DIIS
+   @CUHF iter   4:  -149.64447293218819   -3.22604e-01   2.40639e-02 DIIS
+   @CUHF iter   5:  -149.65389481517087   -9.42188e-03   6.36417e-03 DIIS
+   @CUHF iter   6:  -149.65398666571483   -9.18505e-05   7.58265e-04 DIIS
+   @CUHF iter   7:  -149.65398572744482    9.38270e-07   2.24224e-04 DIIS
+   @CUHF iter   8:  -149.65398715246809   -1.42502e-06   2.04427e-05 DIIS
+   @CUHF iter   9:  -149.65398720586501   -5.33969e-08   1.09084e-06 DIIS
+   @CUHF iter  10:  -149.65398719125520    1.46098e-08   2.51082e-07 DIIS
+   @CUHF iter  11:  -149.65398718669243    4.56276e-09   3.87180e-08 DIIS
+
+  ==> Post-Iterations <==
+
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               2.00000
+  @S^2 Observed:               2.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -4986,9 +5360,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.65398718668436
+  @CUHF Final Energy:  -149.65398718669243
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954448360560377
+    Two-Electron Energy =              84.1186731912302861
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871866924045
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -5017,247 +5401,20 @@ Total time:
    Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:40 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:35 2012
 Module time:
-	user time   =       0.57 seconds =       0.01 minutes
-	system time =       0.02 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
-Total time:
-	user time   =      34.17 seconds =       0.57 minutes
-	system time =       0.53 seconds =       0.01 minutes
-	total time  =         35 seconds =       0.58 minutes
-
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:40 2012
-
-
-         ---------------------------------------------------------
-                                   SCF
-            by Justin Turney, Rob Parrish, and Andy Simmonett
-                             CUHF Reference
-                        1 Threads,    250 MiB Core
-         ---------------------------------------------------------
-
-  ==> Geometry <==
-
-    Molecular point group: d2h
-
-    Geometry (in Angstrom), charge = 0, multiplicity = 3:
-
-       Center              X                  Y                   Z       
-    ------------   -----------------  -----------------  -----------------
-           O          0.000000000000     0.000000000000    -0.600000000000
-           O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
-
-  Running in d2h symmetry.
-
-  Nuclear repulsion =   28.222784458133336
-
-  Charge       = 0
-  Multiplicity = 3
-  Electrons    = 16
-  Nalpha       = 9
-  Nbeta        = 7
-
-  ==> Algorithm <==
-
-  SCF Algorithm Type is DIRECT.
-  DIIS enabled.
-  MOM disabled.
-  Fractional occupation disabled.
-  Guess Type is CORE.
-  Energy threshold   = 1.00e-08
-  Density threshold  = 1.00e-08
-  Integral threshold = 0.00e+00
-
-  ==> Primary Basis: CC-PVTZ <==
-
-  -AO BASIS SET INFORMATION:
-    Total number of shells = 20
-    Number of primitives   = 52
-    Number of AO           = 70
-    Number of SO           = 60
-    Maximum AM             = 3
-    Spherical Harmonics    = TRUE
-
-  -Contraction Scheme:
-    Atom   Type   All Primitives // Shells:
-   ------ ------ --------------------------
-       1     O     18s 5p 2d 1f // 4s 3p 2d 1f 
-       2     O     18s 5p 2d 1f // 4s 3p 2d 1f 
-
-  ==> Pre-Iterations <==
-
-  Minimum eigenvalue in the overlap matrix is 4.2858401312E-03.
-  Using Symmetric Orthogonalization.
-  SCF Guess: Core (One-Electron) Hamiltonian.
-
-  Initial CUHF energy:  -112.81603870657221
-
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     Ag        13      13       2       2       2       0
-     B1g        3       3       0       0       0       0
-     B2g        7       7       1       0       0       1
-     B3g        7       7       1       1       1       0
-     Au         3       3       0       0       0       0
-     B1u       13      13       3       2       2       1
-     B2u        7       7       1       1       1       0
-     B3u        7       7       1       1       1       0
-   -------------------------------------------------------
-    Total      60      60       9       7       7       2
-   -------------------------------------------------------
-
-  ==> Integral Setup <==
-
-  Building Direct Integral Objects...
-
-  ==> Iterations <==
-
-                        Total Energy        Delta E     Density RMS
-
-   @CUHF iter   1:  -131.74795839881580   -1.89319e+01   0.00000e+00 
-	Occupation by irrep:
-	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
-	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
-	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
-   @CUHF iter   2:  -141.34745775350353   -9.59950e+00   3.43643e-01 DIIS
-   @CUHF iter   3:  -149.32186865387413   -7.97441e+00   2.98430e-01 DIIS
-   @CUHF iter   4:  -149.64447293218819   -3.22604e-01   2.40639e-02 DIIS
-   @CUHF iter   5:  -149.65389481517084   -9.42188e-03   6.36417e-03 DIIS
-   @CUHF iter   6:  -149.65398666571471   -9.18505e-05   7.58265e-04 DIIS
-   @CUHF iter   7:  -149.65398572744490    9.38270e-07   2.24224e-04 DIIS
-   @CUHF iter   8:  -149.65398715246801   -1.42502e-06   2.04427e-05 DIIS
-   @CUHF iter   9:  -149.65398720586509   -5.33971e-08   1.09084e-06 DIIS
-   @CUHF iter  10:  -149.65398719125514    1.46100e-08   2.51082e-07 DIIS
-   @CUHF iter  11:  -149.65398718669169    4.56345e-09   3.87231e-08 DIIS
-
-  ==> Post-Iterations <==
-
-	Orbital Energies (a.u.)
-	-----------------------
-
-	Alpha Occupied:                                                       
-
-	   1Ag   -20.748118     1B1u  -20.747498     2Ag    -1.709706  
-	   2B1u   -1.185219     1B3u   -0.822494     1B2u   -0.822494  
-	   3Ag    -0.768922     1B2g   -0.526668     1B3g   -0.526668  
-
-	Alpha Virtual:                                                        
-
-	   3B1u    0.385403     2B3u    0.683564     2B2u    0.683564  
-	   4Ag     0.727493     4B1u    0.740301     2B2g    0.795901  
-	   2B3g    0.795901     5Ag     0.872401     5B1u    1.428549  
-	   1B1g    1.441898     6Ag     1.441898     3B2u    1.537491  
-	   3B3u    1.537491     1Au     1.863025     6B1u    1.863025  
-	   7Ag     2.387459     7B1u    2.450697     3B2g    2.458606  
-	   3B3g    2.458606     4B3u    3.860476     4B2u    3.860476  
-	   8Ag     4.064237     4B2g    4.150390     4B3g    4.150390  
-	   2B1g    4.973826     9Ag     4.973826     5B2u    5.057941  
-	   5B3u    5.057941     8B1u    5.190542     6B3u    5.310288  
-	   6B2u    5.310288    10Ag     5.332900     5B2g    5.566030  
-	   5B3g    5.566030     2Au     6.136203     9B1u    6.136203  
-	  10B1u    6.203159     3B1g    6.499301    11Ag     6.499301  
-	   3Au     6.715764    11B1u    6.715764     6B2g    6.784201  
-	   6B3g    6.784201     7B3u    6.889268     7B2u    6.889268  
-	  12B1u    7.187780    12Ag     7.526604     7B3g    7.670966  
-	   7B2g    7.670966    13Ag     8.071985    13B1u   13.011964  
-
-	Beta Occupied:                                                        
-
-	   1Ag   -20.707159     1B1u  -20.705838     2Ag    -1.601457  
-	   2B1u   -1.004650     3Ag    -0.700323     1B3u   -0.590442  
-	   1B2u   -0.590442  
-
-	Beta Virtual:                                                         
-
-	   1B2g    0.094284     1B3g    0.094284     3B1u    0.430848  
-	   2B3u    0.738686     2B2u    0.738686     4Ag     0.741112  
-	   4B1u    0.782622     2B2g    0.876077     2B3g    0.876077  
-	   5Ag     0.901160     5B1u    1.466615     6Ag     1.502984  
-	   1B1g    1.502984     3B2u    1.604840     3B3u    1.604840  
-	   6B1u    1.958105     1Au     1.958105     7Ag     2.434719  
-	   7B1u    2.476759     3B2g    2.509522     3B3g    2.509522  
-	   4B3u    3.956648     4B2u    3.956648     8Ag     4.088608  
-	   4B2g    4.241920     4B3g    4.241920     9Ag     5.012375  
-	   2B1g    5.012375     5B2u    5.089933     5B3u    5.089933  
-	   8B1u    5.222344    10Ag     5.366253     6B3u    5.367843  
-	   6B2u    5.367843     5B2g    5.628769     5B3g    5.628769  
-	   9B1u    6.187840     2Au     6.187840    10B1u    6.244051  
-	  11Ag     6.603844     3B1g    6.603844    11B1u    6.812670  
-	   3Au     6.812670     6B3g    6.844679     6B2g    6.844679  
-	   7B2u    6.944886     7B3u    6.944886    12B1u    7.220239  
-	  12Ag     7.563255     7B3g    7.701470     7B2g    7.701470  
-	  13Ag     8.112038    13B1u   13.046614  
-
-	Final Occupation by Irrep:
-	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
-	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
-	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
-
-  Energy converged.
-
-  @CUHF Final Energy:  -149.65398718669169
-
-  ==> Properties <==
-  Nuclear Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.0000
-
-  Electronic Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.0000
-
-  Dipole Moment: (a.u.)
-     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
-
-  Dipole Moment: (Debye)
-     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
-
-  Quadrupole Moment: (Debye Ang)
-    XX:    -9.9023     YY:    -9.9023     ZZ:   -10.3546
-    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
-
-  Traceless Quadrupole Moment: (Debye Ang)
-    XX:     0.1508     YY:     0.1508     ZZ:    -0.3016
-    XY:     0.0000     XZ:     0.0000     YZ:     0.0000
-
-  Mulliken Charges: (a.u.)
-   Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.50000  3.50000  1.00000 -0.00000
-       2     O     4.50000  3.50000  1.00000 -0.00000
-
-   Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
-
-
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.00000
-
-  Saving occupied orbitals to File 180.
-
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:45 2012
-Module time:
-	user time   =       4.80 seconds =       0.08 minutes
+	user time   =       4.58 seconds =       0.08 minutes
 	system time =       0.01 seconds =       0.00 minutes
 	total time  =          5 seconds =       0.08 minutes
 Total time:
-	user time   =      38.97 seconds =       0.65 minutes
-	system time =       0.54 seconds =       0.01 minutes
+	user time   =      37.49 seconds =       0.62 minutes
+	system time =       0.59 seconds =       0.01 minutes
 	total time  =         40 seconds =       0.67 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:45 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:35 2012
 
 
          ---------------------------------------------------------
@@ -5277,11 +5434,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -5304,9 +5456,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -5375,19 +5528,24 @@ Total time:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
+
    @CUHF iter   2:  -141.34745775350353   -9.59950e+00   3.43643e-01 DIIS
-   @CUHF iter   3:  -149.32186865387413   -7.97441e+00   2.98430e-01 DIIS
+   @CUHF iter   3:  -149.32186865387422   -7.97441e+00   2.98430e-01 DIIS
    @CUHF iter   4:  -149.64447293218819   -3.22604e-01   2.40639e-02 DIIS
-   @CUHF iter   5:  -149.65389481517084   -9.42188e-03   6.36417e-03 DIIS
-   @CUHF iter   6:  -149.65398666571471   -9.18505e-05   7.58265e-04 DIIS
-   @CUHF iter   7:  -149.65398572744490    9.38270e-07   2.24224e-04 DIIS
-   @CUHF iter   8:  -149.65398715246801   -1.42502e-06   2.04427e-05 DIIS
-   @CUHF iter   9:  -149.65398720586509   -5.33971e-08   1.09084e-06 DIIS
-   @CUHF iter  10:  -149.65398719125514    1.46100e-08   2.51082e-07 DIIS
-   @CUHF iter  11:  -149.65398718669169    4.56345e-09   3.87231e-08 DIIS
+   @CUHF iter   5:  -149.65389481517087   -9.42188e-03   6.36417e-03 DIIS
+   @CUHF iter   6:  -149.65398666571483   -9.18505e-05   7.58265e-04 DIIS
+   @CUHF iter   7:  -149.65398572744482    9.38270e-07   2.24224e-04 DIIS
+   @CUHF iter   8:  -149.65398715246809   -1.42502e-06   2.04427e-05 DIIS
+   @CUHF iter   9:  -149.65398720586501   -5.33969e-08   1.09084e-06 DIIS
+   @CUHF iter  10:  -149.65398719125520    1.46098e-08   2.51082e-07 DIIS
+   @CUHF iter  11:  -149.65398718669243    4.56276e-09   3.87180e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               2.00000
+  @S^2 Observed:               2.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -5402,13 +5560,13 @@ Total time:
 	   3B1u    0.385403     2B3u    0.683564     2B2u    0.683564  
 	   4Ag     0.727493     4B1u    0.740301     2B2g    0.795901  
 	   2B3g    0.795901     5Ag     0.872401     5B1u    1.428549  
-	   1B1g    1.441898     6Ag     1.441898     3B2u    1.537491  
+	   1B1g    1.441899     6Ag     1.441899     3B2u    1.537491  
 	   3B3u    1.537491     1Au     1.863025     6B1u    1.863025  
 	   7Ag     2.387459     7B1u    2.450697     3B2g    2.458606  
 	   3B3g    2.458606     4B3u    3.860476     4B2u    3.860476  
 	   8Ag     4.064237     4B2g    4.150390     4B3g    4.150390  
-	   2B1g    4.973826     9Ag     4.973826     5B2u    5.057941  
-	   5B3u    5.057941     8B1u    5.190542     6B3u    5.310288  
+	   2B1g    4.973826     9Ag     4.973826     5B3u    5.057941  
+	   5B2u    5.057941     8B1u    5.190542     6B3u    5.310288  
 	   6B2u    5.310288    10Ag     5.332900     5B2g    5.566030  
 	   5B3g    5.566030     2Au     6.136203     9B1u    6.136203  
 	  10B1u    6.203159     3B1g    6.499301    11Ag     6.499301  
@@ -5429,11 +5587,11 @@ Total time:
 	   2B3u    0.738686     2B2u    0.738686     4Ag     0.741112  
 	   4B1u    0.782622     2B2g    0.876077     2B3g    0.876077  
 	   5Ag     0.901160     5B1u    1.466615     6Ag     1.502984  
-	   1B1g    1.502984     3B2u    1.604840     3B3u    1.604840  
+	   1B1g    1.502984     3B3u    1.604840     3B2u    1.604840  
 	   6B1u    1.958105     1Au     1.958105     7Ag     2.434719  
 	   7B1u    2.476759     3B2g    2.509522     3B3g    2.509522  
 	   4B3u    3.956648     4B2u    3.956648     8Ag     4.088608  
-	   4B2g    4.241920     4B3g    4.241920     9Ag     5.012375  
+	   4B3g    4.241920     4B2g    4.241920     9Ag     5.012375  
 	   2B1g    5.012375     5B2u    5.089933     5B3u    5.089933  
 	   8B1u    5.222344    10Ag     5.366253     6B3u    5.367843  
 	   6B2u    5.367843     5B2g    5.628769     5B3g    5.628769  
@@ -5451,9 +5609,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.65398718669169
+  @CUHF Final Energy:  -149.65398718669243
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9954448360560377
+    Two-Electron Energy =              84.1186731912302861
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539871866924045
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -5476,30 +5644,26 @@ Total time:
 
   Mulliken Charges: (a.u.)
    Center  Symbol    Alpha    Beta     Spin     Total
-       1     O     4.50000  3.50000  1.00000 -0.00000
-       2     O     4.50000  3.50000  1.00000 -0.00000
+       1     O     4.50000  3.50000  1.00000  0.00000
+       2     O     4.50000  3.50000  1.00000  0.00000
 
    Total alpha =  9.00000, Total beta =  7.00000, Total charge = -0.00000
 
 
-  @Spin Contamination Metric: -0.00000
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:46 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:36 2012
 Module time:
-	user time   =       0.69 seconds =       0.01 minutes
+	user time   =       0.68 seconds =       0.01 minutes
 	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =      39.66 seconds =       0.66 minutes
-	system time =       0.58 seconds =       0.01 minutes
+	user time   =      38.17 seconds =       0.64 minutes
+	system time =       0.63 seconds =       0.01 minutes
 	total time  =         41 seconds =       0.68 minutes
 
-*** tstart() called on QuickSilver.local
-*** at Mon Jan 23 14:38:46 2012
+*** tstart() called on lawn-143-215-103-161.lawn.gatech.edu
+*** at Fri Apr 27 13:52:36 2012
 
 
          ---------------------------------------------------------
@@ -5519,11 +5683,6 @@ Total time:
     ------------   -----------------  -----------------  -----------------
            O          0.000000000000     0.000000000000    -0.600000000000
            O          0.000000000000     0.000000000000     0.600000000000
-
-    Number of unique atoms: 1
-
-    Atoms equivalency:
-       unique atom 0: 0 1 
 
   Running in d2h symmetry.
 
@@ -5546,9 +5705,10 @@ Total time:
   Density threshold  = 1.00e-08
   Integral threshold = 0.00e+00
 
-  ==> Primary Basis: CC-PVTZ <==
+  ==> Primary Basis <==
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz
     Total number of shells = 20
     Number of primitives   = 52
     Number of AO           = 70
@@ -5587,12 +5747,23 @@ Total time:
 
   ==> Integral Setup <==
 
- DFHF: Density-Fitted SCF Algorithms.
-   by Rob Parrish
+  ==> DFJK: Density-Fitted J/K Matrices <==
 
-  ==> Auxiliary Basis: CC-PVTZ-JKFIT <==
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory (MB):               178
+    Algorithm:                Core
+    Integral Cache:           NONE
+    Schwarz Cutoff:          0E+00
+    Fitting Condition:       1E-12
+
+   => Auxiliary Basis Set <=
 
   -AO BASIS SET INFORMATION:
+    Name                   = cc-pvtz-jkfit
     Total number of shells = 50
     Number of primitives   = 50
     Number of AO           = 192
@@ -5606,42 +5777,33 @@ Total time:
        1     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
        2     O     10s 7p 5d 2f 1g // 10s 7p 5d 2f 1g 
 
-  Schwarz Cutoff is 0.000E+00
-   -Shell Pairs:             210 of          210 remain,   0% savings
-   -Function Pairs:         1830 of         1830 remain,   0% savings
-
-  Using Core Algorithm.
-
-    ----------------------------------------------
-     Quantity         Doubles              MiB   
-    ----------------------------------------------
-     Memory            21875000              175
-     (A|B)                24964                0
-     (A|mn)              289140                2
-    ----------------------------------------------
-
   ==> Iterations <==
 
                         Total Energy        Delta E     Density RMS
 
-   @CUHF iter   1:  -131.74516984948585   -1.89291e+01   0.00000e+00 
+   @CUHF iter   1:  -131.74516984948590   -1.89291e+01   0.00000e+00 
 	Occupation by irrep:
 	         Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
 	DOCC [     3,    0,    0,    0,    0,    2,    1,    1 ]
 	SOCC [     0,    0,    1,    1,    0,    0,    0,    0 ]
-   @CUHF iter   2:  -141.34777621230171   -9.60261e+00   3.42718e-01 DIIS
-   @CUHF iter   3:  -149.32169220450652   -7.97392e+00   2.97351e-01 DIIS
-   @CUHF iter   4:  -149.64439384809296   -3.22702e-01   2.40849e-02 DIIS
-   @CUHF iter   5:  -149.65381336977600   -9.41952e-03   6.37676e-03 DIIS
-   @CUHF iter   6:  -149.65390550485142   -9.21351e-05   7.61712e-04 DIIS
+
+   @CUHF iter   2:  -141.34777621230174   -9.60261e+00   3.42718e-01 DIIS
+   @CUHF iter   3:  -149.32169220450646   -7.97392e+00   2.97351e-01 DIIS
+   @CUHF iter   4:  -149.64439384809285   -3.22702e-01   2.40849e-02 DIIS
+   @CUHF iter   5:  -149.65381336977603   -9.41952e-03   6.37676e-03 DIIS
+   @CUHF iter   6:  -149.65390550485148   -9.21351e-05   7.61712e-04 DIIS
    @CUHF iter   7:  -149.65390457147737    9.33374e-07   2.24549e-04 DIIS
-   @CUHF iter   8:  -149.65390600199137   -1.43051e-06   2.05319e-05 DIIS
-   @CUHF iter   9:  -149.65390605452137   -5.25300e-08   1.08412e-06 DIIS
-   @CUHF iter  10:  -149.65390603950706    1.50143e-08   2.44018e-07 DIIS
-   @CUHF iter  11:  -149.65390603497798    4.52908e-09   3.85015e-08 DIIS
+   @CUHF iter   8:  -149.65390600199154   -1.43051e-06   2.05319e-05 DIIS
+   @CUHF iter   9:  -149.65390605452146   -5.25299e-08   1.08411e-06 DIIS
+   @CUHF iter  10:  -149.65390603950760    1.50139e-08   2.44012e-07 DIIS
+   @CUHF iter  11:  -149.65390603498778    4.51982e-09   3.84235e-08 DIIS
 
   ==> Post-Iterations <==
 
+
+  @Spin Contamination Metric:  0.00000
+  @S^2 Expected:               2.00000
+  @S^2 Observed:               2.00000
 	Orbital Energies (a.u.)
 	-----------------------
 
@@ -5705,9 +5867,19 @@ Total time:
 
   Energy converged.
 
-  @CUHF Final Energy:  -149.65390603497798
+  @CUHF Final Energy:  -149.65390603498778
+
+   => Energetics <=
+
+    Nuclear Repulsion Energy =         28.2227844581333365
+    One-Electron Energy =            -261.9950192883262616
+    Two-Electron Energy =              84.1183287952051586
+    DFT Functional Energy =             0.0000000000000000
+    Empirical Dispersion Energy =       0.0000000000000000
+    Total Energy =                   -149.6539060349877559
 
   ==> Properties <==
+
   Nuclear Dipole Moment: (a.u.)
      X:     0.0000      Y:     0.0000      Z:     0.0000
 
@@ -5736,20 +5908,16 @@ Total time:
    Total alpha =  9.00000, Total beta =  7.00000, Total charge =  0.00000
 
 
-  @Spin Contamination Metric:  0.00000
-  @S^2 Expected:               2.00000
-  @S^2 Observed:               2.00000
-
   Saving occupied orbitals to File 180.
 
-*** tstop() called on QuickSilver.local at Mon Jan 23 14:38:46 2012
+*** tstop() called on lawn-143-215-103-161.lawn.gatech.edu at Fri Apr 27 13:52:36 2012
 Module time:
 	user time   =       0.53 seconds =       0.01 minutes
 	system time =       0.03 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =      40.19 seconds =       0.67 minutes
-	system time =       0.61 seconds =       0.01 minutes
+	user time   =      38.70 seconds =       0.64 minutes
+	system time =       0.66 seconds =       0.01 minutes
 	total time  =         41 seconds =       0.68 minutes
 
 *** PSI4 exiting successfully. Buy a developer a beer!
