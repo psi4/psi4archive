@@ -343,9 +343,6 @@ opt4:         SCF cc-pVTZ geometry optimzation, with Z-matrix input
 opt5:         6-31G** UHF CH2 3B1 optimization
 
 
-plugin_cepa:  cc-pvdz H2O Test CISD, AQCC, ACPF Energy/Properties
-
-
 plugin_libfock:  LibFock test input
 
 
