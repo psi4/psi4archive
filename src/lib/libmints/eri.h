@@ -132,34 +132,6 @@ public:
     virtual ~ERI();
 };
 
-class F12 : public TwoElectronInt
-{
-public:
-    F12(boost::shared_ptr<CorrelationFactor> cf, const IntegralFactory* integral, int deriv=0, double schwarz = 0.0);
-    virtual ~F12();
-};
-
-class F12Squared : public TwoElectronInt
-{
-public:
-    F12Squared(boost::shared_ptr<CorrelationFactor> cf, const IntegralFactory* integral, int deriv=0, double schwarz = 0.0);
-    virtual ~F12Squared();
-};
-
-class F12G12 : public TwoElectronInt
-{
-public:
-    F12G12(boost::shared_ptr<CorrelationFactor> cf, const IntegralFactory* integral, int deriv=0, double schwarz = 0.0);
-    virtual ~F12G12();
-};
-
-class F12DoubleCommutator : public TwoElectronInt
-{
-public:
-    F12DoubleCommutator(boost::shared_ptr<CorrelationFactor> cf, const IntegralFactory* integral, int deriv=0, double schwarz = 0.0);
-    virtual ~F12DoubleCommutator();
-};
-
 class ErfERI : public TwoElectronInt
 {
 public:

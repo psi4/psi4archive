@@ -123,36 +123,6 @@ public:
     void set_rho(double rho);
 };
 
-class F12Fundamental : public GaussianFundamental {
-public:
-    F12Fundamental(boost::shared_ptr<CorrelationFactor> cf, int max);
-    virtual ~F12Fundamental();
-    double* values(int J, double T);
-};
-
-class F12SquaredFundamental : public GaussianFundamental {
-public:
-    F12SquaredFundamental(boost::shared_ptr<CorrelationFactor> cf, int max);
-    virtual ~F12SquaredFundamental();
-    double* values(int J, double T);
-};
-
-class F12G12Fundamental : public GaussianFundamental {
-private:
-    boost::shared_ptr<FJT> Fm_;
-public:
-    F12G12Fundamental(boost::shared_ptr<CorrelationFactor> cf, int max);
-    virtual ~F12G12Fundamental();
-    double* values(int J, double T);
-};
-
-class F12DoubleCommutatorFundamental : public GaussianFundamental {
-public:
-    F12DoubleCommutatorFundamental(boost::shared_ptr<CorrelationFactor> cf, int max);
-    virtual ~F12DoubleCommutatorFundamental();
-    double* values(int J, double T);
-};
-
 class ErfFundamental : public GaussianFundamental {
 private:
     double omega_;
