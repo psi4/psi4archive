@@ -290,7 +290,8 @@ void DFJKGrad::build_Amn_terms()
         ::memset((void*) Amnp[0], '\0', sizeof(double) * np * nso * nso);
         
         // > Integrals < //
-        #pragma omp parallel for schedule(dynamic) num_threads(df_ints_num_threads_)
+        int nthread_df = df_ints_num_threads_;
+        #pragma omp parallel for schedule(dynamic) num_threads(nthread_df)
         for (long int PMN = 0L; PMN < NP * npairs; PMN++) {
 
             int thread = 0;
@@ -339,7 +340,7 @@ void DFJKGrad::build_Amn_terms()
             C_DGEMM('N','N',np*(ULI)nso,na,nso,1.0,Amnp[0],nso,Cap[0],na,0.0,Amip[0],na);
 
             // > (A|mi) C_mj -> (A|ij) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for 
             for (int p = 0; p < np; p++) {
                 C_DGEMM('T','N',na,na,nso,1.0,Amip[p],na,Cap[0],na,0.0,&Aijp[0][p * (ULI) na * na],na);
             }
@@ -354,7 +355,7 @@ void DFJKGrad::build_Amn_terms()
             C_DGEMM('N','N',np*(ULI)nso,nb,nso,1.0,Amnp[0],nso,Cbp[0],nb,0.0,Amip[0],na);
 
             // > (A|mi) C_mj -> (A|ij) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int p = 0; p < np; p++) {
                 C_DGEMM('T','N',nb,nb,nso,1.0,Amip[p],na,Cbp[0],nb,0.0,&Aijp[0][p * (ULI) nb * nb],nb);
             }
@@ -462,7 +463,8 @@ void DFJKGrad::build_Amn_lr_terms()
         ::memset((void*) Amnp[0], '\0', sizeof(double) * np * nso * nso);
         
         // > Integrals < //
-        #pragma omp parallel for schedule(dynamic) num_threads(df_ints_num_threads_)
+        int nthread_df = df_ints_num_threads_;
+        #pragma omp parallel for schedule(dynamic) num_threads(nthread_df)
         for (long int PMN = 0L; PMN < NP * npairs; PMN++) {
 
             int thread = 0;
@@ -506,7 +508,7 @@ void DFJKGrad::build_Amn_lr_terms()
             C_DGEMM('N','N',np*(ULI)nso,na,nso,1.0,Amnp[0],nso,Cap[0],na,0.0,Amip[0],na);
 
             // > (A|mi) C_mj -> (A|ij) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int p = 0; p < np; p++) {
                 C_DGEMM('T','N',na,na,nso,1.0,Amip[p],na,Cap[0],na,0.0,&Aijp[0][p * (ULI) na * na],na);
             }
@@ -521,7 +523,7 @@ void DFJKGrad::build_Amn_lr_terms()
             C_DGEMM('N','N',np*(ULI)nso,nb,nso,1.0,Amnp[0],nso,Cbp[0],nb,0.0,Amip[0],na);
 
             // > (A|mi) C_mj -> (A|ij) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int p = 0; p < np; p++) {
                 C_DGEMM('T','N',nb,nb,nso,1.0,Amip[p],na,Cbp[0],nb,0.0,&Aijp[0][p * (ULI) nb * nb],nb);
             }
@@ -856,7 +858,8 @@ void DFJKGrad::build_AB_x_terms()
         }
     }
 
-    #pragma omp parallel for schedule(dynamic) num_threads(df_ints_num_threads_)
+    int nthread_df = df_ints_num_threads_;
+    #pragma omp parallel for schedule(dynamic) num_threads(nthread_df)
     for (long int PQ = 0L; PQ < PQ_pairs.size(); PQ++) {
 
         int P = PQ_pairs[PQ].first;
@@ -1111,7 +1114,7 @@ void DFJKGrad::build_Amn_x_terms()
             psio_->read(unit_a_, "(A|ij)", (char*) Aijp[0], sizeof(double) * np * na * na, next_Aija, &next_Aija);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,na,na,1.0,Cap[0],na,&Aijp[0][P * (ULI) na * na],na,0.0,Amip[P],na);
             }
@@ -1127,7 +1130,7 @@ void DFJKGrad::build_Amn_x_terms()
             psio_->read(unit_b_, "(A|ij)", (char*) Aijp[0], sizeof(double) * np * nb * nb, next_Aijb, &next_Aijb);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,nb,nb,1.0,Cbp[0],nb,&Aijp[0][P* (ULI) nb * nb],nb,0.0,Amip[P],na);
             }
@@ -1145,7 +1148,7 @@ void DFJKGrad::build_Amn_x_terms()
             psio_->read(unit_a_, "(A|w|ij)", (char*) Aijp[0], sizeof(double) * np * na * na, next_Awija, &next_Awija);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,na,na,1.0,Cap[0],na,&Aijp[0][P * (ULI) na * na],na,0.0,Amip[P],na);
             }
@@ -1161,7 +1164,7 @@ void DFJKGrad::build_Amn_x_terms()
             psio_->read(unit_b_, "(A|w|ij)", (char*) Aijp[0], sizeof(double) * np * nb * nb, next_Awijb, &next_Awijb);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,nb,nb,1.0,Cbp[0],nb,&Aijp[0][P* (ULI) nb * nb],nb,0.0,Amip[P],na);
             }
@@ -1171,7 +1174,8 @@ void DFJKGrad::build_Amn_x_terms()
         }
 
         // > Integrals < //
-        #pragma omp parallel for schedule(dynamic) num_threads(df_ints_num_threads_)
+        int nthread_df = df_ints_num_threads_;
+        #pragma omp parallel for schedule(dynamic) num_threads(nthread_df)
         for (long int PMN = 0L; PMN < NP * npairs; PMN++) {
 
             int thread = 0;
@@ -1416,7 +1420,7 @@ void DFJKGrad::build_Amn_x_lr_terms()
             psio_->read(unit_a_, "(A|ij)", (char*) Aijp[0], sizeof(double) * np * na * na, next_Aija, &next_Aija);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,na,na,1.0,Cap[0],na,&Aijp[0][P * (ULI) na * na],na,0.0,Amip[P],na);
             }
@@ -1432,7 +1436,7 @@ void DFJKGrad::build_Amn_x_lr_terms()
             psio_->read(unit_b_, "(A|ij)", (char*) Aijp[0], sizeof(double) * np * nb * nb, next_Aijb, &next_Aijb);
 
             // > (A|ij) C_mi -> (A|mj) < //
-            #pragma omp parallel for num_threads(omp_num_threads_)
+            #pragma omp parallel for
             for (int P = 0; P < np; P++) {
                 C_DGEMM('N','N',nso,nb,nb,1.0,Cbp[0],nb,&Aijp[0][P* (ULI) nb * nb],nb,0.0,Amip[P],na);
             }
@@ -1442,7 +1446,8 @@ void DFJKGrad::build_Amn_x_lr_terms()
         }
 
         // > Integrals < //
-        #pragma omp parallel for schedule(dynamic) num_threads(df_ints_num_threads_)
+        int nthread_df = df_ints_num_threads_;
+        #pragma omp parallel for schedule(dynamic) num_threads(nthread_df)
         for (long int PMN = 0L; PMN < NP * npairs; PMN++) {
 
             int thread = 0;
