@@ -38,7 +38,44 @@ where
 
 .. math:: \textrm{H}^{eff}_{\mu \nu} = \left \langle \Phi_\mu \right | \hat{H}e^{\hat{T}^\nu} \left | \Phi_\nu \right \rangle \, \textrm{.}
 
-|PSIfour| currently implements Mk-MRCC with singles and doubles [Mk-MRCCSD] and Mk-MRCCSD with perturbative triples [Mk-MRCCSD(T)] as formulated in [Evangelista:2010:074107]_. A companion perturbation method (Mk-MRPT2) has been developed based on the Mukherjee formalisim as shown in [Evangelista:2009:4728]_.
+|PSIfour| currently implements Mk-MRCC with singles and doubles
+[Mk-MRCCSD] and Mk-MRCCSD with perturbative triples [Mk-MRCCSD(T)]
+as formulated in [Evangelista:2010:074107]_. A companion perturbation
+method (Mk-MRPT2) has been developed based on the Mukherjee formalisim
+as shown in [Evangelista:2009:4728]_.
+
+The current version of the code is limited to reference active spaces
+in which all determinants are connected to each other by no more than
+two excitations.  In practice, this usually means that the active space
+can have at most two particles, or at most two holes.  Examples would
+include CAS(2,2), CAS(2,8), CAS(4,3), etc., where CAS(n,m) refers to
+a complete-active-space configuration interaction (CAS-CI) reference
+with n electrons in m orbitals.  If the user specifies active spaces
+that do not fit these limitations, then the code will still run, but
+some relevant determinants will be missing, and the answer obtained
+will be an approximation to the true Mk-MRCC procedure.
+
+The PSIMRCC code itself does not perform orbital optimization.
+Hence, the references used might be considered CAS-CI references,
+but not CASSCF references (CASSCF implies that the orbitals have been
+optimized specifically to minimize the energy of the CAS-CI reference).
+However, if one wishes to use two-configuration self-consistent-field
+(TCSCF) orbitals, those can be obtained using the multi-configuration
+self-consistent-field (MCSCF) component of PSIMRCC (specifying
+|mcscf__reference| to be ``twocon``).
+
+This is suitable for describing diradicals.  Otherwise, one may use
+RHF or ROHF orbitals as input to PSIMRCC.  Due to a current limitation
+in the code, one must obtain orbitals using PSIMRCC's MCSCF module
+regardless of what orbital type is chosen, ``twocon``, ``rhf``, or
+``rohf``.  An example of the MCSCF input is given below.
+
+PSIMRCC is most commonly used for low-spin cases (singlets or open-shell
+singlets).  It is capable of performing computations on higher spin
+states (e.g., triplets), but in general, not all the required matrix
+elements have been coded for high-spin cases, meaning that results will
+correspond to an approximate Mk-MRCC computation for high-spin cases.
+
 
 A Simple Example
 ________________ 
@@ -71,11 +108,23 @@ The |psimrcc__corr_wfn| allows you to select one of three methods Mk-MRPT2 [``PT
    }
    energy('psimrcc')
 
+Note that the oxygen molecule has 16 electrons (including core), while
+the ``docc`` array contains only 7 doubly-occupied orbitals (or 14
+electrons).  Hence, two more electrons are available to place into
+the active space (given by ``active``), which consists of 2 orbitals.
+Thus there are two active electrons in two orbitals.  In this particular
+example, we are using standard ROHF orbitals for the Mk-MRCCSD procedure,
+rather than TCSCF orbitals.  Nevertheless, with the present code,
+these orbitals must be provided through the MCSCF module, as specified in
+the
+``set mcscf`` section above.
 
 Orbital ordering and selection of the model space
 _________________________________________________
 
-The reference determinants :math:`\Phi_\mu` are specified in PSIMRCC via occupational numbers. PSIMRCC requires that four arrays be specified for this purpose.
+The reference determinants :math:`\Phi_\mu` are specified in PSIMRCC
+via occupational numbers. PSIMRCC requires that four arrays be specified
+for this purpose.
 
 - Frozen doubly occupied orbitals (|psimrcc__frozen_docc|) are doubly occupied in each reference determinant and are not correlated in the MRCC procedure.
 - Doubly occupied orbitals (|psimrcc__restricted_docc|) are doubly occupied in each reference determinant and are correlated in the MRCC procedure.
