@@ -397,23 +397,13 @@ DCFTSolver::build_denominators()
     //Alpha spin
     for(int h = 0; h < nirrep_; ++h){
         for(int i = 0; i < naoccpi_[h]; ++i){
-            if (options_.get_str("TAU") == "APPROXIMATE") {
                 aOccEvals[aOccCount++] = moFa_->get(h, i, i);
-            }
-            else {
-                aOccEvals[aOccCount++] = moFa_->get(h, i, i) / (1.0 + 2.0 * T_OO.matrix[h][i][i]);
-            }
             for(int mu = 0; mu < nsopi_[h]; ++mu)
                 aocc_c_->set(h, mu, i, Ca_->get(h, mu, i));
         }
 
         for(int a = 0; a < navirpi_[h]; ++a){
-            if (options_.get_str("TAU") == "APPROXIMATE") {
                 aVirEvals[aVirCount++] = moFa_->get(h, naoccpi_[h] + a, naoccpi_[h] + a);
-            }
-            else {
-                aVirEvals[aVirCount++] = moFa_->get(h, a + naoccpi_[h], a + naoccpi_[h]) / (1.0 - 2.0 * T_VV.matrix[h][a][a]);
-            }
             for(int mu = 0; mu < nsopi_[h]; ++mu)
                 avir_c_->set(h, mu, a, Ca_->get(h, mu, naoccpi_[h] + a));
         }        
@@ -422,7 +412,6 @@ DCFTSolver::build_denominators()
     //Elements of the Fock matrix
     //Alpha occupied
 
-    if (options_.get_str("TAU") == "APPROXIMATE") {
         dpd_file2_init(&F, PSIF_LIBTRANS_DPD, 0, ID('O'), ID('O'), "F <O|O>");
         dpd_file2_mat_init(&F);
         int offset = 0;
@@ -453,28 +442,17 @@ DCFTSolver::build_denominators()
         }
         dpd_file2_mat_wrt(&F);
         dpd_file2_close(&F);
-    }
 
     //Diagonal elements of the Fock matrix
     //Beta spin
     for(int h = 0; h < nirrep_; ++h){
         for(int i = 0; i < nboccpi_[h]; ++i){
-            if (options_.get_str("TAU") == "APPROXIMATE") {
                 bOccEvals[bOccCount++] = moFb_->get(h, i, i);
-            }
-            else {
-                bOccEvals[bOccCount++] = moFb_->get(h, i, i) / (1.0 + 2.0 * T_oo.matrix[h][i][i]);
-            }
             for(int mu = 0; mu < nsopi_[h]; ++mu)
                 bocc_c_->set(h, mu, i, Cb_->get(h, mu, i));
         }
         for(int a = 0; a < nbvirpi_[h]; ++a){
-            if (options_.get_str("TAU") == "APPROXIMATE") {
                 bVirEvals[bVirCount++] = moFb_->get(h, nboccpi_[h] + a, nboccpi_[h] + a);
-            }
-            else {
-                bVirEvals[bVirCount++] = moFb_->get(h, a + nboccpi_[h], a + nboccpi_[h]) / (1.0 - 2.0 * T_vv.matrix[h][a][a]);
-            }
             for(int mu = 0; mu < nsopi_[h]; ++mu)
                 bvir_c_->set(h, mu, a, Cb_->get(h, mu, nboccpi_[h] + a));
         }
@@ -483,10 +461,9 @@ DCFTSolver::build_denominators()
     //Off-diagonal elements of the Fock matrix
     //Beta Occupied
 
-    if (options_.get_str("TAU") == "APPROXIMATE") {
         dpd_file2_init(&F, PSIF_LIBTRANS_DPD, 0, ID('o'), ID('o'), "F <o|o>");
         dpd_file2_mat_init(&F);
-        int offset = 0;
+        offset = 0;
         for(int h = 0; h < nirrep_; ++h){
             offset += frzcpi_[h];
             for(int i = 0 ; i < nboccpi_[h]; ++i){
@@ -514,7 +491,6 @@ DCFTSolver::build_denominators()
         }
         dpd_file2_mat_wrt(&F);
         dpd_file2_close(&F);
-    }
 
     dpd_file2_close(&T_OO);
     dpd_file2_close(&T_oo);

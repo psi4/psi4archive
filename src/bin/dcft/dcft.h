@@ -115,10 +115,7 @@ protected:
     void update_cumulant_and_orbitals();
     void run_davidson();
     void davidson_guess();
-    // Exact Tau
-    void refine_tau();
     void compute_F_intermediate();
-    void form_density_weighted_fock();
 
     bool augment_b(double *vec, double tol);
     /// Whether to force the code to keep the same occupation from SCF

@@ -32,7 +32,6 @@ DCFTSolver::compute_energy()
     // to self-consistency, until converged.  When lambda is converged and only one scf cycle is needed to reach
     // the desired cutoff, we're done
 
-    if (options_.get_str("DERTYPE") == "FIRST" && options_.get_str("TAU") == "EXACT") throw FeatureNotImplemented("DCFT-06 with TAU = EXACT", "Analytic gradients", __FILE__, __LINE__);
 
     if(options_.get_str("ALGORITHM") == "TWOSTEP"){
         SharedMatrix tmp = SharedMatrix(new Matrix("temp", nirrep_, nsopi_, nsopi_));
@@ -83,10 +82,6 @@ DCFTSolver::compute_energy()
                     // Build new Tau from current Lambda
                     if (options_.get_bool("RELAX_TAU")) {
                         build_tau();
-                        // Compute tau exactly if requested
-                        if (options_.get_str("TAU") == "EXACT") {
-                            refine_tau();
-                        }
                         if (options_.get_str("AO_BASIS") == "DISK") {
                             // Transform new Tau to the SO basis
                             transform_tau();
@@ -160,10 +155,6 @@ DCFTSolver::compute_energy()
             else fprintf(outfile, "\tSkipping the cumulant update to relax guess orbitals\n");
             // Build new Tau from the density cumulant in the MO basis and transform it the SO basis
             build_tau();
-            // Compute tau exactly if requested
-            if (options_.get_str("TAU") == "EXACT") {
-                refine_tau();
-            }
             transform_tau();
             // Update the orbitals
             int nSCFCycles = 0;
@@ -278,9 +269,6 @@ DCFTSolver::compute_energy()
             old_total_energy_ = new_total_energy_;
             // Build new Tau from the density cumulant in the MO basis and transform it the SO basis
             build_tau();
-            if (options_.get_str("TAU") == "EXACT") {
-                refine_tau();
-            }
             transform_tau();
             // Copy core hamiltonian into the Fock matrix array: F = H
             Fa_->copy(so_h_);
@@ -389,7 +377,6 @@ DCFTSolver::compute_energy()
         fprintf(outfile,    "\n\n\t\t        Quadratically-Convergent DCFT      \n");
         fprintf(outfile,        "\t\t     by A.Yu. Sokolov and A.C. Simmonett   \n\n");
 
-        if (options_.get_str("TAU") == "EXACT") throw FeatureNotImplemented("DCFT-06 with TAU = EXACT", "ALGORITHM = QC", __FILE__, __LINE__);
         if (options_.get_str("DERTYPE") == "FIRST") throw FeatureNotImplemented("QC-DCFT-06", "Analytic gradients", __FILE__, __LINE__);
         run_qc_dcft();
 
