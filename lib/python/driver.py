@@ -769,6 +769,18 @@ def optimize(name, **kwargs):
     | eom-ccsd                | equation of motion (EOM) CCSD                                                         |
     +-------------------------+---------------------------------------------------------------------------------------+
 
+    .. include:: autodoc_dft_opt.rst
+
+    .. warning:: For the present, file ``intco.dat`` is lodged in the submission
+       directory and defines the internal coordinates for an optimization.
+       Thus, it is unsafe to run multiple optimizations from a single
+       directory. Also, ``intco.dat`` can linger, so, unless you've
+       deliberately constructed it, be sure to clear it out before starting a
+       new optimization.
+    
+    .. warning:: Optimizations where the molecule is specified in Z-matrix format 
+       with dummy atoms will result in the geometry being converted to a Cartesian representation.
+
     :type name: string
     :param name: ``'scf'`` || ``'df-mp2'`` || ``'ci5'`` || etc.
 
