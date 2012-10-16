@@ -29,6 +29,8 @@ clean()
 set {
     dft_functional bp86-d
     reference rks
+    dft_radial_points 99
+    dft_spherical_points 302
 }
 
 gradient('bp86-d')

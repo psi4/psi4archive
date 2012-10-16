@@ -229,7 +229,7 @@ dcft2:        DCFT-06 calculation for the He dimer. This performs a two-step upd
 dcft3:        DCFT-06 calculation for the He dimer. This performs a simultaneous update of the orbitals and cumulant, using DIIS extrapolation. Four-virtual integrals are handled in the AO Basis, using integrals stored on disk.
 
 
-dcft4:        DCFT calculation for the HF+ using DCFT-06 functional. This performs both two-step and simultaneous update of the orbitals and cumulant using DIIS extrapolation. Four-virtual integrals are first handled in the MO Basis for the first two energy computations. In the next two the ao_basis=disk algorithm is used, where the transformation of integrals for  four-virtual case is avoided.  The computation is then repeated using the exact expression for non-idempotent contribution to OPDM (TAU = EXACT) using the same algorithms.
+dcft4:        DCFT calculation for the HF+ using DCFT-06 functional. This performs both two-step and simultaneous update of the orbitals and cumulant using DIIS extrapolation. Four-virtual integrals are first handled in the MO Basis for the first two energy computations. In the next two the ao_basis=disk algorithm is used, where the transformation of integrals for  four-virtual case is avoided. 
 
 
 dcft5:        DCFT-06 calculation for the O2 molecule (triplet ground state). This performs  geometry optimization using two-step and simultaneous solution of the  response equations for the analytic gradient.
@@ -388,7 +388,7 @@ omp3-1:       OMP3 cc-pVDZ energy for the H2O molecule
 omp3-2:       SCS-OMP3 cc-pVDZ geometry optimization for the H2O molecule.
 
 
-omp3-1:       Spin-component scaled variations for OMP3.
+omp3-3:       SOS-OMP3 cc-pVDZ geometry optimization for the H2O molecule.
 
 
 opt1:         SCF STO-3G geometry optimzation, with Z-matrix input
@@ -409,7 +409,7 @@ opt3:         SCF cc-pVDZ geometry optimzation, with Z-matrix input
 opt4:         SCF cc-pVTZ geometry optimzation, with Z-matrix input
 
 
-opt5:         6-31G** UHF CH2 3B1 optimization
+opt5:         6-31G** UHF CH2 3B1 optimization.  Uses a Z-Matrix with dummy atoms, just for demo and testing purposes.
 
 
 props1:       RHF STO-3G dipole moment computation, performed by applying a finite electric field and numerical differentiation.
