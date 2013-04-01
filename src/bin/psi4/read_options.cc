@@ -1235,35 +1235,6 @@ int read_options(const std::string &name, Options & options, bool suppress_print
     options.add_bool("SOLVER_EXACT_DIAGONAL", false);
 
   }
-  if (name == "MP2"|| options.read_globals()) {
-      /*- MODULEDESCRIPTION Performs second order Moller-Plesset perturbation theory (MP2) computations.  This code can
-          compute RHF/ROHF/UHF energies, and RHF gradient/property computations.  However, given the small errors introduced,
-          we recommend using the new density fitted MP2 codes instead, which are much more efficient. -*/
-    /*- Wavefunction type !expert -*/
-    options.add_str("WFN", "MP2", "MP2");
-    /*- Reference wavefunction type -*/
-    options.add_str("REFERENCE", "RHF", "RHF UHF ROHF");
-    /*- Type of job being performed !expert -*/
-    options.add_str("JOBTYPE", "SP");
-    /*- Do compute the one particle density matrix, for properties? -*/
-    options.add_bool("OPDM", false);
-    /*- Do add relaxation terms to the one particle density matrix, for properties? -*/
-    options.add_bool("OPDM_RELAX", false);
-    /*- The amount of cacheing of data to perform -*/
-    options.add_int("CACHELEVEL", 2);
-    /*- The criterion used to retain/release cached data -*/
-    options.add_str("CACHETYPE", "LRU", "LRU LOW");
-    /*- Do perform a spin component scaled MP2 computation? -*/
-    options.add_bool("SCS", false);
-    /*- Do perform a spin component scaled (N) MP2 computation? -*/
-    options.add_bool("SCS_N", false);
-    /*- The scale factor used for opposite-spin pairs in SCS computations -*/
-    options.add_double("MP2_OS_SCALE", 6.0/5.0);
-    /*- The scale factor used for same-spin pairs in SCS computations-*/
-    options.add_double("MP2_SS_SCALE", 1.0/3.0);
-    /*- What algorithm to use for the MP2 computation -*/
-    options.add_str("MP2_TYPE", "DF", "DF CONV");
-  }
   // Options of this module not standardized since it's bound for deletion
   if(name == "TRANSQT2"|| options.read_globals()) {
       /*- MODULEDESCRIPTION Performs transformations of integrals into the molecular orbital (MO) basis.  This

@@ -100,36 +100,6 @@ def run_mp2(name, **kwargs):
     optstash.restore()
 
 
-def run_oldmp2(name, **kwargs):
-    """Function encoding sequence of PSI module calls for
-    a MP2 calculation.
-
-    """
-    optstash = OptionsState(
-        ['TRANSQT2', 'WFN'],
-        ['CCSORT', 'WFN'],
-        ['MP2', 'WFN'])
-
-    # Bypass routine scf if user did something special to get it to converge
-    if not (('bypass_scf' in kwargs) and yes.match(str(kwargs['bypass_scf']))):
-        scf_helper(name, **kwargs)
-
-        # If the scf type is DF, then the AO integrals were never generated
-        if PsiMod.get_option('SCF', 'SCF_TYPE') == 'DF':
-            mints = PsiMod.MintsHelper()
-            mints.integrals()
-
-    PsiMod.set_local_option('TRANSQT2', 'WFN', 'MP2')
-    PsiMod.set_local_option('CCSORT', 'WFN', 'MP2')
-    PsiMod.set_local_option('MP2', 'WFN', 'MP2')
-
-    PsiMod.transqt2()
-    PsiMod.ccsort()
-    PsiMod.mp2()
-
-    optstash.restore()
-
-
 def run_mp2_gradient(name, **kwargs):
     """Function encoding sequence of PSI module calls for
     a MP2 gradient calculation.

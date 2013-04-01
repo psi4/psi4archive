@@ -24,7 +24,6 @@
 #include "psi4.h"
 
 #include "../ccenergy/ccwave.h"
-#include "../mp2/mp2wave.h"
 
 using namespace psi;
 using namespace boost;
@@ -406,19 +405,6 @@ double py_psi_ccenergy()
 //    }
 //    else
 //        return 0.0;
-}
-
-double py_psi_mp2()
-{
-    py_psi_prepare_options_for_module("MP2");
-    boost::shared_ptr<Wavefunction> mp2wave(new mp2::MP2Wavefunction(
-                                                Process::environment.wavefunction(),
-                                                Process::environment.options)
-                                           );
-    Process::environment.set_wavefunction(mp2wave);
-
-    double energy = mp2wave->compute_energy();
-    return energy;
 }
 
 double py_psi_cctriples()
@@ -1097,7 +1083,6 @@ BOOST_PYTHON_MODULE(PsiMod)
     def("dfmp2", py_psi_dfmp2, "Runs the DF-MP2 code.");
     def("dfmp2grad", py_psi_dfmp2grad, "Runs the DF-MP2 gradient.");
 //    def("lmp2", py_psi_lmp2, "docstring");
-    def("mp2", py_psi_mp2, "Runs the conventional (slow) MP2 code.");
     def("mcscf", py_psi_mcscf, "Runs the MCSCF code, (N.B. restricted to certain active spaces).");
     def("mrcc_generate_input", py_psi_mrcc_generate_input, "Generates an input for Kallay's MRCC code.");
     def("mrcc_load_densities", py_psi_mrcc_load_densities, "Reads in the density matrices from Kallay's MRCC code.");
