@@ -425,6 +425,10 @@ cc28:         CCSD/cc-pVDZ optical rotation calculation (length gauge only) on Z
 
 
 mp2-1:        All-electron MP2 6-31G** geometry optimization of water
+ocepa-freq1:  OCEPA cc-pVDZ freqs for C2H2
+
+
+ocepa-grad1:  OCEPA cc-pVDZ gradient for the H2O molecule.
 
 
 cc24:         Single point gradient of 1-2B1 state of H2O+ with EOM-CCSD
