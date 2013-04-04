@@ -60,7 +60,7 @@ I. Compilation Prerequisites
   * autoconf (version 2.52 or higher)
 
     .. note:: autoconf is only needed for special
-       architectures, to compile with MADNESS, or to compile the 
+       architectures or to compile the 
        development branch.
 
   * aclocal
@@ -71,10 +71,6 @@ I. Compilation Prerequisites
   * latex
   * sphinx (version 1.1 or higher)
   * dvipng (for latex math in html)
-
-* To make a distributed-parallel version with MADNESS, you may also need:
-
-  * libtool (called by autoreconf)
 
 For Ubuntu users, you will need the following packages installed:
 gfortran [for linking to BLAS/LAPACK], g++, autoconf, python-dev 
@@ -99,24 +95,6 @@ A. Autoconf
       psi4 directory, run autoconf::
 
          >>> autoconf
-
-   2. Distributed-parallel compilation.
-
-      Not recommended at this time except for developers.  Shared-memory
-      parallelization is already enabled by default in the standard
-      compilation.
-      
-      Distributed-parallel versions of PSI4 require madness. If you select
-      mpicxx as the compiler, the distributed-parallel version (including
-      madness) will compile. For distributed-parallel compilation, you must
-      run the following command in the madness directory, otherwise the PSI4
-      configure script will fail (autoreconf is provided by package autoconf,
-      but it calls another program provided by libtool, so that package must
-      also be installed)::
-
-         >>> cd madness
-         >>> autoreconf
-         >>> cd ..
 
 B. Configuration and Compilation
 

@@ -82,11 +82,6 @@ quicktestdirs = tu1-h2o-energy tu2-ch2-energy tu3-h2o-opt tu4-h2o-freq \
   mp2_5-grad1 ocepa-grad2 omp2-grad1 \
   dcft1 dcft2 dcft3 dcft4 pywrap-db1 pywrap-db2 pywrap-cbs1 pywrap-all pywrap-alias  
 
-HAVE_MADNESS=@HAVE_MPI@
-ifeq ($(HAVE_MADNESS),1)
-   subdirs += $(maddness_subdirs)
-endif
- 
 have_dftd3 := $(shell which dftd3)
 ifneq ($(have_dftd3),)
    subdirs += $(dftd3_subdirs)
