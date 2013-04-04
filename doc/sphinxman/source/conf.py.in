@@ -312,11 +312,11 @@ rst_prolog = """
 """
 
 # This option, from sphinx.ext.extlinks, allows linking to source on github with :source:`lib/python/driver/py`
-extlinks = {'source':    ('https://github.com/psi4/4.0b4/blob/master/%s', 'psi4/'),
-            'srcsample': ('https://github.com/psi4/4.0b4/blob/master/samples/%s/input.dat', ''),
-            'srcbasis':  ('https://github.com/psi4/4.0b4/blob/master/lib/basis/%s.gbs', ''),
-            'srcplugin': ('https://github.com/psi4/4.0b4/blob/master/tests/%s', ''),
-            'srcdb':     ('https://github.com/psi4/4.0b4/blob/master/lib/databases/%s.py', '') }
+extlinks = {'source':    ('https://github.com/psi4/psi4.0b4/blob/master/%s', 'psi4/'),
+            'srcsample': ('https://github.com/psi4/psi4.0b4/blob/master/samples/%s/input.dat', ''),
+            'srcbasis':  ('https://github.com/psi4/psi4.0b4/blob/master/lib/basis/%s.gbs', ''),
+            'srcplugin': ('https://github.com/psi4/psi4.0b4/blob/master/tests/%s', ''),
+            'srcdb':     ('https://github.com/psi4/psi4.0b4/blob/master/lib/databases/%s.py', '') }
 
 # corrects baseline for inline math + other custom stuff for inline math, such as non-default math fonts etc.
 pngmath_latex_preamble=r'\usepackage[active]{preview}'
