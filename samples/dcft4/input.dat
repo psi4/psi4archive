@@ -43,11 +43,11 @@ energy('dcft')
 
 set algorithm qc
 set ao_basis none
-energy('dcft')
+#energy('dcft')
 
 
 set ao_basis disk
-energy('dcft')
+#energy('dcft')
 
 
 set dcft_functional dc-12
@@ -71,9 +71,9 @@ energy('dcft')
 
 set algorithm qc
 set ao_basis none
-energy('dcft')
+#energy('dcft')
 
 
 set ao_basis disk
-energy('dcft')
+#energy('dcft')
 
