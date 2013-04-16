@@ -27,6 +27,8 @@ void OCCWave::common_init()
 {
         // print title and options
 	if (print_ > 0) options_.print();
+	wfn_type_=options_.get_str("WFN_TYPE");
+        orb_opt_=options_.get_str("ORB_OPT"); 
         title();
 
 	tol_Eod=options_.get_double("E_CONVERGENCE");
@@ -56,7 +58,6 @@ void OCCWave::common_init()
 	e3_scale=options_.get_double("E3_SCALE");
 	lambda_damping=options_.get_double("MOGRAD_DAMPING");
 	
-	wfn_type_=options_.get_str("WFN_TYPE");
 	orth_type=options_.get_str("ORTH_TYPE");
 	opt_method=options_.get_str("OPT_METHOD");
 	//hess_type=options_.get_str("HESS_TYPE");
@@ -84,7 +85,6 @@ void OCCWave::common_init()
         ep_ea_poles=options_.get_str("EP_EA_POLES"); 
         ekt_ip_=options_.get_str("EKT_IP"); 
         ekt_ea_=options_.get_str("EKT_EA"); 
-        orb_opt_=options_.get_str("ORB_OPT"); 
 
     //   Tying orbital convergence to the desired e_conv,
     //   particularly important for sane numerical frequencies by energy
@@ -116,6 +116,9 @@ void OCCWave::common_init()
     else {
         double temp2;
         temp2 = -log10(tol_grad) - 1.5;
+        if (temp2 >= 5.0) {
+            temp2 = 4.0;
+        }
         mograd_max = pow(10.0, -temp2);
 	fprintf(outfile,"\tMAX orbital gradient is changed to : %12.2e\n", mograd_max);
 	fflush(outfile);
@@ -335,7 +338,7 @@ void OCCWave::title()
    else if (wfn_type_ == "OMP2.5" && orb_opt_ == "TRUE") fprintf(outfile,"                       OMP2.5 (OO-MP2.5)   \n");
    else if (wfn_type_ == "OMP2.5" && orb_opt_ == "FALSE") fprintf(outfile,"                       MP2.5  \n");
    fprintf(outfile,"              Program Written by Ugur Bozkaya,\n") ; 
-   fprintf(outfile,"              Latest Revision April 5, 2013.\n") ;
+   fprintf(outfile,"              Latest Revision April 16, 2013.\n") ;
    fprintf(outfile,"\n");
    fprintf(outfile," ============================================================================== \n");
    fprintf(outfile," ============================================================================== \n");
