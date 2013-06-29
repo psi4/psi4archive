@@ -1,25 +1,3 @@
-/*
- *@BEGIN LICENSE
- *
- * PSI4: an ab initio quantum chemistry software package
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- *@END LICENSE
- */
-
 #include "dcft.h"
 #include "defines.h"
 #include <libpsio/psio.hpp>
@@ -645,7 +623,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[V,V]"), ID("[V,V]"),
                       ID("[V,V]"), ID("[V,V]"), 1, "MO Ints <VV|VV>");
     VVVVEnergy += 0.25* global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testaa = %16.10f\n", 0.25*dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testaa = %16.10f\n", 0.25*global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -654,7 +632,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[V,v]"), ID("[V,v]"),
                       ID("[V,v]"), ID("[V,v]"), 0, "MO Ints <Vv|Vv>");
     VVVVEnergy += global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testab = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testab = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -663,7 +641,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[v,v]"), ID("[v,v]"),
                       ID("[v,v]"), ID("[v,v]"), 1, "MO Ints <vv|vv>");
     VVVVEnergy += 0.25 * global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testbb = %16.10f\n", 0.25*dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testbb = %16.10f\n", 0.25*global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -674,7 +652,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[O,O]"), ID("[O,O]"),
                       ID("[O,O]"), ID("[O,O]"), 1, "MO Ints <OO|OO>");
     OOOOEnergy += 0.25* global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testaa = %16.10f\n", 0.25*dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testaa = %16.10f\n", 0.25*global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -684,7 +662,7 @@ DCFTSolver::dump_density()
                       ID("[O,o]"), ID("[O,o]"), 0, "MO Ints <Oo|Oo>");
     OOOOEnergy += global_dpd_->buf4_dot(&I, &L);
 
-//fprintf(outfile, "testab = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testab = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -693,7 +671,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[o,o]"), ID("[o,o]"),
                       ID("[o,o]"), ID("[o,o]"), 1, "MO Ints <oo|oo>");
     OOOOEnergy += 0.25 * global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testbb = %16.10f\n", 0.25*dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testbb = %16.10f\n", 0.25*global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -705,7 +683,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[O,V]"), ID("[O,V]"),
                   ID("[O,V]"), ID("[O,V]"), 0, "MO Ints <OV|OV> - <OV|VO>");
     OVOVEnergy += global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testaa = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testaa = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -714,7 +692,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[O,v]"), ID("[O,v]"),
                   ID("[O,v]"), ID("[O,v]"), 0, "MO Ints <Ov|Ov>");
     OVOVEnergy += global_dpd_->buf4_dot(&L, &I);
-//fprintf(outfile, "testab = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testab = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -723,7 +701,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[o,V]"), ID("[o,V]"),
                   ID("[o,V]"), ID("[o,V]"), 0, "MO Ints <oV|oV>");
     OVOVEnergy += global_dpd_->buf4_dot(&L, &I);
-//fprintf(outfile, "testba = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testba = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -740,7 +718,7 @@ DCFTSolver::dump_density()
     global_dpd_->buf4_init(&I, PSIF_LIBTRANS_DPD, 0, ID("[o,v]"), ID("[o,v]"),
                   ID("[o,v]"), ID("[o,v]"), 0, "MO Ints <ov|ov> - <ov|vo>");
     OVOVEnergy += global_dpd_->buf4_dot(&I, &L);
-//fprintf(outfile, "testbb = %16.10f\n", dpd_buf4_dot(&I, &L));
+//fprintf(outfile, "testbb = %16.10f\n", global_dpd_->buf4_dot(&I, &L));
     global_dpd_->buf4_close(&I);
     global_dpd_->buf4_close(&L);
 
@@ -921,6 +899,73 @@ DCFTSolver::check_n_representability()
         free_block(TPDMaa);
         free_block(TPDMab);
     }
+}
+
+/**
+ * Prints the mulliken charges.
+ */
+void
+DCFTSolver::mulliken_charges()
+{
+#if 0
+    SimpleMatrix aOPDM(_aKappa.to_simple_matrix());
+    SimpleMatrix bOPDM(_bKappa.to_simple_matrix());
+    int offset = 0;
+    for(int h = 0; h < _nIrreps; ++h){
+        for(int row = 0; row < _soPI[h]; ++row){
+            for(int col = 0; col < _soPI[h]; ++col){
+                aOPDM.add(row + offset, col + offset, _aTau[h][row][col]);
+                bOPDM.add(row + offset, col + offset, _aTau[h][row][col]);
+            }
+        }
+        offset += _soPI[h];
+    }
+
+    SimpleMatrix aDS(_nSo, _nSo);
+    SimpleMatrix bDS(_nSo, _nSo);
+    SimpleMatrix S(_aoS.to_simple_matrix());
+    // Form the DS matrix (well, Kappa X S really)
+    aDS.gemm(0, 0, 1.0, &aOPDM, &S, 0.0);
+    bDS.gemm(0, 0, 1.0, &aOPDM, &S, 0.0);
+    int nAtoms         = _chkpt->rd_natom();
+    int nShells        = _chkpt->rd_nshell();
+    int *shellLocation = _chkpt->rd_sloc_new();
+    int *shellAngMom   = _chkpt->rd_stype();
+    int *shellToAtom   = _chkpt->rd_snuc();
+    double *zVals      = _chkpt->rd_zvals();
+    double **U         = _chkpt->rd_usotbf();
+    char **labels      = _chkpt->rd_felement();
+    SimpleMatrix aoADS(_nSo, _nSo);
+    SimpleMatrix aoBDS(_nSo, _nSo);
+    SimpleMatrix UMat(_nSo, _nSo);
+    UMat.set(U);
+    SimpleMatrix tmp(_nSo, _nSo);
+    // Transform the SO DS matrix into the AO basis
+    tmp.gemm(1, 0, 1.0, &UMat, &aDS, 0.0);
+    aoADS.gemm(0, 0, 1.0, &tmp, &UMat, 0.0);
+    tmp.gemm(1, 0, 1.0, &UMat, &bDS, 0.0);
+    aoBDS.gemm(0, 0, 1.0, &tmp, &UMat, 0.0);
+    SimpleVector aCharges(nAtoms);
+    SimpleVector bCharges(nAtoms);
+    for(int shell = 0; shell < nShells; ++shell){
+        int atom       = shellToAtom[shell] - 1;
+        int firstBF    = shellLocation[shell] - 1;
+        int shellSize  = 2*shellAngMom[shell] - 1;
+        for(int bf = 0; bf < shellSize; ++bf){
+            aCharges[atom] += aoADS.get(bf + firstBF, bf + firstBF);
+            bCharges[atom] += aoBDS.get(bf + firstBF, bf + firstBF);
+        }
+    }
+
+    fprintf(outfile, "\n\t\t     Mulliken Population Analysis\n\n");
+    fprintf(outfile,   "\t\t    Atom          Charge      Spin\n");
+    fprintf(outfile,   "\t\t-------------------------------------\n");
+    for(int atom = 0; atom < nAtoms; ++atom){
+        fprintf(outfile, "\t\t  %-12s  %8.3f   %8.3f\n",
+                labels[atom], zVals[atom] - aCharges[atom] - bCharges[atom],
+                aCharges[atom] - bCharges[atom]);
+    }
+#endif
 }
 
 }} // Namespaces

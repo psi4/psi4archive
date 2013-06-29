@@ -836,21 +836,25 @@ int read_options(const std::string &name, Options & options, bool suppress_print
       In the cases where the convergence problems are encountered (especially
       for highly symmetric systems) QC algorithm can be used. -*/
       options.add_str("ALGORITHM", "TWOSTEP", "TWOSTEP SIMULTANEOUS QC");
-      /*- The algorithm to use for the solution of the response equations for the analytic gradients and properties-*/
+      /*- The algorithm to use for the solution of the response equations for the analytic gradients and properties.-*/
       options.add_str("RESPONSE_ALGORITHM", "TWOSTEP", "TWOSTEP SIMULTANEOUS");
-      /*- Chooses the type of the quadratically-convergent algorithm (effective for ALGORITHM = QC).
-      If set to TWOSTEP the Newton-Raphson equations are only solved for the orbital updates,
-      the cumulant is updated using the standard Jacobi algorithm. If set to SIMULTANEOUS both cumulant
-      and orbitals are updated in a single Newton-Raphson step. -*/
-      options.add_str("QC_TYPE", "SIMULTANEOUS", "TWOSTEP SIMULTANEOUS");
       /*- Convergence criterion for the RMS of the residual vector in the density cumulant updates, as well as
       the solution of the density cumulant and orbital response equations. In the orbital updates controls
       the RMS of the SCF error vector -*/
       options.add_double("R_CONVERGENCE", 1e-10);
-      /*- Convergence criterion for the density cumulant and orbital guess for the
-      variationally orbital-optimized DCFT methods. Currently only available for ALGORITHM = SIMULTANEOUS. -*/
-      options.add_double("GUESS_R_CONVERGENCE", 1e-3);
-      /*- Maximum number of the macro- or micro-iterations for both the energy and the solution of the response equations -*/
+      /*- Maximum number of density cumulant update micro-iterations per
+      macro-iteration (for ALOGRITHM = TWOSTEP). Same keyword controls the
+      maximum number of density cumulant response micro-iterations per
+      macro-iteration for the solution of the response equations
+      (for RESPONSE_ALOGRITHM = TWOSTEP) -*/
+      options.add_int("LAMBDA_MAXITER", 50);
+      /*- Maximum number of the orbital update micro-iterations per
+      macro-iteration (for ALOGRITHM = TWOSTEP). Same keyword controls the
+      maximum number of orbital response micro-iterations per
+      macro-iteration for the solution of the response equations
+      (for RESPONSE_ALOGRITHM = TWOSTEP) -*/
+      options.add_int("SCF_MAXITER", 50);
+      /*- Maximum number of the macro-iterations for both the energy and the solution of the response equations -*/
       options.add_int("MAXITER", 40);
       /*- Value of RMS of the density cumulant residual and SCF error vector below which DIIS extrapolation starts.
       Same keyword controls the DIIS extrapolation for the solution of the response equations. -*/
@@ -873,6 +877,10 @@ int read_options(const std::string &name, Options & options, bool suppress_print
       options.add_double("DAMPING_PERCENTAGE",0.0);
       /*- The shift applied to the denominator in the density cumulant update iterations !expert-*/
       options.add_double("TIKHONOW_OMEGA", 0.0);
+//      /* Controls whether to compute the DCFT energy with the Tau^2 correction to Tau !expert*/
+//      options.add_bool("TAU_SQUARED", false);
+      /*- Controls whether to compute unrelaxed two-particle density matrix at the end of the energy computation !expert-*/
+      options.add_bool("TPDM", false);
       /*- Controls whether to relax the orbitals during the energy computation or not (for debug puproses only).
       For practical applications only the default must be used !expert-*/
       options.add_bool("MO_RELAX", true);
@@ -883,17 +891,16 @@ int read_options(const std::string &name, Options & options, bool suppress_print
       options.add_int("CACHELEVEL", 2);
       /*- Minimum absolute value below which integrals are neglected !expert-*/
       options.add_double("INTS_TOLERANCE", 1e-14);
+      /*- Controls whether to force the occupation to be that of the SCF guess.
+          For practical applications only the default must be used !expert-*/
+      options.add_bool("LOCK_OCC", true);
       /*- Whether to read the orbitals from a previous computation, or to compute
           an MP2 guess !expert -*/
-      options.add_str("DCFT_GUESS", "MP2", "CC BCC MP2 DCFT");
-      /*- Whether to perform a guess DC-06 or DC-12 computation for ODC-06 or ODC-12 methods, respectively.
-          Currently only available for ALGORITHM = SIMULTANEOUS. -*/
-      options.add_bool("ODC_GUESS", false);
+      options.add_str("DCFT_GUESS", "MP2", "CC BCC MP2");
       /*- Controls whether to relax the guess orbitals by taking the guess density cumulant
       and performing orbital update on the first macroiteration (for ALOGRITHM = TWOSTEP only) !expert-*/
       options.add_bool("RELAX_GUESS_ORBITALS", false);
-      /*- Controls whether to include the coupling terms in the DCFT electronic Hessian (for ALOGRITHM = QC
-      with QC_TYPE = SIMULTANEOUS only) -*/
+      /*- Controls whether to include the coupling terms in the DCFT electronic Hessian (for ALOGRITHM = QC only) -*/
       options.add_bool("QC_COUPLING", true);
       /*- Performs stability analysis of the DCFT energy !expert-*/
       options.add_bool("STABILITY_CHECK", false);
@@ -914,7 +921,9 @@ int read_options(const std::string &name, Options & options, bool suppress_print
       /*- Controls whether to relax tau during the cumulant updates or not !expert-*/
       options.add_bool("RELAX_TAU", true);
       /*- Chooses appropriate DCFT method -*/
-      options.add_str("DCFT_FUNCTIONAL", "DC-06", "DC-06 DC-12 ODC-06 ODC-12 CEPA0");
+      options.add_str("DCFT_FUNCTIONAL", "DC-06", "DC-06 DC-12 CEPA0");
+      //      /* Specify orbital basis to be used in the DCFT iterations !expert */
+      //      options.add_str("DCFT_BASIS", "MO", "MO NSO");
 
   }
   if (name == "MINTS"|| options.read_globals()) {
