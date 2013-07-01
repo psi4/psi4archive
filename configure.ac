@@ -988,7 +988,6 @@ AC_CONFIG_FILES([
           src/bin/mrcc/Makefile
           src/bin/dfmp2/Makefile
           src/bin/sapt/Makefile
-          src/bin/dftsapt/Makefile
           src/bin/mints_wrapper/Makefile
           src/bin/deriv_wrapper/Makefile
           src/bin/scfgrad/Makefile
